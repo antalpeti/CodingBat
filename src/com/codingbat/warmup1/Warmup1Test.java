@@ -5,15 +5,29 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * The Class Warmup1Test is contains tests for Warmup-1 section.
+ */
 public class Warmup1Test {
 
+  /** The instance variable to test the not static methods. */
   private Warmup1 instance;
 
+  /**
+   * Setup before the tests start.
+   *
+   * @throws Exception the exception if something go wrong
+   */
   @Before
   public void setUp() throws Exception {
     instance = new Warmup1();
   }
 
+  /**
+   * Tear down after the tests finish.
+   *
+   * @throws Exception the exception if something go wrong
+   */
   @After
   public void tearDown() throws Exception {
     instance = null;
@@ -29,5 +43,4 @@ public class Warmup1Test {
     Assert.assertEquals(true, instance.sleepIn(false, true));
     Assert.assertEquals(true, instance.sleepIn(true, true));
   }
-
 }
