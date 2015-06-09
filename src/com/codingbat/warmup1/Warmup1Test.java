@@ -43,4 +43,15 @@ public class Warmup1Test {
     Assert.assertEquals(true, instance.sleepIn(false, true));
     Assert.assertEquals(true, instance.sleepIn(true, true));
   }
+
+  /**
+   * Test method for {@link Warmup1#monkeyTrouble(boolean, boolean)}.
+   */
+  @Test
+  public void testMonkeyTrouble() {
+    Assert.assertEquals(true, instance.monkeyTrouble(true, true));
+    Assert.assertEquals(true, instance.monkeyTrouble(false, false));
+    Assert.assertEquals(false, instance.monkeyTrouble(true, false));
+    Assert.assertEquals(false, instance.monkeyTrouble(false, true));
+  }
 }
