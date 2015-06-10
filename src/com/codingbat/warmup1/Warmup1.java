@@ -42,4 +42,17 @@ public class Warmup1 {
   public int sumDouble(int a, int b) {
     return a == b ? 4 * a : a + b;
   }
+
+  /**
+   * Given an int n, return the absolute difference between n and 21, except return double the
+   * absolute difference if n is over 21.
+   *
+   * @param n the examinable number
+   * @return the difference beetween 21 and the input number, or double the difference if input
+   *         number is bigger than 21
+   */
+  public int diff21(int n) {
+    int diff = Math.abs(n - 21);
+    return n > 21 ? 2 * diff : diff;
+  }
 }

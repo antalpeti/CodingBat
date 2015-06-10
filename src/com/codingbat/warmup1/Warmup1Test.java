@@ -70,4 +70,24 @@ public class Warmup1Test {
     Assert.assertEquals(7, instance.sumDouble(3, 4));
     Assert.assertEquals(-12, instance.sumDouble(-3, -3));
   }
+
+  /**
+   * Test method for {@link Warmup1#diff21(int)}.
+   */
+  @Test
+  public void testDiff21() {
+    Assert.assertEquals(2, instance.diff21(19));
+    Assert.assertEquals(11, instance.diff21(10));
+    Assert.assertEquals(0, instance.diff21(21));
+    Assert.assertEquals(2, instance.diff21(22));
+    Assert.assertEquals(8, instance.diff21(25));
+    Assert.assertEquals(18, instance.diff21(30));
+    Assert.assertEquals(58, instance.diff21(50));
+    Assert.assertEquals(100, instance.diff21(71));
+    Assert.assertEquals(21, instance.diff21(0));
+    Assert.assertEquals(20, instance.diff21(1));
+    Assert.assertEquals(19, instance.diff21(2));
+    Assert.assertEquals(22, instance.diff21(-1));
+    Assert.assertEquals(23, instance.diff21(-2));
+  }
 }
