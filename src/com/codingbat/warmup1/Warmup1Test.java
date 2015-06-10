@@ -54,4 +54,20 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.monkeyTrouble(true, false));
     Assert.assertEquals(false, instance.monkeyTrouble(false, true));
   }
+
+  /**
+   * Test method for {@link Warmup1#sumDouble(int, int)}.
+   */
+  @Test
+  public void testSumDouble() {
+    Assert.assertEquals(3, instance.sumDouble(1, 2));
+    Assert.assertEquals(5, instance.sumDouble(3, 2));
+    Assert.assertEquals(8, instance.sumDouble(2, 2));
+    Assert.assertEquals(-1, instance.sumDouble(-1, 0));
+    Assert.assertEquals(12, instance.sumDouble(3, 3));
+    Assert.assertEquals(0, instance.sumDouble(0, 0));
+    Assert.assertEquals(1, instance.sumDouble(0, 1));
+    Assert.assertEquals(7, instance.sumDouble(3, 4));
+    Assert.assertEquals(-12, instance.sumDouble(-3, -3));
+  }
 }

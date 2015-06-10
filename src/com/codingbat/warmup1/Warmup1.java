@@ -30,4 +30,16 @@ public class Warmup1 {
   public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
     return aSmile && bSmile || !aSmile && !bSmile;
   }
+
+  /**
+   * Given two int values, return their sum. Unless the two values are the same, then return double
+   * their sum.
+   *
+   * @param a the first number
+   * @param b the second number
+   * @return the sum of the two number, or double their sum in case of equality
+   */
+  public int sumDouble(int a, int b) {
+    return a == b ? 4 * a : a + b;
+  }
 }
