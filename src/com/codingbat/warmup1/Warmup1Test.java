@@ -90,4 +90,27 @@ public class Warmup1Test {
     Assert.assertEquals(22, instance.diff21(-1));
     Assert.assertEquals(23, instance.diff21(-2));
   }
+
+  /**
+   * Test method for {@link Warmup1#parrotTrouble(boolean, int)}.
+   */
+  @Test
+  public void testParrotTrouble() {
+    Assert.assertEquals(true, instance.parrotTrouble(true, 6));
+    Assert.assertEquals(false, instance.parrotTrouble(false, 6));
+    Assert.assertEquals(false, instance.parrotTrouble(true, 7));
+    Assert.assertEquals(false, instance.parrotTrouble(false, 7));
+    Assert.assertEquals(true, instance.parrotTrouble(true, 21));
+    Assert.assertEquals(false, instance.parrotTrouble(false, 21));
+    Assert.assertEquals(false, instance.parrotTrouble(false, 20));
+    Assert.assertEquals(false, instance.parrotTrouble(true, 20));
+    Assert.assertEquals(true, instance.parrotTrouble(true, 23));
+    Assert.assertEquals(false, instance.parrotTrouble(false, 23));
+    Assert.assertEquals(false, instance.parrotTrouble(true, 12));
+    Assert.assertEquals(false, instance.parrotTrouble(false, 12));
+    Assert.assertEquals(false, instance.parrotTrouble(false, 25));
+    Assert.assertEquals(false, instance.parrotTrouble(true, 25));
+    Assert.assertEquals(false, instance.parrotTrouble(false, -1));
+    Assert.assertEquals(false, instance.parrotTrouble(true, -1));
+  }
 }
