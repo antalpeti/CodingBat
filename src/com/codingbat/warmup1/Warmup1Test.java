@@ -113,4 +113,25 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.parrotTrouble(false, -1));
     Assert.assertEquals(false, instance.parrotTrouble(true, -1));
   }
+
+  /**
+   * Test method for {@link Warmup1#makes10(int, int)}.
+   */
+  @Test
+  public void testMakes10() {
+    Assert.assertEquals(true, instance.makes10(9, 10));
+    Assert.assertEquals(false, instance.makes10(9, 9));
+    Assert.assertEquals(true, instance.makes10(1, 9));
+    Assert.assertEquals(true, instance.makes10(9, 1));
+    Assert.assertEquals(true, instance.makes10(10, 1));
+    Assert.assertEquals(true, instance.makes10(1, 10));
+    Assert.assertEquals(true, instance.makes10(10, 10));
+    Assert.assertEquals(true, instance.makes10(8, 2));
+    Assert.assertEquals(false, instance.makes10(8, 3));
+    Assert.assertEquals(false, instance.makes10(5, 4));
+    Assert.assertEquals(true, instance.makes10(-10, 20));
+    Assert.assertEquals(false, instance.makes10(8, 3));
+    Assert.assertEquals(true, instance.makes10(10, 42));
+    Assert.assertEquals(true, instance.makes10(-2, 10));
+  }
 }
