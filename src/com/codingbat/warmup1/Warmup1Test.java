@@ -134,4 +134,27 @@ public class Warmup1Test {
     Assert.assertEquals(true, instance.makes10(10, 42));
     Assert.assertEquals(true, instance.makes10(-2, 10));
   }
+
+  /**
+   * Test method for {@link Warmup1#nearHundred(int)}.
+   */
+  @Test
+  public void testNearHundred() {
+    Assert.assertEquals(false, instance.nearHundred(0));
+    Assert.assertEquals(false, instance.nearHundred(5));
+    Assert.assertEquals(false, instance.nearHundred(89));
+    Assert.assertEquals(true, instance.nearHundred(90));
+    Assert.assertEquals(true, instance.nearHundred(93));
+    Assert.assertEquals(true, instance.nearHundred(109));
+    Assert.assertEquals(true, instance.nearHundred(110));
+    Assert.assertEquals(false, instance.nearHundred(111));
+    Assert.assertEquals(false, instance.nearHundred(121));
+    Assert.assertEquals(false, instance.nearHundred(189));
+    Assert.assertEquals(true, instance.nearHundred(190));
+    Assert.assertEquals(true, instance.nearHundred(191));
+    Assert.assertEquals(true, instance.nearHundred(200));
+    Assert.assertEquals(true, instance.nearHundred(210));
+    Assert.assertEquals(false, instance.nearHundred(211));
+    Assert.assertEquals(false, instance.nearHundred(290));
+  }
 }
