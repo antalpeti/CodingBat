@@ -181,4 +181,19 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.posNeg(-5, -6, false));
     Assert.assertEquals(false, instance.posNeg(-5, 6, true));
   }
+
+  /**
+   * Test method for {@link Warmup1#notString(String)}.
+   */
+  @Test
+  public void testNotString() {
+    Assert.assertEquals("not candy", instance.notString("candy"));
+    Assert.assertEquals("not x", instance.notString("x"));
+    Assert.assertEquals("not bad", instance.notString("not bad"));
+    Assert.assertEquals("not bad", instance.notString("bad"));
+    Assert.assertEquals("not", instance.notString("not"));
+    Assert.assertEquals("not is not", instance.notString("is not"));
+    Assert.assertEquals("not no", instance.notString("no"));
+    Assert.assertEquals("not hey", instance.notString("hey"));
+  }
 }

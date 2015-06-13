@@ -104,4 +104,16 @@ public class Warmup1 {
   public boolean posNeg(int a, int b, boolean negative) {
     return (a < 0 && b > 0 || a > 0 && b < 0) && !negative || a < 0 && b < 0 && negative;
   }
+
+  /**
+   * Given a string, return a new string where "not " has been added to the front. However, if the
+   * string already begins with "not", return the string unchanged. Note: use .equals() to compare 2
+   * strings.
+   *
+   * @param str the input string
+   * @return the input string with only one "not " prefix
+   */
+  public String notString(String str) {
+    return str.startsWith("not") ? str : "not " + str;
+  }
 }
