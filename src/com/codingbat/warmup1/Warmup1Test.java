@@ -157,4 +157,28 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.nearHundred(211));
     Assert.assertEquals(false, instance.nearHundred(290));
   }
+
+  /**
+   * Test method for {@link Warmup1#posNeg(int, int, boolean)}.
+   */
+  @Test
+  public void testPosNeg() {
+    Assert.assertEquals(false, instance.posNeg(1, 1, false));
+    Assert.assertEquals(false, instance.posNeg(1, 1, true));
+    Assert.assertEquals(false, instance.posNeg(-1, -1, false));
+    Assert.assertEquals(true, instance.posNeg(-1, -1, true));
+    Assert.assertEquals(true, instance.posNeg(1, -1, false));
+    Assert.assertEquals(false, instance.posNeg(1, -1, true));
+    Assert.assertEquals(false, instance.posNeg(-1, 1, true));
+    Assert.assertEquals(false, instance.posNeg(1, 2, false));
+    Assert.assertEquals(false, instance.posNeg(-2, -1, false));
+    Assert.assertEquals(true, instance.posNeg(-4, -5, true));
+    Assert.assertEquals(false, instance.posNeg(-4, -5, false));
+    Assert.assertEquals(false, instance.posNeg(-4, 5, true));
+    Assert.assertEquals(true, instance.posNeg(5, -5, false));
+    Assert.assertEquals(true, instance.posNeg(-5, -5, true));
+    Assert.assertEquals(true, instance.posNeg(-6, 6, false));
+    Assert.assertEquals(false, instance.posNeg(-5, -6, false));
+    Assert.assertEquals(false, instance.posNeg(-5, 6, true));
+  }
 }

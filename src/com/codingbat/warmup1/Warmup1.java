@@ -90,4 +90,18 @@ public class Warmup1 {
   public boolean nearHundred(int n) {
     return Math.abs(100 - n) < 11 || Math.abs(200 - n) < 11;
   }
+
+  /**
+   * Given 2 int values, return true if one is negative and one is positive. Except if the parameter
+   * "negative" is true, then return true only if both are negative.
+   *
+   * @param a the first number
+   * @param b the second number
+   * @param negative indicate is only negative number allowable
+   * @return true, if one of the number is negative and to other is positive and negative number is
+   *         not allowable, or both of them is negative and negative number is allowable
+   */
+  public boolean posNeg(int a, int b, boolean negative) {
+    return (a < 0 && b > 0 || a > 0 && b < 0) && !negative || a < 0 && b < 0 && negative;
+  }
 }
