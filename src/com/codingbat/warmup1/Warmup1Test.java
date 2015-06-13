@@ -196,4 +196,23 @@ public class Warmup1Test {
     Assert.assertEquals("not no", instance.notString("no"));
     Assert.assertEquals("not hey", instance.notString("hey"));
   }
+
+  /**
+   * Test method for {@link Warmup1#missingChar(String, int)}.
+   */
+  @Test
+  public void testMissingChar() {
+    Assert.assertEquals("", instance.missingChar("", -1));
+    Assert.assertEquals("", instance.missingChar("", 0));
+    Assert.assertEquals("ktten", instance.missingChar("kitten", 1));
+    Assert.assertEquals("itten", instance.missingChar("kitten", 0));
+    Assert.assertEquals("kittn", instance.missingChar("kitten", 4));
+    Assert.assertEquals("i", instance.missingChar("Hi", 0));
+    Assert.assertEquals("H", instance.missingChar("Hi", 1));
+    Assert.assertEquals("ode", instance.missingChar("code", 0));
+    Assert.assertEquals("cde", instance.missingChar("code", 1));
+    Assert.assertEquals("coe", instance.missingChar("code", 2));
+    Assert.assertEquals("cod", instance.missingChar("code", 3));
+    Assert.assertEquals("chocolat", instance.missingChar("chocolate", 8));
+  }
 }
