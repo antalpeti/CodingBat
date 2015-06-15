@@ -215,4 +215,22 @@ public class Warmup1Test {
     Assert.assertEquals("cod", instance.missingChar("code", 3));
     Assert.assertEquals("chocolat", instance.missingChar("chocolate", 8));
   }
+
+  /**
+   * Test method for {@link Warmup1#frontBack(String)}.
+   */
+  @Test
+  public void testFrontBack() {
+    Assert.assertEquals("eodc", instance.frontBack("code"));
+    Assert.assertEquals("a", instance.frontBack("a"));
+    Assert.assertEquals("ba", instance.frontBack("ab"));
+    Assert.assertEquals("cba", instance.frontBack("abc"));
+    Assert.assertEquals("", instance.frontBack(""));
+    Assert.assertEquals("1", instance.frontBack("1"));
+    Assert.assertEquals("21", instance.frontBack("12"));
+    Assert.assertEquals("321", instance.frontBack("123"));
+    Assert.assertEquals("ehocolatC", instance.frontBack("Chocolate"));
+    Assert.assertEquals("Java", instance.frontBack("aavJ"));
+    Assert.assertEquals("oellh", instance.frontBack("hello"));
+  }
 }
