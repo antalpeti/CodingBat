@@ -233,4 +233,21 @@ public class Warmup1Test {
     Assert.assertEquals("Java", instance.frontBack("aavJ"));
     Assert.assertEquals("oellh", instance.frontBack("hello"));
   }
+
+  /**
+   * Test method for {@link Warmup1#front3(String)}.
+   */
+  @Test
+  public void testFront3() {
+    Assert.assertEquals("JavJavJav", instance.front3("Java"));
+    Assert.assertEquals("ChoChoCho", instance.front3("Chocolate"));
+    Assert.assertEquals("abcabcabc", instance.front3("abc"));
+    Assert.assertEquals("@1#@1#@1#", instance.front3("@1#"));
+    Assert.assertEquals("abcabcabc", instance.front3("abcXYZ"));
+    Assert.assertEquals("ababab", instance.front3("ab"));
+    Assert.assertEquals("@1@1@1", instance.front3("@1"));
+    Assert.assertEquals("aaa", instance.front3("a"));
+    Assert.assertEquals("@@@", instance.front3("@"));
+    Assert.assertEquals("", instance.front3(""));
+  }
 }
