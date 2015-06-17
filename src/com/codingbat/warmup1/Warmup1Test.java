@@ -250,4 +250,18 @@ public class Warmup1Test {
     Assert.assertEquals("@@@", instance.front3("@"));
     Assert.assertEquals("", instance.front3(""));
   }
+
+  /**
+   * Test method for {@link Warmup1#backAround(String)}.
+   */
+  @Test
+  public void testBackAround() {
+    Assert.assertEquals("tcatt", instance.backAround("cat"));
+    Assert.assertEquals("oHelloo", instance.backAround("Hello"));
+    Assert.assertEquals("", instance.backAround(""));
+    Assert.assertEquals("aaa", instance.backAround("a"));
+    Assert.assertEquals("cabcc", instance.backAround("abc"));
+    Assert.assertEquals("dreadd", instance.backAround("read"));
+    Assert.assertEquals("obooo", instance.backAround("boo"));
+  }
 }
