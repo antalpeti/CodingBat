@@ -167,4 +167,15 @@ public class Warmup1 {
     return str.length() > 0 ? str.charAt(str.length() - 1) + str + str.charAt(str.length() - 1)
         : str;
   }
+
+  /**
+   * Return true if the given non-negative number is a multiple of 3 or a multiple of 5. Use the %
+   * "mod" operator.
+   *
+   * @param n the non-negative number
+   * @return true, if the input number is multiple of 3 or multiple of 5
+   */
+  public boolean or35(int n) {
+    return n % 3 == 0 || n % 5 == 0;
+  }
 }

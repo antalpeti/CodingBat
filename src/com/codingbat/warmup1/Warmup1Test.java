@@ -264,4 +264,37 @@ public class Warmup1Test {
     Assert.assertEquals("dreadd", instance.backAround("read"));
     Assert.assertEquals("obooo", instance.backAround("boo"));
   }
+
+  /**
+   * Test method for {@link Warmup1#or35(int)}.
+   */
+  @Test
+  public void testOr35() {
+    Assert.assertEquals(true, instance.or35(-5));
+    Assert.assertEquals(true, instance.or35(-3));
+    Assert.assertEquals(false, instance.or35(-1));
+    Assert.assertEquals(true, instance.or35(3));
+    Assert.assertEquals(false, instance.or35(4));
+    Assert.assertEquals(true, instance.or35(5));
+    Assert.assertEquals(true, instance.or35(6));
+    Assert.assertEquals(false, instance.or35(7));
+    Assert.assertEquals(false, instance.or35(8));
+    Assert.assertEquals(true, instance.or35(9));
+    Assert.assertEquals(true, instance.or35(10));
+    Assert.assertEquals(true, instance.or35(15));
+    Assert.assertEquals(false, instance.or35(17));
+    Assert.assertEquals(true, instance.or35(18));
+    Assert.assertEquals(false, instance.or35(19));
+    Assert.assertEquals(false, instance.or35(29));
+    Assert.assertEquals(true, instance.or35(20));
+    Assert.assertEquals(true, instance.or35(21));
+    Assert.assertEquals(false, instance.or35(22));
+    Assert.assertEquals(true, instance.or35(45));
+    Assert.assertEquals(true, instance.or35(99));
+    Assert.assertEquals(true, instance.or35(100));
+    Assert.assertEquals(false, instance.or35(101));
+    Assert.assertEquals(false, instance.or35(121));
+    Assert.assertEquals(false, instance.or35(122));
+    Assert.assertEquals(true, instance.or35(123));
+  }
 }
