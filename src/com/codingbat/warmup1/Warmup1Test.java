@@ -297,4 +297,18 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.or35(122));
     Assert.assertEquals(true, instance.or35(123));
   }
+
+  /**
+   * Test method for {@link Warmup1#front22(String)}.
+   */
+  @Test
+  public void testFront22() {
+    Assert.assertEquals("kikittenki", instance.front22("kitten"));
+    Assert.assertEquals("HaHaHa", instance.front22("Ha"));
+    Assert.assertEquals("ababcab", instance.front22("abc"));
+    Assert.assertEquals("ababab", instance.front22("ab"));
+    Assert.assertEquals("aaa", instance.front22("a"));
+    Assert.assertEquals("", instance.front22(""));
+    Assert.assertEquals("LoLogicLo", instance.front22("Logic"));
+  }
 }
