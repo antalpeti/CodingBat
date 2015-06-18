@@ -311,4 +311,19 @@ public class Warmup1Test {
     Assert.assertEquals("", instance.front22(""));
     Assert.assertEquals("LoLogicLo", instance.front22("Logic"));
   }
+
+  /**
+   * Test method for {@link Warmup1#startHi(String)}.
+   */
+  @Test
+  public void testStartHi() {
+    Assert.assertEquals(true, instance.startHi("hi there"));
+    Assert.assertEquals(true, instance.startHi("hi"));
+    Assert.assertEquals(false, instance.startHi("hello hi"));
+    Assert.assertEquals(false, instance.startHi("he"));
+    Assert.assertEquals(false, instance.startHi("h"));
+    Assert.assertEquals(false, instance.startHi(""));
+    Assert.assertEquals(false, instance.startHi("ho hi"));
+    Assert.assertEquals(true, instance.startHi("hi ho"));
+  }
 }

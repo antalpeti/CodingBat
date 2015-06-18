@@ -196,4 +196,14 @@ public class Warmup1 {
     String front = str.substring(0, take);
     return front + str + front;
   }
+
+  /**
+   * Given a string, return true if the string starts with "hi" and false otherwise.
+   *
+   * @param str the arbitrary length input string
+   * @return true, if the input string starts with "hi"
+   */
+  public boolean startHi(String str) {
+    return str.startsWith("hi");
+  }
 }
