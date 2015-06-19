@@ -326,4 +326,19 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.startHi("ho hi"));
     Assert.assertEquals(true, instance.startHi("hi ho"));
   }
+
+  /**
+   * Test method for {@link Warmup1#icyHot(int, int)}.
+   */
+  @Test
+  public void testIcyHot() {
+    Assert.assertEquals(true, instance.icyHot(120, -1));
+    Assert.assertEquals(true, instance.icyHot(-1, 120));
+    Assert.assertEquals(false, instance.icyHot(2, 120));
+    Assert.assertEquals(false, instance.icyHot(120, 2));
+    Assert.assertEquals(false, instance.icyHot(-1, 100));
+    Assert.assertEquals(false, instance.icyHot(100, -1));
+    Assert.assertEquals(false, instance.icyHot(-1, -1));
+    Assert.assertEquals(false, instance.icyHot(101, 101));
+  }
 }

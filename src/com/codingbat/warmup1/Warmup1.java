@@ -206,4 +206,16 @@ public class Warmup1 {
   public boolean startHi(String str) {
     return str.startsWith("hi");
   }
+
+  /**
+   * Given two temperatures, return true if one is less than 0 and the other is greater than 100.
+   *
+   * @param temp1 the first temperature
+   * @param temp2 the second temperature
+   * @return true, if one of the input temperature is smaller than 0, and the other input
+   *         temperature is bigger than 100
+   */
+  public boolean icyHot(int temp1, int temp2) {
+    return (temp1 < 0 || temp2 < 0) && (temp1 > 100 || temp2 > 100);
+  }
 }
