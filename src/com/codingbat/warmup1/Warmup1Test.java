@@ -341,4 +341,23 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.icyHot(-1, -1));
     Assert.assertEquals(false, instance.icyHot(101, 101));
   }
+
+  /**
+   * Test method for {@link Warmup1#in1020(int, int)}.
+   */
+  @Test
+  public void testIn1020() {
+    Assert.assertEquals(false, instance.in1020(8, 99));
+    Assert.assertEquals(true, instance.in1020(10, 99));
+    Assert.assertEquals(true, instance.in1020(12, 99));
+    Assert.assertEquals(true, instance.in1020(20, 99));
+    Assert.assertEquals(true, instance.in1020(20, 12));
+    Assert.assertEquals(true, instance.in1020(99, 10));
+    Assert.assertEquals(true, instance.in1020(21, 12));
+    Assert.assertEquals(true, instance.in1020(21, 20));
+    Assert.assertEquals(true, instance.in1020(10, 10));
+    Assert.assertEquals(true, instance.in1020(20, 20));
+    Assert.assertEquals(false, instance.in1020(9, 9));
+    Assert.assertEquals(false, instance.in1020(21, 21));
+  }
 }
