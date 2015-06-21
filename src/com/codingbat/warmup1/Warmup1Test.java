@@ -360,4 +360,48 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.in1020(9, 9));
     Assert.assertEquals(false, instance.in1020(21, 21));
   }
+
+  /**
+   * Test method for {@link Warmup1#hasTeen(int, int, int)}.
+   */
+  @Test
+  public void testHasTeen() {
+    // not in range
+    Assert.assertEquals(false, instance.hasTeen(12, 21, 9));
+    Assert.assertEquals(false, instance.hasTeen(12, 9, 21));
+    Assert.assertEquals(false, instance.hasTeen(20, 7, 24));
+    Assert.assertEquals(false, instance.hasTeen(20, 24, 7));
+    Assert.assertEquals(false, instance.hasTeen(12, 12, 12));
+    Assert.assertEquals(false, instance.hasTeen(11, 22, 22));
+    Assert.assertEquals(false, instance.hasTeen(20, 20, 20));
+    Assert.assertEquals(false, instance.hasTeen(4, 2, 20));
+    Assert.assertEquals(false, instance.hasTeen(1, 20, 12));
+    Assert.assertEquals(false, instance.hasTeen(12, 9, 20));
+    // first number in range
+    Assert.assertEquals(true, instance.hasTeen(13, 20, 10));
+    Assert.assertEquals(true, instance.hasTeen(13, 10, 20));
+    Assert.assertEquals(true, instance.hasTeen(14, 2, 20));
+    Assert.assertEquals(true, instance.hasTeen(14, 20, 2));
+    Assert.assertEquals(true, instance.hasTeen(15, 20, 10));
+    Assert.assertEquals(true, instance.hasTeen(19, 7, 24));
+    Assert.assertEquals(true, instance.hasTeen(19, 24, 7));
+    Assert.assertEquals(true, instance.hasTeen(19, 20, 12));
+    Assert.assertEquals(true, instance.hasTeen(19, 12, 20));
+    // second number in range
+    Assert.assertEquals(true, instance.hasTeen(12, 13, 20));
+    Assert.assertEquals(true, instance.hasTeen(20, 13, 12));
+    Assert.assertEquals(true, instance.hasTeen(12, 18, 20));
+    Assert.assertEquals(true, instance.hasTeen(20, 18, 12));
+    Assert.assertEquals(true, instance.hasTeen(7, 19, 24));
+    Assert.assertEquals(true, instance.hasTeen(24, 19, 7));
+    Assert.assertEquals(true, instance.hasTeen(10, 19, 20));
+    Assert.assertEquals(true, instance.hasTeen(20, 19, 10));
+    // third number in range
+    Assert.assertEquals(true, instance.hasTeen(20, 10, 13));
+    Assert.assertEquals(true, instance.hasTeen(10, 20, 13));
+    Assert.assertEquals(true, instance.hasTeen(8, 22, 15));
+    Assert.assertEquals(true, instance.hasTeen(22, 8, 15));
+    Assert.assertEquals(true, instance.hasTeen(12, 20, 19));
+    Assert.assertEquals(true, instance.hasTeen(20, 12, 19));
+  }
 }
