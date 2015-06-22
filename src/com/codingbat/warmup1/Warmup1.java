@@ -242,4 +242,16 @@ public class Warmup1 {
   public boolean hasTeen(int a, int b, int c) {
     return 12 < a && a < 20 || 12 < b && b < 20 || 12 < c && c < 20;
   }
+
+  /**
+   * We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values,
+   * return true if one or the other is teen, but not both.
+   *
+   * @param a the first number
+   * @param b the second number
+   * @return true, if one of the input number is in the range 13..19, but not both
+   */
+  public boolean loneTeen(int a, int b) {
+    return (12 < a && a < 20) ^ (12 < b && b < 20);
+  }
 }

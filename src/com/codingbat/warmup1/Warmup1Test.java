@@ -404,4 +404,37 @@ public class Warmup1Test {
     Assert.assertEquals(true, instance.hasTeen(12, 20, 19));
     Assert.assertEquals(true, instance.hasTeen(20, 12, 19));
   }
+
+  /**
+   * Test method for {@link Warmup1#loneTeen(int, int)}.
+   */
+  @Test
+  public void testLoneTeen() {
+    // out of range
+    Assert.assertEquals(false, instance.loneTeen(1, 1));
+    Assert.assertEquals(false, instance.loneTeen(12, 12));
+    Assert.assertEquals(false, instance.loneTeen(12, 20));
+    Assert.assertEquals(false, instance.loneTeen(20, 12));
+    Assert.assertEquals(false, instance.loneTeen(20, 20));
+    Assert.assertEquals(false, instance.loneTeen(99, 99));
+    // first number in range
+    Assert.assertEquals(true, instance.loneTeen(13, 99));
+    Assert.assertEquals(true, instance.loneTeen(13, 20));
+    Assert.assertEquals(true, instance.loneTeen(16, 9));
+    Assert.assertEquals(true, instance.loneTeen(14, 20));
+    // second number in range
+    Assert.assertEquals(true, instance.loneTeen(20, 13));
+    Assert.assertEquals(true, instance.loneTeen(99, 13));
+    Assert.assertEquals(true, instance.loneTeen(20, 15));
+    Assert.assertEquals(true, instance.loneTeen(6, 18));
+    Assert.assertEquals(true, instance.loneTeen(21, 19));
+    // both of them in range
+    Assert.assertEquals(false, instance.loneTeen(13, 13));
+    Assert.assertEquals(false, instance.loneTeen(13, 19));
+    Assert.assertEquals(false, instance.loneTeen(16, 18));
+    Assert.assertEquals(false, instance.loneTeen(16, 17));
+    Assert.assertEquals(false, instance.loneTeen(17, 16));
+    Assert.assertEquals(false, instance.loneTeen(19, 13));
+    Assert.assertEquals(false, instance.loneTeen(19, 19));
+  }
 }
