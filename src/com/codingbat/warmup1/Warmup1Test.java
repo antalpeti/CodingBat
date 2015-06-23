@@ -437,4 +437,24 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.loneTeen(19, 13));
     Assert.assertEquals(false, instance.loneTeen(19, 19));
   }
+
+  /**
+   * Test method for {@link Warmup1#delDel(String)}.
+   */
+  @Test
+  public void testDelDel() {
+    Assert.assertEquals("abc", instance.delDel("adelbc"));
+    Assert.assertEquals("aHello", instance.delDel("adelHello"));
+    Assert.assertEquals("adedbc", instance.delDel("adedbc"));
+    Assert.assertEquals("abcdel", instance.delDel("abcdel"));
+    Assert.assertEquals("add", instance.delDel("add"));
+    Assert.assertEquals("ad", instance.delDel("ad"));
+    Assert.assertEquals("a", instance.delDel("a"));
+    Assert.assertEquals("", instance.delDel(""));
+    Assert.assertEquals("del", instance.delDel("del"));
+    Assert.assertEquals("a", instance.delDel("adel"));
+    Assert.assertEquals("adel", instance.delDel("adeldel"));
+    Assert.assertEquals("abdel", instance.delDel("adelbdel"));
+    Assert.assertEquals("aadelbb", instance.delDel("aadelbb"));
+  }
 }

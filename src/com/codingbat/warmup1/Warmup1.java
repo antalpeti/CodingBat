@@ -254,4 +254,16 @@ public class Warmup1 {
   public boolean loneTeen(int a, int b) {
     return (12 < a && a < 20) ^ (12 < b && b < 20);
   }
+
+  /**
+   * Given a string, if the string "del" appears starting at index 1, return a string where that
+   * "del" has been deleted. Otherwise, return the string unchanged.
+   *
+   * @param str the input string
+   * @return the input string without the "del" substring according to the described starting
+   *         position
+   */
+  public String delDel(String str) {
+    return str.indexOf("del") == 1 ? str.replaceFirst("del", "") : str;
+  }
 }
