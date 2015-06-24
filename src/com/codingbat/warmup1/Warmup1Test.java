@@ -457,4 +457,23 @@ public class Warmup1Test {
     Assert.assertEquals("abdel", instance.delDel("adelbdel"));
     Assert.assertEquals("aadelbb", instance.delDel("aadelbb"));
   }
+
+  /**
+   * Test method for {@link Warmup1#mixStart(String)}.
+   */
+  @Test
+  public void testMixStart() {
+    Assert.assertEquals(true, instance.mixStart("mix snacks"));
+    Assert.assertEquals(true, instance.mixStart("pix snacks"));
+    Assert.assertEquals(false, instance.mixStart("piz snacks"));
+    Assert.assertEquals(true, instance.mixStart("nix"));
+    Assert.assertEquals(true, instance.mixStart("5ix"));
+    Assert.assertEquals(false, instance.mixStart("tnix"));
+    Assert.assertEquals(false, instance.mixStart("ix"));
+    Assert.assertEquals(false, instance.mixStart("ni"));
+    Assert.assertEquals(false, instance.mixStart("n"));
+    Assert.assertEquals(false, instance.mixStart("i"));
+    Assert.assertEquals(false, instance.mixStart("x"));
+    Assert.assertEquals(false, instance.mixStart(""));
+  }
 }
