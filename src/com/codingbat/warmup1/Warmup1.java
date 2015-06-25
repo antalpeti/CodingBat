@@ -277,4 +277,17 @@ public class Warmup1 {
   public boolean mixStart(String str) {
     return str.length() > 2 ? str.substring(1, 3).equals("ix") : false;
   }
+
+  /**
+   * Given a string, return a string made of the first 2 chars (if present), however include first
+   * char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
+   *
+   * @param str the input string
+   * @return the first two characters ("", "o", "z","oz") according to to above description
+   */
+  public String startOz(String str) {
+    String fc = str.length() > 0 && str.charAt(0) == 'o' ? "o" : "";
+    String sc = str.length() > 1 && str.charAt(1) == 'z' ? "z" : "";
+    return fc + sc;
+  }
 }

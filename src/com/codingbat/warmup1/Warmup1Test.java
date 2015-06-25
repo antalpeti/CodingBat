@@ -476,4 +476,23 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.mixStart("x"));
     Assert.assertEquals(false, instance.mixStart(""));
   }
+
+  /**
+   * Test method for {@link Warmup1#startOz(String)}.
+   */
+  @Test
+  public void testStartOz() {
+    Assert.assertEquals("oz", instance.startOz("ozymandias"));
+    Assert.assertEquals("z", instance.startOz("bzoo"));
+    Assert.assertEquals("o", instance.startOz("oxx"));
+    Assert.assertEquals("oz", instance.startOz("oz"));
+    Assert.assertEquals("o", instance.startOz("ounce"));
+    Assert.assertEquals("o", instance.startOz("o"));
+    Assert.assertEquals("", instance.startOz("abc"));
+    Assert.assertEquals("", instance.startOz(""));
+    Assert.assertEquals("", instance.startOz("zoo"));
+    Assert.assertEquals("z", instance.startOz("aztec"));
+    Assert.assertEquals("z", instance.startOz("zzzz"));
+    Assert.assertEquals("oz", instance.startOz("oznic"));
+  }
 }
