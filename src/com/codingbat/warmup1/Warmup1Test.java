@@ -495,4 +495,24 @@ public class Warmup1Test {
     Assert.assertEquals("z", instance.startOz("zzzz"));
     Assert.assertEquals("oz", instance.startOz("oznic"));
   }
+
+  /**
+   * Test method for {@link Warmup1#intMax(int, int, int)}.
+   */
+  @Test
+  public void testIntMax() {
+    Assert.assertEquals(1, instance.intMax(1, 1, 1));
+    Assert.assertEquals(3, instance.intMax(1, 2, 3));
+    Assert.assertEquals(3, instance.intMax(1, 3, 2));
+    Assert.assertEquals(3, instance.intMax(3, 2, 1));
+    Assert.assertEquals(9, instance.intMax(9, 3, 3));
+    Assert.assertEquals(9, instance.intMax(3, 9, 3));
+    Assert.assertEquals(9, instance.intMax(3, 3, 9));
+    Assert.assertEquals(8, instance.intMax(8, 2, 3));
+    Assert.assertEquals(-1, instance.intMax(-3, -1, -2));
+    Assert.assertEquals(6, instance.intMax(6, 2, 5));
+    Assert.assertEquals(6, instance.intMax(5, 6, 2));
+    Assert.assertEquals(6, instance.intMax(5, 2, 6));
+    Assert.assertEquals(9, instance.intMax(9, 9, 9));
+  }
 }

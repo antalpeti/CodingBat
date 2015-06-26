@@ -290,4 +290,17 @@ public class Warmup1 {
     String sc = str.length() > 1 && str.charAt(1) == 'z' ? "z" : "";
     return fc + sc;
   }
+
+  /**
+   * Given three int values, a b c, return the largest.
+   *
+   * @param a the first integer
+   * @param b the second integer
+   * @param c the third integer
+   * @return the largest integer from the input integers
+   */
+  public int intMax(int a, int b, int c) {
+    int max = a > b ? a : b;
+    return c > max ? c : max;
+  }
 }
