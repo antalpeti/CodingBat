@@ -515,4 +515,26 @@ public class Warmup1Test {
     Assert.assertEquals(6, instance.intMax(5, 2, 6));
     Assert.assertEquals(9, instance.intMax(9, 9, 9));
   }
+
+  /**
+   * Test method for {@link Warmup1#close10(int, int)}.
+   */
+  @Test
+  public void testClose10() {
+    Assert.assertEquals(8, instance.close10(8, 13));
+    Assert.assertEquals(8, instance.close10(13, 8));
+    Assert.assertEquals(0, instance.close10(7, 13));
+    Assert.assertEquals(0, instance.close10(13, 7));
+    Assert.assertEquals(0, instance.close10(5, 5));
+    Assert.assertEquals(9, instance.close10(9, 13));
+    Assert.assertEquals(9, instance.close10(13, 9));
+    Assert.assertEquals(10, instance.close10(10, 12));
+    Assert.assertEquals(10, instance.close10(11, 10));
+    Assert.assertEquals(5, instance.close10(5, 21));
+    Assert.assertEquals(0, instance.close10(0, 20));
+    Assert.assertEquals(0, instance.close10(10, 10));
+    Assert.assertEquals(10, instance.close10(-10, 10));
+    Assert.assertEquals(0, instance.close10(-10, 30));
+    Assert.assertEquals(0, instance.close10(0, 20));
+  }
 }

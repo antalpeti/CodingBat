@@ -303,4 +303,24 @@ public class Warmup1 {
     int max = a > b ? a : b;
     return c > max ? c : max;
   }
+
+  /**
+   * Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event
+   * of a tie. Note that Math.abs(n) returns the absolute value of a number.
+   *
+   * @param a the first integer
+   * @param b the second integer
+   * @return the nearest input integer to the value 10, or 0
+   */
+  public int close10(int a, int b) {
+    int diffa = Math.abs(10 - a);
+    int diffb = Math.abs(10 - b);
+    int ret;
+    if (diffa == diffb) {
+      ret = 0;
+    } else {
+      ret = diffa < diffb ? a : b;
+    }
+    return ret;
+  }
 }
