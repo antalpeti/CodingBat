@@ -537,4 +537,35 @@ public class Warmup1Test {
     Assert.assertEquals(0, instance.close10(-10, 30));
     Assert.assertEquals(0, instance.close10(0, 20));
   }
+
+  /**
+   * Test method for {@link Warmup1#in3050(int, int)}.
+   */
+  @Test
+  public void testIn3050() {
+    Assert.assertEquals(true, instance.in3050(30, 31));
+    Assert.assertEquals(true, instance.in3050(31, 30));
+    Assert.assertEquals(true, instance.in3050(35, 36));
+    Assert.assertEquals(true, instance.in3050(36, 35));
+    Assert.assertEquals(false, instance.in3050(30, 41));
+    Assert.assertEquals(false, instance.in3050(41, 30));
+    Assert.assertEquals(false, instance.in3050(39, 29));
+    Assert.assertEquals(false, instance.in3050(29, 39));
+    Assert.assertEquals(true, instance.in3050(40, 50));
+    Assert.assertEquals(true, instance.in3050(50, 40));
+    Assert.assertEquals(true, instance.in3050(40, 39));
+    Assert.assertEquals(true, instance.in3050(39, 40));
+    Assert.assertEquals(true, instance.in3050(49, 48));
+    Assert.assertEquals(true, instance.in3050(48, 49));
+    Assert.assertEquals(true, instance.in3050(40, 50));
+    Assert.assertEquals(true, instance.in3050(50, 40));
+    Assert.assertEquals(false, instance.in3050(40, 51));
+    Assert.assertEquals(false, instance.in3050(51, 40));
+    Assert.assertEquals(false, instance.in3050(39, 50));
+    Assert.assertEquals(false, instance.in3050(50, 39));
+    Assert.assertEquals(false, instance.in3050(50, 51));
+    Assert.assertEquals(false, instance.in3050(51, 50));
+    Assert.assertEquals(false, instance.in3050(35, 45));
+    Assert.assertEquals(false, instance.in3050(45, 35));
+  }
 }

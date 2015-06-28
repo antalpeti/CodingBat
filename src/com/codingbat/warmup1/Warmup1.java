@@ -294,10 +294,10 @@ public class Warmup1 {
   /**
    * Given three int values, a b c, return the largest.
    *
-   * @param a the first integer
-   * @param b the second integer
-   * @param c the third integer
-   * @return the largest integer from the input integers
+   * @param a the first number
+   * @param b the second number
+   * @param c the third number
+   * @return the largest number from the input numbers
    */
   public int intMax(int a, int b, int c) {
     int max = a > b ? a : b;
@@ -308,9 +308,9 @@ public class Warmup1 {
    * Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event
    * of a tie. Note that Math.abs(n) returns the absolute value of a number.
    *
-   * @param a the first integer
-   * @param b the second integer
-   * @return the nearest input integer to the value 10, or 0
+   * @param a the first number
+   * @param b the second number
+   * @return the nearest input number to the value 10, or 0
    */
   public int close10(int a, int b) {
     int diffa = Math.abs(10 - a);
@@ -322,5 +322,18 @@ public class Warmup1 {
       ret = diffa < diffb ? a : b;
     }
     return ret;
+  }
+
+  /**
+   * Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are
+   * both in the range 40..50 inclusive.
+   *
+   * @param a the first number
+   * @param b the second number
+   * @return true, if both input number in range 30..40 inclusive or in range 40..50 inclusive
+   */
+  public boolean in3050(int a, int b) {
+    return 29 < a && a < 41 && 29 < b && b < 41 || 39 < a && a < 51 && 39 < b && b < 51 ? true
+        : false;
   }
 }
