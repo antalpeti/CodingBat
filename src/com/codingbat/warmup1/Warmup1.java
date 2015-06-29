@@ -336,4 +336,28 @@ public class Warmup1 {
     return 29 < a && a < 41 && 29 < b && b < 41 || 39 < a && a < 51 && 39 < b && b < 51 ? true
         : false;
   }
+
+  /**
+   * Given 2 positive int values, return the larger value that is in the range 10..20 inclusive, or
+   * return 0 if neither is in that range.
+   *
+   * @param a the first number
+   * @param b the second number
+   * @return the larger value that is in the range 10..20 inclusive, or 0 if neither is in the range
+   */
+  public int max1020(int a, int b) {
+    int ret;
+    boolean aInRange = 9 < a && a < 21;
+    boolean bInRange = 9 < b && b < 21;
+    if (aInRange && bInRange) {
+      ret = a > b ? a : b;
+    } else if (aInRange && !bInRange) {
+      ret = a;
+    } else if (!aInRange && bInRange) {
+      ret = b;
+    } else {
+      ret = 0;
+    }
+    return ret;
+  }
 }
