@@ -594,4 +594,21 @@ public class Warmup1Test {
     Assert.assertEquals(0, instance.max1020(9, 21));
     Assert.assertEquals(0, instance.max1020(21, 9));
   }
+
+  /**
+   * Test method for {@link Warmup1#stringE(String)}.
+   */
+  @Test
+  public void testStringE() {
+    Assert.assertEquals(true, instance.stringE("Hello"));
+    Assert.assertEquals(true, instance.stringE("Heello"));
+    Assert.assertEquals(true, instance.stringE("Heelle"));
+    Assert.assertEquals(false, instance.stringE("Heelele"));
+    Assert.assertEquals(false, instance.stringE("Hll"));
+    Assert.assertEquals(false, instance.stringE(""));
+    Assert.assertEquals(true, instance.stringE("e"));
+    Assert.assertEquals(true, instance.stringE("ee"));
+    Assert.assertEquals(true, instance.stringE("eee"));
+    Assert.assertEquals(false, instance.stringE("eeee"));
+  }
 }
