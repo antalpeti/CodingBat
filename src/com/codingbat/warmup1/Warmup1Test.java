@@ -579,17 +579,18 @@ public class Warmup1Test {
     Assert.assertEquals(19, instance.max1020(19, 11));
     Assert.assertEquals(17, instance.max1020(16, 17));
     Assert.assertEquals(17, instance.max1020(17, 16));
-    // one of them is out of range
+    Assert.assertEquals(20, instance.max1020(20, 10));
+    // only first in range
     Assert.assertEquals(11, instance.max1020(11, 9));
-    Assert.assertEquals(11, instance.max1020(9, 11));
+    Assert.assertEquals(20, instance.max1020(10, 20));
     Assert.assertEquals(10, instance.max1020(10, 21));
+    Assert.assertEquals(10, instance.max1020(10, 23));
+    Assert.assertEquals(20, instance.max1020(20, 7));
+    // only second in range
+    Assert.assertEquals(11, instance.max1020(9, 11));
     Assert.assertEquals(10, instance.max1020(21, 10));
     Assert.assertEquals(10, instance.max1020(23, 10));
-    Assert.assertEquals(10, instance.max1020(10, 23));
-    Assert.assertEquals(20, instance.max1020(20, 10));
-    Assert.assertEquals(20, instance.max1020(10, 20));
     Assert.assertEquals(20, instance.max1020(7, 20));
-    Assert.assertEquals(20, instance.max1020(20, 7));
     // both of them out of range
     Assert.assertEquals(0, instance.max1020(9, 21));
     Assert.assertEquals(0, instance.max1020(21, 9));
