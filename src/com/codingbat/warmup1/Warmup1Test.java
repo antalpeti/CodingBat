@@ -612,4 +612,23 @@ public class Warmup1Test {
     Assert.assertEquals(true, instance.stringE("eee"));
     Assert.assertEquals(false, instance.stringE("eeee"));
   }
+
+  /**
+   * Test method for {@link Warmup1#lastDigit(int, int)}.
+   */
+  @Test
+  public void testLastDigit() {
+    Assert.assertEquals(true, instance.lastDigit(7, 17));
+    Assert.assertEquals(true, instance.lastDigit(17, 7));
+    Assert.assertEquals(false, instance.lastDigit(6, 17));
+    Assert.assertEquals(false, instance.lastDigit(17, 6));
+    Assert.assertEquals(true, instance.lastDigit(3, 113));
+    Assert.assertEquals(true, instance.lastDigit(113, 3));
+    Assert.assertEquals(false, instance.lastDigit(114, 113));
+    Assert.assertEquals(false, instance.lastDigit(113, 114));
+    Assert.assertEquals(true, instance.lastDigit(4, 114));
+    Assert.assertEquals(true, instance.lastDigit(114, 4));
+    Assert.assertEquals(false, instance.lastDigit(11, 0));
+    Assert.assertEquals(false, instance.lastDigit(0, 11));
+  }
 }

@@ -346,16 +346,19 @@ public class Warmup1 {
    * @return the larger value that is in the range 10..20 inclusive, or 0 if neither is in the range
    */
   public int max1020(int a, int b) {
-    int ret;
+    int ret = 0;
     boolean aInRange = 9 < a && a < 21;
     boolean bInRange = 9 < b && b < 21;
     if (aInRange && bInRange) {
       ret = a > b ? a : b;
-    } else if (aInRange && !bInRange) {
+    }
+    if (aInRange && !bInRange) {
       ret = a;
-    } else if (!aInRange && bInRange) {
+    }
+    if (!aInRange && bInRange) {
       ret = b;
-    } else {
+    }
+    if (!aInRange && !bInRange) {
       ret = 0;
     }
     return ret;
@@ -375,5 +378,17 @@ public class Warmup1 {
       }
     }
     return 0 < count && count < 4;
+  }
+
+  /**
+   * Given two non-negative int values, return true if they have the same last digit, such as with
+   * 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+   *
+   * @param a the first number
+   * @param b the second number
+   * @return true, if both number have the same last digit
+   */
+  public boolean lastDigit(int a, int b) {
+    return a % 10 == b % 10;
   }
 }
