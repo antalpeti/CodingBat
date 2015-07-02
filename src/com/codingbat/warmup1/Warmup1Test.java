@@ -631,4 +631,21 @@ public class Warmup1Test {
     Assert.assertEquals(false, instance.lastDigit(11, 0));
     Assert.assertEquals(false, instance.lastDigit(0, 11));
   }
+
+  /**
+   * Test method for {@link Warmup1#endUp(String)}.
+   */
+  @Test
+  public void testEndUp() {
+    Assert.assertEquals("HeLLO", instance.endUp("Hello"));
+    Assert.assertEquals("hi thERE", instance.endUp("hi there"));
+    Assert.assertEquals("HI", instance.endUp("hi"));
+    Assert.assertEquals("TIE", instance.endUp("tie"));
+    Assert.assertEquals("123", instance.endUp("123"));
+    Assert.assertEquals("1B3", instance.endUp("1b3"));
+    Assert.assertEquals("woo HOO", instance.endUp("woo hoo"));
+    Assert.assertEquals("xyZ12", instance.endUp("xyz12"));
+    Assert.assertEquals("X", instance.endUp("x"));
+    Assert.assertEquals("", instance.endUp(""));
+  }
 }
