@@ -648,4 +648,22 @@ public class Warmup1Test {
     Assert.assertEquals("X", instance.endUp("x"));
     Assert.assertEquals("", instance.endUp(""));
   }
+
+  /**
+   * Test method for {@link Warmup1#everyNth(String, int)}.
+   */
+  @Test
+  public void testEveryNth() {
+    Assert.assertEquals("", instance.everyNth("", 1));
+    Assert.assertEquals("Miracle", instance.everyNth("Miracle", 1));
+    Assert.assertEquals("Mrce", instance.everyNth("Miracle", 2));
+    Assert.assertEquals("Mae", instance.everyNth("Miracle", 3));
+    Assert.assertEquals("Mc", instance.everyNth("Miracle", 4));
+    Assert.assertEquals("aceg", instance.everyNth("abcdefg", 2));
+    Assert.assertEquals("adg", instance.everyNth("abcdefg", 3));
+    Assert.assertEquals("Cca", instance.everyNth("Chocolate", 3));
+    Assert.assertEquals("Ccas", instance.everyNth("Chocolates", 3));
+    Assert.assertEquals("Coe", instance.everyNth("Chocolates", 4));
+    Assert.assertEquals("C", instance.everyNth("Chocolates", 100));
+  }
 }
