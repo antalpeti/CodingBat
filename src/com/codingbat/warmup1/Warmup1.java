@@ -1,7 +1,7 @@
 package com.codingbat.warmup1;
 
 /**
- * The Class Warmup1 is contains solution for Warmup-1 section.
+ * The class Warmup1 is contains solution for Warmup-1 section.
  */
 public class Warmup1 {
 
