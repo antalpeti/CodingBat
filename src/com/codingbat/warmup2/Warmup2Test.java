@@ -51,4 +51,17 @@ public class Warmup2Test {
     Assert.assertEquals("codecodecode", instance.stringTimes("code", 3));
   }
 
+  @Test
+  public final void testFrontTimes() {
+    Assert.assertEquals("ChoCho", instance.frontTimes("Chocolate", 2));
+    Assert.assertEquals("ChoChoCho", instance.frontTimes("Chocolate", 3));
+    Assert.assertEquals("", instance.frontTimes("Abc", 0));
+    Assert.assertEquals("Abc", instance.frontTimes("Abc", 1));
+    Assert.assertEquals("AbcAbc", instance.frontTimes("Abc", 2));
+    Assert.assertEquals("AbcAbcAbc", instance.frontTimes("Abc", 3));
+    Assert.assertEquals("AbAbAbAb", instance.frontTimes("Ab", 4));
+    Assert.assertEquals("AAAA", instance.frontTimes("A", 4));
+    Assert.assertEquals("", instance.frontTimes("", 4));
+    Assert.assertEquals("", instance.frontTimes("Abc", 0));
+  }
 }
