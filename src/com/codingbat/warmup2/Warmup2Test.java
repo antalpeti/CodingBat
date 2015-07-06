@@ -51,6 +51,9 @@ public class Warmup2Test {
     Assert.assertEquals("codecodecode", instance.stringTimes("code", 3));
   }
 
+  /**
+   * Test method for {@link Warmup2#frontTimes(String, int)}.
+   */
   @Test
   public final void testFrontTimes() {
     Assert.assertEquals("ChoCho", instance.frontTimes("Chocolate", 2));
@@ -63,5 +66,21 @@ public class Warmup2Test {
     Assert.assertEquals("AAAA", instance.frontTimes("A", 4));
     Assert.assertEquals("", instance.frontTimes("", 4));
     Assert.assertEquals("", instance.frontTimes("Abc", 0));
+  }
+
+  /**
+   * Test method for {@link Warmup2#countXX(String)}.
+   */
+  @Test
+  public final void testCountXX() {
+    Assert.assertEquals(1, instance.countXX("abcxx"));
+    Assert.assertEquals(2, instance.countXX("xxx"));
+    Assert.assertEquals(3, instance.countXX("xxxx"));
+    Assert.assertEquals(0, instance.countXX("abc"));
+    Assert.assertEquals(0, instance.countXX("Hello there"));
+    Assert.assertEquals(2, instance.countXX("Hexxo thxxe"));
+    Assert.assertEquals(0, instance.countXX(""));
+    Assert.assertEquals(0, instance.countXX("Kittens"));
+    Assert.assertEquals(2, instance.countXX("Kittensxxx"));
   }
 }
