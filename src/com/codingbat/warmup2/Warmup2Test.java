@@ -83,4 +83,22 @@ public class Warmup2Test {
     Assert.assertEquals(0, instance.countXX("Kittens"));
     Assert.assertEquals(2, instance.countXX("Kittensxxx"));
   }
+
+  /**
+   * Test method for {@link Warmup2#doubleX(String)}.
+   */
+  @Test
+  public final void testDoubleX() {
+    Assert.assertEquals(true, instance.doubleX("axxbb"));
+    Assert.assertEquals(false, instance.doubleX("axaxax"));
+    Assert.assertEquals(true, instance.doubleX("xxxxx"));
+    Assert.assertEquals(false, instance.doubleX("xaxxx"));
+    Assert.assertEquals(false, instance.doubleX("aaaax"));
+    Assert.assertEquals(false, instance.doubleX(""));
+    Assert.assertEquals(false, instance.doubleX("abc"));
+    Assert.assertEquals(false, instance.doubleX("x"));
+    Assert.assertEquals(true, instance.doubleX("xx"));
+    Assert.assertEquals(false, instance.doubleX("xax"));
+    Assert.assertEquals(false, instance.doubleX("xaxx"));
+  }
 }
