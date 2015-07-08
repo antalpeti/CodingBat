@@ -71,4 +71,19 @@ public class Warmup2 {
     String xSubStr = str.substring(i);
     return xSubStr.startsWith("xx");
   }
+
+  /**
+   * Given a string, return a new string made of every other char (every second char) starting with
+   * the first, so "Hello" yields "Hlo".
+   *
+   * @param str input string
+   * @return a new string made of every other char starting with the first
+   */
+  public String stringBits(String str) {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < str.length(); i += 2) {
+      sb.append(str.charAt(i));
+    }
+    return sb.toString();
+  }
 }

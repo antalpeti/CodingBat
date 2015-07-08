@@ -101,4 +101,21 @@ public class Warmup2Test {
     Assert.assertEquals(false, instance.doubleX("xax"));
     Assert.assertEquals(false, instance.doubleX("xaxx"));
   }
+
+  /**
+   * Test method for {@link Warmup2#stringBits(String)}.
+   */
+  @Test
+  public final void testStringBits() {
+    Assert.assertEquals("Hlo", instance.stringBits("Hello"));
+    Assert.assertEquals("H", instance.stringBits("Hi"));
+    Assert.assertEquals("Hello", instance.stringBits("Heeololeo"));
+    Assert.assertEquals("HHH", instance.stringBits("HiHiHi"));
+    Assert.assertEquals("", instance.stringBits(""));
+    Assert.assertEquals("Getns", instance.stringBits("Greetings"));
+    Assert.assertEquals("Coot", instance.stringBits("Chocoate"));
+    Assert.assertEquals("p", instance.stringBits("pi"));
+    Assert.assertEquals("HloKte", instance.stringBits("Hello Kitten"));
+    Assert.assertEquals("happy", instance.stringBits("hxaxpxpxy"));
+  }
 }
