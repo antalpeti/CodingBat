@@ -86,4 +86,18 @@ public class Warmup2 {
     }
     return sb.toString();
   }
+
+  /**
+   * Given a non-empty string like "Code" return a string like "CCoCodCode".
+   *
+   * @param str the input string
+   * @return the concatenation of substrings of the input string
+   */
+  public String stringSplosion(String str) {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 1; i <= str.length(); i++) {
+      sb.append(str.substring(0, i));
+    }
+    return sb.toString();
+  }
 }

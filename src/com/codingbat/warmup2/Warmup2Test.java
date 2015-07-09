@@ -118,4 +118,22 @@ public class Warmup2Test {
     Assert.assertEquals("HloKte", instance.stringBits("Hello Kitten"));
     Assert.assertEquals("happy", instance.stringBits("hxaxpxpxy"));
   }
+
+  /**
+   * Test method for {@link Warmup2#stringSplosion(String)}.
+   */
+  @Test
+  public final void testStringSplosion() {
+    Assert.assertEquals("CCoCodCode", instance.stringSplosion("Code"));
+    Assert.assertEquals("aababc", instance.stringSplosion("abc"));
+    Assert.assertEquals("aab", instance.stringSplosion("ab"));
+    Assert.assertEquals("x", instance.stringSplosion("x"));
+    Assert.assertEquals("", instance.stringSplosion(""));
+    Assert.assertEquals("ffafadfade", instance.stringSplosion("fade"));
+    Assert.assertEquals("TThTheTherThere", instance.stringSplosion("There"));
+    Assert.assertEquals("KKiKitKittKitteKitten", instance.stringSplosion("Kitten"));
+    Assert.assertEquals("BByBye", instance.stringSplosion("Bye"));
+    Assert.assertEquals("GGoGooGood", instance.stringSplosion("Good"));
+    Assert.assertEquals("BBaBad", instance.stringSplosion("Bad"));
+  }
 }
