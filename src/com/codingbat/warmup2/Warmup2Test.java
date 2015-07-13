@@ -136,4 +136,24 @@ public class Warmup2Test {
     Assert.assertEquals("GGoGooGood", instance.stringSplosion("Good"));
     Assert.assertEquals("BBaBad", instance.stringSplosion("Bad"));
   }
+
+  /**
+   * Test method for {@link Warmup2#last2(String)}.
+   */
+  @Test
+  public final void testLast2() {
+    Assert.assertEquals(1, instance.last2("hixxxhi"));
+    Assert.assertEquals(1, instance.last2("xaxxaxaxx"));
+    Assert.assertEquals(2, instance.last2("axxxaaxx"));
+    Assert.assertEquals(3, instance.last2("xxaxxaxxaxx"));
+    Assert.assertEquals(0, instance.last2("xaxaxaxx"));
+    Assert.assertEquals(2, instance.last2("xxxx"));
+    Assert.assertEquals(1, instance.last2("13121312"));
+    Assert.assertEquals(1, instance.last2("11212"));
+    Assert.assertEquals(0, instance.last2("13121311"));
+    Assert.assertEquals(2, instance.last2("1717171"));
+    Assert.assertEquals(0, instance.last2("hi"));
+    Assert.assertEquals(0, instance.last2("h"));
+    Assert.assertEquals(0, instance.last2(""));
+  }
 }
