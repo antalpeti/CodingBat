@@ -156,4 +156,19 @@ public class Warmup2Test {
     Assert.assertEquals(0, instance.last2("h"));
     Assert.assertEquals(0, instance.last2(""));
   }
+
+  /**
+   * Test method for {@link Warmup2#arrayCount9(int[])}.
+   */
+  @Test
+  public final void testArrayCount9() {
+    Assert.assertEquals(1, instance.arrayCount9(new int[] {1, 2, 9}));
+    Assert.assertEquals(2, instance.arrayCount9(new int[] {1, 9, 9}));
+    Assert.assertEquals(3, instance.arrayCount9(new int[] {1, 9, 9, 3, 9}));
+    Assert.assertEquals(0, instance.arrayCount9(new int[] {1, 2, 3}));
+    Assert.assertEquals(0, instance.arrayCount9(new int[] {}));
+    Assert.assertEquals(0, instance.arrayCount9(new int[] {4, 2, 4, 3, 1}));
+    Assert.assertEquals(1, instance.arrayCount9(new int[] {9, 2, 4, 3, 1}));
+    Assert.assertEquals(1, instance.arrayCount9(new int[] {9, -9}));
+  }
 }
