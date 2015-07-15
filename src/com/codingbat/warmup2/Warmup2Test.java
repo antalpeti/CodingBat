@@ -171,4 +171,23 @@ public class Warmup2Test {
     Assert.assertEquals(1, instance.arrayCount9(new int[] {9, 2, 4, 3, 1}));
     Assert.assertEquals(1, instance.arrayCount9(new int[] {9, -9}));
   }
+
+  /**
+   * Test method for {@link Warmup2#arrayFront9(int[])}.
+   */
+  @Test
+  public final void testArrayFront9() {
+    Assert.assertEquals(true, instance.arrayFront9(new int[] {1, 2, 9, 3, 4}));
+    Assert.assertEquals(false, instance.arrayFront9(new int[] {1, 2, 3, 4, 9}));
+    Assert.assertEquals(false, instance.arrayFront9(new int[] {1, 2, 3, 4, 5}));
+    Assert.assertEquals(true, instance.arrayFront9(new int[] {9, 2, 3}));
+    Assert.assertEquals(true, instance.arrayFront9(new int[] {1, 9, 9}));
+    Assert.assertEquals(false, instance.arrayFront9(new int[] {1, 2, 3}));
+    Assert.assertEquals(true, instance.arrayFront9(new int[] {1, 9}));
+    Assert.assertEquals(false, instance.arrayFront9(new int[] {5, 5}));
+    Assert.assertEquals(false, instance.arrayFront9(new int[] {2}));
+    Assert.assertEquals(true, instance.arrayFront9(new int[] {9}));
+    Assert.assertEquals(false, instance.arrayFront9(new int[] {}));
+    Assert.assertEquals(true, instance.arrayFront9(new int[] {3, 9, 2, 3, 3}));
+  }
 }
