@@ -208,4 +208,23 @@ public class Warmup2Test {
     Assert.assertEquals(false, instance.array123(new int[] {1}));
     Assert.assertEquals(false, instance.array123(new int[] {}));
   }
+
+  /**
+   * Test method for {@link Warmup2#stringMatch(String, String)}.
+   */
+  @Test
+  public final void testStringMatch() {
+    Assert.assertEquals(3, instance.stringMatch("xxcaazz", "xxbaaz"));
+    Assert.assertEquals(2, instance.stringMatch("abc", "abc"));
+    Assert.assertEquals(0, instance.stringMatch("abc", "axc"));
+    Assert.assertEquals(1, instance.stringMatch("hello", "he"));
+    Assert.assertEquals(1, instance.stringMatch("he", "hello"));
+    Assert.assertEquals(0, instance.stringMatch("h", "hello"));
+    Assert.assertEquals(0, instance.stringMatch("", "hello"));
+    Assert.assertEquals(0, instance.stringMatch("hehe", ""));
+    Assert.assertEquals(0, instance.stringMatch("", ""));
+    Assert.assertEquals(1, instance.stringMatch("aabbccdd", "abbbxxd"));
+    Assert.assertEquals(3, instance.stringMatch("aaxxaaxx", "iaxxai"));
+    Assert.assertEquals(3, instance.stringMatch("iaxxai", "aaxxaaxx"));
+  }
 }
