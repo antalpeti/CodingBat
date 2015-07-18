@@ -190,4 +190,22 @@ public class Warmup2 {
 
     return count;
   }
+
+  /**
+   * Given a string, return a version where all the "x" have been removed. Except an "x" at the very
+   * start or end should not be removed.
+   *
+   * @param str the input string
+   * @return the input string version where all the 'x' have been removed, except the char at the
+   *         start or end position of the original string
+   */
+  public String stringX(String str) {
+    if (str.length() > 2) {
+      String sub = str.substring(1, str.length() - 1);
+      sub = sub.replaceAll("x", "");
+      return str.charAt(0) + sub + str.charAt(str.length() - 1);
+    } else {
+      return str;
+    }
+  }
 }
