@@ -242,4 +242,19 @@ public class Warmup2Test {
     Assert.assertEquals("x", instance.stringX("x"));
     Assert.assertEquals("", instance.stringX(""));
   }
+
+  /**
+   * Test method for {@link Warmup2#altPairs(String)}.
+   */
+  @Test
+  public final void testAltPairs() {
+    Assert.assertEquals("kien", instance.altPairs("kitten"));
+    Assert.assertEquals("Chole", instance.altPairs("Chocolate"));
+    Assert.assertEquals("Congrr", instance.altPairs("CodingHorror"));
+    Assert.assertEquals("ya", instance.altPairs("yak"));
+    Assert.assertEquals("ya", instance.altPairs("ya"));
+    Assert.assertEquals("y", instance.altPairs("y"));
+    Assert.assertEquals("", instance.altPairs(""));
+    Assert.assertEquals("ThThThth", instance.altPairs("ThisThatTheOther"));
+  }
 }

@@ -208,4 +208,21 @@ public class Warmup2 {
       return str;
     }
   }
+
+  /**
+   * Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens"
+   * yields "kien".
+   *
+   * @param str the input string
+   * @return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so of the input string
+   */
+  public String altPairs(String str) {
+    String out = "";
+    for (int i = 0; i < str.length(); i = i + 4) {
+      int end = i + 2;
+      end = Math.min(str.length(), end);
+      out = out + str.substring(i, end);
+    }
+    return out;
+  }
 }
