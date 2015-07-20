@@ -257,4 +257,22 @@ public class Warmup2Test {
     Assert.assertEquals("", instance.altPairs(""));
     Assert.assertEquals("ThThThth", instance.altPairs("ThisThatTheOther"));
   }
+
+  /**
+   * Test method for {@link Warmup2#stringYak(String)}.
+   */
+  @Test
+  public final void testStringYak() {
+    Assert.assertEquals("pak", instance.stringYak("yakpak"));
+    Assert.assertEquals("pak", instance.stringYak("yokpak"));
+    Assert.assertEquals("pak", instance.stringYak("pakyak"));
+    Assert.assertEquals("pak", instance.stringYak("pakyuk"));
+    Assert.assertEquals("123ya", instance.stringYak("yak123ya"));
+    Assert.assertEquals("", instance.stringYak("yak"));
+    Assert.assertEquals("", instance.stringYak("ybk"));
+    Assert.assertEquals("xxx", instance.stringYak("yakxxxyak"));
+    Assert.assertEquals("xxx", instance.stringYak("yekxxxyik"));
+    Assert.assertEquals("HiHi", instance.stringYak("HiyakHi"));
+    Assert.assertEquals("xxxyyzzz", instance.stringYak("xxxyakyyyakzzz"));
+  }
 }
