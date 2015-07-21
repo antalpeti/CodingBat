@@ -275,4 +275,25 @@ public class Warmup2Test {
     Assert.assertEquals("HiHi", instance.stringYak("HiyakHi"));
     Assert.assertEquals("xxxyyzzz", instance.stringYak("xxxyakyyyakzzz"));
   }
+
+  /**
+   * Test method for {@link Warmup2#array667(int[])}.
+   */
+  @Test
+  public final void testArray667() {
+    Assert.assertEquals(1, instance.array667(new int[] {6, 6, 2}));
+    Assert.assertEquals(1, instance.array667(new int[] {6, 6, 2, 6}));
+    Assert.assertEquals(1, instance.array667(new int[] {6, 7, 2, 6}));
+    Assert.assertEquals(2, instance.array667(new int[] {6, 7, 2, 6, 7}));
+    Assert.assertEquals(0, instance.array667(new int[] {1, 6, 3}));
+    Assert.assertEquals(0, instance.array667(new int[] {6, 1}));
+    Assert.assertEquals(0, instance.array667(new int[] {}));
+    Assert.assertEquals(1, instance.array667(new int[] {3, 6, 7, 6}));
+    Assert.assertEquals(2, instance.array667(new int[] {3, 6, 6, 7}));
+    Assert.assertEquals(1, instance.array667(new int[] {6, 3, 6, 6}));
+    Assert.assertEquals(2, instance.array667(new int[] {6, 7, 6, 6}));
+    Assert.assertEquals(3, instance.array667(new int[] {6, 6, 6, 7}));
+    Assert.assertEquals(0, instance.array667(new int[] {1, 2, 3, 5, 6}));
+    Assert.assertEquals(1, instance.array667(new int[] {1, 2, 3, 6, 6}));
+  }
 }
