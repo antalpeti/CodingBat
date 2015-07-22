@@ -296,4 +296,20 @@ public class Warmup2Test {
     Assert.assertEquals(0, instance.array667(new int[] {1, 2, 3, 5, 6}));
     Assert.assertEquals(1, instance.array667(new int[] {1, 2, 3, 6, 6}));
   }
+
+  /**
+   * Test method for {@link Warmup2#noTriples(int[])}.
+   */
+  @Test
+  public final void testNoTriples() {
+    Assert.assertEquals(true, instance.noTriples(new int[] {1, 1, 2, 2, 1}));
+    Assert.assertEquals(false, instance.noTriples(new int[] {1, 1, 2, 2, 1, 2, 1, 1, 1}));
+    Assert.assertEquals(false, instance.noTriples(new int[] {1, 1, 2, 2, 2, 1}));
+    Assert.assertEquals(true, instance.noTriples(new int[] {1, 1, 2, 2, 1, 2, 1}));
+    Assert.assertEquals(true, instance.noTriples(new int[] {1, 2, 1}));
+    Assert.assertEquals(false, instance.noTriples(new int[] {1, 1, 1}));
+    Assert.assertEquals(true, instance.noTriples(new int[] {1, 1}));
+    Assert.assertEquals(true, instance.noTriples(new int[] {1}));
+    Assert.assertEquals(true, instance.noTriples(new int[] {}));
+  }
 }
