@@ -312,4 +312,27 @@ public class Warmup2Test {
     Assert.assertEquals(true, instance.noTriples(new int[] {1}));
     Assert.assertEquals(true, instance.noTriples(new int[] {}));
   }
+
+  /**
+   * Test method for {@link Warmup2#has271(int[])}.
+   */
+  @Test
+  public final void testHas271() {
+    Assert.assertEquals(false, instance.has271(new int[] {1, 2, 8, 1}));
+    Assert.assertEquals(false, instance.has271(new int[] {2, 7, -2}));
+    Assert.assertEquals(true, instance.has271(new int[] {1, 2, 7, 1}));
+    Assert.assertEquals(false, instance.has271(new int[] {2, 7, -2}));
+    Assert.assertEquals(true, instance.has271(new int[] {2, 7, -1}));
+    Assert.assertEquals(true, instance.has271(new int[] {2, 7, 0}));
+    Assert.assertEquals(true, instance.has271(new int[] {2, 7, 1}));
+    Assert.assertEquals(true, instance.has271(new int[] {2, 7, 2}));
+    Assert.assertEquals(true, instance.has271(new int[] {2, 7, 3}));
+    Assert.assertEquals(false, instance.has271(new int[] {2, 7, 4}));
+    Assert.assertEquals(true, instance.has271(new int[] {3, 8, 2}));
+    Assert.assertEquals(true, instance.has271(new int[] {4, 5, 3, 8, 0}));
+    Assert.assertEquals(true, instance.has271(new int[] {2, 7, 5, 10, 4}));
+    Assert.assertEquals(true, instance.has271(new int[] {2, 7, -2, 4, 9, 3}));
+    Assert.assertEquals(false, instance.has271(new int[] {2, 7, 5, 10, 1}));
+    Assert.assertEquals(false, instance.has271(new int[] {2, 7, -2, 10, 2}));
+  }
 }
