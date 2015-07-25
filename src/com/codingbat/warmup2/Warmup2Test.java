@@ -1,8 +1,8 @@
 package com.codingbat.warmup2;
 
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -11,15 +11,15 @@ import org.junit.Test;
 public class Warmup2Test {
 
   /** The instance variable to test the not static methods. */
-  private Warmup2 instance;
+  private static Warmup2 instance;
 
   /**
    * Setup before the tests start.
    *
    * @throws Exception the exception if something go wrong
    */
-  @Before
-  public void setUp() throws Exception {
+  @BeforeClass
+  public static void setUpBeforeClass() throws Exception {
     instance = new Warmup2();
   }
 
@@ -28,8 +28,8 @@ public class Warmup2Test {
    *
    * @throws Exception the exception if something go wrong
    */
-  @After
-  public void tearDown() throws Exception {
+  @AfterClass
+  public static void tearDownAfterClass() throws Exception {
     instance = null;
   }
 
