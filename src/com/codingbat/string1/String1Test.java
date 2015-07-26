@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * The Class Warmup2Test is contains tests for String-1 section.
+ * The Class String1Test is contains tests for String-1 section.
  */
 public class String1Test {
 
@@ -33,7 +33,9 @@ public class String1Test {
     instance = null;
   }
 
-
+  /**
+   * Test method for {@link String1#helloName(String)}.
+   */
   @Test
   public void testHelloName() {
     Assert.assertEquals("Hello Bob!", instance.helloName("Bob"));
@@ -48,4 +50,23 @@ public class String1Test {
     Assert.assertEquals("Hello Hello!", instance.helloName("Hello"));
   }
 
+  /**
+   * Test method for {@link String1#makeAbba(String, String)}.
+   */
+  @Test
+  public void testMakeAbba() {
+    Assert.assertEquals("HiByeByeHi", instance.makeAbba("Hi", "Bye"));
+    Assert.assertEquals("YoAliceAliceYo", instance.makeAbba("Yo", "Alice"));
+    Assert.assertEquals("WhatUpUpWhat", instance.makeAbba("What", "Up"));
+    Assert.assertEquals("aaabbbbbbaaa", instance.makeAbba("aaa", "bbb"));
+    Assert.assertEquals("xyyx", instance.makeAbba("x", "y"));
+    Assert.assertEquals("xx", instance.makeAbba("x", ""));
+    Assert.assertEquals("yy", instance.makeAbba("", "y"));
+    Assert.assertEquals("", instance.makeAbba("", ""));
+    Assert.assertEquals("", instance.makeAbba("", ""));
+    Assert.assertEquals("BoYaYaBo", instance.makeAbba("Bo", "Ya"));
+    Assert.assertEquals("YaYaYaYa", instance.makeAbba("Ya", "Ya"));
+    Assert.assertEquals("cCCc", instance.makeAbba("c", "C"));
+    Assert.assertEquals("cccc", instance.makeAbba("c", "c"));
+  }
 }
