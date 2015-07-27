@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * The Class Warmup1Test is contains tests for Warmup-1 section.
+ * The class Warmup1Test is contains tests for Warmup-1 section.
  */
 public class Warmup1Test {
 
