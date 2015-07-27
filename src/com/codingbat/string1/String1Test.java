@@ -69,4 +69,20 @@ public class String1Test {
     Assert.assertEquals("cCCc", instance.makeAbba("c", "C"));
     Assert.assertEquals("cccc", instance.makeAbba("c", "c"));
   }
+
+  /**
+   * Test method for {@link String1#makeTags(String, String)}.
+   */
+  @Test
+  public void testMakeTags() {
+    Assert.assertEquals("<i>Yay</i>", instance.makeTags("i", "Yay"));
+    Assert.assertEquals("<i>Hello</i>", instance.makeTags("i", "Hello"));
+    Assert.assertEquals("<cite>Yay</cite>", instance.makeTags("cite", "Yay"));
+    Assert.assertEquals("<address>here</address>", instance.makeTags("address", "here"));
+    Assert.assertEquals("<body>Heart</body>", instance.makeTags("body", "Heart"));
+    Assert.assertEquals("<i>i</i>", instance.makeTags("i", "i"));
+    Assert.assertEquals("<i></i>", instance.makeTags("i", ""));
+    Assert.assertEquals("<>i</>", instance.makeTags("", "i"));
+    Assert.assertEquals("<></>", instance.makeTags("", ""));
+  }
 }
