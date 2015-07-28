@@ -85,4 +85,19 @@ public class String1Test {
     Assert.assertEquals("<>i</>", instance.makeTags("", "i"));
     Assert.assertEquals("<></>", instance.makeTags("", ""));
   }
+
+  /**
+   * Test method for {@link String1#makeOutWord(String, String)}.
+   */
+  @Test
+  public void testMakeOutWord() {
+    Assert.assertEquals("<<Yay>>", instance.makeOutWord("<<>>", "Yay"));
+    Assert.assertEquals("<<WooHoo>>", instance.makeOutWord("<<>>", "WooHoo"));
+    Assert.assertEquals("[[word]]", instance.makeOutWord("[[]]", "word"));
+    Assert.assertEquals("HHHellooo", instance.makeOutWord("HHoo", "Hello"));
+    Assert.assertEquals("abYAYyz", instance.makeOutWord("abyz", "YAY"));
+    Assert.assertEquals("12numbers34", instance.makeOutWord("1234", "numbers"));
+    Assert.assertEquals("(())", instance.makeOutWord("(())", ""));
+    Assert.assertEquals("((*))", instance.makeOutWord("(())", "*"));
+  }
 }
