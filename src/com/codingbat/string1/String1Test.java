@@ -100,4 +100,18 @@ public class String1Test {
     Assert.assertEquals("(())", instance.makeOutWord("(())", ""));
     Assert.assertEquals("((*))", instance.makeOutWord("(())", "*"));
   }
+
+  /**
+   * Test method for {@link String1#extraEnd(String)}.
+   */
+  @Test
+  public void testExtraEnd() {
+    Assert.assertEquals("lololo", instance.extraEnd("Hello"));
+    Assert.assertEquals("ababab", instance.extraEnd("ab"));
+    Assert.assertEquals("HiHiHi", instance.extraEnd("Hi"));
+    Assert.assertEquals("dydydy", instance.extraEnd("Candy"));
+    Assert.assertEquals("dedede", instance.extraEnd("Code"));
+    Assert.assertEquals("121212", instance.extraEnd("12"));
+    Assert.assertEquals("bcbcbc", instance.extraEnd("abc"));
+  }
 }
