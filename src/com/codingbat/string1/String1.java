@@ -64,4 +64,17 @@ public class String1 {
     String end = str.substring(str.length() - 2);
     return end + end + end;
   }
+
+  /**
+   * Given a string, return the string made of its first two chars, so the String "Hello" yields
+   * "He". If the string is shorter than length 2, return whatever there is, so "X" yields "X", and
+   * the empty string "" yields the empty string "". Note that str.length() returns the length of a
+   * string.
+   *
+   * @param str the input string
+   * @return the above defined substring of the input string
+   */
+  public String firstTwo(String str) {
+    return str.length() < 2 ? str : str.substring(0, 2);
+  }
 }

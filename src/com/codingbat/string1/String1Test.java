@@ -114,4 +114,21 @@ public class String1Test {
     Assert.assertEquals("121212", instance.extraEnd("12"));
     Assert.assertEquals("bcbcbc", instance.extraEnd("abc"));
   }
+
+  /**
+   * Test method for {@link String1#firstTwo(String)}.
+   */
+  @Test
+  public void testFirstTwo() {
+    Assert.assertEquals("He", instance.firstTwo("Hello"));
+    Assert.assertEquals("ab", instance.firstTwo("abcdefg"));
+    Assert.assertEquals("ab", instance.firstTwo("ab"));
+    Assert.assertEquals("a", instance.firstTwo("a"));
+    Assert.assertEquals("", instance.firstTwo(""));
+    Assert.assertEquals("1", instance.firstTwo("1"));
+    Assert.assertEquals("17", instance.firstTwo("17"));
+    Assert.assertEquals("Ki", instance.firstTwo("Kitten"));
+    Assert.assertEquals("hi", instance.firstTwo("hi"));
+    Assert.assertEquals("hi", instance.firstTwo("hiya"));
+  }
 }
