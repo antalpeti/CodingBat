@@ -77,4 +77,14 @@ public class String1 {
   public String firstTwo(String str) {
     return str.length() < 2 ? str : str.substring(0, 2);
   }
+
+  /**
+   * Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
+   *
+   * @param str the input string
+   * @return the first half of the input string
+   */
+  public String firstHalf(String str) {
+    return str.substring(0, str.length() / 2);
+  }
 }

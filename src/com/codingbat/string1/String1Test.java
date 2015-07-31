@@ -131,4 +131,22 @@ public class String1Test {
     Assert.assertEquals("hi", instance.firstTwo("hi"));
     Assert.assertEquals("hi", instance.firstTwo("hiya"));
   }
+
+  /**
+   * Test method for {@link String1#firstHalf(String)}.
+   */
+  @Test
+  public void testFirstHalf() {
+    Assert.assertEquals("Woo", instance.firstHalf("WooHoo"));
+    Assert.assertEquals("Hello", instance.firstHalf("HelloThere"));
+    Assert.assertEquals("abc", instance.firstHalf("abcdef"));
+    Assert.assertEquals("abc", instance.firstHalf("abcdefg"));
+    Assert.assertEquals("a", instance.firstHalf("ab"));
+    Assert.assertEquals("a", instance.firstHalf("abc"));
+    Assert.assertEquals("", instance.firstHalf(""));
+    Assert.assertEquals("", instance.firstHalf("1"));
+    Assert.assertEquals("1", instance.firstHalf("12"));
+    Assert.assertEquals("01234", instance.firstHalf("0123456789"));
+    Assert.assertEquals("kit", instance.firstHalf("kitten"));
+  }
 }
