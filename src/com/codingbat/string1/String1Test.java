@@ -149,4 +149,21 @@ public class String1Test {
     Assert.assertEquals("01234", instance.firstHalf("0123456789"));
     Assert.assertEquals("kit", instance.firstHalf("kitten"));
   }
+
+  /**
+   * Test method for {@link String1#withoutEnd(String)}.
+   */
+  @Test
+  public void testWithoutEnd() {
+    Assert.assertEquals("ell", instance.withoutEnd("Hello"));
+    Assert.assertEquals("av", instance.withoutEnd("java"));
+    Assert.assertEquals("odin", instance.withoutEnd("coding"));
+    Assert.assertEquals("od", instance.withoutEnd("code"));
+    Assert.assertEquals("", instance.withoutEnd("ab"));
+    Assert.assertEquals("hocolate", instance.withoutEnd("Chocolate!"));
+    Assert.assertEquals("itte", instance.withoutEnd("kitten"));
+    Assert.assertEquals("ooho", instance.withoutEnd("woohoo"));
+    Assert.assertEquals("", instance.withoutEnd("k"));
+    Assert.assertEquals("", instance.withoutEnd(""));
+  }
 }

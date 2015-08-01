@@ -87,4 +87,15 @@ public class String1 {
   public String firstHalf(String str) {
     return str.substring(0, str.length() / 2);
   }
+
+  /**
+   * Given a string, return a version without the first and last char, so "Hello" yields "ell". The
+   * string length will be at least 2.
+   *
+   * @param str the input string
+   * @return the input string without the first and last char
+   */
+  public String withoutEnd(String str) {
+    return str.length() > 1 ? str.substring(1, str.length() - 1) : "";
+  }
 }
