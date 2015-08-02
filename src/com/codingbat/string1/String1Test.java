@@ -166,4 +166,29 @@ public class String1Test {
     Assert.assertEquals("", instance.withoutEnd("k"));
     Assert.assertEquals("", instance.withoutEnd(""));
   }
+
+  /**
+   * Test method for {@link String1#comboString(String, String)}.
+   */
+  @Test
+  public void testComboString() {
+    Assert.assertEquals("hiHellohi", instance.comboString("Hello", "hi"));
+    Assert.assertEquals("hiHellohi", instance.comboString("hi", "Hello"));
+    Assert.assertEquals("baaab", instance.comboString("aaa", "b"));
+    Assert.assertEquals("baaab", instance.comboString("b", "aaa"));
+    Assert.assertEquals("aaa", instance.comboString("", "aaa"));
+    Assert.assertEquals("aaa", instance.comboString("aaa", ""));
+    Assert.assertEquals("bb", instance.comboString("", "bb"));
+    Assert.assertEquals("bb", instance.comboString("bb", ""));
+    Assert.assertEquals("c", instance.comboString("", "c"));
+    Assert.assertEquals("c", instance.comboString("c", ""));
+    Assert.assertEquals("", instance.comboString("", ""));
+    Assert.assertEquals("aaa1234aaa", instance.comboString("aaa", "1234"));
+    Assert.assertEquals("aaa1234aaa", instance.comboString("1234", "aaa"));
+    Assert.assertEquals("bbaaabb", instance.comboString("aaa", "bb"));
+    Assert.assertEquals("bbaaabb", instance.comboString("bb", "aaa"));
+    Assert.assertEquals("abba", instance.comboString("bb", "a"));
+    Assert.assertEquals("abba", instance.comboString("a", "bb"));
+    Assert.assertEquals("abxyzab", instance.comboString("xyz", "ab"));
+  }
 }

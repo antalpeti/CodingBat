@@ -98,4 +98,17 @@ public class String1 {
   public String withoutEnd(String str) {
     return str.length() > 1 ? str.substring(1, str.length() - 1) : "";
   }
+
+  /**
+   * Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string
+   * on the outside and the longer string on the inside. The strings will not be the same length,
+   * but they may be empty (length 0).
+   *
+   * @param a the first input string
+   * @param b the second input string
+   * @return a string of the form short+long+short input strings
+   */
+  public String comboString(String a, String b) {
+    return a.length() > b.length() ? b + a + b : a + b + a;
+  }
 }
