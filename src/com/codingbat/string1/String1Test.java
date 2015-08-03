@@ -191,4 +191,21 @@ public class String1Test {
     Assert.assertEquals("abba", instance.comboString("a", "bb"));
     Assert.assertEquals("abxyzab", instance.comboString("xyz", "ab"));
   }
+
+  /**
+   * Test method for {@link String1#nonStart(String, String)}.
+   */
+  @Test
+  public void testNonStart() {
+    Assert.assertEquals("ellohere", instance.nonStart("Hello", "There"));
+    Assert.assertEquals("avaode", instance.nonStart("java", "code"));
+    Assert.assertEquals("hotlava", instance.nonStart("shotl", "java"));
+    Assert.assertEquals("by", instance.nonStart("ab", "xy"));
+    Assert.assertEquals("b", instance.nonStart("ab", "x"));
+    Assert.assertEquals("c", instance.nonStart("x", "ac"));
+    Assert.assertEquals("", instance.nonStart("x", "a"));
+    Assert.assertEquals("", instance.nonStart("a", "x"));
+    Assert.assertEquals("itat", instance.nonStart("kit", "kat"));
+    Assert.assertEquals("artart", instance.nonStart("mart", "dart"));
+  }
 }

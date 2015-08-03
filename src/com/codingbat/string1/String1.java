@@ -111,4 +111,18 @@ public class String1 {
   public String comboString(String a, String b) {
     return a.length() > b.length() ? b + a + b : a + b + a;
   }
+
+  /**
+   * Given 2 strings, return their concatenation, except omit the first char of each. The strings
+   * will be at least length 1.
+   *
+   * @param a the first input string
+   * @param b the second input string
+   * @return the concatenation of the input strings without the first chars
+   */
+  public String nonStart(String a, String b) {
+    String shortA = a.length() > 0 ? a.substring(1) : a;
+    String shortB = b.length() > 0 ? b.substring(1) : b;
+    return shortA + shortB;
+  }
 }
