@@ -208,4 +208,19 @@ public class String1Test {
     Assert.assertEquals("itat", instance.nonStart("kit", "kat"));
     Assert.assertEquals("artart", instance.nonStart("mart", "dart"));
   }
+
+  /**
+   * Test method for {@link String1#left2(String)}.
+   */
+  @Test
+  public void testLeft2() {
+    Assert.assertEquals("lloHe", instance.left2("Hello"));
+    Assert.assertEquals("vaja", instance.left2("java"));
+    Assert.assertEquals("Hi", instance.left2("Hi"));
+    Assert.assertEquals("deco", instance.left2("code"));
+    Assert.assertEquals("tca", instance.left2("cat"));
+    Assert.assertEquals("34512", instance.left2("12345"));
+    Assert.assertEquals("ocolateCh", instance.left2("Chocolate"));
+    Assert.assertEquals("icksbr", instance.left2("bricks"));
+  }
 }
