@@ -136,4 +136,16 @@ public class String1 {
   public String left2(String str) {
     return str.length() > 2 ? str.substring(2) + str.substring(0, 2) : str;
   }
+
+  /**
+   * Given a string, return a "rotated right 2" version where the last 2 chars are moved to the
+   * start. The string length will be at least 2.
+   *
+   * @param str the input string
+   * @return the rotated right 2 version of the input string
+   */
+  public String right2(String str) {
+    return str.length() > 2 ? str.substring(str.length() - 2) + str.substring(0, str.length() - 2)
+        : str;
+  }
 }

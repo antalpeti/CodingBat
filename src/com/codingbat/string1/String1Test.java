@@ -223,4 +223,17 @@ public class String1Test {
     Assert.assertEquals("ocolateCh", instance.left2("Chocolate"));
     Assert.assertEquals("icksbr", instance.left2("bricks"));
   }
+
+  /**
+   * Test method for {@link String1#right2(String)}.
+   */
+  @Test
+  public void testRight2() {
+    Assert.assertEquals("loHel", instance.right2("Hello"));
+    Assert.assertEquals("vaja", instance.right2("java"));
+    Assert.assertEquals("Hi", instance.right2("Hi"));
+    Assert.assertEquals("deco", instance.right2("code"));
+    Assert.assertEquals("atc", instance.right2("cat"));
+    Assert.assertEquals("45123", instance.right2("12345"));
+  }
 }
