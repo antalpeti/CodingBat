@@ -205,6 +205,8 @@ public class String1Test {
     Assert.assertEquals("c", instance.nonStart("x", "ac"));
     Assert.assertEquals("", instance.nonStart("x", "a"));
     Assert.assertEquals("", instance.nonStart("a", "x"));
+    Assert.assertEquals("", instance.nonStart("", "x"));
+    Assert.assertEquals("", instance.nonStart("a", ""));
     Assert.assertEquals("itat", instance.nonStart("kit", "kat"));
     Assert.assertEquals("artart", instance.nonStart("mart", "dart"));
   }
