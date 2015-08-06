@@ -148,4 +148,17 @@ public class String1 {
     return str.length() > 2 ? str.substring(str.length() - 2) + str.substring(0, str.length() - 2)
         : str;
   }
+
+  /**
+   * Given a string, return a string length 1 from its front, unless front is false, in which case
+   * return a string length 1 from its back. The string will be non-empty.
+   *
+   * @param str the input string
+   * @param front request the front or the back part of the input string
+   * @return the front or the back part of the input string
+   */
+  public String theEnd(String str, boolean front) {
+    return front && str.length() > 0 ? str.substring(0, 1) : str.substring(str.length() - 1,
+        str.length());
+  }
 }

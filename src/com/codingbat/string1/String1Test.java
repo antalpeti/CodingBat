@@ -238,4 +238,23 @@ public class String1Test {
     Assert.assertEquals("atc", instance.right2("cat"));
     Assert.assertEquals("45123", instance.right2("12345"));
   }
+
+  /**
+   * Test method for {@link String1#theEnd(String, boolean).
+   */
+  @Test
+  public void testTheEnd() {
+    Assert.assertEquals("H", instance.theEnd("Hello", true));
+    Assert.assertEquals("o", instance.theEnd("Hello", false));
+    Assert.assertEquals("o", instance.theEnd("oh", true));
+    Assert.assertEquals("h", instance.theEnd("oh", false));
+    Assert.assertEquals("x", instance.theEnd("x", true));
+    Assert.assertEquals("x", instance.theEnd("x", false));
+    Assert.assertEquals("j", instance.theEnd("java", true));
+    Assert.assertEquals("e", instance.theEnd("chocolate", false));
+    Assert.assertEquals("C", instance.theEnd("Chocolate", true));
+    Assert.assertEquals("1", instance.theEnd("1234", true));
+    Assert.assertEquals("4", instance.theEnd("1234", false));
+    Assert.assertEquals("e", instance.theEnd("code", false));
+  }
 }
