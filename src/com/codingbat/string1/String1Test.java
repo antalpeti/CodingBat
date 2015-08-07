@@ -3,7 +3,9 @@ package com.codingbat.string1;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 /**
  * The class String1Test is contains tests for String-1 section.
@@ -239,8 +241,12 @@ public class String1Test {
     Assert.assertEquals("45123", instance.right2("12345"));
   }
 
+  /** Helper to test the */
+  @Rule
+  public final ExpectedException exception = ExpectedException.none();
+
   /**
-   * Test method for {@link String1#theEnd(String, boolean).
+   * Test method for {@link String1#theEnd(String, boolean)}.
    */
   @Test
   public void testTheEnd() {
@@ -256,5 +262,21 @@ public class String1Test {
     Assert.assertEquals("1", instance.theEnd("1234", true));
     Assert.assertEquals("4", instance.theEnd("1234", false));
     Assert.assertEquals("e", instance.theEnd("code", false));
+    exception.expect(StringIndexOutOfBoundsException.class);
+    Assert.assertEquals("", instance.theEnd("", true));
+  }
+
+  /**
+   * Test method for {@link String1#withouEnd2(String)}.
+   */
+  @Test
+  public void testWithouEnd2() {
+    Assert.assertEquals("ell", instance.withouEnd2("Hello"));
+    Assert.assertEquals("b", instance.withouEnd2("abc"));
+    Assert.assertEquals("", instance.withouEnd2("ab"));
+    Assert.assertEquals("", instance.withouEnd2("a"));
+    Assert.assertEquals("", instance.withouEnd2(""));
+    Assert.assertEquals("old", instance.withouEnd2("coldy"));
+    Assert.assertEquals("ava cod", instance.withouEnd2("java code"));
   }
 }
