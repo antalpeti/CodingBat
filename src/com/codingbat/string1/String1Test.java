@@ -279,4 +279,18 @@ public class String1Test {
     Assert.assertEquals("old", instance.withouEnd2("coldy"));
     Assert.assertEquals("ava cod", instance.withouEnd2("java code"));
   }
+
+  /**
+   * Test method for {@link String1#middleTwo(String)}.
+   */
+  @Test
+  public void testMiddleTwo() {
+    Assert.assertEquals("ri", instance.middleTwo("string"));
+    Assert.assertEquals("od", instance.middleTwo("code"));
+    Assert.assertEquals("ct", instance.middleTwo("Practice"));
+    Assert.assertEquals("ab", instance.middleTwo("ab"));
+    Assert.assertEquals("45", instance.middleTwo("0123456789"));
+    Assert.assertEquals("x", instance.middleTwo("x"));
+    Assert.assertEquals("", instance.middleTwo(""));
+  }
 }

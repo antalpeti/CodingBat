@@ -172,4 +172,15 @@ public class String1 {
   public String withouEnd2(String str) {
     return str.length() > 2 ? str.substring(1, str.length() - 1) : "";
   }
+
+  /**
+   * Given a string of even length, return a string made of the middle two chars, so the string
+   * "string" yields "ri". The string length will be at least 2.
+   *
+   * @param str the input string with even length
+   * @return a string made of the middle two chars
+   */
+  public String middleTwo(String str) {
+    return str.length() > 1 ? str.substring(str.length() / 2 - 1, str.length() / 2 + 1) : str;
+  }
 }
