@@ -183,4 +183,14 @@ public class String1 {
   public String middleTwo(String str) {
     return str.length() > 1 ? str.substring(str.length() / 2 - 1, str.length() / 2 + 1) : str;
   }
+
+  /**
+   * Given a string, return true if it ends in "ly".
+   *
+   * @param str the input string
+   * @return true, if the string ends with "ly"
+   */
+  public boolean endsLy(String str) {
+    return str.length() > 1 ? str.substring(str.length() - 2, str.length()).equals("ly") : false;
+  }
 }

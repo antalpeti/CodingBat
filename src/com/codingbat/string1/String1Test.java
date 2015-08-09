@@ -293,4 +293,20 @@ public class String1Test {
     Assert.assertEquals("x", instance.middleTwo("x"));
     Assert.assertEquals("", instance.middleTwo(""));
   }
+
+  /**
+   * Test method for {@link String1#endsLy(String)}.
+   */
+  @Test
+  public void testEndsLy() {
+    Assert.assertEquals(true, instance.endsLy("oddly"));
+    Assert.assertEquals(false, instance.endsLy("y"));
+    Assert.assertEquals(false, instance.endsLy("oddy"));
+    Assert.assertEquals(false, instance.endsLy("oddl"));
+    Assert.assertEquals(false, instance.endsLy("olydd"));
+    Assert.assertEquals(true, instance.endsLy("ly"));
+    Assert.assertEquals(false, instance.endsLy(""));
+    Assert.assertEquals(false, instance.endsLy("falsey"));
+    Assert.assertEquals(true, instance.endsLy("evenly"));
+  }
 }
