@@ -193,4 +193,17 @@ public class String1 {
   public boolean endsLy(String str) {
     return str.length() > 1 ? str.substring(str.length() - 2, str.length()).equals("ly") : false;
   }
+
+  /**
+   * Given a string and an int n, return a string made of the first and last n chars from the
+   * string. The string length will be at least n.
+   *
+   * @param str the input string
+   * @param n the number of chars from the front and the back of the input string
+   * @return a string made of the first and last n chars
+   */
+  public String nTwice(String str, int n) {
+    return str.length() > n - 1 ? str.substring(0, n)
+        + str.substring(str.length() - n, str.length()) : str;
+  }
 }

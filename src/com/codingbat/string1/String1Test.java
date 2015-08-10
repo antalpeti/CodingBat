@@ -309,4 +309,20 @@ public class String1Test {
     Assert.assertEquals(false, instance.endsLy("falsey"));
     Assert.assertEquals(true, instance.endsLy("evenly"));
   }
+
+  /**
+   * Test method for {@link String1#nTwice(String, int)}.
+   */
+  @Test
+  public void testNTwice() {
+    Assert.assertEquals("Helo", instance.nTwice("Hello", 2));
+    Assert.assertEquals("Choate", instance.nTwice("Chocolate", 3));
+    Assert.assertEquals("Ce", instance.nTwice("Chocolate", 1));
+    Assert.assertEquals("", instance.nTwice("Chocolate", 0));
+    Assert.assertEquals("Hellello", instance.nTwice("Hello", 4));
+    Assert.assertEquals("CodeCode", instance.nTwice("Code", 4));
+    Assert.assertEquals("Code", instance.nTwice("Code", 2));
+    Assert.assertEquals("Code", instance.nTwice("Code", 5));
+    Assert.assertEquals("A", instance.nTwice("A", 2));
+  }
 }
