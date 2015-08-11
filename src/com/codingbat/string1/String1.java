@@ -206,4 +206,18 @@ public class String1 {
     return str.length() > n - 1 ? str.substring(0, n)
         + str.substring(str.length() - n, str.length()) : str;
   }
+
+  /**
+   * Given a string and an index, return a string length 2 starting at the given index. If the index
+   * is too big or too small to define a string length 2, use the first 2 chars. The string length
+   * will be at least 2.
+   *
+   * @param str the input string
+   * @param index the start index from the input string
+   * @return a string length 2 starting at the given index
+   */
+  public String twoChar(String str, int index) {
+    return index > 0 && index < str.length() - 1 ? str.substring(index, index + 2) : str.substring(
+        0, 2);
+  }
 }

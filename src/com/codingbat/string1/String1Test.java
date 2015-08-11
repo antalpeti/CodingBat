@@ -325,4 +325,34 @@ public class String1Test {
     Assert.assertEquals("Code", instance.nTwice("Code", 5));
     Assert.assertEquals("A", instance.nTwice("A", 2));
   }
+
+  /**
+   * Test method for {@link String1#twoChar(String, int)}.
+   */
+  @Test
+  public void testTwoChar() {
+    Assert.assertEquals("ja", instance.twoChar("java", 0));
+    Assert.assertEquals("va", instance.twoChar("java", 2));
+    Assert.assertEquals("ja", instance.twoChar("java", 3));
+    Assert.assertEquals("ja", instance.twoChar("java", 4));
+    Assert.assertEquals("ja", instance.twoChar("java", -1));
+    Assert.assertEquals("He", instance.twoChar("Hello", 0));
+    Assert.assertEquals("el", instance.twoChar("Hello", 1));
+    Assert.assertEquals("He", instance.twoChar("Hello", 99));
+    Assert.assertEquals("lo", instance.twoChar("Hello", 3));
+    Assert.assertEquals("He", instance.twoChar("Hello", 4));
+    Assert.assertEquals("He", instance.twoChar("Hello", 5));
+    Assert.assertEquals("He", instance.twoChar("Hello", -7));
+    Assert.assertEquals("He", instance.twoChar("Hello", 6));
+    Assert.assertEquals("He", instance.twoChar("Hello", -1));
+    Assert.assertEquals("ya", instance.twoChar("yay", 0));
+    Assert.assertEquals("fo", instance.twoChar("foo", -1));
+    Assert.assertEquals("fo", instance.twoChar("foo", 0));
+    Assert.assertEquals("oo", instance.twoChar("foo", 1));
+    Assert.assertEquals("fo", instance.twoChar("foo", 2));
+    Assert.assertEquals("fo", instance.twoChar("foo", 3));
+    Assert.assertEquals("fo", instance.twoChar("fo", -1));
+    Assert.assertEquals("fo", instance.twoChar("fo", 0));
+    Assert.assertEquals("fo", instance.twoChar("fo", 1));
+  }
 }
