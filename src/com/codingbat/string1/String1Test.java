@@ -355,4 +355,21 @@ public class String1Test {
     Assert.assertEquals("fo", instance.twoChar("fo", 0));
     Assert.assertEquals("fo", instance.twoChar("fo", 1));
   }
+
+  /**
+   * Test method for {@link String1#middleThree(String)}.
+   */
+  @Test
+  public void testMiddleThree() {
+    Assert.assertEquals("and", instance.middleThree("Candy"));
+    Assert.assertEquals("and", instance.middleThree("and"));
+    Assert.assertEquals("lvi", instance.middleThree("solving"));
+    Assert.assertEquals("yet", instance.middleThree("Hi yet Hi"));
+    Assert.assertEquals("yet", instance.middleThree("java yet java"));
+    Assert.assertEquals("col", instance.middleThree("Chocolate"));
+    Assert.assertEquals("xyz", instance.middleThree("XabcxyzabcX"));
+    Assert.assertEquals("ab", instance.middleThree("ab"));
+    Assert.assertEquals("a", instance.middleThree("a"));
+    Assert.assertEquals("", instance.middleThree(""));
+  }
 }
