@@ -372,4 +372,21 @@ public class String1Test {
     Assert.assertEquals("a", instance.middleThree("a"));
     Assert.assertEquals("", instance.middleThree(""));
   }
+
+  /**
+   * Test method for {@link String1#hasBad(String)}.
+   */
+  @Test
+  public void testHasBad() {
+    Assert.assertEquals(true, instance.hasBad("badxx"));
+    Assert.assertEquals(true, instance.hasBad("xbadxx"));
+    Assert.assertEquals(false, instance.hasBad("xxbadxx"));
+    Assert.assertEquals(false, instance.hasBad("code"));
+    Assert.assertEquals(true, instance.hasBad("bad"));
+    Assert.assertEquals(false, instance.hasBad("ba"));
+    Assert.assertEquals(false, instance.hasBad("xba"));
+    Assert.assertEquals(true, instance.hasBad("xbad"));
+    Assert.assertEquals(false, instance.hasBad(""));
+    Assert.assertEquals(true, instance.hasBad("badyy"));
+  }
 }

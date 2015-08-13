@@ -232,4 +232,18 @@ public class String1 {
     int middlePoint = str.length() / 2;
     return str.length() > 2 ? str.substring(middlePoint - 1, middlePoint + 2) : str;
   }
+
+  /**
+   * Given a string, return true if "bad" appears starting at index 0 or 1 in the string, such as
+   * with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0.
+   *
+   * @param str the input string
+   * @return true, if "bad" appears starting at index 0 or 1 in the string
+   */
+  public boolean hasBad(String str) {
+    String word = "bad";
+    // this is a short but not efficient solution because of the whole string check
+    int indexOf = str.indexOf(word);
+    return indexOf == 0 || indexOf == 1;
+  }
 }
