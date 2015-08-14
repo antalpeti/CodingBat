@@ -389,4 +389,18 @@ public class String1Test {
     Assert.assertEquals(false, instance.hasBad(""));
     Assert.assertEquals(true, instance.hasBad("badyy"));
   }
+
+  /**
+   * Test method for {@link String1#atFirst(String)}.
+   */
+  @Test
+  public void testAtFirst() {
+    Assert.assertEquals("he", instance.atFirst("hello"));
+    Assert.assertEquals("hi", instance.atFirst("hi"));
+    Assert.assertEquals("h@", instance.atFirst("h"));
+    Assert.assertEquals("@@", instance.atFirst(""));
+    Assert.assertEquals("ki", instance.atFirst("kitten"));
+    Assert.assertEquals("ja", instance.atFirst("java"));
+    Assert.assertEquals("j@", instance.atFirst("j"));
+  }
 }
