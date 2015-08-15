@@ -403,4 +403,20 @@ public class String1Test {
     Assert.assertEquals("ja", instance.atFirst("java"));
     Assert.assertEquals("j@", instance.atFirst("j"));
   }
+
+  /**
+   * Test method for {@link String1#lastChars(String, String)}.
+   */
+  @Test
+  public void testLastChars() {
+    Assert.assertEquals("ls", instance.lastChars("last", "chars"));
+    Assert.assertEquals("ya", instance.lastChars("yo", "java"));
+    Assert.assertEquals("h@", instance.lastChars("hi", ""));
+    Assert.assertEquals("@o", instance.lastChars("", "hello"));
+    Assert.assertEquals("@@", instance.lastChars("", ""));
+    Assert.assertEquals("ki", instance.lastChars("kitten", "hi"));
+    Assert.assertEquals("kp", instance.lastChars("k", "zip"));
+    Assert.assertEquals("k@", instance.lastChars("kitten", ""));
+    Assert.assertEquals("kp", instance.lastChars("kitten", "zip"));
+  }
 }
