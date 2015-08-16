@@ -419,4 +419,19 @@ public class String1Test {
     Assert.assertEquals("k@", instance.lastChars("kitten", ""));
     Assert.assertEquals("kp", instance.lastChars("kitten", "zip"));
   }
+
+  /**
+   * Test method for {@link String1#conCat(String, String)}.
+   */
+  @Test
+  public void testConCat() {
+    Assert.assertEquals("abcat", instance.conCat("abc", "cat"));
+    Assert.assertEquals("abc", instance.conCat("abc", ""));
+    Assert.assertEquals("cat", instance.conCat("", "cat"));
+    Assert.assertEquals("pig", instance.conCat("pig", "g"));
+    Assert.assertEquals("pig", instance.conCat("p", "pig"));
+    Assert.assertEquals("pigdoggy", instance.conCat("pig", "doggy"));
+    Assert.assertEquals("", instance.conCat("", ""));
+    Assert.assertEquals("c", instance.conCat("c", "c"));
+  }
 }
