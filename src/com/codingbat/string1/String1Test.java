@@ -434,4 +434,17 @@ public class String1Test {
     Assert.assertEquals("", instance.conCat("", ""));
     Assert.assertEquals("c", instance.conCat("c", "c"));
   }
+
+  /**
+   * Test method for {@link String1#lastTwo(String)}.
+   */
+  @Test
+  public void testLastTwo() {
+    Assert.assertEquals("codign", instance.lastTwo("coding"));
+    Assert.assertEquals("cta", instance.lastTwo("cat"));
+    Assert.assertEquals("ba", instance.lastTwo("ab"));
+    Assert.assertEquals("21", instance.lastTwo("12"));
+    Assert.assertEquals("a", instance.lastTwo("a"));
+    Assert.assertEquals("", instance.lastTwo(""));
+  }
 }
