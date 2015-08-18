@@ -447,4 +447,22 @@ public class String1Test {
     Assert.assertEquals("a", instance.lastTwo("a"));
     Assert.assertEquals("", instance.lastTwo(""));
   }
+
+  /**
+   * Test method for {@link String1#seeColor(String)}.
+   */
+  @Test
+  public void testSeeColor() {
+    Assert.assertEquals("red", instance.seeColor("redxx"));
+    Assert.assertEquals("", instance.seeColor("xxred"));
+    Assert.assertEquals("blue", instance.seeColor("blueTimes"));
+    Assert.assertEquals("", instance.seeColor("NoColor"));
+    Assert.assertEquals("red", instance.seeColor("red"));
+    Assert.assertEquals("", instance.seeColor("re"));
+    Assert.assertEquals("", instance.seeColor("blu"));
+    Assert.assertEquals("blue", instance.seeColor("blue"));
+    Assert.assertEquals("", instance.seeColor("a"));
+    Assert.assertEquals("", instance.seeColor(""));
+    Assert.assertEquals("", instance.seeColor("xyzred"));
+  }
 }
