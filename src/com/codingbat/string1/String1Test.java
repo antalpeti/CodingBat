@@ -465,4 +465,21 @@ public class String1Test {
     Assert.assertEquals("", instance.seeColor(""));
     Assert.assertEquals("", instance.seeColor("xyzred"));
   }
+
+  /**
+   * Test method for {@link String1#frontAgain(String)}.
+   */
+  @Test
+  public void testFrontAgain() {
+    Assert.assertEquals(true, instance.frontAgain("edited"));
+    Assert.assertEquals(false, instance.frontAgain("edit"));
+    Assert.assertEquals(true, instance.frontAgain("ed"));
+    Assert.assertEquals(true, instance.frontAgain("jj"));
+    Assert.assertEquals(true, instance.frontAgain("jjj"));
+    Assert.assertEquals(false, instance.frontAgain("jjjk"));
+    Assert.assertEquals(false, instance.frontAgain("x"));
+    Assert.assertEquals(false, instance.frontAgain(""));
+    Assert.assertEquals(false, instance.frontAgain("java"));
+    Assert.assertEquals(true, instance.frontAgain("javaja"));
+  }
 }
