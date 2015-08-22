@@ -482,4 +482,18 @@ public class String1Test {
     Assert.assertEquals(false, instance.frontAgain("java"));
     Assert.assertEquals(true, instance.frontAgain("javaja"));
   }
+
+  /**
+   * Test method for {@link String1#minCat(String, String)}.
+   */
+  @Test
+  public void testMinCat() {
+    Assert.assertEquals("loHi", instance.minCat("Hello", "Hi"));
+    Assert.assertEquals("ellojava", instance.minCat("Hello", "java"));
+    Assert.assertEquals("javaello", instance.minCat("java", "Hello"));
+    Assert.assertEquals("cx", instance.minCat("abc", "x"));
+    Assert.assertEquals("xc", instance.minCat("x", "abc"));
+    Assert.assertEquals("", instance.minCat("abc", ""));
+    Assert.assertEquals("", instance.minCat("", ""));
+  }
 }
