@@ -364,4 +364,16 @@ public class String1 {
       return a + b.substring(b.length() - a.length());
     }
   }
+
+  /**
+   * Given a string, return a new string made of 3 copies of the first 2 chars of the original
+   * string. The string may be any length. If there are fewer than 2 chars, use whatever is there.
+   *
+   * @param str the input string
+   * @return a new string made of 3 copies of the first 2 chars of the input string
+   */
+  public String extraFront(String str) {
+    String base = str.length() > 2 ? str.substring(0, 2) : str;
+    return base + base + base;
+  }
 }

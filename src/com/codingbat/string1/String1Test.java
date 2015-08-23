@@ -496,4 +496,17 @@ public class String1Test {
     Assert.assertEquals("", instance.minCat("abc", ""));
     Assert.assertEquals("", instance.minCat("", ""));
   }
+
+  /**
+   * Test method for {@link String1#extraFront(String)}.
+   */
+  @Test
+  public void testExtraFont() {
+    Assert.assertEquals("HeHeHe", instance.extraFront("Hello"));
+    Assert.assertEquals("ababab", instance.extraFront("ab"));
+    Assert.assertEquals("HHH", instance.extraFront("H"));
+    Assert.assertEquals("", instance.extraFront(""));
+    Assert.assertEquals("CaCaCa", instance.extraFront("Candy"));
+    Assert.assertEquals("CoCoCo", instance.extraFront("Code"));
+  }
 }
