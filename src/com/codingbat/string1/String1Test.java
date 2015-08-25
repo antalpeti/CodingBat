@@ -509,4 +509,20 @@ public class String1Test {
     Assert.assertEquals("CaCaCa", instance.extraFront("Candy"));
     Assert.assertEquals("CoCoCo", instance.extraFront("Code"));
   }
+
+  /**
+   * Test method for {@link String1#without2(String)}.
+   */
+  @Test
+  public void testWithout2() {
+    Assert.assertEquals("lloHe", instance.without2("HelloHe"));
+    Assert.assertEquals("HelloHi", instance.without2("HelloHi"));
+    Assert.assertEquals("", instance.without2("Hi"));
+    Assert.assertEquals("Chocolate", instance.without2("Chocolate"));
+    Assert.assertEquals("x", instance.without2("xxx"));
+    Assert.assertEquals("", instance.without2("xx"));
+    Assert.assertEquals("x", instance.without2("x"));
+    Assert.assertEquals("", instance.without2(""));
+    Assert.assertEquals("Fruits", instance.without2("Fruits"));
+  }
 }
