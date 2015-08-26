@@ -525,4 +525,37 @@ public class String1Test {
     Assert.assertEquals("", instance.without2(""));
     Assert.assertEquals("Fruits", instance.without2("Fruits"));
   }
+
+  /**
+   * Test method for {@link String1#deFront(String)}.
+   */
+  @Test
+  public void testDeFront() {
+    // first is 'a' second is not 'b'
+    Assert.assertEquals("a", instance.deFront("ax"));
+    Assert.assertEquals("ay", instance.deFront("axy"));
+    Assert.assertEquals("ab", instance.deFront("axb"));
+    Assert.assertEquals("aay", instance.deFront("away"));
+    Assert.assertEquals("aa", instance.deFront("aaa"));
+    Assert.assertEquals("a", instance.deFront("a"));
+    // first is not 'a' second is 'b'
+    Assert.assertEquals("by", instance.deFront("xby"));
+    Assert.assertEquals("bc", instance.deFront("xbc"));
+    Assert.assertEquals("bb", instance.deFront("bbb"));
+    // first is not 'a' second is not 'b'
+    Assert.assertEquals("llo", instance.deFront("Hello"));
+    Assert.assertEquals("va", instance.deFront("java"));
+    Assert.assertEquals("zz", instance.deFront("bazz"));
+    Assert.assertEquals("", instance.deFront("ba"));
+    Assert.assertEquals("", instance.deFront("hi"));
+    Assert.assertEquals("", instance.deFront("xz"));
+    Assert.assertEquals("z", instance.deFront("zzz"));
+    // length is smaller than 2
+    Assert.assertEquals("", instance.deFront("t"));
+    Assert.assertEquals("", instance.deFront(""));
+    // first is 'a' second is 'b'
+    Assert.assertEquals("ab", instance.deFront("ab"));
+    Assert.assertEquals("abc", instance.deFront("abc"));
+    Assert.assertEquals("abxyz", instance.deFront("abxyz"));
+  }
 }
