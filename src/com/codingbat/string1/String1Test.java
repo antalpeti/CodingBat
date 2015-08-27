@@ -558,4 +558,28 @@ public class String1Test {
     Assert.assertEquals("abc", instance.deFront("abc"));
     Assert.assertEquals("abxyz", instance.deFront("abxyz"));
   }
+
+  /**
+   * Test method for {@link String1#startWord(String, String)}.
+   */
+  @Test
+  public void testStartWord() {
+    Assert.assertEquals("h", instance.startWord("h", "z"));
+    Assert.assertEquals("hi", instance.startWord("hippo", "hi"));
+    Assert.assertEquals("hip", instance.startWord("hippo", "xip"));
+    Assert.assertEquals("h", instance.startWord("hippo", "i"));
+    Assert.assertEquals("hi", instance.startWord("hip", "zi"));
+    Assert.assertEquals("hip", instance.startWord("hip", "zip"));
+    Assert.assertEquals("hippo", instance.startWord("hippo", "xippo"));
+    Assert.assertEquals("", instance.startWord("hippo", "xyz"));
+    Assert.assertEquals("hip", instance.startWord("hippo", "hip"));
+    Assert.assertEquals("kit", instance.startWord("kitten", "cit"));
+    Assert.assertEquals("kit", instance.startWord("kit", "cit"));
+    Assert.assertEquals("", instance.startWord("hippo", ""));
+    Assert.assertEquals("", instance.startWord("hippo", "ix"));
+    Assert.assertEquals("", instance.startWord("h", "ix"));
+    Assert.assertEquals("", instance.startWord("hip", "zig"));
+    Assert.assertEquals("", instance.startWord("", "i"));
+  }
+
 }
