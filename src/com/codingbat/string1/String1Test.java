@@ -582,4 +582,23 @@ public class String1Test {
     Assert.assertEquals("", instance.startWord("", "i"));
   }
 
+  /**
+   * Test method for {@link String1#withoutX(String)}.
+   */
+  @Test
+  public void testWithoutX() {
+    Assert.assertEquals("Hi", instance.withoutX("Hi"));
+    Assert.assertEquals("Hi", instance.withoutX("xHi"));
+    Assert.assertEquals("Hi", instance.withoutX("Hix"));
+    Assert.assertEquals("Hi", instance.withoutX("xHix"));
+    Assert.assertEquals("Hxi", instance.withoutX("Hxix"));
+    Assert.assertEquals("xHi", instance.withoutX("xxHi"));
+    Assert.assertEquals("Hix", instance.withoutX("Hixx"));
+    Assert.assertEquals("axb", instance.withoutX("xaxbx"));
+    Assert.assertEquals("", instance.withoutX(""));
+    Assert.assertEquals("", instance.withoutX("x"));
+    Assert.assertEquals("", instance.withoutX("xx"));
+    Assert.assertEquals("Hello", instance.withoutX("Hello"));
+    Assert.assertEquals("Hexllo", instance.withoutX("Hexllo"));
+  }
 }
