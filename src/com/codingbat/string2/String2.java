@@ -19,4 +19,23 @@ public class String2 {
     }
     return doubleStr;
   }
+
+  /**
+   * Return the number of times that the string "hi" appears anywhere in the given string.
+   *
+   * @param str the input string
+   * @return the number of times that the string "hi" appears anywhere in the given string
+   */
+  public int countHi(String str) {
+    int count = 0;
+    int index = 0;
+    while (index != -1) {
+      index = str.indexOf("hi", index);
+      if (index != -1) {
+        count++;
+        index++;
+      }
+    }
+    return count;
+  }
 }

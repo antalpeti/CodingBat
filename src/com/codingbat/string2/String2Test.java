@@ -48,4 +48,20 @@ public class String2Test {
     Assert.assertEquals("..", instance.doubleChar("."));
     Assert.assertEquals("aaaa", instance.doubleChar("aa"));
   }
+
+  /**
+   * Test method for {@link String2#countHi(String)}.
+   */
+  @Test
+  public void testCountHi() {
+    Assert.assertEquals(1, instance.countHi("abc hi ho"));
+    Assert.assertEquals(2, instance.countHi("ABChi hi"));
+    Assert.assertEquals(2, instance.countHi("hihi"));
+    Assert.assertEquals(2, instance.countHi("hiHIhi"));
+    Assert.assertEquals(0, instance.countHi(""));
+    Assert.assertEquals(0, instance.countHi("h"));
+    Assert.assertEquals(1, instance.countHi("hi"));
+    Assert.assertEquals(0, instance.countHi("Hi is no HI on ahI"));
+    Assert.assertEquals(2, instance.countHi("hiho not HOHIhi"));
+  }
 }
