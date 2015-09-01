@@ -38,4 +38,26 @@ public class String2 {
     }
     return count;
   }
+
+  /**
+   * Return true if the string "cat" and "dog" appear the same number of times in the given string.
+   *
+   * @param str the input string
+   * @return true, if the string "cat" and "dog" appear the same number of times in the given string
+   */
+  public boolean catDog(String str) {
+    int countCat = 0;
+    for (int i = 0; i < str.length() - 2; i++) {
+      if (str.substring(i, i + 3).equals("cat")) {
+        countCat++;
+      }
+    }
+    int countDog = 0;
+    for (int i = 0; i < str.length() - 2; i++) {
+      if (str.substring(i, i + 3).equals("dog")) {
+        countDog++;
+      }
+    }
+    return countCat == countDog;
+  }
 }

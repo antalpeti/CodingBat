@@ -64,4 +64,24 @@ public class String2Test {
     Assert.assertEquals(0, instance.countHi("Hi is no HI on ahI"));
     Assert.assertEquals(2, instance.countHi("hiho not HOHIhi"));
   }
+
+  /**
+   * Test method for {@link String2#catDog(String)}.
+   */
+  @Test
+  public void testCatDog() {
+    Assert.assertEquals(true, instance.catDog("catdog"));
+    Assert.assertEquals(false, instance.catDog("catcat"));
+    Assert.assertEquals(true, instance.catDog("1cat1cadodog"));
+    Assert.assertEquals(false, instance.catDog("catxxdogxxxdog"));
+    Assert.assertEquals(true, instance.catDog("catxdogxdogxcat"));
+    Assert.assertEquals(false, instance.catDog("catxdogxdogxca"));
+    Assert.assertEquals(false, instance.catDog("dogdogcat"));
+    Assert.assertEquals(true, instance.catDog("dogogcat"));
+    Assert.assertEquals(false, instance.catDog("dog"));
+    Assert.assertEquals(false, instance.catDog("cat"));
+    Assert.assertEquals(true, instance.catDog("ca"));
+    Assert.assertEquals(true, instance.catDog("c"));
+    Assert.assertEquals(true, instance.catDog(""));
+  }
 }
