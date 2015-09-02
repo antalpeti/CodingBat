@@ -1,5 +1,6 @@
 package com.codingbat.string2;
 
+
 /**
  * The class String2 is contains solution for String-2 section.
  */
@@ -59,5 +60,21 @@ public class String2 {
       }
     }
     return countCat == countDog;
+  }
+
+  /**
+   * Return the number of times that the string "code" appears anywhere in the given string, except
+   * we'll accept any letter for the 'd', so "cope" and "cooe" count.
+   *
+   * @param str the input string
+   * @return the number of the above defined substring
+   */
+  public int countCode(String str) {
+    str = str.replaceAll("co.e", "*");
+    int count = 0;
+    for (int i = 0; i < str.length(); i++) {
+      count = str.charAt(i) == '*' ? count + 1 : count;
+    }
+    return count;
   }
 }

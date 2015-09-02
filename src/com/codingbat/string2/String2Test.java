@@ -84,4 +84,25 @@ public class String2Test {
     Assert.assertEquals(true, instance.catDog("c"));
     Assert.assertEquals(true, instance.catDog(""));
   }
+
+  /**
+   * Test method for {@link String2#countCode(String)}.
+   */
+  @Test
+  public void testCountCode() {
+    Assert.assertEquals(1, instance.countCode("aaacodebbb"));
+    Assert.assertEquals(2, instance.countCode("codexxcode"));
+    Assert.assertEquals(2, instance.countCode("cozexxcope"));
+    Assert.assertEquals(1, instance.countCode("cozfxxcope"));
+    Assert.assertEquals(1, instance.countCode("xxcozeyycop"));
+    Assert.assertEquals(0, instance.countCode("cozcop"));
+    Assert.assertEquals(0, instance.countCode("abcxyz"));
+    Assert.assertEquals(1, instance.countCode("code"));
+    Assert.assertEquals(0, instance.countCode("ode"));
+    Assert.assertEquals(0, instance.countCode("c"));
+    Assert.assertEquals(0, instance.countCode(""));
+    Assert.assertEquals(3, instance.countCode("AAcodeBBcoleCCccoreDD"));
+    Assert.assertEquals(2, instance.countCode("AAcodeBBcoleCCccorfDD"));
+    Assert.assertEquals(3, instance.countCode("coAcodeBcoleccoreDD"));
+  }
 }
