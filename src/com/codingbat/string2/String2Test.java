@@ -105,4 +105,19 @@ public class String2Test {
     Assert.assertEquals(2, instance.countCode("AAcodeBBcoleCCccorfDD"));
     Assert.assertEquals(3, instance.countCode("coAcodeBcoleccoreDD"));
   }
+
+  /**
+   * Test method for {@link String2#endOther(String, String)}.
+   */
+  @Test
+  public void testEndOther() {
+    Assert.assertEquals(true, instance.endOther("", ""));
+    Assert.assertEquals(true, instance.endOther("a", "ba"));
+    Assert.assertEquals(true, instance.endOther("ab", "b"));
+    Assert.assertEquals(true, instance.endOther("c", "bc"));
+    Assert.assertEquals(false, instance.endOther("12", "23"));
+    Assert.assertEquals(false, instance.endOther("xyz", "jkl"));
+    Assert.assertEquals(true, instance.endOther("h", ""));
+    Assert.assertEquals(true, instance.endOther("", "t"));
+  }
 }
