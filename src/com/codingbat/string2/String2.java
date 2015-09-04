@@ -92,4 +92,26 @@ public class String2 {
     b = b.toLowerCase();
     return a.endsWith(b) || b.endsWith(a);
   }
+
+  /**
+   * Return true if the given string contains an appearance of "xyz" where the xyz is not directly
+   * preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
+   *
+   * @param str the input string
+   * @return true, if appears the above described subtring
+   */
+  public boolean xyzThere(String str) {
+    boolean ok = false;
+    for (int i = 0; i < str.length() - 2; i++) {
+      if (str.substring(i, i + 3).equals("xyz")) {
+        if (i == 0) {
+          ok = true;
+        }
+        if (i > 0 && str.charAt(i - 1) != '.') {
+          ok = true;
+        }
+      }
+    }
+    return ok;
+  }
 }

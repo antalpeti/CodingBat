@@ -120,4 +120,25 @@ public class String2Test {
     Assert.assertEquals(true, instance.endOther("h", ""));
     Assert.assertEquals(true, instance.endOther("", "t"));
   }
+
+  /**
+   * Test method for {@link String2#xyzThere(String)}.
+   */
+  @Test
+  public void testXyzThere() {
+    Assert.assertEquals(true, instance.xyzThere("abcxyz"));
+    Assert.assertEquals(false, instance.xyzThere("abc.xyz"));
+    Assert.assertEquals(true, instance.xyzThere("xyz.abc"));
+    Assert.assertEquals(false, instance.xyzThere("abcxy"));
+    Assert.assertEquals(true, instance.xyzThere("xyz"));
+    Assert.assertEquals(false, instance.xyzThere("xy"));
+    Assert.assertEquals(false, instance.xyzThere("x"));
+    Assert.assertEquals(false, instance.xyzThere(""));
+    Assert.assertEquals(true, instance.xyzThere("abc.xyzxyz"));
+    Assert.assertEquals(true, instance.xyzThere("abc.xxyz"));
+    Assert.assertEquals(false, instance.xyzThere(".xyz"));
+    Assert.assertEquals(false, instance.xyzThere("12.xyz"));
+    Assert.assertEquals(true, instance.xyzThere("12xyz"));
+    Assert.assertEquals(false, instance.xyzThere("1.xyz.xyz2.xyz"));
+  }
 }
