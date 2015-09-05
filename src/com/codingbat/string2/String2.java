@@ -98,7 +98,7 @@ public class String2 {
    * preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
    *
    * @param str the input string
-   * @return true, if appears the above described subtring
+   * @return true, if appears the above described substring
    */
   public boolean xyzThere(String str) {
     boolean ok = false;
@@ -113,5 +113,25 @@ public class String2 {
       }
     }
     return ok;
+  }
+
+  /**
+   * Return true if the given string contains a "bob" string, but where the middle 'o' char can be
+   * any char.
+   *
+   * @param str the input string
+   * @return true, if appears the above described substring
+   */
+  public boolean bobThere(String str) {
+    if (str.length() < 3) {
+      return false;
+    } else {
+      for (int i = 0; i < str.length() - 2; i++) {
+        if (str.charAt(i) == 'b' && str.charAt(i + 2) == 'b') {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }

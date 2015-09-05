@@ -141,4 +141,27 @@ public class String2Test {
     Assert.assertEquals(true, instance.xyzThere("12xyz"));
     Assert.assertEquals(false, instance.xyzThere("1.xyz.xyz2.xyz"));
   }
+
+  /**
+   * Test method for {@link String2#bobThere(String)}.
+   */
+  @Test
+  public void testBobThere() {
+    Assert.assertEquals(true, instance.bobThere("abcbob"));
+    Assert.assertEquals(true, instance.bobThere("b9b"));
+    Assert.assertEquals(false, instance.bobThere("bac"));
+    Assert.assertEquals(true, instance.bobThere("bbb"));
+    Assert.assertEquals(false, instance.bobThere("abcdefb"));
+    Assert.assertEquals(true, instance.bobThere("123abcbcdbabxyz"));
+    Assert.assertEquals(false, instance.bobThere("b12"));
+    Assert.assertEquals(true, instance.bobThere("b1b"));
+    Assert.assertEquals(true, instance.bobThere("b12b1b"));
+    Assert.assertEquals(false, instance.bobThere("bbc"));
+    Assert.assertEquals(true, instance.bobThere("bbb"));
+    Assert.assertEquals(false, instance.bobThere("bb"));
+    Assert.assertEquals(false, instance.bobThere("b"));
+    Assert.assertEquals(false, instance.bobThere(""));
+    Assert.assertEquals(true, instance.bobThere("b*b"));
+    Assert.assertEquals(true, instance.bobThere("b b"));
+  }
 }
