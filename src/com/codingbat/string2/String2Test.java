@@ -164,4 +164,19 @@ public class String2Test {
     Assert.assertEquals(true, instance.bobThere("b*b"));
     Assert.assertEquals(true, instance.bobThere("b b"));
   }
+
+  /**
+   * Test method for {@link String2#xyBalance(String)}.
+   */
+  @Test
+  public void testXyBalance() {
+    Assert.assertEquals(true, instance.xyBalance(""));
+    Assert.assertEquals(true, instance.xyBalance("xy"));
+    Assert.assertEquals(false, instance.xyBalance("x"));
+    Assert.assertEquals(true, instance.xyBalance("y"));
+    Assert.assertEquals(true, instance.xyBalance("xyy"));
+    Assert.assertEquals(false, instance.xyBalance("yyx"));
+    Assert.assertEquals(true, instance.xyBalance("xbbdey"));
+    Assert.assertEquals(false, instance.xyBalance("ybbdex"));
+  }
 }
