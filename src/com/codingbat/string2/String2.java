@@ -148,4 +148,27 @@ public class String2 {
     int indexOfY = str.lastIndexOf('y');
     return indexOfY >= indexOfX;
   }
+
+  /**
+   * Given two strings, A and B, create a bigger string made of the first char of A, the first char
+   * of B, the second char of A, the second char of B, and so on. Any leftover chars go at the end
+   * of the result.
+   *
+   * @param a the first string
+   * @param b the second string
+   * @return the above described new string
+   */
+  public String mixString(String a, String b) {
+    int maxLength = Math.max(a.length(), b.length());
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < maxLength; i++) {
+      if (i < a.length()) {
+        sb.append(a.charAt(i));
+      }
+      if (i < b.length()) {
+        sb.append(b.charAt(i));
+      }
+    }
+    return sb.toString();
+  }
 }

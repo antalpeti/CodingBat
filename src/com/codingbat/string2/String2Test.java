@@ -179,4 +179,24 @@ public class String2Test {
     Assert.assertEquals(true, instance.xyBalance("xbbdey"));
     Assert.assertEquals(false, instance.xyBalance("ybbdex"));
   }
+
+  /**
+   * Test method for {@link String2#mixString(String, String)}.
+   */
+  @Test
+  public void testMixString() {
+    Assert.assertEquals("axbycz", instance.mixString("abc", "xyz"));
+    Assert.assertEquals("HTihere", instance.mixString("Hi", "There"));
+    Assert.assertEquals("xTxhxexre", instance.mixString("xxxx", "There"));
+    Assert.assertEquals("xXxx", instance.mixString("xxx", "X"));
+    Assert.assertEquals("22/7 around", instance.mixString("2/", "27 around"));
+    Assert.assertEquals("Hello", instance.mixString("", "Hello"));
+    Assert.assertEquals("Abc", instance.mixString("Abc", ""));
+    Assert.assertEquals("", instance.mixString("", ""));
+    Assert.assertEquals("ab", instance.mixString("a", "b"));
+    Assert.assertEquals("abx", instance.mixString("ax", "b"));
+    Assert.assertEquals("abx", instance.mixString("a", "bx"));
+    Assert.assertEquals("SLoong", instance.mixString("So", "Long"));
+    Assert.assertEquals("LSoong", instance.mixString("Long", "So"));
+  }
 }
