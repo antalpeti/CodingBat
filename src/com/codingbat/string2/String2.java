@@ -171,4 +171,21 @@ public class String2 {
     }
     return sb.toString();
   }
+
+  /**
+   * Given a string and an int N, return a string made of N repetitions of the last N characters of
+   * the string. You may assume that N is between 0 and the length of the string, inclusive.
+   *
+   * @param str the input string
+   * @param n the repetition
+   * @return the above described news string
+   */
+  public String repeatEnd(String str, int n) {
+    String rep = str.substring(str.length() - n, str.length());
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < n; i++) {
+      sb.append(rep);
+    }
+    return sb.toString();
+  }
 }

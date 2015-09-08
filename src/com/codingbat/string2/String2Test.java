@@ -199,4 +199,22 @@ public class String2Test {
     Assert.assertEquals("SLoong", instance.mixString("So", "Long"));
     Assert.assertEquals("LSoong", instance.mixString("Long", "So"));
   }
+
+  /**
+   * Test method for {@link String2#repeatEnd(String, int)}.
+   */
+  @Test
+  public void testRepeatEnd() {
+    Assert.assertEquals("llollollo", instance.repeatEnd("Hello", 3));
+    Assert.assertEquals("lolo", instance.repeatEnd("Hello", 2));
+    Assert.assertEquals("o", instance.repeatEnd("Hello", 1));
+    Assert.assertEquals("", instance.repeatEnd("Hello", 0));
+    Assert.assertEquals("abcabcabc", instance.repeatEnd("abc", 3));
+    Assert.assertEquals("bcbc", instance.repeatEnd("abc", 2));
+    Assert.assertEquals("c", instance.repeatEnd("abc", 1));
+    Assert.assertEquals("", instance.repeatEnd("abc", 0));
+    Assert.assertEquals("3434", instance.repeatEnd("1234", 2));
+    Assert.assertEquals("234234234", instance.repeatEnd("1234", 3));
+    Assert.assertEquals("", instance.repeatEnd("", 0));
+  }
 }
