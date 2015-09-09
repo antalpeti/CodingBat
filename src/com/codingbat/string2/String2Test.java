@@ -217,4 +217,22 @@ public class String2Test {
     Assert.assertEquals("234234234", instance.repeatEnd("1234", 3));
     Assert.assertEquals("", instance.repeatEnd("", 0));
   }
+
+  /**
+   * Test method for {@link String2#repeatFront(String, int)}.
+   */
+  @Test
+  public void testRepeatFront() {
+    Assert.assertEquals("ChocChoChC", instance.repeatFront("Chocolate", 4));
+    Assert.assertEquals("ChoChC", instance.repeatFront("Chocolate", 3));
+    Assert.assertEquals("IcI", instance.repeatFront("Ice Cream", 2));
+    Assert.assertEquals("I", instance.repeatFront("Ice Cream", 1));
+    Assert.assertEquals("", instance.repeatFront("Ice Cream", 0));
+    Assert.assertEquals("xyzxyx", instance.repeatFront("xyz", 3));
+    Assert.assertEquals("", instance.repeatFront("", 0));
+    Assert.assertEquals("JavaJavJaJ", instance.repeatFront("Java", 4));
+    Assert.assertEquals("J", instance.repeatFront("Java", 1));
+    Assert.assertEquals("", instance.repeatFront("Java", -1));
+    Assert.assertEquals("JavaJavJaJ", instance.repeatFront("Java", 5));
+  }
 }
