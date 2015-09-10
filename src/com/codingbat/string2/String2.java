@@ -196,7 +196,7 @@ public class String2 {
    *
    * @param str the input string
    * @param n the n >= 0 and n <= str.length()
-   * @return the above defined new string
+   * @return the above described new string
    */
   public String repeatFront(String str, int n) {
     n = str.length() < n ? str.length() : n;
@@ -204,6 +204,25 @@ public class String2 {
     while (n > 0) {
       sb.append(str.substring(0, n--));
     }
+    return sb.toString();
+  }
+
+  /**
+   * Given two strings, word and a separator, return a big string made of count occurences of the
+   * word, separated by the separator string.
+   *
+   * @param word the input word
+   * @param sep the separator
+   * @param count the count
+   * @return the above described new string
+   */
+  public String repeatSeparator(String word, String sep, int count) {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < count; i++) {
+      sb.append(word);
+      sb.append(sep);
+    }
+    sb.delete(sb.length() - sep.length(), sb.length());
     return sb.toString();
   }
 }

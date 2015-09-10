@@ -235,4 +235,23 @@ public class String2Test {
     Assert.assertEquals("", instance.repeatFront("Java", -1));
     Assert.assertEquals("JavaJavJaJ", instance.repeatFront("Java", 5));
   }
+
+  /**
+   * Test method for {@link String2#repeatSeparator(String, String, int)}.
+   */
+  @Test
+  public void testRepeatSeparator() {
+    Assert.assertEquals("WordXWordXWord", instance.repeatSeparator("Word", "X", 3));
+    Assert.assertEquals("ThisAndThis", instance.repeatSeparator("This", "And", 2));
+    Assert.assertEquals("This", instance.repeatSeparator("This", "And", 1));
+    Assert.assertEquals("Hi-n-Hi", instance.repeatSeparator("Hi", "-n-", 2));
+    Assert.assertEquals("AAAAAA", instance.repeatSeparator("AAA", "", 2));
+    Assert.assertEquals("AAA", instance.repeatSeparator("AAA", "", 1));
+    Assert.assertEquals("", instance.repeatSeparator("AAA", "", 0));
+    Assert.assertEquals("ABABABABA", instance.repeatSeparator("A", "B", 5));
+    Assert.assertEquals("abcXXabcXXabc", instance.repeatSeparator("abc", "XX", 3));
+    Assert.assertEquals("abcXXabc", instance.repeatSeparator("abc", "XX", 2));
+    Assert.assertEquals("abc", instance.repeatSeparator("abc", "XX", 1));
+    Assert.assertEquals("XYZaXYZ", instance.repeatSeparator("XYZ", "a", 2));
+  }
 }
