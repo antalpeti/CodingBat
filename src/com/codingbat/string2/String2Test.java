@@ -254,4 +254,23 @@ public class String2Test {
     Assert.assertEquals("abc", instance.repeatSeparator("abc", "XX", 1));
     Assert.assertEquals("XYZaXYZ", instance.repeatSeparator("XYZ", "a", 2));
   }
+
+  /**
+   * Test method for {@link String2#prefixAgain(String, int)}.
+   */
+  @Test
+  public void testPrefixAgain() {
+    Assert.assertEquals(true, instance.prefixAgain("abXYabc", 1));
+    Assert.assertEquals(true, instance.prefixAgain("abXYabc", 2));
+    Assert.assertEquals(false, instance.prefixAgain("abXYabc", 3));
+    Assert.assertEquals(true, instance.prefixAgain("xyzxyxyxy", 2));
+    Assert.assertEquals(false, instance.prefixAgain("xyzxyxyxy", 3));
+    Assert.assertEquals(true, instance.prefixAgain("Hi12345Hi6789Hi10", 1));
+    Assert.assertEquals(true, instance.prefixAgain("Hi12345Hi6789Hi10", 2));
+    Assert.assertEquals(true, instance.prefixAgain("Hi12345Hi6789Hi10", 3));
+    Assert.assertEquals(false, instance.prefixAgain("Hi12345Hi6789Hi10", 4));
+    Assert.assertEquals(false, instance.prefixAgain("a", 1));
+    Assert.assertEquals(true, instance.prefixAgain("aa", 1));
+    Assert.assertEquals(false, instance.prefixAgain("ab", 1));
+  }
 }

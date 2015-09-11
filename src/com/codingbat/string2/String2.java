@@ -225,4 +225,19 @@ public class String2 {
     sb.delete(sb.length() - sep.length(), sb.length());
     return sb.toString();
   }
+
+  /**
+   * Given a string, consider the prefix string made of the first N chars of the string. Does that
+   * prefix string appear somewhere else in the string? Assume that the string is not empty and that
+   * N is in the range 1..str.length().
+   *
+   * @param str the input string
+   * @param n the prefix length
+   * @return true, if the above defined appearance fulfill
+   */
+  public boolean prefixAgain(String str, int n) {
+    String prefix = str.substring(0, n);
+    String sub = str.substring(n);
+    return sub.contains(prefix);
+  }
 }
