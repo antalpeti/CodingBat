@@ -273,4 +273,32 @@ public class String2Test {
     Assert.assertEquals(true, instance.prefixAgain("aa", 1));
     Assert.assertEquals(false, instance.prefixAgain("ab", 1));
   }
+
+  /**
+   * Test method for {@link String2#xyzMiddle(String)}.
+   */
+  @Test
+  public void testXyzMiddle() {
+    Assert.assertEquals(true, instance.xyzMiddle("AAxyzBB"));
+    Assert.assertEquals(true, instance.xyzMiddle("AxyzBB"));
+    Assert.assertEquals(false, instance.xyzMiddle("AxyzBBB"));
+    Assert.assertEquals(false, instance.xyzMiddle("AxyzBBBB"));
+    Assert.assertEquals(false, instance.xyzMiddle("AAAxyzB"));
+    Assert.assertEquals(true, instance.xyzMiddle("AAAxyzBB"));
+    Assert.assertEquals(false, instance.xyzMiddle("AAAAxyzBB"));
+    Assert.assertEquals(false, instance.xyzMiddle("AAAAAxyzBBB"));
+    Assert.assertEquals(true, instance.xyzMiddle("1x345xyz12x4"));
+    Assert.assertEquals(true, instance.xyzMiddle("xyzAxyzBBB"));
+    Assert.assertEquals(true, instance.xyzMiddle("xyzAxyzBxyz"));
+    Assert.assertEquals(true, instance.xyzMiddle("xyzxyzAxyzBxyzxyz"));
+    Assert.assertEquals(true, instance.xyzMiddle("xyzxyzxyzBxyzxyz"));
+    Assert.assertEquals(true, instance.xyzMiddle("xyzxyzAxyzxyzxyz"));
+    Assert.assertEquals(false, instance.xyzMiddle("xyzxyzAxyzxyzxy"));
+    Assert.assertEquals(false, instance.xyzMiddle("AxyzxyzBB"));
+    Assert.assertEquals(false, instance.xyzMiddle(""));
+    Assert.assertEquals(false, instance.xyzMiddle("x"));
+    Assert.assertEquals(false, instance.xyzMiddle("xy"));
+    Assert.assertEquals(true, instance.xyzMiddle("xyz"));
+    Assert.assertEquals(true, instance.xyzMiddle("xyzz"));
+  }
 }

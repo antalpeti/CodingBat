@@ -240,4 +240,27 @@ public class String2 {
     String sub = str.substring(n);
     return sub.contains(prefix);
   }
+
+  /**
+   * Given a string, does "xyz" appear in the middle of the string? To define middle, we'll say that
+   * the number of chars to the left and right of the "xyz" must differ by at most one. This problem
+   * is harder than it looks.
+   *
+   * @param str the input string
+   * @return true, if the above described restriction fulfill
+   */
+  public boolean xyzMiddle(String str) {
+    boolean middle = false;
+    int length = str.length();
+    if (length >= 3) {
+      int pos = str.indexOf("xyz");
+      do {
+        int leftSideChars = pos;
+        int rightSideChars = length - 3 - pos;
+        middle = Math.abs(leftSideChars - rightSideChars) < 2 ? true : false;
+        pos = str.indexOf("xyz", pos + 1);
+      } while (pos != -1 && middle != true);
+    }
+    return middle;
+  }
 }
