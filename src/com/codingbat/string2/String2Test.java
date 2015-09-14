@@ -301,4 +301,25 @@ public class String2Test {
     Assert.assertEquals(true, instance.xyzMiddle("xyz"));
     Assert.assertEquals(true, instance.xyzMiddle("xyzz"));
   }
+
+  /**
+   * Test method for {@link String2#getSandwich(String)}.
+   */
+  @Test
+  public void testGetSandwich() {
+    Assert.assertEquals("jam", instance.getSandwich("breadjambread"));
+    Assert.assertEquals("jam", instance.getSandwich("xxbreadjambreadyy"));
+    Assert.assertEquals("", instance.getSandwich("xxbreadyy"));
+    Assert.assertEquals("breadjam", instance.getSandwich("xxbreadbreadjambreadyy"));
+    Assert.assertEquals("A", instance.getSandwich("breadAbread"));
+    Assert.assertEquals("", instance.getSandwich("breadbread"));
+    Assert.assertEquals("", instance.getSandwich("abcbreaz"));
+    Assert.assertEquals("", instance.getSandwich("abcbread"));
+    Assert.assertEquals("", instance.getSandwich("bread"));
+    Assert.assertEquals("", instance.getSandwich("xyz"));
+    Assert.assertEquals("", instance.getSandwich(""));
+    Assert.assertEquals("breax", instance.getSandwich("breadbreaxbread"));
+    Assert.assertEquals("y", instance.getSandwich("breaxbreadybread"));
+    Assert.assertEquals("breadbread", instance.getSandwich("breadbreadbreadbread"));
+  }
 }
