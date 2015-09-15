@@ -322,4 +322,28 @@ public class String2Test {
     Assert.assertEquals("y", instance.getSandwich("breaxbreadybread"));
     Assert.assertEquals("breadbread", instance.getSandwich("breadbreadbreadbread"));
   }
+
+  /**
+   * Test method for {@link String2#sameStarChar(String)}.
+   */
+  @Test
+  public void testSameStarChar() {
+    Assert.assertEquals(true, instance.sameStarChar("xy*yzz"));
+    Assert.assertEquals(false, instance.sameStarChar("xy*zzz"));
+    Assert.assertEquals(true, instance.sameStarChar("xa*az"));
+    Assert.assertEquals(false, instance.sameStarChar("xa*bz"));
+    Assert.assertEquals(true, instance.sameStarChar("xa*a*"));
+    Assert.assertEquals(true, instance.sameStarChar(""));
+    Assert.assertEquals(true, instance.sameStarChar("xa*a*a"));
+    Assert.assertEquals(false, instance.sameStarChar("xa*a*b"));
+    Assert.assertEquals(true, instance.sameStarChar("12*2*2"));
+    Assert.assertEquals(false, instance.sameStarChar("12*2*3"));
+    Assert.assertEquals(true, instance.sameStarChar("abcDEF"));
+    Assert.assertEquals(false, instance.sameStarChar("XY*YYYY*Z*"));
+    Assert.assertEquals(true, instance.sameStarChar("XY*YYYY*Y*"));
+    Assert.assertEquals(false, instance.sameStarChar("12*2*3*"));
+    Assert.assertEquals(true, instance.sameStarChar("*"));
+    Assert.assertEquals(true, instance.sameStarChar("**"));
+    Assert.assertEquals(true, instance.sameStarChar("***"));
+  }
 }
