@@ -346,4 +346,23 @@ public class String2Test {
     Assert.assertEquals(true, instance.sameStarChar("**"));
     Assert.assertEquals(true, instance.sameStarChar("***"));
   }
+
+  /**
+   * Test method for {@link String2#zipZap(String)}.
+   */
+  @Test
+  public void testZipZap() {
+    Assert.assertEquals("zpXzp", instance.zipZap("zipXzap"));
+    Assert.assertEquals("zpzp", instance.zipZap("zopzop"));
+    Assert.assertEquals("zzzpzp", instance.zipZap("zzzopzop"));
+    Assert.assertEquals("zibzp", instance.zipZap("zibzap"));
+    Assert.assertEquals("zp", instance.zipZap("zip"));
+    Assert.assertEquals("zi", instance.zipZap("zi"));
+    Assert.assertEquals("z", instance.zipZap("z"));
+    Assert.assertEquals("", instance.zipZap(""));
+    Assert.assertEquals("zp", instance.zipZap("zzp"));
+    Assert.assertEquals("abcppp", instance.zipZap("abcppp"));
+    Assert.assertEquals("azbcppp", instance.zipZap("azbcppp"));
+    Assert.assertEquals("azbcpzp", instance.zipZap("azbcpzpp"));
+  }
 }
