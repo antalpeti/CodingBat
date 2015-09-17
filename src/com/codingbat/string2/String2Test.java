@@ -365,4 +365,29 @@ public class String2Test {
     Assert.assertEquals("azbcppp", instance.zipZap("azbcppp"));
     Assert.assertEquals("azbcpzp", instance.zipZap("azbcpzpp"));
   }
+
+  /**
+   * Test method for {@link String2#starOut(String)}.
+   */
+  @Test
+  public void testStarOut() {
+    Assert.assertEquals("ad", instance.starOut("ab*cd"));
+    Assert.assertEquals("ad", instance.starOut("ab**cd"));
+    Assert.assertEquals("silly", instance.starOut("sm*eilly"));
+    Assert.assertEquals("siy", instance.starOut("sm*eil*ly"));
+    Assert.assertEquals("siy", instance.starOut("sm**eil*ly"));
+    Assert.assertEquals("siy", instance.starOut("sm***eil*ly"));
+    Assert.assertEquals("string", instance.starOut("stringy*"));
+    Assert.assertEquals("tringy", instance.starOut("*stringy"));
+    Assert.assertEquals("ty", instance.starOut("*str*in*gy"));
+    Assert.assertEquals("abc", instance.starOut("abc"));
+    Assert.assertEquals("c", instance.starOut("a*bc"));
+    Assert.assertEquals("ab", instance.starOut("ab"));
+    Assert.assertEquals("", instance.starOut("a*b"));
+    Assert.assertEquals("a", instance.starOut("a"));
+    Assert.assertEquals("", instance.starOut("a*"));
+    Assert.assertEquals("", instance.starOut("*a"));
+    Assert.assertEquals("", instance.starOut("*"));
+    Assert.assertEquals("", instance.starOut(""));
+  }
 }
