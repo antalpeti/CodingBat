@@ -23,37 +23,40 @@ public class Warmup1 {
    * We are in trouble if they are both smiling or if neither of them is smiling. Return true if we
    * are in trouble.
    *
-   * @param aSmile the first monkey is smiling
-   * @param bSmile the second monkey is smiling
+   * @param aMonkeySmiling the first monkey is smiling
+   * @param bMonkeySmiling the second monkey is smiling
    * @return true, if we are in trouble
    */
-  public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-    return aSmile && bSmile || !aSmile && !bSmile;
+  public boolean monkeyTrouble(boolean aMonkeySmiling, boolean bMonkeySmiling) {
+    boolean troubleStatus =
+        aMonkeySmiling && bMonkeySmiling || !aMonkeySmiling && !bMonkeySmiling;
+    return troubleStatus;
   }
 
   /**
    * Given two int values, return their sum. Unless the two values are the same, then return double
    * their sum.
    *
-   * @param a the first number
-   * @param b the second number
+   * @param firstNumber the first number
+   * @param secondNumber the second number
    * @return the sum of the two number, or double their sum in case of equality
    */
-  public int sumDouble(int a, int b) {
-    return a == b ? 4 * a : a + b;
+  public int sumDouble(int firstNumber, int secondNumber) {
+    return firstNumber == secondNumber ? 2 * (firstNumber + secondNumber) : firstNumber
+        + secondNumber;
   }
 
   /**
    * Given an int n, return the absolute difference between n and 21, except return double the
    * absolute difference if n is over 21.
    *
-   * @param n the examinable number
-   * @return the difference beetween 21 and the input number, or double the difference if input
+   * @param inputNumber the input number
+   * @return the difference between 21 and the input number, or double the difference if input
    *         number is bigger than 21
    */
-  public int diff21(int n) {
-    int diff = Math.abs(n - 21);
-    return n > 21 ? 2 * diff : diff;
+  public int diff21(int inputNumber) {
+    int absoluteDifferenceFrom21 = Math.abs(inputNumber - 21);
+    return inputNumber > 21 ? 2 * absoluteDifferenceFrom21 : absoluteDifferenceFrom21;
   }
 
   /**
@@ -61,23 +64,27 @@ public class Warmup1 {
    * 0..23. We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return
    * true if we are in trouble.
    *
-   * @param talking the talking parameter of the parrot
-   * @param hour the hour parameter of the day
+   * @param parrotTalking the talking parameter of the parrot
+   * @param actualHourOfDay the hour parameter of the day
    * @return true, if we are in trouble
    */
-  public boolean parrotTrouble(boolean talking, int hour) {
-    return talking && (-1 < hour && hour < 7 || 20 < hour && hour < 24);
+  public boolean parrotTrouble(boolean parrotTalking, int actualHourOfDay) {
+    boolean insideAllowableHour = -1 < actualHourOfDay && actualHourOfDay < 7 || 20 < actualHourOfDay && actualHourOfDay < 24;
+    boolean troubleStatus = parrotTalking && insideAllowableHour;
+    return troubleStatus;
   }
 
   /**
    * Given 2 ints, a and b, return true if one of them is 10 or if their sum is 10.
    *
-   * @param a the first number
-   * @param b the second number
+   * @param aNumber the first number
+   * @param bNumber the second number
    * @return true, if one of them is 10 or their sum is 10
    */
-  public boolean makes10(int a, int b) {
-    return a == 10 || b == 10 || a + b == 10;
+  public boolean makes10(int aNumber, int bNumber) {
+    boolean oneIs10 = aNumber == 10 || bNumber == 10;
+    boolean sumIs10 = aNumber + bNumber == 10;
+    return oneIs10 || sumIs10;
   }
 
   /**
