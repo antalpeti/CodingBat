@@ -390,4 +390,21 @@ public class String2Test {
     Assert.assertEquals("", instance.starOut("*"));
     Assert.assertEquals("", instance.starOut(""));
   }
+
+  /**
+   * Test method for {@link String2#plusOut(String, String)}.
+   */
+  @Test
+  public void testPlusOut() {
+    Assert.assertEquals("++xy++", instance.plusOut("12xy34", "xy"));
+    Assert.assertEquals("1+++++", instance.plusOut("12xy34", "1"));
+    Assert.assertEquals("++xy++xy+++xy", instance.plusOut("12xy34xyabcxy", "xy"));
+    Assert.assertEquals("ab++ab++++", instance.plusOut("abXYabcXYZ", "ab"));
+    Assert.assertEquals("++++abc+++", instance.plusOut("abXYabcXYZ", "abc"));
+    Assert.assertEquals("++XY+++XY+", instance.plusOut("abXYabcXYZ", "XY"));
+    Assert.assertEquals("+++++++XYZ", instance.plusOut("abXYxyzXYZ", "XYZ"));
+    Assert.assertEquals("++++++", instance.plusOut("--++ab", "++"));
+    Assert.assertEquals("++xxxx++", instance.plusOut("aaxxxxbb", "xx"));
+    Assert.assertEquals("++3++3", instance.plusOut("123123", "3"));
+  }
 }

@@ -322,4 +322,26 @@ public class String2 {
   public String starOut(String str) {
     return str.replaceAll(".{0,1}\\*+.{0,1}", "");
   }
+
+  /**
+   * Given a string and a non-empty word string, return a version of the original String where all
+   * chars have been replaced by pluses ("+"), except for appearances of the word string which are
+   * preserved unchanged.
+   *
+   * @param str the input string
+   * @param word the word
+   * @return the above defined new string
+   */
+  public String plusOut(String str, String word) {
+    String wordWithoutPlusSign = word.replaceAll("\\+", "");
+    String plusSignWithWord;
+    if (!wordWithoutPlusSign.isEmpty()) {
+      String wordReplacedWithEqualSign = str.replaceAll(wordWithoutPlusSign, "=");
+      String otherCharsReplacedWithPlusSign = wordReplacedWithEqualSign.replaceAll("[^=]", "+");
+      plusSignWithWord = otherCharsReplacedWithPlusSign.replaceAll("=", word);
+    } else {
+      plusSignWithWord = str.replaceAll(".", "+");
+    }
+    return plusSignWithWord;
+  }
 }
