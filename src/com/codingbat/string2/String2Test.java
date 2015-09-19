@@ -407,4 +407,24 @@ public class String2Test {
     Assert.assertEquals("++xxxx++", instance.plusOut("aaxxxxbb", "xx"));
     Assert.assertEquals("++3++3", instance.plusOut("123123", "3"));
   }
+
+  /**
+   * Test method for {@link String2#wordEnds(String, String)}.
+   */
+  @Test
+  public void testWordEnds() {
+    Assert.assertEquals("c13i", instance.wordEnds("abcXY123XYijk", "XY"));
+    Assert.assertEquals("13", instance.wordEnds("XY123XY", "XY"));
+    Assert.assertEquals("11", instance.wordEnds("XY1XY", "XY"));
+    Assert.assertEquals("XY", instance.wordEnds("XYXY", "XY"));
+    Assert.assertEquals("", instance.wordEnds("XY", "XY"));
+    Assert.assertEquals("", instance.wordEnds("Hi", "XY"));
+    Assert.assertEquals("", instance.wordEnds("", "XY"));
+    Assert.assertEquals("cxziij", instance.wordEnds("abc1xyz1i1j", "1"));
+    Assert.assertEquals("cxz", instance.wordEnds("abc1xyz1", "1"));
+    Assert.assertEquals("cxz11", instance.wordEnds("abc1xyz11", "1"));
+    Assert.assertEquals("11", instance.wordEnds("abc1xyz1abc", "abc"));
+    Assert.assertEquals("acac", instance.wordEnds("abc1xyz1abc", "b"));
+    Assert.assertEquals("1111", instance.wordEnds("abc1abc1abc", "abc"));
+  }
 }

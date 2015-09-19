@@ -330,7 +330,7 @@ public class String2 {
    *
    * @param str the input string
    * @param word the word
-   * @return the above defined new string
+   * @return the above described new string
    */
   public String plusOut(String str, String word) {
     String wordWithoutPlusSign = word.replaceAll("\\+", "");
@@ -343,5 +343,30 @@ public class String2 {
       plusSignWithWord = str.replaceAll(".", "+");
     }
     return plusSignWithWord;
+  }
+
+  /**
+   * Given a string and a non-empty word string, return a string made of each char just before and
+   * just after every appearance of the word in the string. Ignore cases where there is no char
+   * before or after the word, and a char may be included twice if it is between two words.
+   *
+   * @param str the input string
+   * @param word the word
+   * @return the above described new string
+   */
+  public String wordEnds(String str, String word) {
+    StringBuilder sb = new StringBuilder();
+    int actualWordStartPosition = 0;
+    while (actualWordStartPosition != -1) {
+      actualWordStartPosition = str.indexOf(word, actualWordStartPosition);
+      if (actualWordStartPosition - 1 >= 0) {
+        sb.append(str.charAt(actualWordStartPosition - 1));
+      }
+      if (actualWordStartPosition != -1 && actualWordStartPosition + word.length() < str.length()) {
+        sb.append(str.charAt(actualWordStartPosition + word.length()));
+      }
+      actualWordStartPosition = actualWordStartPosition == -1 ? -1 : actualWordStartPosition + 1;
+    }
+    return sb.toString();
   }
 }
