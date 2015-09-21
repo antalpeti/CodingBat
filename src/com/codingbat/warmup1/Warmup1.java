@@ -12,7 +12,7 @@ public class Warmup1 {
    *
    * @param weekday the weekday indicate it is a weekday
    * @param vacation the vacation indicate it is a vacation
-   * @return true, if sleep in
+   * @return true, if the above mentioned condition fulfilled
    */
   public boolean sleepIn(boolean weekday, boolean vacation) {
     return !weekday || vacation;
@@ -25,11 +25,10 @@ public class Warmup1 {
    *
    * @param aMonkeySmiling the first monkey is smiling
    * @param bMonkeySmiling the second monkey is smiling
-   * @return true, if we are in trouble
+   * @return true, if the above mentioned condition fulfilled
    */
   public boolean monkeyTrouble(boolean aMonkeySmiling, boolean bMonkeySmiling) {
-    boolean troubleStatus =
-        aMonkeySmiling && bMonkeySmiling || !aMonkeySmiling && !bMonkeySmiling;
+    boolean troubleStatus = aMonkeySmiling && bMonkeySmiling || !aMonkeySmiling && !bMonkeySmiling;
     return troubleStatus;
   }
 
@@ -39,11 +38,11 @@ public class Warmup1 {
    *
    * @param firstNumber the first number
    * @param secondNumber the second number
-   * @return the sum of the two number, or double their sum in case of equality
+   * @return the above mentioned calculation
    */
   public int sumDouble(int firstNumber, int secondNumber) {
-    return firstNumber == secondNumber ? 2 * (firstNumber + secondNumber) : firstNumber
-        + secondNumber;
+    int sumOfBoth = firstNumber + secondNumber;
+    return firstNumber == secondNumber ? 2 * sumOfBoth : sumOfBoth;
   }
 
   /**
@@ -51,8 +50,7 @@ public class Warmup1 {
    * absolute difference if n is over 21.
    *
    * @param inputNumber the input number
-   * @return the difference between 21 and the input number, or double the difference if input
-   *         number is bigger than 21
+   * @return the above mentioned calculation
    */
   public int diff21(int inputNumber) {
     int absoluteDifferenceFrom21 = Math.abs(inputNumber - 21);
@@ -69,8 +67,10 @@ public class Warmup1 {
    * @return true, if we are in trouble
    */
   public boolean parrotTrouble(boolean parrotTalking, int actualHourOfDay) {
-    boolean insideAllowableHour = -1 < actualHourOfDay && actualHourOfDay < 7 || 20 < actualHourOfDay && actualHourOfDay < 24;
-    boolean troubleStatus = parrotTalking && insideAllowableHour;
+    boolean allowableMorningHours = -1 < actualHourOfDay && actualHourOfDay < 7;
+    boolean allowableEveningHours = 20 < actualHourOfDay && actualHourOfDay < 24;
+    boolean insideAllowableHours = allowableMorningHours || allowableEveningHours;
+    boolean troubleStatus = parrotTalking && insideAllowableHours;
     return troubleStatus;
   }
 
@@ -79,11 +79,12 @@ public class Warmup1 {
    *
    * @param aNumber the first number
    * @param bNumber the second number
-   * @return true, if one of them is 10 or their sum is 10
+   * @return true, if the above mentioned condition fulfilled
    */
   public boolean makes10(int aNumber, int bNumber) {
-    boolean oneIs10 = aNumber == 10 || bNumber == 10;
-    boolean sumIs10 = aNumber + bNumber == 10;
+    int searchedNumber = 10;
+    boolean oneIs10 = aNumber == searchedNumber || bNumber == searchedNumber;
+    boolean sumIs10 = aNumber + bNumber == searchedNumber;
     return oneIs10 || sumIs10;
   }
 
@@ -91,25 +92,29 @@ public class Warmup1 {
    * Given an int n, return true if it is within 10 of 100 or 200. Note: Math.abs(num) computes the
    * absolute value of a number.
    *
-   * @param n the number
-   * @return true, if it is range of 10 of 100, or 200
+   * @param number the number
+   * @return true, if the above mentioned condition fulfilled
    */
-  public boolean nearHundred(int n) {
-    return Math.abs(100 - n) < 11 || Math.abs(200 - n) < 11;
+  public boolean nearHundred(int number) {
+    int range100 = Math.abs(100 - number);
+    int range200 = Math.abs(200 - number);
+    return range100 < 11 || range200 < 11;
   }
 
   /**
    * Given 2 int values, return true if one is negative and one is positive. Except if the parameter
    * "negative" is true, then return true only if both are negative.
    *
-   * @param a the first number
-   * @param b the second number
-   * @param negative indicate is only negative number allowable
-   * @return true, if one of the number is negative and to other is positive and negative number is
-   *         not allowable, or both of them is negative and negative number is allowable
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param negativeAllowed indicate is only negative number allowable
+   * @return true, if the above mentioned condition fulfilled
    */
-  public boolean posNeg(int a, int b, boolean negative) {
-    return (a < 0 && b > 0 || a > 0 && b < 0) && !negative || a < 0 && b < 0 && negative;
+  public boolean posNeg(int aNumber, int bNumber, boolean negativeAllowed) {
+    boolean bothNegative = aNumber < 0 && bNumber < 0 && negativeAllowed;
+    boolean onePositiveOneNegative =
+        (aNumber < 0 && bNumber > 0 || aNumber > 0 && bNumber < 0) && !negativeAllowed;
+    return onePositiveOneNegative || bothNegative;
   }
 
   /**
