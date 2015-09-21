@@ -53,4 +53,20 @@ public class Array1Test {
     Assert.assertEquals(true, instance.firstLast6(new int[] {1, 2, 3, 4, 6}));
     Assert.assertEquals(false, instance.firstLast6(new int[] {1, 2, 3, 4}));
   }
+
+  /**
+   * Test method for {@link Array1#sameFirstLast(int[])}.
+   */
+  @Test
+  public void testSameFirstLast() {
+    Assert.assertEquals(false, instance.sameFirstLast(new int[] {1, 2, 3}));
+    Assert.assertEquals(true, instance.sameFirstLast(new int[] {1, 2, 3, 1}));
+    Assert.assertEquals(true, instance.sameFirstLast(new int[] {1, 2, 1}));
+    Assert.assertEquals(true, instance.sameFirstLast(new int[] {7}));
+    Assert.assertEquals(false, instance.sameFirstLast(new int[] {}));
+    Assert.assertEquals(true, instance.sameFirstLast(new int[] {1, 2, 3, 4, 5, 1}));
+    Assert.assertEquals(false, instance.sameFirstLast(new int[] {1, 2, 3, 4, 5, 13}));
+    Assert.assertEquals(true, instance.sameFirstLast(new int[] {13, 2, 3, 4, 5, 13}));
+    Assert.assertEquals(true, instance.sameFirstLast(new int[] {7, 7}));
+  }
 }
