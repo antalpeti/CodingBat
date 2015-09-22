@@ -122,11 +122,11 @@ public class Warmup1 {
    * string already begins with "not", return the string unchanged. Note: use .equals() to compare 2
    * strings.
    *
-   * @param str the input string
+   * @param string the input string
    * @return the input string with only one "not " prefix
    */
-  public String notString(String str) {
-    return str.startsWith("not") ? str : "not " + str;
+  public String notString(String string) {
+    return string.startsWith("not") ? string : "not " + string;
   }
 
   /**
@@ -134,25 +134,27 @@ public class Warmup1 {
    * removed. The value of n will be a valid index of a char in the original string (i.e. n will be
    * in the range 0..str.length()-1 inclusive).
    *
-   * @param str the input string
-   * @param n the index of the input string
-   * @return the input string without the char at index n, or the input string if n is not valid
-   *         index
+   * @param string the input string
+   * @param index the index of the input string
+   * @return the above defined new string, or the input string if n is not valid index
    */
-  public String missingChar(String str, int n) {
-    return n < 0 || n > str.length() - 1 ? str : str.substring(0, n)
-        + str.substring(n + 1, str.length());
+  public String missingChar(String string, int index) {
+    boolean validIndex = index < 0 || index > string.length() - 1;
+    String charOnIndexNRemoved = string.substring(0, index) + string.substring(index + 1, string.length());
+    return validIndex ? string : charOnIndexNRemoved;
   }
 
   /**
    * Given a string, return a new string where the first and last chars have been exchanged.
    *
-   * @param str the input string
-   * @return the input string where the first and last chars have been exchanged
+   * @param string the input string
+   * @return the above mentioned new string
    */
-  public String frontBack(String str) {
-    return str.length() > 1 ? str.charAt(str.length() - 1) + str.substring(1, str.length() - 1)
-        + str.charAt(0) : str;
+  public String frontBack(String string) {
+    boolean notEmptyString = !string.isEmpty();
+    String firstLastCharsExchanged = string.charAt(string.length() - 1) + string.substring(1, string.length() - 1)
+        + string.charAt(0);
+    return notEmptyString ? firstLastCharsExchanged : string;
   }
 
   /**
