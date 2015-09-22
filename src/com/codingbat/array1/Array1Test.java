@@ -69,4 +69,12 @@ public class Array1Test {
     Assert.assertEquals(true, instance.sameFirstLast(new int[] {13, 2, 3, 4, 5, 13}));
     Assert.assertEquals(true, instance.sameFirstLast(new int[] {7, 7}));
   }
+
+  /**
+   * Test method for {@link Array1#makePi()}.
+   */
+  @Test
+  public void testMakePi() {
+    Assert.assertArrayEquals(new int[] {3, 1, 4}, instance.makePi());
+  }
 }

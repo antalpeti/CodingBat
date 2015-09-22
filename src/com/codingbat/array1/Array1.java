@@ -31,4 +31,15 @@ public class Array1 {
     int lastIndex = nums.length - 1;
     return nums.length > firstIndex && nums[firstIndex] == nums[lastIndex];
   }
+
+  /**
+   * Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
+   *
+   * @return the above defined array
+   */
+  public int[] makePi() {
+    int[] piNumbers = new int[] {3, 1, 4};
+    return piNumbers;
+  }
+
 }
