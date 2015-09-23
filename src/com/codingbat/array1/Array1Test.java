@@ -77,4 +77,17 @@ public class Array1Test {
   public void testMakePi() {
     Assert.assertArrayEquals(new int[] {3, 1, 4}, instance.makePi());
   }
+
+  /**
+   * Test method for {@link Array1#commonEnd(int[], int[])}.
+   */
+  @Test
+  public void testCommonEnd() {
+    Assert.assertEquals(true, instance.commonEnd(new int[] {1, 2, 3}, new int[] {7, 3}));
+    Assert.assertEquals(false, instance.commonEnd(new int[] {1, 2, 3}, new int[] {7, 3, 2}));
+    Assert.assertEquals(true, instance.commonEnd(new int[] {1, 2, 3}, new int[] {1, 3}));
+    Assert.assertEquals(true, instance.commonEnd(new int[] {1, 2, 3}, new int[] {1}));
+    Assert.assertEquals(true, instance.commonEnd(new int[] {3}, new int[] {1, 2, 3}));
+    Assert.assertEquals(false, instance.commonEnd(new int[] {1, 2, 3}, new int[] {2}));
+  }
 }

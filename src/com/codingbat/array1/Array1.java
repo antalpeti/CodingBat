@@ -42,4 +42,17 @@ public class Array1 {
     return piNumbers;
   }
 
+  /**
+   * Given 2 arrays of ints, a and b, return true if they have the same first element or they have
+   * the same last element. Both arrays will be length 1 or more.
+   *
+   * @param aNumbers the first array of numbers
+   * @param bNumbers the second array of numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean commonEnd(int[] aNumbers, int[] bNumbers) {
+    boolean firstElementSame = aNumbers[0] == bNumbers[0];
+    boolean lastElementSame = aNumbers[aNumbers.length - 1] == bNumbers[bNumbers.length - 1];
+    return firstElementSame || lastElementSame;
+  }
 }
