@@ -140,7 +140,8 @@ public class Warmup1 {
    */
   public String missingChar(String string, int index) {
     boolean validIndex = index < 0 || index > string.length() - 1;
-    String charOnIndexNRemoved = string.substring(0, index) + string.substring(index + 1, string.length());
+    String charOnIndexNRemoved =
+        string.substring(0, index) + string.substring(index + 1, string.length());
     return validIndex ? string : charOnIndexNRemoved;
   }
 
@@ -152,8 +153,12 @@ public class Warmup1 {
    */
   public String frontBack(String string) {
     boolean notEmptyString = !string.isEmpty();
-    String firstLastCharsExchanged = string.charAt(string.length() - 1) + string.substring(1, string.length() - 1)
-        + string.charAt(0);
+    String firstLastCharsExchanged = null;
+    if (notEmptyString) {
+      firstLastCharsExchanged =
+          string.charAt(string.length() - 1) + string.substring(1, string.length() - 1)
+          + string.charAt(0);
+    }
     return notEmptyString ? firstLastCharsExchanged : string;
   }
 
@@ -162,11 +167,11 @@ public class Warmup1 {
    * length is less than 3, the front is whatever is there. Return a new string which is 3 copies of
    * the front.
    *
-   * @param str the input string with arbitrary length
-   * @return the first 3 character of the string by three times
+   * @param string the input string with arbitrary length
+   * @return the above mentioned new string
    */
-  public String front3(String str) {
-    String front = str.length() > 2 ? str.substring(0, 3) : str;
+  public String front3(String string) {
+    String front = string.length() > 2 ? string.substring(0, 3) : string;
     return front + front + front;
   }
 
@@ -174,12 +179,17 @@ public class Warmup1 {
    * Given a string, take the last char and return a new string with the last char added at the
    * front and back, so "cat" yields "tcatt". The original string will be length 1 or more.
    *
-   * @param str the input string with at least length 1
-   * @return the input string with the last char added at the front and back
+   * @param string the input string with at least length 1
+   * @return the above mentioned new string
    */
-  public String backAround(String str) {
-    return str.length() > 0 ? str.charAt(str.length() - 1) + str + str.charAt(str.length() - 1)
-        : str;
+  public String backAround(String string) {
+    boolean notEmptyString = !string.isEmpty();
+    String lastCharAroundString = null;
+    if (notEmptyString) {
+      lastCharAroundString =
+          string.charAt(string.length() - 1) + string + string.charAt(string.length() - 1);
+    }
+    return notEmptyString ? lastCharAroundString : string;
   }
 
   /**
