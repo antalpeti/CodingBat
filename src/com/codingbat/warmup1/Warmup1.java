@@ -12,7 +12,7 @@ public class Warmup1 {
    *
    * @param weekday the weekday indicate it is a weekday
    * @param vacation the vacation indicate it is a vacation
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean sleepIn(boolean weekday, boolean vacation) {
     return !weekday || vacation;
@@ -25,7 +25,7 @@ public class Warmup1 {
    *
    * @param aMonkeySmiling the first monkey is smiling
    * @param bMonkeySmiling the second monkey is smiling
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean monkeyTrouble(boolean aMonkeySmiling, boolean bMonkeySmiling) {
     boolean troubleStatus = aMonkeySmiling && bMonkeySmiling || !aMonkeySmiling && !bMonkeySmiling;
@@ -38,7 +38,7 @@ public class Warmup1 {
    *
    * @param firstNumber the first number
    * @param secondNumber the second number
-   * @return the above mentioned calculation
+   * @return the result of the above mentioned calculation
    */
   public int sumDouble(int firstNumber, int secondNumber) {
     int sumOfBoth = firstNumber + secondNumber;
@@ -50,7 +50,7 @@ public class Warmup1 {
    * absolute difference if n is over 21.
    *
    * @param inputNumber the input number
-   * @return the above mentioned calculation
+   * @return the result of the above mentioned calculation
    */
   public int diff21(int inputNumber) {
     int absoluteDifferenceFrom21 = Math.abs(inputNumber - 21);
@@ -64,7 +64,7 @@ public class Warmup1 {
    *
    * @param parrotTalking the talking parameter of the parrot
    * @param actualHourOfDay the hour parameter of the day
-   * @return true, if we are in trouble
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean parrotTrouble(boolean parrotTalking, int actualHourOfDay) {
     boolean allowableMorningHours = -1 < actualHourOfDay && actualHourOfDay < 7;
@@ -79,7 +79,7 @@ public class Warmup1 {
    *
    * @param aNumber the first number
    * @param bNumber the second number
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean makes10(int aNumber, int bNumber) {
     int searchedNumber = 10;
@@ -93,7 +93,7 @@ public class Warmup1 {
    * absolute value of a number.
    *
    * @param number the number
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean nearHundred(int number) {
     int range100 = Math.abs(100 - number);
@@ -108,7 +108,7 @@ public class Warmup1 {
    * @param aNumber the first number
    * @param bNumber the second number
    * @param negativeAllowed indicate is only negative number allowable
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean posNeg(int aNumber, int bNumber, boolean negativeAllowed) {
     boolean bothNegative = aNumber < 0 && bNumber < 0 && negativeAllowed;
@@ -123,7 +123,7 @@ public class Warmup1 {
    * strings.
    *
    * @param string the input string
-   * @return the input string with only one "not " prefix
+   * @return the above mentioned new string
    */
   public String notString(String string) {
     return string.startsWith("not") ? string : "not " + string;
@@ -157,7 +157,7 @@ public class Warmup1 {
     if (notEmptyString) {
       firstLastCharsExchanged =
           string.charAt(string.length() - 1) + string.substring(1, string.length() - 1)
-          + string.charAt(0);
+              + string.charAt(0);
     }
     return notEmptyString ? firstLastCharsExchanged : string;
   }
@@ -196,11 +196,13 @@ public class Warmup1 {
    * Return true if the given non-negative number is a multiple of 3 or a multiple of 5. Use the %
    * "mod" operator.
    *
-   * @param n the non-negative number
-   * @return true, if the input number is multiple of 3 or multiple of 5
+   * @param number the non-negative number
+   * @return true, if the above defined condition is fulfilled
    */
-  public boolean or35(int n) {
-    return n % 3 == 0 || n % 5 == 0;
+  public boolean or35(int number) {
+    boolean divisibleWithThree = number % 3 == 0;
+    boolean divisibleWithFive = number % 5 == 0;
+    return divisibleWithThree || divisibleWithFive;
   }
 
   /**
@@ -208,27 +210,27 @@ public class Warmup1 {
    * front and back, so "kitten" yields"kikittenki". If the string length is less than 2, use
    * whatever chars are there.
    *
-   * @param str the arbitrary length string
-   * @return the input string with the first 2 chars added at both the front and back
+   * @param string the arbitrary length string
+   * @return the above mentioned new string
    */
-  public String front22(String str) {
-    int take = 2;
-    if (take > str.length()) {
-      take = str.length();
+  public String front22(String string) {
+    int takeLength = 2;
+    if (takeLength > string.length()) {
+      takeLength = string.length();
     }
 
-    String front = str.substring(0, take);
-    return front + str + front;
+    String frontPart = string.substring(0, takeLength);
+    return frontPart + string + frontPart;
   }
 
   /**
    * Given a string, return true if the string starts with "hi" and false otherwise.
    *
-   * @param str the arbitrary length input string
-   * @return true, if the input string starts with "hi"
+   * @param string the arbitrary length input string
+   * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean startHi(String str) {
-    return str.startsWith("hi");
+  public boolean startHi(String string) {
+    return string.startsWith("hi");
   }
 
   /**
@@ -246,12 +248,13 @@ public class Warmup1 {
   /**
    * Given 2 int values, return true if either of them is in the range 10..20 inclusive.
    *
-   * @param a the first number
-   * @param b the second number
-   * @return true, if either of the input number is in range 10..20 inclusive
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean in1020(int a, int b) {
-    return 9 < a && a < 21 || 9 < b && b < 21;
+  public boolean in1020(int aNumber, int bNumber) {
+    boolean aInRange = 9 < aNumber && aNumber < 21;
+    return aInRange || 9 < bNumber && bNumber < 21;
   }
 
   /**
