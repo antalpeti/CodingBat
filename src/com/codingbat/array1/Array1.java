@@ -55,4 +55,18 @@ public class Array1 {
     boolean lastElementSame = aNumbers[aNumbers.length - 1] == bNumbers[bNumbers.length - 1];
     return firstElementSame || lastElementSame;
   }
+
+  /**
+   * Given an array of ints length 3, return the sum of all the elements.
+   *
+   * @param numbers the input numbers
+   * @return the result of the above defined calculation
+   */
+  public int sum3(int[] numbers) {
+    int sumOfNumbers = 0;
+    for (int i = 0; i < numbers.length; i++) {
+      sumOfNumbers += numbers[i];
+    }
+    return sumOfNumbers;
+  }
 }

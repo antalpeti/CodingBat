@@ -90,4 +90,21 @@ public class Array1Test {
     Assert.assertEquals(true, instance.commonEnd(new int[] {3}, new int[] {1, 2, 3}));
     Assert.assertEquals(false, instance.commonEnd(new int[] {1, 2, 3}, new int[] {2}));
   }
+
+  /**
+   * Test method for {@link Array1#sum3(int[])}.
+   */
+  @Test
+  public void testSum3() {
+    Assert.assertEquals(6, instance.sum3(new int[] {1, 2, 3}));
+    Assert.assertEquals(18, instance.sum3(new int[] {5, 11, 2}));
+    Assert.assertEquals(7, instance.sum3(new int[] {7, 0, 0}));
+    Assert.assertEquals(4, instance.sum3(new int[] {1, 2, 1}));
+    Assert.assertEquals(3, instance.sum3(new int[] {1, 1, 1}));
+    Assert.assertEquals(11, instance.sum3(new int[] {2, 7, 2}));
+    Assert.assertEquals(2, instance.sum3(new int[] {2, 0, 0}));
+    Assert.assertEquals(5, instance.sum3(new int[] {0, 5, 0}));
+    Assert.assertEquals(8, instance.sum3(new int[] {0, 0, 8}));
+    Assert.assertEquals(0, instance.sum3(new int[] {0, 0, 0}));
+  }
 }
