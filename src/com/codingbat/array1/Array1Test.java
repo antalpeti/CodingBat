@@ -107,4 +107,18 @@ public class Array1Test {
     Assert.assertEquals(8, instance.sum3(new int[] {0, 0, 8}));
     Assert.assertEquals(0, instance.sum3(new int[] {0, 0, 0}));
   }
+
+  /**
+   * Test method for {@link Array1#rotateLeft3(int[])}.
+   */
+  @Test
+  public void testRotateLeft3() {
+    Assert.assertArrayEquals(new int[] {2, 3, 1}, instance.rotateLeft3(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {11, 9, 5}, instance.rotateLeft3(new int[] {5, 11, 9}));
+    Assert.assertArrayEquals(new int[] {0, 0, 7}, instance.rotateLeft3(new int[] {7, 0, 0}));
+    Assert.assertArrayEquals(new int[] {2, 1, 1}, instance.rotateLeft3(new int[] {1, 2, 1}));
+    Assert.assertArrayEquals(new int[] {0, 1, 0}, instance.rotateLeft3(new int[] {0, 0, 1}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0}, instance.rotateLeft3(new int[] {0, 0, 0}));
+    Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.rotateLeft3(new int[] {1, 1, 1}));
+  }
 }

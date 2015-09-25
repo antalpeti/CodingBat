@@ -69,4 +69,15 @@ public class Array1 {
     }
     return sumOfNumbers;
   }
+
+  /**
+   * Given an array of ints length 3, return an array with the elements "rotated left" so {1, 2, 3}
+   * yields {2, 3, 1}.
+   *
+   * @param numbers the input numbers
+   * @return the above defined new array
+   */
+  public int[] rotateLeft3(int[] numbers) {
+    return new int[] {numbers[1], numbers[2], numbers[0]};
+  }
 }
