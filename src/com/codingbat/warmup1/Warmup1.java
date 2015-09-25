@@ -236,13 +236,14 @@ public class Warmup1 {
   /**
    * Given two temperatures, return true if one is less than 0 and the other is greater than 100.
    *
-   * @param temp1 the first temperature
-   * @param temp2 the second temperature
-   * @return true, if one of the input temperature is smaller than 0, and the other input
-   *         temperature is bigger than 100
+   * @param temperature1 the first temperature
+   * @param temperature2 the second temperature
+   * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean icyHot(int temp1, int temp2) {
-    return (temp1 < 0 || temp2 < 0) && (temp1 > 100 || temp2 > 100);
+  public boolean icyHot(int temperature1, int temperature2) {
+    boolean oneIsLessThanZero = temperature1 < 0 || temperature2 < 0;
+    boolean oneIsGreaterThanOneHundred = temperature1 > 100 || temperature2 > 100;
+    return oneIsLessThanZero && oneIsGreaterThanOneHundred;
   }
 
   /**
@@ -253,45 +254,50 @@ public class Warmup1 {
    * @return true, if the above mentioned condition is fulfilled
    */
   public boolean in1020(int aNumber, int bNumber) {
-    boolean aInRange = 9 < aNumber && aNumber < 21;
-    return aInRange || 9 < bNumber && bNumber < 21;
+    boolean aNumberInRange = 9 < aNumber && aNumber < 21;
+    boolean bNumberInRange = 9 < bNumber && bNumber < 21;
+    return aNumberInRange || bNumberInRange;
   }
 
   /**
    * We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values,
    * return true if 1 or more of them are teen.
    *
-   * @param a the first number
-   * @param b the second number
-   * @param c the third number
-   * @return true, if one of the input number is in the range 13..19 inclusive
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean hasTeen(int a, int b, int c) {
-    return 12 < a && a < 20 || 12 < b && b < 20 || 12 < c && c < 20;
+  public boolean hasTeen(int aNumber, int bNumber, int cNumber) {
+    boolean aNumberInRange = 12 < aNumber && aNumber < 20;
+    boolean bNumberInRange = 12 < bNumber && bNumber < 20;
+    boolean cNumberInRange = 12 < cNumber && cNumber < 20;
+    return aNumberInRange || bNumberInRange || cNumberInRange;
   }
 
   /**
    * We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values,
    * return true if one or the other is teen, but not both.
    *
-   * @param a the first number
-   * @param b the second number
-   * @return true, if one of the input number is in the range 13..19, but not both
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean loneTeen(int a, int b) {
-    return (12 < a && a < 20) ^ (12 < b && b < 20);
+  public boolean loneTeen(int aNumber, int bNumber) {
+    boolean aNumberInRange = 12 < aNumber && aNumber < 20;
+    boolean bNumberInRange = 12 < bNumber && bNumber < 20;
+    return aNumberInRange ^ bNumberInRange;
   }
 
   /**
    * Given a string, if the string "del" appears starting at index 1, return a string where that
    * "del" has been deleted. Otherwise, return the string unchanged.
    *
-   * @param str the input string
-   * @return the input string without the "del" substring according to the described starting
-   *         position
+   * @param string the input string
+   * @return the above mentioned new string
    */
-  public String delDel(String str) {
-    return str.indexOf("del") == 1 ? str.replaceFirst("del", "") : str;
+  public String delDel(String string) {
+    return string.indexOf("del") == 1 ? string.replaceFirst("del", "") : string;
   }
 
   /**
@@ -299,7 +305,7 @@ public class Warmup1 {
    * "9ix" .. all count.
    *
    * @param str the input string
-   * @return true, if the input string second character is 'i' and the third character is 'x'
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean mixStart(String str) {
     return str.length() > 2 ? str.substring(1, 3).equals("ix") : false;
