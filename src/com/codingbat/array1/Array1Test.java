@@ -121,4 +121,19 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {0, 0, 0}, instance.rotateLeft3(new int[] {0, 0, 0}));
     Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.rotateLeft3(new int[] {1, 1, 1}));
   }
+
+  /**
+   * Test method for {@link Array1#reverse3(int[])}.
+   */
+  @Test
+  public void testReverse3() {
+    Assert.assertArrayEquals(new int[] {3, 2, 1}, instance.reverse3(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {9, 11, 5}, instance.reverse3(new int[] {5, 11, 9}));
+    Assert.assertArrayEquals(new int[] {0, 0, 7}, instance.reverse3(new int[] {7, 0, 0}));
+    Assert.assertArrayEquals(new int[] {2, 1, 2}, instance.reverse3(new int[] {2, 1, 2}));
+    Assert.assertArrayEquals(new int[] {1, 2, 1}, instance.reverse3(new int[] {1, 2, 1}));
+    Assert.assertArrayEquals(new int[] {3, 11, 2}, instance.reverse3(new int[] {2, 11, 3}));
+    Assert.assertArrayEquals(new int[] {5, 6, 0}, instance.reverse3(new int[] {0, 6, 5}));
+    Assert.assertArrayEquals(new int[] {3, 2, 7}, instance.reverse3(new int[] {7, 2, 3}));
+  }
 }
