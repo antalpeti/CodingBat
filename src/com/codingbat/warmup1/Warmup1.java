@@ -139,10 +139,13 @@ public class Warmup1 {
    * @return the above defined new string, or the input string if n is not valid index
    */
   public String missingChar(String string, int index) {
-    boolean validIndex = index < 0 || index > string.length() - 1;
-    String charOnIndexNRemoved =
-        string.substring(0, index) + string.substring(index + 1, string.length());
-    return validIndex ? string : charOnIndexNRemoved;
+    boolean validIndex = 0 <= index && index < string.length();
+    if (validIndex) {
+      String charOnIndexNRemoved =
+          string.substring(0, index) + string.substring(index + 1, string.length());
+      return charOnIndexNRemoved;
+    }
+    return string;
   }
 
   /**
@@ -152,14 +155,13 @@ public class Warmup1 {
    * @return the above mentioned new string
    */
   public String frontBack(String string) {
-    boolean notEmptyString = !string.isEmpty();
-    String firstLastCharsExchanged = null;
-    if (notEmptyString) {
-      firstLastCharsExchanged =
+    if (string.length() > 1) {
+      String firstLastCharsExchanged =
           string.charAt(string.length() - 1) + string.substring(1, string.length() - 1)
               + string.charAt(0);
+      return firstLastCharsExchanged;
     }
-    return notEmptyString ? firstLastCharsExchanged : string;
+    return string;
   }
 
   /**
@@ -304,11 +306,11 @@ public class Warmup1 {
    * Return true if the given string begins with "mix", except the 'm' can be anything, so "pix",
    * "9ix" .. all count.
    *
-   * @param str the input string
+   * @param string the input string
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean mixStart(String str) {
-    return str.length() > 2 ? str.substring(1, 3).equals("ix") : false;
+  public boolean mixStart(String string) {
+    return string.length() > 2 ? string.substring(1, 3).equals("ix") : false;
   }
 
   /**
@@ -316,58 +318,62 @@ public class Warmup1 {
    * char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
    *
    * @param str the input string
-   * @return the first two characters ("", "o", "z","oz") according to to above description
+   * @return the above mentioned new string
    */
   public String startOz(String str) {
-    String fc = str.length() > 0 && str.charAt(0) == 'o' ? "o" : "";
-    String sc = str.length() > 1 && str.charAt(1) == 'z' ? "z" : "";
-    return fc + sc;
+    String firstChar = str.length() > 0 && str.charAt(0) == 'o' ? "o" : "";
+    String secondChar = str.length() > 1 && str.charAt(1) == 'z' ? "z" : "";
+    return firstChar + secondChar;
   }
 
   /**
    * Given three int values, a b c, return the largest.
    *
-   * @param a the first number
-   * @param b the second number
-   * @param c the third number
-   * @return the largest number from the input numbers
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return the above defined number
    */
-  public int intMax(int a, int b, int c) {
-    int max = a > b ? a : b;
-    return c > max ? c : max;
+  public int intMax(int aNumber, int bNumber, int cNumber) {
+    int maxNumber = Math.max(aNumber, bNumber);
+    return Math.max(cNumber, maxNumber);
   }
 
   /**
    * Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event
    * of a tie. Note that Math.abs(n) returns the absolute value of a number.
    *
-   * @param a the first number
-   * @param b the second number
-   * @return the nearest input number to the value 10, or 0
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return the above defined number
    */
-  public int close10(int a, int b) {
-    int diffa = Math.abs(10 - a);
-    int diffb = Math.abs(10 - b);
-    int ret;
-    if (diffa == diffb) {
-      ret = 0;
+  public int close10(int aNumber, int bNumber) {
+    int aNumberDistanceFromTen = Math.abs(10 - aNumber);
+    int bNumberDistanceFromTen = Math.abs(10 - bNumber);
+    int result;
+    if (aNumberDistanceFromTen == bNumberDistanceFromTen) {
+      result = 0;
     } else {
-      ret = diffa < diffb ? a : b;
+      result = aNumberDistanceFromTen < bNumberDistanceFromTen ? aNumber : bNumber;
     }
-    return ret;
+    return result;
   }
 
   /**
    * Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are
    * both in the range 40..50 inclusive.
    *
-   * @param a the first number
-   * @param b the second number
-   * @return true, if both input number in range 30..40 inclusive or in range 40..50 inclusive
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return true, if the above mentioned condition fulfilled
    */
-  public boolean in3050(int a, int b) {
-    return 29 < a && a < 41 && 29 < b && b < 41 || 39 < a && a < 51 && 39 < b && b < 51 ? true
-        : false;
+  public boolean in3050(int aNumber, int bNumber) {
+    boolean aNumberInRangeFirst = 29 < aNumber && aNumber < 41;
+    boolean bNumberInRangeFirst = 29 < bNumber && bNumber < 41;
+    boolean aNumberInRangeSecond = 39 < aNumber && aNumber < 51;
+    boolean bNumberInRangeSecond = 39 < bNumber && bNumber < 51;
+    return aNumberInRangeFirst && bNumberInRangeFirst || aNumberInRangeSecond
+        && bNumberInRangeSecond;
   }
 
   /**
