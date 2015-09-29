@@ -136,4 +136,19 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {5, 6, 0}, instance.reverse3(new int[] {0, 6, 5}));
     Assert.assertArrayEquals(new int[] {3, 2, 7}, instance.reverse3(new int[] {7, 2, 3}));
   }
+
+  /**
+   * Test method for {@link Array1#maxEnd3(int[])}.
+   */
+  @Test
+  public void testMaxEnd3() {
+    Assert.assertArrayEquals(new int[] {3, 3, 3}, instance.maxEnd3(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {11, 11, 11}, instance.maxEnd3(new int[] {11, 5, 9}));
+    Assert.assertArrayEquals(new int[] {3, 3, 3}, instance.maxEnd3(new int[] {2, 11, 3}));
+    Assert.assertArrayEquals(new int[] {11, 11, 11}, instance.maxEnd3(new int[] {11, 3, 3}));
+    Assert.assertArrayEquals(new int[] {11, 11, 11}, instance.maxEnd3(new int[] {3, 11, 11}));
+    Assert.assertArrayEquals(new int[] {2, 2, 2}, instance.maxEnd3(new int[] {2, 2, 2}));
+    Assert.assertArrayEquals(new int[] {2, 2, 2}, instance.maxEnd3(new int[] {2, 11, 2}));
+    Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.maxEnd3(new int[] {0, 0, 1}));
+  }
 }

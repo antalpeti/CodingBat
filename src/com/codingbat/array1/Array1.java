@@ -91,4 +91,17 @@ public class Array1 {
   public int[] reverse3(int[] numbers) {
     return new int[] {numbers[2], numbers[1], numbers[0]};
   }
+
+  /**
+   * Given an array of ints length 3, figure out which is larger between the first and last elements
+   * in the array, and set all the other elements to be that value. Return the changed array.
+   *
+   * @param numbers the input numbers
+   * @return the above defined new array
+   */
+  public int[] maxEnd3(int[] numbers) {
+    int max = Math.max(numbers[0], numbers[numbers.length - 1]);
+    numbers = new int[] {max, max, max};
+    return numbers;
+  }
 }
