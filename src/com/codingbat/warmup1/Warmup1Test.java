@@ -582,8 +582,8 @@ public class Warmup1Test {
     Assert.assertEquals(20, instance.max1020(20, 10));
     // only first in range
     Assert.assertEquals(11, instance.max1020(11, 9));
-    Assert.assertEquals(20, instance.max1020(10, 20));
     Assert.assertEquals(10, instance.max1020(10, 21));
+    Assert.assertEquals(10, instance.max1020(10, 22));
     Assert.assertEquals(10, instance.max1020(10, 23));
     Assert.assertEquals(20, instance.max1020(20, 7));
     // only second in range

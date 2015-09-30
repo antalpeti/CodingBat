@@ -368,36 +368,30 @@ public class Warmup1 {
    * @return true, if the above mentioned condition fulfilled
    */
   public boolean in3050(int aNumber, int bNumber) {
-    boolean aNumberInRangeFirst = 29 < aNumber && aNumber < 41;
-    boolean bNumberInRangeFirst = 29 < bNumber && bNumber < 41;
-    boolean aNumberInRangeSecond = 39 < aNumber && aNumber < 51;
-    boolean bNumberInRangeSecond = 39 < bNumber && bNumber < 51;
-    return aNumberInRangeFirst && bNumberInRangeFirst || aNumberInRangeSecond
-        && bNumberInRangeSecond;
+    boolean bothInRange3040 = 29 < aNumber && aNumber < 41 && 29 < bNumber && bNumber < 41;
+    boolean bothInRange4050 = 39 < aNumber && aNumber < 51 && 39 < bNumber && bNumber < 51;
+    return bothInRange3040 || bothInRange4050;
   }
 
   /**
    * Given 2 positive int values, return the larger value that is in the range 10..20 inclusive, or
    * return 0 if neither is in that range.
    *
-   * @param a the first number
-   * @param b the second number
-   * @return the larger value that is in the range 10..20 inclusive, or 0 if neither is in the range
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return the above mentioned number
    */
-  public int max1020(int a, int b) {
+  public int max1020(int aNumber, int bNumber) {
     int ret = 0;
-    boolean aInRange = 9 < a && a < 21;
-    boolean bInRange = 9 < b && b < 21;
-    if (aInRange && bInRange) {
-      ret = a > b ? a : b;
-    }
-    if (aInRange && !bInRange) {
-      ret = a;
-    }
-    if (!aInRange && bInRange) {
-      ret = b;
-    }
-    if (!aInRange && !bInRange) {
+    boolean aNumberInRange = 9 < aNumber && aNumber < 21;
+    boolean bNumberInRange = 9 < bNumber && bNumber < 21;
+    if (aNumberInRange && bNumberInRange) {
+      ret = Math.max(aNumber, bNumber);
+    } else if (aNumberInRange && !bNumberInRange) {
+      ret = aNumber;
+    } else if (!aNumberInRange && bNumberInRange) {
+      ret = bNumber;
+    } else if (!aNumberInRange && !bNumberInRange) {
       ret = 0;
     }
     return ret;
@@ -406,29 +400,32 @@ public class Warmup1 {
   /**
    * Return true if the given string contains between 1 and 3 'e' chars.
    *
-   * @param str the input string
-   * @return true, if the input string contains between 1 and 3 'e' chars
+   * @param string the input string
+   * @return true, if the above mentioned condition fulfilled
    */
-  public boolean stringE(String str) {
+  public boolean stringE(String string) {
     int count = 0;
-    for (int i = 0; i < str.length(); i++) {
-      if (str.charAt(i) == 'e') {
+    for (int i = 0; i < string.length(); i++) {
+      if (string.charAt(i) == 'e') {
         count++;
       }
     }
-    return 0 < count && count < 4;
+    boolean countBetween1And3 = 0 < count && count < 4;
+    return countBetween1And3;
   }
 
   /**
    * Given two non-negative int values, return true if they have the same last digit, such as with
    * 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
    *
-   * @param a the first number
-   * @param b the second number
-   * @return true, if both number have the same last digit
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return true, if the above mentioned condition fulfilled
    */
-  public boolean lastDigit(int a, int b) {
-    return a % 10 == b % 10;
+  public boolean lastDigit(int aNumber, int bNumber) {
+    int aNumberLastDigit = aNumber % 10;
+    int bNumberLastDigit = bNumber % 10;
+    return aNumberLastDigit == bNumberLastDigit;
   }
 
   /**
@@ -436,12 +433,17 @@ public class Warmup1 {
    * has less than 3 chars, uppercase whatever is there. Note that str.toUpperCase() returns the
    * uppercase version of a string.
    *
-   * @param str the input string
-   * @return the string with the last 3 chars are in upper case
+   * @param string the input string
+   * @return the above mentioned new string
    */
-  public String endUp(String str) {
-    return str.length() < 3 ? str.toUpperCase() : str.substring(0, str.length() - 3)
-        + str.substring(str.length() - 3, str.length()).toUpperCase();
+  public String endUp(String string) {
+    if (string.length() < 3) {
+      return string.toUpperCase();
+    } else {
+      String stringBeginPart = string.substring(0, string.length() - 3);
+      String stringEndPart = string.substring(string.length() - 3, string.length());
+      return stringBeginPart + stringEndPart.toUpperCase();
+    }
   }
 
   /**
