@@ -104,4 +104,22 @@ public class Array1 {
     numbers = new int[] {max, max, max};
     return numbers;
   }
+
+  /**
+   * Given an array of ints, return the sum of the first 2 elements in the array. If the array
+   * length is less than 2, just sum up the elements that exist, returning 0 if the array is length
+   * 0.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned result
+   */
+  public int sum2(int[] numbers) {
+    if (numbers.length > 1) {
+      return numbers[0] + numbers[1];
+    } else if (numbers.length == 1) {
+      return numbers[0];
+    } else {
+      return 0;
+    }
+  }
 }

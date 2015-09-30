@@ -151,4 +151,22 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {2, 2, 2}, instance.maxEnd3(new int[] {2, 11, 2}));
     Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.maxEnd3(new int[] {0, 0, 1}));
   }
+
+  /**
+   * Test method for {@link Array1#sum2(int[])}.
+   */
+  @Test
+  public void testSum2() {
+    Assert.assertEquals(3, instance.sum2(new int[] {1, 2, 3}));
+    Assert.assertEquals(2, instance.sum2(new int[] {1, 1}));
+    Assert.assertEquals(2, instance.sum2(new int[] {1, 1, 1, 1}));
+    Assert.assertEquals(3, instance.sum2(new int[] {1, 2}));
+    Assert.assertEquals(1, instance.sum2(new int[] {1}));
+    Assert.assertEquals(0, instance.sum2(new int[] {}));
+    Assert.assertEquals(9, instance.sum2(new int[] {4, 5, 6}));
+    Assert.assertEquals(4, instance.sum2(new int[] {4}));
+    Assert.assertEquals(0, instance.sum2(new int[] {0}));
+    Assert.assertEquals(0, instance.sum2(new int[] {1, -1}));
+    Assert.assertEquals(0, instance.sum2(new int[] {0, 0, 1}));
+  }
 }
