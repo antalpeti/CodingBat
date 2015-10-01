@@ -169,4 +169,27 @@ public class Array1Test {
     Assert.assertEquals(0, instance.sum2(new int[] {1, -1}));
     Assert.assertEquals(0, instance.sum2(new int[] {0, 0, 1}));
   }
+
+  /**
+   * Test method for {@link Array1#middleWay(int[], int[])}.
+   */
+  @Test
+  public void testMiddleWay() {
+    Assert.assertArrayEquals(new int[] {2, 5},
+        instance.middleWay(new int[] {1, 2, 3}, new int[] {4, 5, 6}));
+    Assert.assertArrayEquals(new int[] {7, 8},
+        instance.middleWay(new int[] {7, 7, 7}, new int[] {3, 8, 0}));
+    Assert.assertArrayEquals(new int[] {2, 4},
+        instance.middleWay(new int[] {5, 2, 9}, new int[] {1, 4, 5}));
+    Assert.assertArrayEquals(new int[] {9, 8},
+        instance.middleWay(new int[] {1, 9, 7}, new int[] {4, 8, 8}));
+    Assert.assertArrayEquals(new int[] {2, 1},
+        instance.middleWay(new int[] {1, 2, 3}, new int[] {3, 1, 4}));
+    Assert.assertArrayEquals(new int[] {2, 1},
+        instance.middleWay(new int[] {1, 2, 3}, new int[] {4, 1, 1}));
+    Assert.assertArrayEquals(new int[] {0, 0},
+        instance.middleWay(new int[] {0, 0, 0}, new int[] {0, 0, 0}));
+    Assert.assertArrayEquals(new int[] {0, 2},
+        instance.middleWay(new int[] {-1, 0, 1}, new int[] {1, 2, 3}));
+  }
 }

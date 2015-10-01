@@ -122,4 +122,16 @@ public class Array1 {
       return 0;
     }
   }
+
+  /**
+   * Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle
+   * elements.
+   *
+   * @param aNumbers the first array of numbers
+   * @param bNumbers the second array of numbers
+   * @return the above mentioned new array
+   */
+  public int[] middleWay(int[] aNumbers, int[] bNumbers) {
+    return new int[] {aNumbers[1], bNumbers[1]};
+  }
 }
