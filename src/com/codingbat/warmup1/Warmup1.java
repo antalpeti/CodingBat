@@ -450,15 +450,15 @@ public class Warmup1 {
    * Given a non-empty string and an int N, return the string made starting with char 0, and then
    * every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
    *
-   * @param str the input string
-   * @param n the input number
-   * @return the string that starting with char 0, and then every Nth char of the input string
+   * @param string the input string
+   * @param number the input number
+   * @return the above mentioned new string
    */
-  public String everyNth(String str, int n) {
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < str.length(); i = i + n) {
-      sb.append(str.charAt(i));
+  public String everyNth(String string, int number) {
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < string.length(); i = i + number) {
+      builder.append(string.charAt(i));
     }
-    return sb.toString();
+    return builder.toString();
   }
 }

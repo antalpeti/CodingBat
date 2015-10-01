@@ -9,67 +9,67 @@ public class Warmup2 {
    * Given a string and a non-negative int n, return a larger string that is n copies of the
    * original string.
    *
-   * @param str the input string
-   * @param n the number of copies
-   * @return a larger string that is n copies of the input string
+   * @param string the input string
+   * @param number the number of copies
+   * @return the above mentioned new string
    */
-  public String stringTimes(String str, int n) {
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < n; i++) {
-      sb.append(str);
+  public String stringTimes(String string, int number) {
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < number; i++) {
+      builder.append(string);
     }
-    return sb.toString();
+    return builder.toString();
   }
 
   /**
    * Given a string and a non-negative int n, we'll say that the front of the string is the first 3
    * chars, or whatever is there if the string is less than length 3. Return n copies of the front;
    *
-   * @param str the input string
-   * @param n the number of copies
-   * @return the n copies of front chars (3 chars or less)
+   * @param string the input string
+   * @param number the number of copies
+   * @return the above mentioned new string
    */
-  public String frontTimes(String str, int n) {
-    int fLength = 3;
-    StringBuilder sb = new StringBuilder();
-    String front = str.length() > fLength ? str.substring(0, fLength) : str;
-    for (int i = 0; i < n; i++) {
-      sb.append(front);
+  public String frontTimes(String string, int number) {
+    int frontLength = 3;
+    StringBuilder builder = new StringBuilder();
+    String frontPart = string.length() > frontLength ? string.substring(0, frontLength) : string;
+    for (int i = 0; i < number; i++) {
+      builder.append(frontPart);
     }
-    return sb.toString();
+    return builder.toString();
   }
 
   /**
    * Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx"
    * contains 2 "xx".
    *
-   * @param str the input string
-   * @return the number of "xx"
+   * @param string the input string
+   * @return the above defined number
    */
-  public int countXX(String str) {
-    int ret = 0;
-    for (int i = 0; i < str.length() - 1; i++) {
-      if ("xx".equals(str.substring(i, i + 2))) {
-        ++ret;
+  public int countXX(String string) {
+    int numberOfXX = 0;
+    for (int i = 0; i < string.length() - 1; i++) {
+      if ("xx".equals(string.substring(i, i + 2))) {
+        ++numberOfXX;
       }
     }
-    return ret;
+    return numberOfXX;
   }
 
   /**
    * Given a string, return true if the first instance of "x" in the string is immediately followed
    * by another "x".
    *
-   * @param str the input string
-   * @return true, if the first 'x' in the input string is immediately followed by another 'x'
+   * @param string the input string
+   * @return true, if the above defined conditions fulfilled
    */
-  boolean doubleX(String str) {
-    int i = str.indexOf("x");
+  boolean doubleX(String string) {
+    int i = string.indexOf("x");
     if (i == -1) {
       return false;
     }
-    String xSubStr = str.substring(i);
-    return xSubStr.startsWith("xx");
+    String startWithXSubstring = string.substring(i);
+    return startWithXSubstring.startsWith("xx");
   }
 
   /**
