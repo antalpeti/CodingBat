@@ -76,29 +76,30 @@ public class Warmup2 {
    * Given a string, return a new string made of every other char (every second char) starting with
    * the first, so "Hello" yields "Hlo".
    *
-   * @param str input string
-   * @return a new string made of every other char starting with the first
+   * @param string input string
+   * @return the above defined new string
    */
-  public String stringBits(String str) {
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < str.length(); i += 2) {
-      sb.append(str.charAt(i));
+  public String stringBits(String string) {
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < string.length(); i += 2) {
+      builder.append(string.charAt(i));
     }
-    return sb.toString();
+    return builder.toString();
   }
 
   /**
    * Given a non-empty string like "Code" return a string like "CCoCodCode".
    *
-   * @param str the input string
-   * @return the concatenation of substrings of the input string
+   * @param string the input string
+   * @return the above defined new string
    */
-  public String stringSplosion(String str) {
-    StringBuilder sb = new StringBuilder();
-    for (int i = 1; i <= str.length(); i++) {
-      sb.append(str.substring(0, i));
+  public String stringSplosion(String string) {
+    StringBuilder builder = new StringBuilder();
+    for (int i = 1; i <= string.length(); i++) {
+      String part = string.substring(0, i);
+      builder.append(part);
     }
-    return sb.toString();
+    return builder.toString();
   }
 
   /**
@@ -106,20 +107,19 @@ public class Warmup2 {
    * the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count
    * the end substring).
    *
-   * @param str the input string
-   * @return the number of times that a substring length 2 appears in the string and also as the
-   *         last 2 chars of the string
+   * @param string the input string
+   * @return the above defined number
    */
-  public int last2(String str) {
-    int ret = 0;
-    String end = str.length() > 1 ? str.substring(str.length() - 2) : "";
-    for (int i = 0; i < str.length() - 2; i++) {
-      String sub = str.substring(i, i + 2);
-      if (sub.equals(end)) {
-        ret++;
+  public int last2(String string) {
+    int result = 0;
+    String endPart = string.length() > 1 ? string.substring(string.length() - 2) : "";
+    for (int i = 0; i < string.length() - 2; i++) {
+      String part = string.substring(i, i + 2);
+      if (part.equals(endPart)) {
+        result++;
       }
     }
-    return ret;
+    return result;
   }
 
   /**
