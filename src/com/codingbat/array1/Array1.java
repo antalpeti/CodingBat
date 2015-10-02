@@ -134,4 +134,19 @@ public class Array1 {
   public int[] middleWay(int[] aNumbers, int[] bNumbers) {
     return new int[] {aNumbers[1], bNumbers[1]};
   }
+
+  /**
+   * Given an array of ints, return a new array length 2 containing the first and last elements from
+   * the original array. The original array will be length 1 or more.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new array
+   */
+  public int[] makeEnds(int[] numbers) {
+    if (numbers.length > 0) {
+      return new int[] {numbers[0], numbers[numbers.length - 1]};
+    } else {
+      return new int[] {};
+    }
+  }
 }

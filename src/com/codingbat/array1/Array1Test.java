@@ -192,4 +192,21 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {0, 2},
         instance.middleWay(new int[] {-1, 0, 1}, new int[] {1, 2, 3}));
   }
+
+  /**
+   * Test method for {@link Array1#makeEnds(int[])}.
+   */
+  @Test
+  public void testMakeEnds() {
+    Assert.assertArrayEquals(new int[] {1, 3}, instance.makeEnds(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {1, 4}, instance.makeEnds(new int[] {1, 2, 3, 4}));
+    Assert.assertArrayEquals(new int[] {7, 2}, instance.makeEnds(new int[] {7, 4, 6, 2}));
+    Assert.assertArrayEquals(new int[] {1, 3},
+        instance.makeEnds(new int[] {1, 2, 2, 2, 2, 2, 2, 3}));
+    Assert.assertArrayEquals(new int[] {7, 4}, instance.makeEnds(new int[] {7, 4}));
+    Assert.assertArrayEquals(new int[] {7, 7}, instance.makeEnds(new int[] {7}));
+    Assert.assertArrayEquals(new int[] {}, instance.makeEnds(new int[] {}));
+    Assert.assertArrayEquals(new int[] {5, 9}, instance.makeEnds(new int[] {5, 2, 9}));
+    Assert.assertArrayEquals(new int[] {2, 1}, instance.makeEnds(new int[] {2, 3, 4, 1}));
+  }
 }
