@@ -209,4 +209,21 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {5, 9}, instance.makeEnds(new int[] {5, 2, 9}));
     Assert.assertArrayEquals(new int[] {2, 1}, instance.makeEnds(new int[] {2, 3, 4, 1}));
   }
+
+  /**
+   * Test method for {@link Array1#has23(int[])}.
+   */
+  @Test
+  public void testHas23() {
+    Assert.assertEquals(true, instance.has23(new int[] {2, 5}));
+    Assert.assertEquals(true, instance.has23(new int[] {4, 3}));
+    Assert.assertEquals(false, instance.has23(new int[] {4, 5}));
+    Assert.assertEquals(true, instance.has23(new int[] {2, 2}));
+    Assert.assertEquals(true, instance.has23(new int[] {2, 3}));
+    Assert.assertEquals(true, instance.has23(new int[] {3, 2}));
+    Assert.assertEquals(true, instance.has23(new int[] {3, 3}));
+    Assert.assertEquals(false, instance.has23(new int[] {7, 7}));
+    Assert.assertEquals(true, instance.has23(new int[] {3, 9}));
+    Assert.assertEquals(false, instance.has23(new int[] {9, 5}));
+  }
 }

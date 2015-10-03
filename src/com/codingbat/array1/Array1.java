@@ -149,4 +149,16 @@ public class Array1 {
       return new int[] {};
     }
   }
+
+  /**
+   * Given an int array length 2, return true if it contains a 2 or a 3.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned condition fulfilled
+   */
+  public boolean has23(int[] numbers) {
+    boolean arrayContains2 = numbers[0] == 2 || numbers[1] == 2;
+    boolean arrayContains3 = numbers[0] == 3 || numbers[1] == 3;
+    return arrayContains2 || arrayContains3;
+  }
 }
