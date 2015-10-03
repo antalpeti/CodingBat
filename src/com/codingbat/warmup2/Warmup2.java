@@ -125,29 +125,29 @@ public class Warmup2 {
   /**
    * Given an array of ints, return the number of 9's in the array.
    *
-   * @param nums the input numbers
-   * @return the number of 9's in the array
+   * @param numbers the input numbers
+   * @return the above defined number
    */
-  public int arrayCount9(int[] nums) {
-    int count = 0;
-    for (int i = 0; i < nums.length; i++) {
-      if (nums[i] == 9) {
-        count++;
+  public int arrayCount9(int[] numbers) {
+    int numberOf9 = 0;
+    for (int i = 0; i < numbers.length; i++) {
+      if (numbers[i] == 9) {
+        numberOf9++;
       }
     }
-    return count;
+    return numberOf9;
   }
 
   /**
    * Given an array of ints, return true if one of the first 4 elements in the array is a 9. The
    * array length may be less than 4.
    *
-   * @param nums the input numbers
-   * @return true, if one of the first 4 elements in the array is a 9
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean arrayFront9(int[] nums) {
-    for (int i = 0; i < nums.length && i < 4; i++) {
-      if (nums[i] == 9) {
+  public boolean arrayFront9(int[] numbers) {
+    for (int i = 0; i < numbers.length && i < 4; i++) {
+      if (numbers[i] == 9) {
         return true;
       }
     }
@@ -157,12 +157,15 @@ public class Warmup2 {
   /**
    * Given an array of ints, return true if .. 1, 2, 3, .. appears in the array somewhere.
    *
-   * @param nums the input numbers
-   * @return true, if .. 1, 2, 3, .. appears in the array somewhere
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean array123(int[] nums) {
-    for (int i = 0; i < nums.length - 2; i++) {
-      if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3) {
+  public boolean array123(int[] numbers) {
+    for (int i = 0; i < numbers.length - 2; i++) {
+      boolean one = numbers[i] == 1;
+      boolean two = numbers[i + 1] == 2;
+      boolean three = numbers[i + 2] == 3;
+      if (one && two && three) {
         return true;
       }
     }
@@ -174,38 +177,41 @@ public class Warmup2 {
    * 2 substring. So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings
    * appear in the same place in both strings.
    *
-   * @param a the first input string
-   * @param b the second input string
-   * @return the number of the positions where they contain the same length 2 substring
+   * @param aString the first input string
+   * @param bString the second input string
+   * @return the above defined number
    */
-  public int stringMatch(String a, String b) {
-    int len = Math.min(a.length(), b.length());
-    int count = 0;
+  public int stringMatch(String aString, String bString) {
+    int minLength = Math.min(aString.length(), bString.length());
+    int numberOfSameStringPart = 0;
 
-    for (int i = 0; i < len - 1; i++) {
-      if (a.substring(i, i + 2).equals(b.substring(i, i + 2))) {
-        count++;
+    for (int i = 0; i < minLength - 1; i++) {
+      String aStringPart = aString.substring(i, i + 2);
+      String bStringPart = bString.substring(i, i + 2);
+      if (aStringPart.equals(bStringPart)) {
+        numberOfSameStringPart++;
       }
     }
 
-    return count;
+    return numberOfSameStringPart;
   }
 
   /**
    * Given a string, return a version where all the "x" have been removed. Except an "x" at the very
    * start or end should not be removed.
    *
-   * @param str the input string
-   * @return the input string version where all the 'x' have been removed, except the char at the
-   *         start or end position of the original string
+   * @param string the input string
+   * @return the above mentioned new string
    */
-  public String stringX(String str) {
-    if (str.length() > 2) {
-      String sub = str.substring(1, str.length() - 1);
-      sub = sub.replaceAll("x", "");
-      return str.charAt(0) + sub + str.charAt(str.length() - 1);
+  public String stringX(String string) {
+    if (string.length() > 2) {
+      String withoutStartEnd = string.substring(1, string.length() - 1);
+      withoutStartEnd = withoutStartEnd.replaceAll("x", "");
+      char startChar = string.charAt(0);
+      char endChar = string.charAt(string.length() - 1);
+      return startChar + withoutStartEnd + endChar;
     } else {
-      return str;
+      return string;
     }
   }
 
@@ -213,17 +219,18 @@ public class Warmup2 {
    * Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens"
    * yields "kien".
    *
-   * @param str the input string
-   * @return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so of the input string
+   * @param string the input string
+   * @return the above mentioned new string
    */
-  public String altPairs(String str) {
-    String out = "";
-    for (int i = 0; i < str.length(); i = i + 4) {
-      int end = i + 2;
-      end = Math.min(str.length(), end);
-      out = out + str.substring(i, end);
+  public String altPairs(String string) {
+    String result = "";
+    for (int i = 0; i < string.length(); i = i + 4) {
+      int endPosition = i + 2;
+      endPosition = Math.min(string.length(), endPosition);
+      String part = string.substring(i, endPosition);
+      result = result + part;
     }
-    return out;
+    return result;
   }
 
   /**
