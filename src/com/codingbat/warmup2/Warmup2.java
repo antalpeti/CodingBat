@@ -237,47 +237,49 @@ public class Warmup2 {
    * Suppose the string "yak" is unlucky. Given a string, return a version where all the "yak" are
    * removed, but the "a" can be any char. The "yak" strings will not overlap.
    *
-   * @param str the input string
-   * @return a string without the y.k substring
+   * @param string the input string
+   * @return the above mentioned new string
    */
-  public String stringYak(String str) {
-    return str.replaceAll("y.k", "");
+  public String stringYak(String string) {
+    return string.replaceAll("y.k", "");
   }
 
   /**
    * Given an array of ints, return the number of times that two 6's are next to each other in the
    * array. Also count instances where the second "6" is actually a 7.
    *
-   * @param nums the input numbers
-   * @return the number of times that two 6's are next to each other in the array, or 7's come after
-   *         the 6's
+   * @param numbers the input numbers
+   * @return the above defined number
    */
-  public int array667(int[] nums) {
-    int count = 0;
-    for (int i = 0; i < nums.length - 1; i++) {
-      if (nums[i] == 6 && (nums[i + 1] == 6 || nums[i + 1] == 7)) {
-        count++;
+  public int array667(int[] numbers) {
+    int numberOf66And67 = 0;
+    for (int i = 0; i < numbers.length - 1; i++) {
+      boolean firstNumberIsSix = numbers[i] == 6;
+      boolean secondNumberIsSixOrSeven = numbers[i + 1] == 6 || numbers[i + 1] == 7;
+      if (firstNumberIsSix && secondNumberIsSixOrSeven) {
+        numberOf66And67++;
       }
     }
-    return count;
+    return numberOf66And67;
   }
 
   /**
    * Given an array of ints, we'll say that a triple is a value appearing 3 times in a row in the
    * array. Return true if the array does not contain any triples.
    *
-   * @param nums the input numbers
-   * @return true, if the array does not contain any triples
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean noTriples(int[] nums) {
-    int count = 1;
-    for (int i = 0; i < nums.length - 1; i++) {
-      if (nums[i] == nums[i + 1]) {
-        count++;
+  public boolean noTriples(int[] numbers) {
+    int sameNumberInRow = 1;
+    for (int i = 0; i < numbers.length - 1; i++) {
+      boolean nextIsSameNumber = numbers[i] == numbers[i + 1];
+      if (nextIsSameNumber) {
+        sameNumberInRow++;
       } else {
-        count = 1;
+        sameNumberInRow = 1;
       }
-      if (count == 3) {
+      if (sameNumberInRow == 3) {
         return false;
       }
     }
@@ -289,13 +291,15 @@ public class Warmup2 {
    * the value plus 5, followed by the value minus 1. Additionally the 271 counts even if the "1"
    * differs by 2 or less from the correct value.
    *
-   * @param nums the input numbers
-   * @return true, if the input numbers fulfill the above restrictions
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean has271(int[] nums) {
-    for (int i = 0; i < nums.length - 2; i++) {
-      int val = nums[i];
-      if (nums[i + 1] == val + 5 && Math.abs(nums[i + 2] - (val - 1)) <= 2) {
+  public boolean has271(int[] numbers) {
+    for (int i = 0; i < numbers.length - 2; i++) {
+      int value = numbers[i];
+      boolean valueWithPlusFive = numbers[i + 1] == value + 5;
+      boolean valueDifferTwoOrLess = Math.abs(numbers[i + 2] - (value - 1)) <= 2;
+      if (valueWithPlusFive && valueDifferTwoOrLess) {
         return true;
       }
     }
