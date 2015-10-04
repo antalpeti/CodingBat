@@ -161,4 +161,16 @@ public class Array1 {
     boolean arrayContains3 = numbers[0] == 3 || numbers[1] == 3;
     return arrayContains2 || arrayContains3;
   }
+
+  /**
+   * Given an int array length 2, return true if it does not contain a 2 or 3.
+   *
+   * @param nums the input numbers
+   * @return true, if the above mentioned condition fulfilled
+   */
+  public boolean no23(int[] nums) {
+    boolean arrayNotContains2 = nums[0] != 2 && nums[1] != 2;
+    boolean arrayNotContains3 = nums[0] != 3 && nums[1] != 3;
+    return arrayNotContains2 && arrayNotContains3;
+  }
 }
