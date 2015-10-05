@@ -23,13 +23,13 @@ public class Array1 {
    * Given an array of ints, return true if the array is length 1 or more, and the first element and
    * the last element are equal.
    *
-   * @param nums the input numbers
+   * @param numbers the input numbers
    * @return true, if the above described condition fulfilled
    */
-  public boolean sameFirstLast(int[] nums) {
+  public boolean sameFirstLast(int[] numbers) {
     int firstIndex = 0;
-    int lastIndex = nums.length - 1;
-    return nums.length > firstIndex && nums[firstIndex] == nums[lastIndex];
+    int lastIndex = numbers.length - 1;
+    return numbers.length > firstIndex && numbers[firstIndex] == numbers[lastIndex];
   }
 
   /**
@@ -165,12 +165,12 @@ public class Array1 {
   /**
    * Given an int array length 2, return true if it does not contain a 2 or 3.
    *
-   * @param nums the input numbers
+   * @param numbers the input numbers
    * @return true, if the above mentioned condition fulfilled
    */
-  public boolean no23(int[] nums) {
-    boolean arrayNotContains2 = nums[0] != 2 && nums[1] != 2;
-    boolean arrayNotContains3 = nums[0] != 3 && nums[1] != 3;
+  public boolean no23(int[] numbers) {
+    boolean arrayNotContains2 = numbers[0] != 2 && numbers[1] != 2;
+    boolean arrayNotContains3 = numbers[0] != 3 && numbers[1] != 3;
     return arrayNotContains2 && arrayNotContains3;
   }
 

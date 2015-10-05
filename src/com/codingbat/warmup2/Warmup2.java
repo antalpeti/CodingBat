@@ -9,14 +9,14 @@ public class Warmup2 {
    * Given a string and a non-negative int n, return a larger string that is n copies of the
    * original string.
    *
-   * @param string the input string
+   * @param text the input string
    * @param number the number of copies
    * @return the above mentioned new string
    */
-  public String stringTimes(String string, int number) {
+  public String stringTimes(String text, int number) {
     StringBuilder builder = new StringBuilder();
     for (int i = 0; i < number; i++) {
-      builder.append(string);
+      builder.append(text);
     }
     return builder.toString();
   }
@@ -25,14 +25,14 @@ public class Warmup2 {
    * Given a string and a non-negative int n, we'll say that the front of the string is the first 3
    * chars, or whatever is there if the string is less than length 3. Return n copies of the front;
    *
-   * @param string the input string
+   * @param text the input string
    * @param number the number of copies
    * @return the above mentioned new string
    */
-  public String frontTimes(String string, int number) {
+  public String frontTimes(String text, int number) {
     int frontLength = 3;
     StringBuilder builder = new StringBuilder();
-    String frontPart = string.length() > frontLength ? string.substring(0, frontLength) : string;
+    String frontPart = text.length() > frontLength ? text.substring(0, frontLength) : text;
     for (int i = 0; i < number; i++) {
       builder.append(frontPart);
     }
@@ -43,13 +43,13 @@ public class Warmup2 {
    * Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx"
    * contains 2 "xx".
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above defined number
    */
-  public int countXX(String string) {
+  public int countXX(String text) {
     int numberOfXX = 0;
-    for (int i = 0; i < string.length() - 1; i++) {
-      if ("xx".equals(string.substring(i, i + 2))) {
+    for (int i = 0; i < text.length() - 1; i++) {
+      if ("xx".equals(text.substring(i, i + 2))) {
         ++numberOfXX;
       }
     }
@@ -60,15 +60,15 @@ public class Warmup2 {
    * Given a string, return true if the first instance of "x" in the string is immediately followed
    * by another "x".
    *
-   * @param string the input string
+   * @param text the input string
    * @return true, if the above defined conditions fulfilled
    */
-  boolean doubleX(String string) {
-    int i = string.indexOf("x");
+  boolean doubleX(String text) {
+    int i = text.indexOf("x");
     if (i == -1) {
       return false;
     }
-    String startWithXSubstring = string.substring(i);
+    String startWithXSubstring = text.substring(i);
     return startWithXSubstring.startsWith("xx");
   }
 
@@ -76,13 +76,13 @@ public class Warmup2 {
    * Given a string, return a new string made of every other char (every second char) starting with
    * the first, so "Hello" yields "Hlo".
    *
-   * @param string input string
+   * @param text input string
    * @return the above defined new string
    */
-  public String stringBits(String string) {
+  public String stringBits(String text) {
     StringBuilder builder = new StringBuilder();
-    for (int i = 0; i < string.length(); i += 2) {
-      builder.append(string.charAt(i));
+    for (int i = 0; i < text.length(); i += 2) {
+      builder.append(text.charAt(i));
     }
     return builder.toString();
   }
@@ -90,13 +90,13 @@ public class Warmup2 {
   /**
    * Given a non-empty string like "Code" return a string like "CCoCodCode".
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above defined new string
    */
-  public String stringSplosion(String string) {
+  public String stringSplosion(String text) {
     StringBuilder builder = new StringBuilder();
-    for (int i = 1; i <= string.length(); i++) {
-      String part = string.substring(0, i);
+    for (int i = 1; i <= text.length(); i++) {
+      String part = text.substring(0, i);
       builder.append(part);
     }
     return builder.toString();
@@ -107,14 +107,14 @@ public class Warmup2 {
    * the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count
    * the end substring).
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above defined number
    */
-  public int last2(String string) {
+  public int last2(String text) {
     int result = 0;
-    String endPart = string.length() > 1 ? string.substring(string.length() - 2) : "";
-    for (int i = 0; i < string.length() - 2; i++) {
-      String part = string.substring(i, i + 2);
+    String endPart = text.length() > 1 ? text.substring(text.length() - 2) : "";
+    for (int i = 0; i < text.length() - 2; i++) {
+      String part = text.substring(i, i + 2);
       if (part.equals(endPart)) {
         result++;
       }
@@ -177,17 +177,17 @@ public class Warmup2 {
    * 2 substring. So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings
    * appear in the same place in both strings.
    *
-   * @param aString the first input string
-   * @param bString the second input string
+   * @param aText the first input string
+   * @param bText the second input string
    * @return the above defined number
    */
-  public int stringMatch(String aString, String bString) {
-    int minLength = Math.min(aString.length(), bString.length());
+  public int stringMatch(String aText, String bText) {
+    int minLength = Math.min(aText.length(), bText.length());
     int numberOfSameStringPart = 0;
 
     for (int i = 0; i < minLength - 1; i++) {
-      String aStringPart = aString.substring(i, i + 2);
-      String bStringPart = bString.substring(i, i + 2);
+      String aStringPart = aText.substring(i, i + 2);
+      String bStringPart = bText.substring(i, i + 2);
       if (aStringPart.equals(bStringPart)) {
         numberOfSameStringPart++;
       }
@@ -200,18 +200,18 @@ public class Warmup2 {
    * Given a string, return a version where all the "x" have been removed. Except an "x" at the very
    * start or end should not be removed.
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above mentioned new string
    */
-  public String stringX(String string) {
-    if (string.length() > 2) {
-      String withoutStartEnd = string.substring(1, string.length() - 1);
+  public String stringX(String text) {
+    if (text.length() > 2) {
+      String withoutStartEnd = text.substring(1, text.length() - 1);
       withoutStartEnd = withoutStartEnd.replaceAll("x", "");
-      char startChar = string.charAt(0);
-      char endChar = string.charAt(string.length() - 1);
+      char startChar = text.charAt(0);
+      char endChar = text.charAt(text.length() - 1);
       return startChar + withoutStartEnd + endChar;
     } else {
-      return string;
+      return text;
     }
   }
 
@@ -219,15 +219,15 @@ public class Warmup2 {
    * Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens"
    * yields "kien".
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above mentioned new string
    */
-  public String altPairs(String string) {
+  public String altPairs(String text) {
     String result = "";
-    for (int i = 0; i < string.length(); i = i + 4) {
+    for (int i = 0; i < text.length(); i = i + 4) {
       int endPosition = i + 2;
-      endPosition = Math.min(string.length(), endPosition);
-      String part = string.substring(i, endPosition);
+      endPosition = Math.min(text.length(), endPosition);
+      String part = text.substring(i, endPosition);
       result = result + part;
     }
     return result;
@@ -237,11 +237,11 @@ public class Warmup2 {
    * Suppose the string "yak" is unlucky. Given a string, return a version where all the "yak" are
    * removed, but the "a" can be any char. The "yak" strings will not overlap.
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above mentioned new string
    */
-  public String stringYak(String string) {
-    return string.replaceAll("y.k", "");
+  public String stringYak(String text) {
+    return text.replaceAll("y.k", "");
   }
 
   /**

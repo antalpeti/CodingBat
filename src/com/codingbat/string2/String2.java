@@ -9,13 +9,13 @@ public class String2 {
   /**
    * Given a string, return a string where for every char in the original, there are two chars.
    *
-   * @param str the input string
+   * @param text the input string
    * @return an above described new string
    */
-  public String doubleChar(String str) {
+  public String doubleChar(String text) {
     String doubleStr = "";
-    for (int i = 0; i < str.length(); i++) {
-      String ch = str.charAt(i) + "";
+    for (int i = 0; i < text.length(); i++) {
+      String ch = text.charAt(i) + "";
       doubleStr += ch + ch;
     }
     return doubleStr;

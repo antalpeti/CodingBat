@@ -122,11 +122,11 @@ public class Warmup1 {
    * string already begins with "not", return the string unchanged. Note: use .equals() to compare 2
    * strings.
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above mentioned new string
    */
-  public String notString(String string) {
-    return string.startsWith("not") ? string : "not " + string;
+  public String notString(String text) {
+    return text.startsWith("not") ? text : "not " + text;
   }
 
   /**
@@ -134,34 +134,34 @@ public class Warmup1 {
    * removed. The value of n will be a valid index of a char in the original string (i.e. n will be
    * in the range 0..str.length()-1 inclusive).
    *
-   * @param string the input string
+   * @param text the input string
    * @param index the index of the input string
    * @return the above defined new string, or the input string if n is not valid index
    */
-  public String missingChar(String string, int index) {
-    boolean validIndex = 0 <= index && index < string.length();
+  public String missingChar(String text, int index) {
+    boolean validIndex = 0 <= index && index < text.length();
     if (validIndex) {
       String charOnIndexNRemoved =
-          string.substring(0, index) + string.substring(index + 1, string.length());
+          text.substring(0, index) + text.substring(index + 1, text.length());
       return charOnIndexNRemoved;
     }
-    return string;
+    return text;
   }
 
   /**
    * Given a string, return a new string where the first and last chars have been exchanged.
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above mentioned new string
    */
-  public String frontBack(String string) {
-    if (string.length() > 1) {
+  public String frontBack(String text) {
+    if (text.length() > 1) {
       String firstLastCharsExchanged =
-          string.charAt(string.length() - 1) + string.substring(1, string.length() - 1)
-              + string.charAt(0);
+          text.charAt(text.length() - 1) + text.substring(1, text.length() - 1)
+              + text.charAt(0);
       return firstLastCharsExchanged;
     }
-    return string;
+    return text;
   }
 
   /**
@@ -169,11 +169,11 @@ public class Warmup1 {
    * length is less than 3, the front is whatever is there. Return a new string which is 3 copies of
    * the front.
    *
-   * @param string the input string with arbitrary length
+   * @param text the input string with arbitrary length
    * @return the above mentioned new string
    */
-  public String front3(String string) {
-    String front = string.length() > 2 ? string.substring(0, 3) : string;
+  public String front3(String text) {
+    String front = text.length() > 2 ? text.substring(0, 3) : text;
     return front + front + front;
   }
 
@@ -181,17 +181,17 @@ public class Warmup1 {
    * Given a string, take the last char and return a new string with the last char added at the
    * front and back, so "cat" yields "tcatt". The original string will be length 1 or more.
    *
-   * @param string the input string with at least length 1
+   * @param text the input string with at least length 1
    * @return the above mentioned new string
    */
-  public String backAround(String string) {
-    boolean notEmptyString = !string.isEmpty();
+  public String backAround(String text) {
+    boolean notEmptyString = !text.isEmpty();
     String lastCharAroundString = null;
     if (notEmptyString) {
       lastCharAroundString =
-          string.charAt(string.length() - 1) + string + string.charAt(string.length() - 1);
+          text.charAt(text.length() - 1) + text + text.charAt(text.length() - 1);
     }
-    return notEmptyString ? lastCharAroundString : string;
+    return notEmptyString ? lastCharAroundString : text;
   }
 
   /**
@@ -212,27 +212,27 @@ public class Warmup1 {
    * front and back, so "kitten" yields"kikittenki". If the string length is less than 2, use
    * whatever chars are there.
    *
-   * @param string the arbitrary length string
+   * @param text the arbitrary length string
    * @return the above mentioned new string
    */
-  public String front22(String string) {
+  public String front22(String text) {
     int takeLength = 2;
-    if (takeLength > string.length()) {
-      takeLength = string.length();
+    if (takeLength > text.length()) {
+      takeLength = text.length();
     }
 
-    String frontPart = string.substring(0, takeLength);
-    return frontPart + string + frontPart;
+    String frontPart = text.substring(0, takeLength);
+    return frontPart + text + frontPart;
   }
 
   /**
    * Given a string, return true if the string starts with "hi" and false otherwise.
    *
-   * @param string the arbitrary length input string
+   * @param text the arbitrary length input string
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean startHi(String string) {
-    return string.startsWith("hi");
+  public boolean startHi(String text) {
+    return text.startsWith("hi");
   }
 
   /**
@@ -295,34 +295,34 @@ public class Warmup1 {
    * Given a string, if the string "del" appears starting at index 1, return a string where that
    * "del" has been deleted. Otherwise, return the string unchanged.
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above mentioned new string
    */
-  public String delDel(String string) {
-    return string.indexOf("del") == 1 ? string.replaceFirst("del", "") : string;
+  public String delDel(String text) {
+    return text.indexOf("del") == 1 ? text.replaceFirst("del", "") : text;
   }
 
   /**
    * Return true if the given string begins with "mix", except the 'm' can be anything, so "pix",
    * "9ix" .. all count.
    *
-   * @param string the input string
+   * @param text the input string
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean mixStart(String string) {
-    return string.length() > 2 ? string.substring(1, 3).equals("ix") : false;
+  public boolean mixStart(String text) {
+    return text.length() > 2 ? text.substring(1, 3).equals("ix") : false;
   }
 
   /**
    * Given a string, return a string made of the first 2 chars (if present), however include first
    * char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
    *
-   * @param str the input string
+   * @param text the input string
    * @return the above mentioned new string
    */
-  public String startOz(String str) {
-    String firstChar = str.length() > 0 && str.charAt(0) == 'o' ? "o" : "";
-    String secondChar = str.length() > 1 && str.charAt(1) == 'z' ? "z" : "";
+  public String startOz(String text) {
+    String firstChar = text.length() > 0 && text.charAt(0) == 'o' ? "o" : "";
+    String secondChar = text.length() > 1 && text.charAt(1) == 'z' ? "z" : "";
     return firstChar + secondChar;
   }
 
@@ -400,13 +400,13 @@ public class Warmup1 {
   /**
    * Return true if the given string contains between 1 and 3 'e' chars.
    *
-   * @param string the input string
+   * @param text the input string
    * @return true, if the above mentioned condition fulfilled
    */
-  public boolean stringE(String string) {
+  public boolean stringE(String text) {
     int count = 0;
-    for (int i = 0; i < string.length(); i++) {
-      if (string.charAt(i) == 'e') {
+    for (int i = 0; i < text.length(); i++) {
+      if (text.charAt(i) == 'e') {
         count++;
       }
     }
@@ -433,15 +433,15 @@ public class Warmup1 {
    * has less than 3 chars, uppercase whatever is there. Note that str.toUpperCase() returns the
    * uppercase version of a string.
    *
-   * @param string the input string
+   * @param text the input string
    * @return the above mentioned new string
    */
-  public String endUp(String string) {
-    if (string.length() < 3) {
-      return string.toUpperCase();
+  public String endUp(String text) {
+    if (text.length() < 3) {
+      return text.toUpperCase();
     } else {
-      String stringBeginPart = string.substring(0, string.length() - 3);
-      String stringEndPart = string.substring(string.length() - 3, string.length());
+      String stringBeginPart = text.substring(0, text.length() - 3);
+      String stringEndPart = text.substring(text.length() - 3, text.length());
       return stringBeginPart + stringEndPart.toUpperCase();
     }
   }
@@ -450,14 +450,14 @@ public class Warmup1 {
    * Given a non-empty string and an int N, return the string made starting with char 0, and then
    * every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
    *
-   * @param string the input string
+   * @param text the input string
    * @param number the input number
    * @return the above mentioned new string
    */
-  public String everyNth(String string, int number) {
+  public String everyNth(String text, int number) {
     StringBuilder builder = new StringBuilder();
-    for (int i = 0; i < string.length(); i = i + number) {
-      builder.append(string.charAt(i));
+    for (int i = 0; i < text.length(); i = i + number) {
+      builder.append(text.charAt(i));
     }
     return builder.toString();
   }
