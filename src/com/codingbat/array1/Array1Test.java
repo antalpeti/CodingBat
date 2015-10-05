@@ -244,4 +244,22 @@ public class Array1Test {
     Assert.assertEquals(true, instance.no23(new int[] {7, 8}));
     Assert.assertEquals(true, instance.no23(new int[] {8, 7}));
   }
+
+  /**
+   * Test method for {@link Array1#makeLast(int[])}.
+   */
+  @Test
+  public void testMakeLast() {
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 0, 6}, instance.makeLast(new int[] {4, 5, 6}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 2}, instance.makeLast(new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {0, 3}, instance.makeLast(new int[] {3}));
+    Assert.assertArrayEquals(new int[] {0, 0}, instance.makeLast(new int[] {0}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 0, 7}, instance.makeLast(new int[] {7, 7, 7}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 0, 4}, instance.makeLast(new int[] {3, 1, 4}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 0, 0, 0, 4},
+        instance.makeLast(new int[] {1, 2, 3, 4}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 0, 0, 0, 0},
+        instance.makeLast(new int[] {1, 2, 3, 0}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 4}, instance.makeLast(new int[] {2, 4}));
+  }
 }
