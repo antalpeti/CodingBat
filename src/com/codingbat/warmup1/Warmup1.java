@@ -42,7 +42,8 @@ public class Warmup1 {
    */
   public int sumDouble(int firstNumber, int secondNumber) {
     int sumOfBoth = firstNumber + secondNumber;
-    return firstNumber == secondNumber ? 2 * sumOfBoth : sumOfBoth;
+    int multiplier = 2;
+    return firstNumber == secondNumber ? multiplier * sumOfBoth : sumOfBoth;
   }
 
   /**
@@ -53,8 +54,10 @@ public class Warmup1 {
    * @return the result of the above mentioned calculation
    */
   public int diff21(int inputNumber) {
-    int absoluteDifferenceFrom21 = Math.abs(inputNumber - 21);
-    return inputNumber > 21 ? 2 * absoluteDifferenceFrom21 : absoluteDifferenceFrom21;
+    int border = 21;
+    int absoluteDifferenceFrom21 = Math.abs(inputNumber - border);
+    int multiplier = 2;
+    return inputNumber > border ? multiplier * absoluteDifferenceFrom21 : absoluteDifferenceFrom21;
   }
 
   /**
@@ -67,8 +70,13 @@ public class Warmup1 {
    * @return true, if the above mentioned condition is fulfilled
    */
   public boolean parrotTrouble(boolean parrotTalking, int actualHourOfDay) {
-    boolean inForbiddenMorningHours = -1 < actualHourOfDay && actualHourOfDay < 7;
-    boolean inForbiddenEveningHours = 20 < actualHourOfDay && actualHourOfDay < 24;
+    int zeroHour = 0;
+    int sixHour = 6;
+    boolean inForbiddenMorningHours = zeroHour <= actualHourOfDay && actualHourOfDay <= sixHour;
+    int twentyOneHour = 21;
+    int twentyThreeHour = 23;
+    boolean inForbiddenEveningHours =
+        twentyOneHour <= actualHourOfDay && actualHourOfDay <= twentyThreeHour;
     boolean inForbiddenHours = inForbiddenMorningHours || inForbiddenEveningHours;
     boolean inTrouble = parrotTalking && inForbiddenHours;
     return inTrouble;
@@ -98,7 +106,8 @@ public class Warmup1 {
   public boolean nearHundred(int number) {
     int distantFrom100 = Math.abs(100 - number);
     int distantFrom200 = Math.abs(200 - number);
-    return distantFrom100 < 11 || distantFrom200 < 11;
+    int limitOfDistance = 11;
+    return distantFrom100 < limitOfDistance || distantFrom200 < limitOfDistance;
   }
 
   /**
@@ -126,7 +135,8 @@ public class Warmup1 {
    * @return the above mentioned new string
    */
   public String notString(String text) {
-    return text.startsWith("not") ? text : "not " + text;
+    String prefix = "not";
+    return text.startsWith(prefix) ? text : prefix + " " + text;
   }
 
   /**
@@ -156,9 +166,9 @@ public class Warmup1 {
    */
   public String frontBack(String text) {
     if (text.length() > 1) {
-      String exchangedFirstLastChars =
+      String exchangedFirstLastCharsText =
           text.charAt(text.length() - 1) + text.substring(1, text.length() - 1) + text.charAt(0);
-      return exchangedFirstLastChars;
+      return exchangedFirstLastCharsText;
     }
     return text;
   }
@@ -172,8 +182,8 @@ public class Warmup1 {
    * @return the above mentioned new string
    */
   public String front3(String text) {
-    String textFront = text.length() > 2 ? text.substring(0, 3) : text;
-    return textFront + textFront + textFront;
+    String frontOfText = text.length() > 2 ? text.substring(0, 3) : text;
+    return frontOfText + frontOfText + frontOfText;
   }
 
   /**
@@ -241,8 +251,11 @@ public class Warmup1 {
    * @return true, if the above mentioned condition is fulfilled
    */
   public boolean icyHot(int temperature1, int temperature2) {
-    boolean oneIsLessThanZero = temperature1 < 0 || temperature2 < 0;
-    boolean oneIsGreaterThanOneHundred = temperature1 > 100 || temperature2 > 100;
+    int minTemperature = 0;
+    boolean oneIsLessThanZero = temperature1 < minTemperature || temperature2 < minTemperature;
+    int maxTemperature = 100;
+    boolean oneIsGreaterThanOneHundred =
+        temperature1 > maxTemperature || temperature2 > maxTemperature;
     return oneIsLessThanZero && oneIsGreaterThanOneHundred;
   }
 
@@ -254,8 +267,8 @@ public class Warmup1 {
    * @return true, if the above mentioned condition is fulfilled
    */
   public boolean in1020(int aNumber, int bNumber) {
-    boolean aNumberInRange = 9 < aNumber && aNumber < 21;
-    boolean bNumberInRange = 9 < bNumber && bNumber < 21;
+    boolean aNumberInRange = 10 <= aNumber && aNumber <= 20;
+    boolean bNumberInRange = 10 <= bNumber && bNumber <= 20;
     return aNumberInRange || bNumberInRange;
   }
 
