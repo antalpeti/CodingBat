@@ -162,10 +162,10 @@ public class Warmup2 {
    */
   public boolean array123(int[] numbers) {
     for (int i = 0; i < numbers.length - 2; i++) {
-      boolean one = numbers[i] == 1;
-      boolean two = numbers[i + 1] == 2;
-      boolean three = numbers[i + 2] == 3;
-      if (one && two && three) {
+      boolean numberOnePresent = numbers[i] == 1;
+      boolean numberTwoPresent = numbers[i + 1] == 2;
+      boolean numberThreePresent = numbers[i + 2] == 3;
+      if (numberOnePresent && numberTwoPresent && numberThreePresent) {
         return true;
       }
     }
@@ -186,9 +186,9 @@ public class Warmup2 {
     int amountOfSameStringPart = 0;
 
     for (int i = 0; i < minLength - 1; i++) {
-      String aStringPart = aText.substring(i, i + 2);
-      String bStringPart = bText.substring(i, i + 2);
-      if (aStringPart.equals(bStringPart)) {
+      String aTextPart = aText.substring(i, i + 2);
+      String bTextPart = bText.substring(i, i + 2);
+      if (aTextPart.equals(bTextPart)) {
         amountOfSameStringPart++;
       }
     }

@@ -67,11 +67,11 @@ public class Warmup1 {
    * @return true, if the above mentioned condition is fulfilled
    */
   public boolean parrotTrouble(boolean parrotTalking, int actualHourOfDay) {
-    boolean allowableMorningHours = -1 < actualHourOfDay && actualHourOfDay < 7;
-    boolean allowableEveningHours = 20 < actualHourOfDay && actualHourOfDay < 24;
-    boolean insideAllowableHours = allowableMorningHours || allowableEveningHours;
-    boolean troubleStatus = parrotTalking && insideAllowableHours;
-    return troubleStatus;
+    boolean inForbiddenMorningHours = -1 < actualHourOfDay && actualHourOfDay < 7;
+    boolean inForbiddenEveningHours = 20 < actualHourOfDay && actualHourOfDay < 24;
+    boolean inForbiddenHours = inForbiddenMorningHours || inForbiddenEveningHours;
+    boolean inTrouble = parrotTalking && inForbiddenHours;
+    return inTrouble;
   }
 
   /**
@@ -96,9 +96,9 @@ public class Warmup1 {
    * @return true, if the above mentioned condition is fulfilled
    */
   public boolean nearHundred(int number) {
-    int range100 = Math.abs(100 - number);
-    int range200 = Math.abs(200 - number);
-    return range100 < 11 || range200 < 11;
+    int distantFrom100 = Math.abs(100 - number);
+    int distantFrom200 = Math.abs(200 - number);
+    return distantFrom100 < 11 || distantFrom200 < 11;
   }
 
   /**
@@ -141,9 +141,9 @@ public class Warmup1 {
   public String missingChar(String text, int index) {
     boolean validIndex = 0 <= index && index < text.length();
     if (validIndex) {
-      String charOnIndexNRemoved =
+      String removedCharOnIndexN =
           text.substring(0, index) + text.substring(index + 1, text.length());
-      return charOnIndexNRemoved;
+      return removedCharOnIndexN;
     }
     return text;
   }
@@ -156,9 +156,9 @@ public class Warmup1 {
    */
   public String frontBack(String text) {
     if (text.length() > 1) {
-      String firstLastCharsExchanged =
+      String exchangedFirstLastChars =
           text.charAt(text.length() - 1) + text.substring(1, text.length() - 1) + text.charAt(0);
-      return firstLastCharsExchanged;
+      return exchangedFirstLastChars;
     }
     return text;
   }
@@ -172,8 +172,8 @@ public class Warmup1 {
    * @return the above mentioned new string
    */
   public String front3(String text) {
-    String front = text.length() > 2 ? text.substring(0, 3) : text;
-    return front + front + front;
+    String textFront = text.length() > 2 ? text.substring(0, 3) : text;
+    return textFront + textFront + textFront;
   }
 
   /**
@@ -184,12 +184,12 @@ public class Warmup1 {
    * @return the above mentioned new string
    */
   public String backAround(String text) {
-    boolean notEmptyString = !text.isEmpty();
-    String lastCharAroundString = null;
-    if (notEmptyString) {
-      lastCharAroundString = text.charAt(text.length() - 1) + text + text.charAt(text.length() - 1);
+    boolean notEmptyText = !text.isEmpty();
+    String lastCharAroundText = null;
+    if (notEmptyText) {
+      lastCharAroundText = text.charAt(text.length() - 1) + text + text.charAt(text.length() - 1);
     }
-    return notEmptyString ? lastCharAroundString : text;
+    return notEmptyText ? lastCharAroundText : text;
   }
 
   /**
