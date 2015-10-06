@@ -157,8 +157,7 @@ public class Warmup1 {
   public String frontBack(String text) {
     if (text.length() > 1) {
       String firstLastCharsExchanged =
-          text.charAt(text.length() - 1) + text.substring(1, text.length() - 1)
-              + text.charAt(0);
+          text.charAt(text.length() - 1) + text.substring(1, text.length() - 1) + text.charAt(0);
       return firstLastCharsExchanged;
     }
     return text;
@@ -188,8 +187,7 @@ public class Warmup1 {
     boolean notEmptyString = !text.isEmpty();
     String lastCharAroundString = null;
     if (notEmptyString) {
-      lastCharAroundString =
-          text.charAt(text.length() - 1) + text + text.charAt(text.length() - 1);
+      lastCharAroundString = text.charAt(text.length() - 1) + text + text.charAt(text.length() - 1);
     }
     return notEmptyString ? lastCharAroundString : text;
   }
@@ -404,13 +402,13 @@ public class Warmup1 {
    * @return true, if the above mentioned condition fulfilled
    */
   public boolean stringE(String text) {
-    int count = 0;
+    int amountOfCharE = 0;
     for (int i = 0; i < text.length(); i++) {
       if (text.charAt(i) == 'e') {
-        count++;
+        amountOfCharE++;
       }
     }
-    boolean countBetween1And3 = 0 < count && count < 4;
+    boolean countBetween1And3 = 0 < amountOfCharE && amountOfCharE < 4;
     return countBetween1And3;
   }
 

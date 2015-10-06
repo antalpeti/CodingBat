@@ -34,7 +34,7 @@ public class String1 {
    *
    * @param tag the input tag string
    * @param word the input word string
-   * @return the HTML string with tags around the word
+   * @return the above defined new string
    */
   public String makeTags(String tag, String word) {
     return "<" + tag + ">" + word + "</" + tag + ">";
@@ -47,7 +47,7 @@ public class String1 {
    *
    * @param out the input outer string
    * @param word the input word string
-   * @return a new string where the word is in the middle of the out string
+   * @return the above defined new string
    */
   public String makeOutWord(String out, String word) {
     return out.substring(0, 2) + word + out.substring(2, 4);

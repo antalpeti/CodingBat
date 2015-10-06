@@ -47,13 +47,13 @@ public class Warmup2 {
    * @return the above defined number
    */
   public int countXX(String text) {
-    int numberOfXX = 0;
+    int amountOfXX = 0;
     for (int i = 0; i < text.length() - 1; i++) {
       if ("xx".equals(text.substring(i, i + 2))) {
-        ++numberOfXX;
+        ++amountOfXX;
       }
     }
-    return numberOfXX;
+    return amountOfXX;
   }
 
   /**
@@ -129,13 +129,13 @@ public class Warmup2 {
    * @return the above defined number
    */
   public int arrayCount9(int[] numbers) {
-    int numberOf9 = 0;
+    int amountOf9 = 0;
     for (int i = 0; i < numbers.length; i++) {
       if (numbers[i] == 9) {
-        numberOf9++;
+        amountOf9++;
       }
     }
-    return numberOf9;
+    return amountOf9;
   }
 
   /**
@@ -183,17 +183,17 @@ public class Warmup2 {
    */
   public int stringMatch(String aText, String bText) {
     int minLength = Math.min(aText.length(), bText.length());
-    int numberOfSameStringPart = 0;
+    int amountOfSameStringPart = 0;
 
     for (int i = 0; i < minLength - 1; i++) {
       String aStringPart = aText.substring(i, i + 2);
       String bStringPart = bText.substring(i, i + 2);
       if (aStringPart.equals(bStringPart)) {
-        numberOfSameStringPart++;
+        amountOfSameStringPart++;
       }
     }
 
-    return numberOfSameStringPart;
+    return amountOfSameStringPart;
   }
 
   /**
@@ -252,15 +252,15 @@ public class Warmup2 {
    * @return the above defined number
    */
   public int array667(int[] numbers) {
-    int numberOf66And67 = 0;
+    int amountOf66And67 = 0;
     for (int i = 0; i < numbers.length - 1; i++) {
       boolean firstNumberIsSix = numbers[i] == 6;
       boolean secondNumberIsSixOrSeven = numbers[i + 1] == 6 || numbers[i + 1] == 7;
       if (firstNumberIsSix && secondNumberIsSixOrSeven) {
-        numberOf66And67++;
+        amountOf66And67++;
       }
     }
-    return numberOf66And67;
+    return amountOf66And67;
   }
 
   /**
