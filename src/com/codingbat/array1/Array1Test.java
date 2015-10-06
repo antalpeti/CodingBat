@@ -262,4 +262,22 @@ public class Array1Test {
         instance.makeLast(new int[] {1, 2, 3, 0}));
     Assert.assertArrayEquals(new int[] {0, 0, 0, 4}, instance.makeLast(new int[] {2, 4}));
   }
+
+  /**
+   * Test method for {@link Array1#double23(int[])}.
+   */
+  @Test
+  public void testDouble23() {
+    Assert.assertEquals(true, instance.double23(new int[] {2, 2}));
+    Assert.assertEquals(true, instance.double23(new int[] {2, 5, 2}));
+    Assert.assertEquals(true, instance.double23(new int[] {3, 3}));
+    Assert.assertEquals(true, instance.double23(new int[] {3, 1, 3}));
+    Assert.assertEquals(false, instance.double23(new int[] {2, 3}));
+    Assert.assertEquals(false, instance.double23(new int[] {3, 2}));
+    Assert.assertEquals(false, instance.double23(new int[] {4, 5}));
+    Assert.assertEquals(false, instance.double23(new int[] {2}));
+    Assert.assertEquals(false, instance.double23(new int[] {3}));
+    Assert.assertEquals(false, instance.double23(new int[] {}));
+    Assert.assertEquals(false, instance.double23(new int[] {3, 4}));
+  }
 }

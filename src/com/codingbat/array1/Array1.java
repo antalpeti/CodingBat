@@ -187,4 +187,24 @@ public class Array1 {
     result[result.length - 1] = numbers[numbers.length - 1];
     return result;
   }
+
+  /**
+   * Given an int array, return true if the array contains 2 twice, or 3 twice. The array will be
+   * length 0, 1, or 2.
+   *
+   * @param numbers the input numbers
+   * @return true, if above mentioned condition fulfilled
+   */
+  public boolean double23(int[] numbers) {
+    int amountOf2 = 0;
+    int amountOf3 = 0;
+    for (int i = 0; i < numbers.length; i++) {
+      if (numbers[i] == 2) {
+        amountOf2++;
+      } else if (numbers[i] == 3) {
+          amountOf3++;
+        }
+    }
+    return amountOf2 == 2 || amountOf3 == 2;
+  }
 }
