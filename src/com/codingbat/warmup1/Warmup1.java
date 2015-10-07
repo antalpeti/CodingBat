@@ -146,7 +146,7 @@ public class Warmup1 {
    *
    * @param text the input string
    * @param index the index of the input string
-   * @return the above defined new string, or the input string if n is not valid index
+   * @return the above mentioned new string, or the input string if n is not valid index
    */
   public String missingChar(String text, int index) {
     boolean validIndex = 0 <= index && index < text.length();
@@ -207,7 +207,7 @@ public class Warmup1 {
    * "mod" operator.
    *
    * @param number the non-negative number
-   * @return true, if the above defined condition is fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean or35(int number) {
     boolean divisibleWithThree = number % 3 == 0;
@@ -256,7 +256,7 @@ public class Warmup1 {
     int maxTemperature = 100;
     boolean oneIsGreaterThanOneHundred =
         temperature1 > maxTemperature || temperature2 > maxTemperature;
-    return oneIsLessThanZero && oneIsGreaterThanOneHundred;
+        return oneIsLessThanZero && oneIsGreaterThanOneHundred;
   }
 
   /**
@@ -343,7 +343,7 @@ public class Warmup1 {
    * @param aNumber the first number
    * @param bNumber the second number
    * @param cNumber the third number
-   * @return the above defined number
+   * @return the above mentioned number
    */
   public int intMax(int aNumber, int bNumber, int cNumber) {
     int maxNumber = Math.max(aNumber, bNumber);
@@ -356,7 +356,7 @@ public class Warmup1 {
    *
    * @param aNumber the first number
    * @param bNumber the second number
-   * @return the above defined number
+   * @return the above mentioned number
    */
   public int close10(int aNumber, int bNumber) {
     int aNumberDistanceFromTen = Math.abs(10 - aNumber);
@@ -376,7 +376,7 @@ public class Warmup1 {
    *
    * @param aNumber the first number
    * @param bNumber the second number
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean in3050(int aNumber, int bNumber) {
     boolean bothInRange3040 = 29 < aNumber && aNumber < 41 && 29 < bNumber && bNumber < 41;
@@ -412,7 +412,7 @@ public class Warmup1 {
    * Return true if the given string contains between 1 and 3 'e' chars.
    *
    * @param text the input string
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean stringE(String text) {
     int amountOfCharE = 0;
@@ -431,7 +431,7 @@ public class Warmup1 {
    *
    * @param aNumber the first number
    * @param bNumber the second number
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean lastDigit(int aNumber, int bNumber) {
     int aNumberLastDigit = aNumber % 10;

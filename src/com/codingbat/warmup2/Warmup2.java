@@ -44,7 +44,7 @@ public class Warmup2 {
    * contains 2 "xx".
    *
    * @param text the input string
-   * @return the above defined number
+   * @return the above mentioned number
    */
   public int countXX(String text) {
     int amountOfXX = 0;
@@ -61,7 +61,7 @@ public class Warmup2 {
    * by another "x".
    *
    * @param text the input string
-   * @return true, if the above defined conditions fulfilled
+   * @return true, if the above mentioned conditions is fulfilled
    */
   boolean doubleX(String text) {
     int i = text.indexOf("x");
@@ -77,7 +77,7 @@ public class Warmup2 {
    * the first, so "Hello" yields "Hlo".
    *
    * @param text input string
-   * @return the above defined new string
+   * @return the above mentioned new string
    */
   public String stringBits(String text) {
     StringBuilder builder = new StringBuilder();
@@ -91,7 +91,7 @@ public class Warmup2 {
    * Given a non-empty string like "Code" return a string like "CCoCodCode".
    *
    * @param text the input string
-   * @return the above defined new string
+   * @return the above mentioned new string
    */
   public String stringSplosion(String text) {
     StringBuilder builder = new StringBuilder();
@@ -108,7 +108,7 @@ public class Warmup2 {
    * the end substring).
    *
    * @param text the input string
-   * @return the above defined number
+   * @return the above mentioned number
    */
   public int last2(String text) {
     int result = 0;
@@ -126,7 +126,7 @@ public class Warmup2 {
    * Given an array of ints, return the number of 9's in the array.
    *
    * @param numbers the input numbers
-   * @return the above defined number
+   * @return the above mentioned number
    */
   public int arrayCount9(int[] numbers) {
     int amountOf9 = 0;
@@ -179,7 +179,7 @@ public class Warmup2 {
    *
    * @param aText the first input string
    * @param bText the second input string
-   * @return the above defined number
+   * @return the above mentioned number
    */
   public int stringMatch(String aText, String bText) {
     int minLength = Math.min(aText.length(), bText.length());
@@ -249,7 +249,7 @@ public class Warmup2 {
    * array. Also count instances where the second "6" is actually a 7.
    *
    * @param numbers the input numbers
-   * @return the above defined number
+   * @return the above mentioned number
    */
   public int array667(int[] numbers) {
     int amountOf66And67 = 0;

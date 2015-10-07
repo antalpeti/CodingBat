@@ -34,7 +34,7 @@ public class String1 {
    *
    * @param tag the input tag string
    * @param word the input word string
-   * @return the above defined new string
+   * @return the above mentioned new string
    */
   public String makeTags(String tag, String word) {
     return "<" + tag + ">" + word + "</" + tag + ">";

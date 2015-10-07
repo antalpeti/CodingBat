@@ -10,7 +10,7 @@ public class Array1 {
    * array. The array will be length 1 or more.
    *
    * @param numbers the input numbers
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean firstLast6(int[] numbers) {
     int firstIndex = 0;
@@ -24,7 +24,7 @@ public class Array1 {
    * the last element are equal.
    *
    * @param numbers the input numbers
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean sameFirstLast(int[] numbers) {
     int firstIndex = 0;
@@ -154,7 +154,7 @@ public class Array1 {
    * Given an int array length 2, return true if it contains a 2 or a 3.
    *
    * @param numbers the input numbers
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean has23(int[] numbers) {
     boolean arrayContains2 = numbers[0] == 2 || numbers[1] == 2;
@@ -166,7 +166,7 @@ public class Array1 {
    * Given an int array length 2, return true if it does not contain a 2 or 3.
    *
    * @param numbers the input numbers
-   * @return true, if the above mentioned condition fulfilled
+   * @return true, if the above mentioned condition is fulfilled
    */
   public boolean no23(int[] numbers) {
     boolean arrayNotContains2 = numbers[0] != 2 && numbers[1] != 2;
@@ -193,7 +193,7 @@ public class Array1 {
    * length 0, 1, or 2.
    *
    * @param numbers the input numbers
-   * @return true, if above mentioned condition fulfilled
+   * @return true, if above mentioned condition is fulfilled
    */
   public boolean double23(int[] numbers) {
     int amountOf2 = 0;
