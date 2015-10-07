@@ -10,7 +10,7 @@ public class Array1 {
    * array. The array will be length 1 or more.
    *
    * @param numbers the input numbers
-   * @return true, if the above described condition fulfilled
+   * @return true, if the above mentioned condition fulfilled
    */
   public boolean firstLast6(int[] numbers) {
     int firstIndex = 0;
@@ -24,7 +24,7 @@ public class Array1 {
    * the last element are equal.
    *
    * @param numbers the input numbers
-   * @return true, if the above described condition fulfilled
+   * @return true, if the above mentioned condition fulfilled
    */
   public boolean sameFirstLast(int[] numbers) {
     int firstIndex = 0;
@@ -35,7 +35,7 @@ public class Array1 {
   /**
    * Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
    *
-   * @return the above defined array
+   * @return the above mentioned new array
    */
   public int[] makePi() {
     int[] piNumbers = new int[] {3, 1, 4};
@@ -60,7 +60,7 @@ public class Array1 {
    * Given an array of ints length 3, return the sum of all the elements.
    *
    * @param numbers the input numbers
-   * @return the result of the above defined calculation
+   * @return the result of the above mentioned calculation
    */
   public int sum3(int[] numbers) {
     int sumOfNumbers = 0;
@@ -75,7 +75,7 @@ public class Array1 {
    * yields {2, 3, 1}.
    *
    * @param numbers the input numbers
-   * @return the above defined new array
+   * @return the above mentioned new array
    */
   public int[] rotateLeft3(int[] numbers) {
     return new int[] {numbers[1], numbers[2], numbers[0]};
@@ -86,7 +86,7 @@ public class Array1 {
    * 2, 3} becomes {3, 2, 1}.
    *
    * @param numbers the input numbers
-   * @return the above defined new array
+   * @return the above mentioned new array
    */
   public int[] reverse3(int[] numbers) {
     return new int[] {numbers[2], numbers[1], numbers[0]};
@@ -97,7 +97,7 @@ public class Array1 {
    * in the array, and set all the other elements to be that value. Return the changed array.
    *
    * @param numbers the input numbers
-   * @return the above defined new array
+   * @return the above mentioned changed array
    */
   public int[] maxEnd3(int[] numbers) {
     int max = Math.max(numbers[0], numbers[numbers.length - 1]);
@@ -202,9 +202,29 @@ public class Array1 {
       if (numbers[i] == 2) {
         amountOf2++;
       } else if (numbers[i] == 3) {
-          amountOf3++;
-        }
+        amountOf3++;
+      }
     }
     return amountOf2 == 2 || amountOf3 == 2;
+  }
+
+  /**
+   * Given an int array length 3, if there is a 2 in the array immediately followed by a 3, set the
+   * 3 element to 0. Return the changed array.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned changed array
+   */
+  public int[] fix23(int[] numbers) {
+    int numberTwo = 2;
+    int numberThree = 3;
+    for (int i = 0; i < numbers.length - 1; i++) {
+      boolean actualNumberIsTwo = numbers[i] == numberTwo;
+      boolean nextNumberIsThree = numbers[i + 1] == numberThree;
+      if (actualNumberIsTwo && nextNumberIsThree) {
+        numbers[i + 1] = 0;
+      }
+    }
+    return numbers;
   }
 }

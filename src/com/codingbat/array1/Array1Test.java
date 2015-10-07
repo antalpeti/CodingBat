@@ -280,4 +280,17 @@ public class Array1Test {
     Assert.assertEquals(false, instance.double23(new int[] {}));
     Assert.assertEquals(false, instance.double23(new int[] {3, 4}));
   }
+
+  /**
+   * Test method for {@link Array1#fix23(int[])}.
+   */
+  @Test
+  public void testFix23() {
+    Assert.assertArrayEquals(new int[] {1, 2, 0}, instance.fix23(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {2, 0, 5}, instance.fix23(new int[] {2, 0, 5}));
+    Assert.assertArrayEquals(new int[] {1, 2, 1}, instance.fix23(new int[] {1, 2, 1}));
+    Assert.assertArrayEquals(new int[] {3, 2, 1}, instance.fix23(new int[] {3, 2, 1}));
+    Assert.assertArrayEquals(new int[] {2, 2, 0}, instance.fix23(new int[] {2, 2, 0}));
+    Assert.assertArrayEquals(new int[] {2, 0, 3}, instance.fix23(new int[] {2, 0, 3}));
+  }
 }
