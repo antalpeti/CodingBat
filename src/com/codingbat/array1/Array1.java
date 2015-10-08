@@ -227,4 +227,23 @@ public class Array1 {
     }
     return numbers;
   }
+
+  /**
+   * Start with 2 int arrays, a and b, of any length. Return how many of the arrays have 1 as their
+   * first element.
+   *
+   * @param aNumbers the first array of numbers
+   * @param bNumbers the second array of numbers
+   * @return the above mentioned number
+   */
+  public int start1(int[] aNumbers, int[] bNumbers) {
+    int numberOfArrayStartWithOne = 0;
+    if (aNumbers.length > 0 && aNumbers[0] == 1) {
+      ++numberOfArrayStartWithOne;
+    }
+    if (bNumbers.length > 0 && bNumbers[0] == 1) {
+      ++numberOfArrayStartWithOne;
+    }
+    return numberOfArrayStartWithOne;
+  }
 }
