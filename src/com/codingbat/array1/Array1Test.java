@@ -310,4 +310,27 @@ public class Array1Test {
     Assert.assertEquals(0, instance.start1(new int[] {7}, new int[] {8}));
     Assert.assertEquals(0, instance.start1(new int[] {}, new int[] {}));
   }
+
+  /**
+   * Test method for {@link Array1#biggerTwo(int[], int[])}.
+   */
+  @Test
+  public void testBiggerTwo() {
+    Assert.assertArrayEquals(new int[] {3, 4},
+        instance.biggerTwo(new int[] {1, 2}, new int[] {3, 4}));
+    Assert.assertArrayEquals(new int[] {3, 4},
+        instance.biggerTwo(new int[] {3, 4}, new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {1, 2},
+        instance.biggerTwo(new int[] {1, 1}, new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {2, 1},
+        instance.biggerTwo(new int[] {2, 1}, new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {2, 2},
+        instance.biggerTwo(new int[] {2, 2}, new int[] {1, 3}));
+    Assert.assertArrayEquals(new int[] {1, 3},
+        instance.biggerTwo(new int[] {1, 3}, new int[] {2, 2}));
+    Assert.assertArrayEquals(new int[] {6, 7},
+        instance.biggerTwo(new int[] {6, 7}, new int[] {3, 1}));
+    Assert.assertArrayEquals(new int[] {5, 9},
+        instance.biggerTwo(new int[] {6, 7}, new int[] {5, 9}));
+  }
 }

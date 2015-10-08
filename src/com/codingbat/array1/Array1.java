@@ -246,4 +246,18 @@ public class Array1 {
     }
     return numberOfArrayStartWithOne;
   }
+
+  /**
+   * Start with 2 int arrays, a and b, each length 2. Consider the sum of the values in each array.
+   * Return the array which has the largest sum. In event of a tie, return a.
+   *
+   * @param aNumbers the first array of numbers
+   * @param bNumbers the second array of numbers
+   * @return the above mentioned array
+   */
+  public int[] biggerTwo(int[] aNumbers, int[] bNumbers) {
+    int sumOfANumbers = aNumbers[0] + aNumbers[1];
+    int sumOfBNumbers = bNumbers[0] + bNumbers[1];
+    return sumOfANumbers >= sumOfBNumbers ? aNumbers : bNumbers;
+  }
 }
