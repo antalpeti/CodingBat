@@ -333,4 +333,16 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {5, 9},
         instance.biggerTwo(new int[] {6, 7}, new int[] {5, 9}));
   }
+
+  /**
+   * Test method for {@link Array1#makeMiddle(int[])}.
+   */
+  @Test
+  public void testMakeMiddle() {
+    Assert.assertArrayEquals(new int[] {2, 3}, instance.makeMiddle(new int[] {1, 2, 3, 4}));
+    Assert.assertArrayEquals(new int[] {2, 3}, instance.makeMiddle(new int[] {7, 1, 2, 3, 4, 9}));
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.makeMiddle(new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {2, 4}, instance.makeMiddle(new int[] {5, 2, 4, 7}));
+    Assert.assertArrayEquals(new int[] {4, 3}, instance.makeMiddle(new int[] {9, 0, 4, 3, 9, 1}));
+  }
 }

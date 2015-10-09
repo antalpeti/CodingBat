@@ -260,4 +260,16 @@ public class Array1 {
     int sumOfBNumbers = bNumbers[0] + bNumbers[1];
     return sumOfANumbers >= sumOfBNumbers ? aNumbers : bNumbers;
   }
+
+  /**
+   * Given an array of ints of even length, return a new array length 2 containing the middle two
+   * elements from the original array. The original array will be length 2 or more.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new array
+   */
+  public int[] makeMiddle(int[] numbers) {
+    int rightMiddlePosition = numbers.length / 2;
+    return new int[] {numbers[rightMiddlePosition - 1], numbers[rightMiddlePosition]};
+  }
 }
