@@ -358,4 +358,19 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {9, 2, 3, 4},
         instance.plusTwo(new int[] {9, 2}, new int[] {3, 4}));
   }
+
+  /**
+   * Test method for {@link Array1#swapEnds(int[])}.
+   */
+  @Test
+  public void testSwapEnds() {
+    Assert.assertArrayEquals(new int[] {4, 2, 3, 1}, instance.swapEnds(new int[] {1, 2, 3, 4}));
+    Assert.assertArrayEquals(new int[] {3, 2, 1}, instance.swapEnds(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {5, 6, 7, 9, 8},
+        instance.swapEnds(new int[] {8, 6, 7, 9, 5}));
+    Assert.assertArrayEquals(new int[] {9, 1, 4, 1, 5, 3},
+        instance.swapEnds(new int[] {3, 1, 4, 1, 5, 9}));
+    Assert.assertArrayEquals(new int[] {2, 1}, instance.swapEnds(new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {1}, instance.swapEnds(new int[] {1}));
+  }
 }

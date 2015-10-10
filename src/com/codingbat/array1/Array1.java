@@ -283,4 +283,22 @@ public class Array1 {
   public int[] plusTwo(int[] aNumbers, int[] bNumbers) {
     return new int[] {aNumbers[0], aNumbers[1], bNumbers[0], bNumbers[1]};
   }
+
+  /**
+   * Given an array of ints, swap the first and last elements in the array. Return the modified
+   * array. The array length will be at least 1.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new array
+   */
+  public int[] swapEnds(int[] numbers) {
+    int[] result = numbers.clone();
+    int lastIndex = numbers.length - 1;
+    int lastElement = numbers[lastIndex];
+    int firstIndex = 0;
+    int firstElement = numbers[firstIndex];
+    result[firstIndex] = lastElement;
+    result[lastIndex] = firstElement;
+    return result;
+  }
 }
