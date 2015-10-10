@@ -269,8 +269,8 @@ public class Array1 {
    * @return the above mentioned new array
    */
   public int[] makeMiddle(int[] numbers) {
-    int rightMiddlePosition = numbers.length / 2;
-    return new int[] {numbers[rightMiddlePosition - 1], numbers[rightMiddlePosition]};
+    int afterMiddleIndex = numbers.length / 2;
+    return new int[] {numbers[afterMiddleIndex - 1], numbers[afterMiddleIndex]};
   }
 
   /**
@@ -300,5 +300,19 @@ public class Array1 {
     result[firstIndex] = lastElement;
     result[lastIndex] = firstElement;
     return result;
+  }
+
+  /**
+   * Given an array of ints of odd length, return a new array length 3 containing the elements from
+   * the middle of the array. The array length will be at least 3.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned number
+   */
+  public int[] midThree(int[] numbers) {
+    int middleIndex = numbers.length / 2;
+    int beforeMiddleIndex = middleIndex - 1;
+    int afterMiddleIndex = middleIndex + 1;
+    return new int[] {numbers[beforeMiddleIndex], numbers[middleIndex], numbers[afterMiddleIndex]};
   }
 }

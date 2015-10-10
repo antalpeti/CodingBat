@@ -373,4 +373,15 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {2, 1}, instance.swapEnds(new int[] {1, 2}));
     Assert.assertArrayEquals(new int[] {1}, instance.swapEnds(new int[] {1}));
   }
+
+  /**
+   * Test method for {@link Array1#midThree(int[])}.
+   */
+  @Test
+  public void testMidThree() {
+    Assert.assertArrayEquals(new int[] {2, 3, 4}, instance.midThree(new int[] {1, 2, 3, 4, 5}));
+    Assert.assertArrayEquals(new int[] {7, 5, 3},
+        instance.midThree(new int[] {8, 6, 7, 5, 3, 0, 9}));
+    Assert.assertArrayEquals(new int[] {1, 2, 3}, instance.midThree(new int[] {1, 2, 3}));
+  }
 }
