@@ -345,4 +345,17 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {2, 4}, instance.makeMiddle(new int[] {5, 2, 4, 7}));
     Assert.assertArrayEquals(new int[] {4, 3}, instance.makeMiddle(new int[] {9, 0, 4, 3, 9, 1}));
   }
+
+  /**
+   * Test method for {@link Array1#plusTwo(int[], int[])}.
+   */
+  @Test
+  public void testPlusTwo() {
+    Assert.assertArrayEquals(new int[] {1, 2, 3, 4},
+        instance.plusTwo(new int[] {1, 2}, new int[] {3, 4}));
+    Assert.assertArrayEquals(new int[] {4, 4, 2, 2},
+        instance.plusTwo(new int[] {4, 4}, new int[] {2, 2}));
+    Assert.assertArrayEquals(new int[] {9, 2, 3, 4},
+        instance.plusTwo(new int[] {9, 2}, new int[] {3, 4}));
+  }
 }

@@ -272,4 +272,15 @@ public class Array1 {
     int rightMiddlePosition = numbers.length / 2;
     return new int[] {numbers[rightMiddlePosition - 1], numbers[rightMiddlePosition]};
   }
+
+  /**
+   * Given 2 int arrays, each length 2, return a new array length 4 containing all their elements.
+   *
+   * @param aNumbers the first array of numbers
+   * @param bNumbers the second array of numbers
+   * @return the above mentioned new array
+   */
+  public int[] plusTwo(int[] aNumbers, int[] bNumbers) {
+    return new int[] {aNumbers[0], aNumbers[1], bNumbers[0], bNumbers[1]};
+  }
 }
