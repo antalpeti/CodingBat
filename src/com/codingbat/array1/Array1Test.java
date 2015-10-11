@@ -401,4 +401,19 @@ public class Array1Test {
     Assert.assertEquals(9, instance.maxTriple(new int[] {5, 1, 7, 3, 7, 8, 9}));
     Assert.assertEquals(5, instance.maxTriple(new int[] {2, 2, 5, 1, 1}));
   }
+
+  /**
+   * Test method for {@link Array1#frontPiece(int[])}.
+   */
+  @Test
+  public void testFrontPiece() {
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.frontPiece(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.frontPiece(new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {1}, instance.frontPiece(new int[] {1}));
+    Assert.assertArrayEquals(new int[] {}, instance.frontPiece(new int[] {}));
+    Assert.assertArrayEquals(new int[] {6, 5}, instance.frontPiece(new int[] {6, 5, 0}));
+    Assert.assertArrayEquals(new int[] {6, 5}, instance.frontPiece(new int[] {6, 5}));
+    Assert.assertArrayEquals(new int[] {3, 1}, instance.frontPiece(new int[] {3, 1, 4, 1, 5}));
+    Assert.assertArrayEquals(new int[] {6}, instance.frontPiece(new int[] {6}));
+  }
 }

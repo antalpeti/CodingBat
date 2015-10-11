@@ -337,4 +337,15 @@ public class Array1 {
     }
     return maxNumber;
   }
+
+  /**
+   * Given an int array of any length, return a new array of its first 2 elements. If the array is
+   * smaller than length 2, use whatever elements are present.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new array
+   */
+  public int[] frontPiece(int[] numbers) {
+    return numbers.length > 1 ? new int[] {numbers[0], numbers[1]} : numbers;
+  }
 }
