@@ -315,4 +315,26 @@ public class Array1 {
     int afterMiddleIndex = middleIndex + 1;
     return new int[] {numbers[beforeMiddleIndex], numbers[middleIndex], numbers[afterMiddleIndex]};
   }
+
+  /**
+   * Given an array of ints of odd length, look at the first, last, and middle values in the array
+   * and return the largest. The array length will be a least 1.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned number
+   */
+  public int maxTriple(int[] numbers) {
+    int firstIndex = 0;
+    int lastIndex = numbers.length - 1;
+    int middleIndex = numbers.length / 2;
+
+    int maxNumber = numbers[firstIndex];
+
+    if (maxNumber < numbers[lastIndex]) {
+      maxNumber = numbers[lastIndex];
+    } else if (maxNumber < numbers[middleIndex]) {
+      maxNumber = numbers[middleIndex];
+    }
+    return maxNumber;
+  }
 }

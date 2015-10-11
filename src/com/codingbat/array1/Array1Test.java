@@ -384,4 +384,21 @@ public class Array1Test {
         instance.midThree(new int[] {8, 6, 7, 5, 3, 0, 9}));
     Assert.assertArrayEquals(new int[] {1, 2, 3}, instance.midThree(new int[] {1, 2, 3}));
   }
+
+  /**
+   * Test method for {@link Array1#maxTriple(int[])}.
+   */
+  @Test
+  public void testMaxTriple() {
+    Assert.assertEquals(3, instance.maxTriple(new int[] {1, 2, 3}));
+    Assert.assertEquals(5, instance.maxTriple(new int[] {5, 2, 3}));
+    Assert.assertEquals(7, instance.maxTriple(new int[] {5, 7, 3}));
+    Assert.assertEquals(3, instance.maxTriple(new int[] {1, 2, 3, 1, 1}));
+    Assert.assertEquals(5, instance.maxTriple(new int[] {1, 7, 3, 1, 5}));
+    Assert.assertEquals(5, instance.maxTriple(new int[] {5, 1, 3, 7, 1}));
+    Assert.assertEquals(5, instance.maxTriple(new int[] {5, 1, 7, 3, 7, 8, 1}));
+    Assert.assertEquals(9, instance.maxTriple(new int[] {5, 1, 7, 9, 7, 8, 1}));
+    Assert.assertEquals(9, instance.maxTriple(new int[] {5, 1, 7, 3, 7, 8, 9}));
+    Assert.assertEquals(5, instance.maxTriple(new int[] {2, 2, 5, 1, 1}));
+  }
 }
