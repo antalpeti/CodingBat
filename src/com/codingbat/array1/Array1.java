@@ -348,4 +348,19 @@ public class Array1 {
   public int[] frontPiece(int[] numbers) {
     return numbers.length > 1 ? new int[] {numbers[0], numbers[1]} : numbers;
   }
+
+  /**
+   * We'll say that a 1 immediately followed by a 3 in an array is an "unlucky" 1. Return true if
+   * the given array contains an unlucky 1 in the first 2 or last 2 positions in the array.
+   *
+   * @param numbers the numbers
+   * @return true, if the above mentioned condition fulfilled
+   */
+  public boolean unlucky1(int[] numbers) {
+    boolean ul =
+        numbers.length < 3 ? false : numbers[0] == 1 && numbers[1] == 3 || numbers[1] == 1 && numbers[2] == 3
+        || numbers[numbers.length - 2] == 1 && numbers[numbers.length - 1] == 3;
+    ul = numbers.length == 2 && !ul ? numbers[0] == 1 && numbers[1] == 3 : ul;
+    return ul;
+  }
 }

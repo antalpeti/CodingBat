@@ -416,4 +416,30 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {3, 1}, instance.frontPiece(new int[] {3, 1, 4, 1, 5}));
     Assert.assertArrayEquals(new int[] {6}, instance.frontPiece(new int[] {6}));
   }
+
+  /**
+   * Test method for {@link Array1#unlucky1(int[])}.
+   */
+  @Test
+  public void testUnlucky1() {
+    Assert.assertEquals(false, instance.unlucky1(new int[] {1, 2, 3, 4, 5}));
+    Assert.assertEquals(true, instance.unlucky1(new int[] {2, 1, 3, 4, 5}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {1, 1, 1}));
+    Assert.assertEquals(true, instance.unlucky1(new int[] {1, 3, 1}));
+    Assert.assertEquals(true, instance.unlucky1(new int[] {1, 1, 3}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {1, 2, 3}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {3, 3, 3}));
+    Assert.assertEquals(true, instance.unlucky1(new int[] {1, 3}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {1, 4}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {1}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {1, 1, 1, 3, 1}));
+    Assert.assertEquals(true, instance.unlucky1(new int[] {1, 1, 3, 1, 1}));
+    Assert.assertEquals(true, instance.unlucky1(new int[] {1, 1, 1, 1, 3}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {1, 4, 1, 5}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {1, 1, 2, 3}));
+    Assert.assertEquals(false, instance.unlucky1(new int[] {2, 3, 2, 1}));
+    Assert.assertEquals(true, instance.unlucky1(new int[] {2, 3, 1, 3}));
+    Assert.assertEquals(true, instance.unlucky1(new int[] {1, 2, 3, 4, 1, 3}));
+  }
 }
