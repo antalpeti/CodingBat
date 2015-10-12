@@ -357,10 +357,21 @@ public class Array1 {
    * @return true, if the above mentioned condition fulfilled
    */
   public boolean unlucky1(int[] numbers) {
-    boolean ul =
-        numbers.length < 3 ? false : numbers[0] == 1 && numbers[1] == 3 || numbers[1] == 1 && numbers[2] == 3
-        || numbers[numbers.length - 2] == 1 && numbers[numbers.length - 1] == 3;
-    ul = numbers.length == 2 && !ul ? numbers[0] == 1 && numbers[1] == 3 : ul;
-    return ul;
+    boolean unluckyInTheArray = false;
+    boolean unluckyPossibleOnZeroAndBeforeEndIndex = numbers.length > 1;
+    if (unluckyPossibleOnZeroAndBeforeEndIndex) {
+      boolean unluckyOnZeroIndex = numbers[0] == 1 && numbers[1] == 3;
+      boolean unluckyOnBeforeEndIndex =
+          numbers[numbers.length - 2] == 1 && numbers[numbers.length - 1] == 3;
+      unluckyInTheArray = unluckyOnZeroIndex || unluckyOnBeforeEndIndex;
+    }
+
+    boolean unluckyPossibleOnFirstIndex = numbers.length > 2;
+    if (unluckyPossibleOnFirstIndex && !unluckyInTheArray) {
+      boolean unluckyOnFirstIndex = numbers[1] == 1 && numbers[2] == 3;
+      unluckyInTheArray = unluckyOnFirstIndex;
+    }
+
+    return unluckyInTheArray;
   }
 }
