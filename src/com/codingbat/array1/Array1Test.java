@@ -442,4 +442,27 @@ public class Array1Test {
     Assert.assertEquals(true, instance.unlucky1(new int[] {2, 3, 1, 3}));
     Assert.assertEquals(true, instance.unlucky1(new int[] {1, 2, 3, 4, 1, 3}));
   }
+
+  /**
+   * Test method for {@link Array1#make2(int[], int[])}.
+   */
+  @Test
+  public void testMake2() {
+    Assert.assertArrayEquals(new int[] {4, 5},
+        instance.make2(new int[] {4, 5}, new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {4, 1}, instance.make2(new int[] {4}, new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.make2(new int[] {}, new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.make2(new int[] {1, 2}, new int[] {}));
+    Assert.assertArrayEquals(new int[] {3, 1}, instance.make2(new int[] {3}, new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {3, 1}, instance.make2(new int[] {3}, new int[] {1}));
+    Assert.assertArrayEquals(new int[] {3, 1}, instance.make2(new int[] {3, 1, 4}, new int[] {}));
+    Assert.assertArrayEquals(new int[] {1, 1}, instance.make2(new int[] {1}, new int[] {1}));
+    Assert.assertArrayEquals(new int[] {1, 2},
+        instance.make2(new int[] {1, 2, 3}, new int[] {7, 8}));
+    Assert.assertArrayEquals(new int[] {7, 8},
+        instance.make2(new int[] {7, 8}, new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {7, 1}, instance.make2(new int[] {7}, new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {5, 4},
+        instance.make2(new int[] {5, 4}, new int[] {2, 3, 7}));
+  }
 }

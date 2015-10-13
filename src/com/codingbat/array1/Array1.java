@@ -374,4 +374,31 @@ public class Array1 {
 
     return unluckyInTheArray;
   }
+
+  /**
+   * Given 2 int arrays, a and b, return a new array length 2 containing, as much as will fit, the
+   * elements from a followed by the elements from b. The arrays may be any length, including 0, but
+   * there will be 2 or more elements available between the 2 arrays.
+   *
+   * @param aNumbers the first input array
+   * @param bNumbers the second input array
+   * @return the above mentioned new array
+   */
+  public int[] make2(int[] aNumbers, int[] bNumbers) {
+    int[] twoElementArray = new int[2];
+    boolean twoAvailableFromFirstArray = aNumbers.length >= 2;
+    boolean oneAvailableFromFirstArray = aNumbers.length == 1;
+    boolean zeroAvailableFromFirstArray = aNumbers.length == 0;
+    if (twoAvailableFromFirstArray) {
+      twoElementArray[0] = aNumbers[0];
+      twoElementArray[1] = aNumbers[1];
+    } else if (oneAvailableFromFirstArray) {
+      twoElementArray[0] = aNumbers[0];
+      twoElementArray[1] = bNumbers[0];
+    } else if (zeroAvailableFromFirstArray) {
+      twoElementArray[0] = bNumbers[0];
+      twoElementArray[1] = bNumbers[1];
+      }
+    return twoElementArray;
+  }
 }
