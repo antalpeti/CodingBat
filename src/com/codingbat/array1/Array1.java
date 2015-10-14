@@ -398,7 +398,28 @@ public class Array1 {
     } else if (zeroAvailableFromFirstArray) {
       twoElementArray[0] = bNumbers[0];
       twoElementArray[1] = bNumbers[1];
-      }
+    }
     return twoElementArray;
+  }
+
+  /**
+   * Given 2 int arrays, a and b, of any length, return a new array with the first element of each
+   * array. If either array is length 0, ignore that array.
+   *
+   * @param aNumbers the first input array
+   * @param bNumbers the second input array
+   * @return the above mentioned new array
+   */
+  public int[] front11(int[] aNumbers, int[] bNumbers) {
+    if (aNumbers.length > 0 && bNumbers.length > 0) {
+      return new int[] {aNumbers[0], bNumbers[0]};
+    }
+    if (aNumbers.length > 0 && bNumbers.length == 0) {
+      return new int[] {aNumbers[0]};
+    }
+    if (aNumbers.length == 0 && bNumbers.length > 0) {
+      return new int[] {bNumbers[0]};
+    }
+    return new int[] {};
   }
 }

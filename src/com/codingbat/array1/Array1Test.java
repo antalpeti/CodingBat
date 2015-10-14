@@ -465,4 +465,20 @@ public class Array1Test {
     Assert.assertArrayEquals(new int[] {5, 4},
         instance.make2(new int[] {5, 4}, new int[] {2, 3, 7}));
   }
+
+  /**
+   * Test method for {@link Array1#front11(int[], int[])}.
+   */
+  @Test
+  public void testFront11() {
+    Assert.assertArrayEquals(new int[] {1, 7},
+        instance.front11(new int[] {1, 2, 3}, new int[] {7, 8, 9}));
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.front11(new int[] {1}, new int[] {2}));
+    Assert.assertArrayEquals(new int[] {1}, instance.front11(new int[] {1, 7}, new int[] {}));
+    Assert.assertArrayEquals(new int[] {2}, instance.front11(new int[] {}, new int[] {2, 8}));
+    Assert.assertArrayEquals(new int[] {}, instance.front11(new int[] {}, new int[] {}));
+    Assert.assertArrayEquals(new int[] {3, 1},
+        instance.front11(new int[] {3}, new int[] {1, 4, 1, 9}));
+    Assert.assertArrayEquals(new int[] {1}, instance.front11(new int[] {1, 4, 1, 9}, new int[] {}));
+  }
 }
