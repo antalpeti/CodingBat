@@ -58,4 +58,26 @@ public class Array2 {
     }
     return (sum - (minimum + maximum)) / (numbers.length - 2);
   }
+
+  /**
+   * Return the sum of the numbers in the array, returning 0 for an empty array. Except the number
+   * 13 is very unlucky, so it does not count and numbers that come immediately after a 13 also do
+   * not count.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned number
+   */
+  public int sum13(int[] numbers) {
+    int sum = 0;
+    int unluckyNumber = 13;
+    int jumpIndex = 1;
+    for (int index = 0; index < numbers.length; index++) {
+      if (numbers[index] == unluckyNumber) {
+        index += jumpIndex;
+        continue;
+      }
+      sum += numbers[index];
+    }
+    return sum;
+  }
 }

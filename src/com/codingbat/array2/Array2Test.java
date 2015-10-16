@@ -88,4 +88,25 @@ public class Array2Test {
     Assert.assertEquals(4, instance.centeredAverage(new int[] {4, 4, 4, 1, 5}));
     Assert.assertEquals(6, instance.centeredAverage(new int[] {6, 4, 8, 12, 3}));
   }
+
+  /**
+   * Test method for {@link Array2#sum13(int[])}.
+   */
+  @Test
+  public void testSum13() {
+    Assert.assertEquals(6, instance.sum13(new int[] {1, 2, 2, 1}));
+    Assert.assertEquals(2, instance.sum13(new int[] {1, 1}));
+    Assert.assertEquals(6, instance.sum13(new int[] {1, 2, 2, 1, 13}));
+    Assert.assertEquals(4, instance.sum13(new int[] {1, 2, 13, 2, 1, 13}));
+    Assert.assertEquals(3, instance.sum13(new int[] {13, 1, 2, 13, 2, 1, 13}));
+    Assert.assertEquals(0, instance.sum13(new int[] {}));
+    Assert.assertEquals(0, instance.sum13(new int[] {13}));
+    Assert.assertEquals(0, instance.sum13(new int[] {13, 13}));
+    Assert.assertEquals(0, instance.sum13(new int[] {13, 0, 13}));
+    Assert.assertEquals(0, instance.sum13(new int[] {13, 1, 13}));
+    Assert.assertEquals(14, instance.sum13(new int[] {5, 7, 2}));
+    Assert.assertEquals(5, instance.sum13(new int[] {5, 13, 2}));
+    Assert.assertEquals(0, instance.sum13(new int[] {0}));
+    Assert.assertEquals(0, instance.sum13(new int[] {13, 0}));
+  }
 }
