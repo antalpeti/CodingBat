@@ -65,4 +65,27 @@ public class Array2Test {
     Assert.assertEquals(3, instance.bigDiff(new int[] {7, 6, 8, 5}));
     Assert.assertEquals(3, instance.bigDiff(new int[] {7, 7, 6, 8, 5, 5, 6}));
   }
+
+  /**
+   * Test method for {@link Array2#centeredAverage(int[])}.
+   */
+  @Test
+  public void testCenteredAverage() {
+    Assert.assertEquals(3, instance.centeredAverage(new int[] {1, 2, 3, 4, 100}));
+    Assert.assertEquals(5, instance.centeredAverage(new int[] {1, 1, 5, 5, 10, 8, 7}));
+    Assert.assertEquals(-3, instance.centeredAverage(new int[] {-10, -4, -2, -4, -2, 0}));
+    Assert.assertEquals(4, instance.centeredAverage(new int[] {5, 3, 4, 6, 2}));
+    Assert.assertEquals(4, instance.centeredAverage(new int[] {5, 3, 4, 0, 100}));
+    Assert.assertEquals(4, instance.centeredAverage(new int[] {100, 0, 5, 3, 4}));
+    Assert.assertEquals(4, instance.centeredAverage(new int[] {4, 0, 100}));
+    Assert.assertEquals(3, instance.centeredAverage(new int[] {0, 2, 3, 4, 100}));
+    Assert.assertEquals(1, instance.centeredAverage(new int[] {1, 1, 100}));
+    Assert.assertEquals(7, instance.centeredAverage(new int[] {7, 7, 7}));
+    Assert.assertEquals(7, instance.centeredAverage(new int[] {1, 7, 8}));
+    Assert.assertEquals(50, instance.centeredAverage(new int[] {1, 1, 99, 99}));
+    Assert.assertEquals(50, instance.centeredAverage(new int[] {1000, 0, 1, 99}));
+    Assert.assertEquals(4, instance.centeredAverage(new int[] {4, 4, 4, 4, 5}));
+    Assert.assertEquals(4, instance.centeredAverage(new int[] {4, 4, 4, 1, 5}));
+    Assert.assertEquals(6, instance.centeredAverage(new int[] {6, 4, 8, 12, 3}));
+  }
 }
