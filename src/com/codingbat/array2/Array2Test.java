@@ -46,4 +46,23 @@ public class Array2Test {
     Assert.assertEquals(1, instance.countEvens(new int[] {2}));
     Assert.assertEquals(2, instance.countEvens(new int[] {2, 5, 12}));
   }
+
+  /**
+   * Test method for {@link Array2#bigDiff(int[])}.
+   */
+  @Test
+  public void testBigDiff() {
+    Assert.assertEquals(7, instance.bigDiff(new int[] {10, 3, 5, 6}));
+    Assert.assertEquals(8, instance.bigDiff(new int[] {7, 2, 10, 9}));
+    Assert.assertEquals(8, instance.bigDiff(new int[] {2, 10, 7, 2}));
+    Assert.assertEquals(8, instance.bigDiff(new int[] {2, 10}));
+    Assert.assertEquals(8, instance.bigDiff(new int[] {10, 2}));
+    Assert.assertEquals(10, instance.bigDiff(new int[] {10, 0}));
+    Assert.assertEquals(1, instance.bigDiff(new int[] {2, 3}));
+    Assert.assertEquals(0, instance.bigDiff(new int[] {2, 2}));
+    Assert.assertEquals(0, instance.bigDiff(new int[] {2}));
+    Assert.assertEquals(8, instance.bigDiff(new int[] {5, 1, 6, 1, 9, 9}));
+    Assert.assertEquals(3, instance.bigDiff(new int[] {7, 6, 8, 5}));
+    Assert.assertEquals(3, instance.bigDiff(new int[] {7, 7, 6, 8, 5, 5, 6}));
+  }
 }
