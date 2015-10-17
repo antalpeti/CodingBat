@@ -109,4 +109,22 @@ public class Array2 {
     }
     return sum;
   }
+
+  /**
+   * Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean has22(int[] numbers) {
+    int searchedNumber = 2;
+    int indexLeap = 1;
+    for (int index = 0; index < numbers.length - indexLeap; index++) {
+      int nextIndex = index + indexLeap;
+      if (numbers[index] == searchedNumber && numbers[nextIndex] == searchedNumber) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

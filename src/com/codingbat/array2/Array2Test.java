@@ -130,4 +130,25 @@ public class Array2Test {
     Assert.assertEquals(22, instance.sum67(new int[] {11, 6, 7, 11}));
     Assert.assertEquals(11, instance.sum67(new int[] {2, 2, 6, 7, 7}));
   }
+
+  /**
+   * Test method for {@link Array2#has22(int[])}.
+   */
+  @Test
+  public void testHas22() {
+    Assert.assertEquals(true, instance.has22(new int[] {1, 2, 2}));
+    Assert.assertEquals(false, instance.has22(new int[] {1, 2, 1, 2}));
+    Assert.assertEquals(false, instance.has22(new int[] {2, 1, 2}));
+    Assert.assertEquals(true, instance.has22(new int[] {2, 2, 1, 2}));
+    Assert.assertEquals(false, instance.has22(new int[] {1, 3, 2}));
+    Assert.assertEquals(true, instance.has22(new int[] {1, 3, 2, 2}));
+    Assert.assertEquals(true, instance.has22(new int[] {2, 3, 2, 2}));
+    Assert.assertEquals(true, instance.has22(new int[] {4, 2, 4, 2, 2, 5}));
+    Assert.assertEquals(false, instance.has22(new int[] {1, 2}));
+    Assert.assertEquals(true, instance.has22(new int[] {2, 2}));
+    Assert.assertEquals(false, instance.has22(new int[] {2}));
+    Assert.assertEquals(false, instance.has22(new int[] {}));
+    Assert.assertEquals(true, instance.has22(new int[] {3, 3, 2, 2}));
+    Assert.assertEquals(false, instance.has22(new int[] {5, 2, 5, 2}));
+  }
 }
