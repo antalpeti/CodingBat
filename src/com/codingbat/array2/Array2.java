@@ -80,4 +80,33 @@ public class Array2 {
     }
     return sum;
   }
+
+  /**
+   * Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6
+   * and extending to the next 7 (every 6 will be followed by at least one 7). Return 0 for no
+   * numbers.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned number
+   */
+  public int sum67(int[] numbers) {
+    boolean ignoredNumbers = false;
+    int sum = 0;
+    int ignoredNumbersStart = 6;
+    int ignoredNumbersEnd = 7;
+    for (int number : numbers) {
+      if (number == ignoredNumbersStart) {
+        ignoredNumbers = true;
+      }
+      if (ignoredNumbers && number == ignoredNumbersEnd) {
+        ignoredNumbers = false;
+        continue;
+      }
+      if (ignoredNumbers) {
+        continue;
+      }
+      sum += number;
+    }
+    return sum;
+  }
 }

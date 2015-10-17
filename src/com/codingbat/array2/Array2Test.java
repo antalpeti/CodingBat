@@ -109,4 +109,25 @@ public class Array2Test {
     Assert.assertEquals(0, instance.sum13(new int[] {0}));
     Assert.assertEquals(0, instance.sum13(new int[] {13, 0}));
   }
+
+  /**
+   * Test method for {@link Array2#sum67(int[])}.
+   */
+  @Test
+  public void testSum67() {
+    Assert.assertEquals(5, instance.sum67(new int[] {1, 2, 2}));
+    Assert.assertEquals(5, instance.sum67(new int[] {1, 2, 2, 6, 99, 99, 7}));
+    Assert.assertEquals(4, instance.sum67(new int[] {1, 1, 6, 7, 2}));
+    Assert.assertEquals(2, instance.sum67(new int[] {1, 6, 2, 2, 7, 1, 6, 99, 99, 7}));
+    Assert.assertEquals(2, instance.sum67(new int[] {1, 6, 2, 6, 2, 7, 1, 6, 99, 99, 7}));
+    Assert.assertEquals(18, instance.sum67(new int[] {2, 7, 6, 2, 6, 7, 2, 7}));
+    Assert.assertEquals(9, instance.sum67(new int[] {2, 7, 6, 2, 6, 2, 7}));
+    Assert.assertEquals(8, instance.sum67(new int[] {1, 6, 7, 7}));
+    Assert.assertEquals(8, instance.sum67(new int[] {6, 7, 1, 6, 7, 7}));
+    Assert.assertEquals(0, instance.sum67(new int[] {6, 8, 1, 6, 7}));
+    Assert.assertEquals(0, instance.sum67(new int[] {}));
+    Assert.assertEquals(11, instance.sum67(new int[] {6, 7, 11}));
+    Assert.assertEquals(22, instance.sum67(new int[] {11, 6, 7, 11}));
+    Assert.assertEquals(11, instance.sum67(new int[] {2, 2, 6, 7, 7}));
+  }
 }
