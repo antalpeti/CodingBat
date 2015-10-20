@@ -142,4 +142,25 @@ public class Array2 {
     }
     return true;
   }
+
+  /**
+   * Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean sum28(int[] numbers) {
+    int searchedNumber = 2;
+    int sumOfSearchedNumber = 0;
+    int limitOfSum = 8;
+    for (int number : numbers) {
+      if (number == searchedNumber) {
+        sumOfSearchedNumber += searchedNumber;
+      }
+      if (sumOfSearchedNumber > limitOfSum) {
+        break;
+      }
+    }
+    return sumOfSearchedNumber == limitOfSum;
+  }
 }

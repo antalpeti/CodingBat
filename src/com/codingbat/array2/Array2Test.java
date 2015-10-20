@@ -171,4 +171,23 @@ public class Array2Test {
     Assert.assertEquals(false, instance.lucky13(new int[] {1}));
     Assert.assertEquals(true, instance.lucky13(new int[] {}));
   }
+
+  /**
+   * Test method for {@link Array2#sum28(int[])}.
+   */
+  @Test
+  public void testSum28() {
+    Assert.assertEquals(true, instance.sum28(new int[] {2, 3, 2, 2, 4, 2}));
+    Assert.assertEquals(false, instance.sum28(new int[] {2, 3, 2, 2, 4, 2, 2}));
+    Assert.assertEquals(false, instance.sum28(new int[] {1, 2, 3, 4}));
+    Assert.assertEquals(true, instance.sum28(new int[] {2, 2, 2, 2}));
+    Assert.assertEquals(true, instance.sum28(new int[] {1, 2, 2, 2, 2, 4}));
+    Assert.assertEquals(false, instance.sum28(new int[] {}));
+    Assert.assertEquals(false, instance.sum28(new int[] {2}));
+    Assert.assertEquals(false, instance.sum28(new int[] {8}));
+    Assert.assertEquals(false, instance.sum28(new int[] {2, 2, 2}));
+    Assert.assertEquals(false, instance.sum28(new int[] {2, 2, 2, 2, 2}));
+    Assert.assertEquals(true, instance.sum28(new int[] {1, 2, 2, 1, 2, 2}));
+    Assert.assertEquals(true, instance.sum28(new int[] {5, 2, 2, 2, 4, 2}));
+  }
 }
