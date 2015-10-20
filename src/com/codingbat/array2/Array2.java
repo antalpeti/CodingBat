@@ -127,4 +127,19 @@ public class Array2 {
     }
     return false;
   }
+
+  /**
+   * Given an array of ints, return true if the array contains no 1's and no 3's.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean lucky13(int[] numbers) {
+    for (int number : numbers) {
+      if (number == 1 || number == 3) {
+        return false;
+      }
+    }
+    return true;
+  }
 }

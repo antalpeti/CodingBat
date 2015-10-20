@@ -151,4 +151,24 @@ public class Array2Test {
     Assert.assertEquals(true, instance.has22(new int[] {3, 3, 2, 2}));
     Assert.assertEquals(false, instance.has22(new int[] {5, 2, 5, 2}));
   }
+
+  /**
+   * Test method for {@link Array2#lucky13(int[])}.
+   */
+  @Test
+  public void testLucky13() {
+    Assert.assertEquals(true, instance.lucky13(new int[] {0, 2, 4}));
+    Assert.assertEquals(false, instance.lucky13(new int[] {1, 2, 3}));
+    Assert.assertEquals(false, instance.lucky13(new int[] {1, 2, 4}));
+    Assert.assertEquals(true, instance.lucky13(new int[] {2, 7, 2, 8}));
+    Assert.assertEquals(false, instance.lucky13(new int[] {2, 7, 1, 8}));
+    Assert.assertEquals(false, instance.lucky13(new int[] {3, 7, 2, 8}));
+    Assert.assertEquals(false, instance.lucky13(new int[] {2, 7, 2, 1}));
+    Assert.assertEquals(false, instance.lucky13(new int[] {1, 2}));
+    Assert.assertEquals(true, instance.lucky13(new int[] {2, 2}));
+    Assert.assertEquals(true, instance.lucky13(new int[] {2}));
+    Assert.assertEquals(false, instance.lucky13(new int[] {3}));
+    Assert.assertEquals(false, instance.lucky13(new int[] {1}));
+    Assert.assertEquals(true, instance.lucky13(new int[] {}));
+  }
 }
