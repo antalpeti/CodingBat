@@ -190,4 +190,25 @@ public class Array2Test {
     Assert.assertEquals(true, instance.sum28(new int[] {1, 2, 2, 1, 2, 2}));
     Assert.assertEquals(true, instance.sum28(new int[] {5, 2, 2, 2, 4, 2}));
   }
+
+  /**
+   * Test method for {@link Array2#more14(int[])}.
+   */
+  @Test
+  public void testMore14() {
+    Assert.assertEquals(true, instance.more14(new int[] {1, 4, 1}));
+    Assert.assertEquals(false, instance.more14(new int[] {1, 4, 1, 4}));
+    Assert.assertEquals(true, instance.more14(new int[] {1, 1}));
+    Assert.assertEquals(true, instance.more14(new int[] {1, 6, 6}));
+    Assert.assertEquals(true, instance.more14(new int[] {1}));
+    Assert.assertEquals(false, instance.more14(new int[] {1, 4}));
+    Assert.assertEquals(true, instance.more14(new int[] {6, 1, 1}));
+    Assert.assertEquals(false, instance.more14(new int[] {1, 6, 4}));
+    Assert.assertEquals(true, instance.more14(new int[] {1, 1, 4, 4, 1}));
+    Assert.assertEquals(true, instance.more14(new int[] {1, 1, 6, 4, 4, 1}));
+    Assert.assertEquals(false, instance.more14(new int[] {}));
+    Assert.assertEquals(false, instance.more14(new int[] {4, 1, 4, 6}));
+    Assert.assertEquals(false, instance.more14(new int[] {4, 1, 4, 6, 1}));
+    Assert.assertEquals(true, instance.more14(new int[] {1, 4, 1, 4, 1, 6}));
+  }
 }

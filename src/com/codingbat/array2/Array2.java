@@ -163,4 +163,26 @@ public class Array2 {
     }
     return sumOfSearchedNumber == limitOfSum;
   }
+
+  /**
+   * Given an array of ints, return true if the number of 1's is greater than the number of 4's.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean more14(int[] numbers) {
+    int numberOfOne = 0;
+    int numberOfFour = 0;
+    int firstSearchedNumber = 1;
+    int secondSearchedNumber = 4;
+    for (int number : numbers) {
+      if (number == firstSearchedNumber) {
+        numberOfOne++;
+      }
+      if (number == secondSearchedNumber) {
+        numberOfFour++;
+      }
+    }
+    return numberOfOne > numberOfFour;
+  }
 }
