@@ -185,4 +185,19 @@ public class Array2 {
     }
     return numberOfOne > numberOfFour;
   }
+
+  /**
+   * Given a number n, create and return a new int array of length n, containing the numbers 0, 1,
+   * 2, ... n-1. The given n may be 0, in which case just return a length 0 array.
+   *
+   * @param number the input number
+   * @return the above mentioned new array
+   */
+  public int[] fizzArray(int number) {
+    int result[] = new int[number];
+    for (int index = 0; index < result.length; index++) {
+      result[index] = index;
+    }
+    return result;
+  }
 }
