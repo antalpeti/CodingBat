@@ -200,4 +200,22 @@ public class Array2 {
     }
     return result;
   }
+
+  /**
+   * Given an array of ints, return true if every element is a 1 or a 4.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean only14(int[] numbers) {
+    int numberOne = 1;
+    int numberFour = 4;
+    for (int number : numbers) {
+      boolean notPermitedNumber = number != numberOne && number != numberFour;
+      if (notPermitedNumber) {
+        return false;
+      }
+    }
+    return true;
+  }
 }

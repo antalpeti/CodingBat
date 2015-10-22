@@ -225,4 +225,28 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {0, 1, 2, 3, 4, 5, 6}, instance.fizzArray(7));
     Assert.assertArrayEquals(new int[] {0, 1, 2, 3, 4, 5, 6, 7}, instance.fizzArray(8));
   }
+
+  /**
+   * Test method for {@link Array2#only14(int[])}.
+   */
+  @Test
+  public void testOnly14() {
+    Assert.assertEquals(true, instance.only14(new int[] {1, 4, 1, 4}));
+    Assert.assertEquals(false, instance.only14(new int[] {1, 4, 2, 4}));
+    Assert.assertEquals(true, instance.only14(new int[] {1, 1}));
+    Assert.assertEquals(true, instance.only14(new int[] {4, 1}));
+    Assert.assertEquals(true, instance.only14(new int[] {4, 4}));
+    Assert.assertEquals(false, instance.only14(new int[] {2}));
+    Assert.assertEquals(true, instance.only14(new int[] {}));
+    Assert.assertEquals(false, instance.only14(new int[] {1, 4, 1, 3}));
+    Assert.assertEquals(false, instance.only14(new int[] {3, 1, 3}));
+    Assert.assertEquals(true, instance.only14(new int[] {1}));
+    Assert.assertEquals(true, instance.only14(new int[] {4}));
+    Assert.assertEquals(false, instance.only14(new int[] {3, 4}));
+    Assert.assertEquals(false, instance.only14(new int[] {1, 3, 4}));
+    Assert.assertEquals(true, instance.only14(new int[] {1, 1, 1}));
+    Assert.assertEquals(true, instance.only14(new int[] {4, 4, 4}));
+    Assert.assertEquals(false, instance.only14(new int[] {1, 1, 1, 5}));
+    Assert.assertEquals(true, instance.only14(new int[] {4, 1, 4, 1}));
+  }
 }
