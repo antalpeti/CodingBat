@@ -235,4 +235,24 @@ public class Array2 {
     }
     return result;
   }
+
+  /**
+   * Given an array of ints, return true if it contains no 1's or it contains no 4's.
+   *
+   * @param numbers the numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean no14(int[] numbers) {
+    boolean hasNumber1 = false;
+    boolean hasNumber4 = false;
+    for (int number : numbers) {
+      if (number == 1) {
+        hasNumber1 = true;
+      }
+      if (number == 4) {
+        hasNumber4 = true;
+      }
+    }
+    return !(hasNumber1 && hasNumber4);
+  }
 }
