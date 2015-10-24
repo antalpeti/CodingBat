@@ -317,4 +317,25 @@ public class Array2Test {
     Assert.assertEquals(true, instance.isEverywhere(new int[] {2, 1, 2, 2, 2, 1, 2, 1}, 2));
     Assert.assertEquals(true, instance.isEverywhere(new int[] {2, 1, 2, 1, 2}, 2));
   }
+
+  /**
+   * Test method for {@link Array2#either24(int[])}.
+   */
+  @Test
+  public void testEither24() {
+    Assert.assertEquals(true, instance.either24(new int[] {1, 2, 2}));
+    Assert.assertEquals(true, instance.either24(new int[] {4, 4, 1}));
+    Assert.assertEquals(false, instance.either24(new int[] {4, 4, 1, 2, 2}));
+    Assert.assertEquals(false, instance.either24(new int[] {1, 2, 3, 4}));
+    Assert.assertEquals(false, instance.either24(new int[] {3, 5, 9}));
+    Assert.assertEquals(true, instance.either24(new int[] {1, 2, 3, 4, 4}));
+    Assert.assertEquals(true, instance.either24(new int[] {2, 2, 3, 4}));
+    Assert.assertEquals(true, instance.either24(new int[] {1, 2, 3, 2, 2, 4}));
+    Assert.assertEquals(false, instance.either24(new int[] {1, 2, 3, 2, 2, 4, 4}));
+    Assert.assertEquals(false, instance.either24(new int[] {1, 2}));
+    Assert.assertEquals(true, instance.either24(new int[] {2, 2}));
+    Assert.assertEquals(true, instance.either24(new int[] {4, 4}));
+    Assert.assertEquals(false, instance.either24(new int[] {2}));
+    Assert.assertEquals(false, instance.either24(new int[] {}));
+  }
 }

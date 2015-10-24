@@ -267,12 +267,44 @@ public class Array2 {
    */
   public boolean isEverywhere(int[] numbers, int value) {
     for (int i = 0; i < numbers.length - 1; i++) {
-      boolean firstPartIsNotValue = numbers[i] != value;
-      boolean secondPartIsNotValue = numbers[i + 1] != value;
-      if (firstPartIsNotValue && secondPartIsNotValue) {
+      boolean elementIsNotValue = numbers[i] != value;
+      boolean nextElementIsNotValue = numbers[i + 1] != value;
+      if (elementIsNotValue && nextElementIsNotValue) {
         return false;
       }
     }
     return true;
+  }
+
+  /**
+   * Given an array of ints, return true if the array contains a 2 next to a 2 or a 4 next to a 4,
+   * but not both.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean either24(int[] numbers) {
+    boolean hasNextToTwo = false;
+    boolean hasNextToFour = false;
+    int numberTwo = 2;
+    int numberFour = 4;
+
+    for (int index = 0; index < numbers.length - 1; index++) {
+      boolean elementIsTwo = numbers[index] == numberTwo;
+      boolean nextElementIsTwo = numbers[index + 1] == numberTwo;
+      if (elementIsTwo && nextElementIsTwo) {
+        hasNextToTwo = true;
+      }
+
+      boolean elementIsFour = numbers[index] == numberFour;
+      boolean nextElementIsFour = numbers[index + 1] == numberFour;
+      if (elementIsFour && nextElementIsFour) {
+        hasNextToFour = true;
+      }
+    }
+
+    boolean onlyNextToTwo = hasNextToTwo && !hasNextToFour;
+    boolean onlyNextToFour = !hasNextToTwo && hasNextToFour;
+    return onlyNextToTwo || onlyNextToFour;
   }
 }
