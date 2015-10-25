@@ -338,4 +338,22 @@ public class Array2Test {
     Assert.assertEquals(false, instance.either24(new int[] {2}));
     Assert.assertEquals(false, instance.either24(new int[] {}));
   }
+
+  /**
+   * Test method for {@link Array2#matchUp(int[], int[])}.
+   */
+  @Test
+  public void testMatchUp() {
+    Assert.assertEquals(2, instance.matchUp(new int[] {1, 2, 3}, new int[] {2, 3, 10}));
+    Assert.assertEquals(3, instance.matchUp(new int[] {1, 2, 3}, new int[] {2, 3, 5}));
+    Assert.assertEquals(2, instance.matchUp(new int[] {1, 2, 3}, new int[] {2, 3, 3}));
+    Assert.assertEquals(1, instance.matchUp(new int[] {5, 3}, new int[] {5, 5}));
+    Assert.assertEquals(2, instance.matchUp(new int[] {5, 3}, new int[] {4, 4}));
+    Assert.assertEquals(1, instance.matchUp(new int[] {5, 3}, new int[] {3, 3}));
+    Assert.assertEquals(1, instance.matchUp(new int[] {5, 3}, new int[] {2, 2}));
+    Assert.assertEquals(1, instance.matchUp(new int[] {5, 3}, new int[] {1, 1}));
+    Assert.assertEquals(0, instance.matchUp(new int[] {5, 3}, new int[] {0, 0}));
+    Assert.assertEquals(0, instance.matchUp(new int[] {4}, new int[] {4}));
+    Assert.assertEquals(1, instance.matchUp(new int[] {4}, new int[] {5}));
+  }
 }

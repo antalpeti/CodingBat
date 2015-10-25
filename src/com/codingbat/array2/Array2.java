@@ -263,7 +263,7 @@ public class Array2 {
    *
    * @param numbers the input numbers
    * @param value the input value
-   * @return true, if is everywhere
+   * @return true, if the above mentioned conditions fulfilled
    */
   public boolean isEverywhere(int[] numbers, int value) {
     for (int i = 0; i < numbers.length - 1; i++) {
@@ -306,5 +306,26 @@ public class Array2 {
     boolean onlyNextToTwo = hasNextToTwo && !hasNextToFour;
     boolean onlyNextToFour = !hasNextToTwo && hasNextToFour;
     return onlyNextToTwo || onlyNextToFour;
+  }
+
+  /**
+   * Given arrays numbers1 and numbers2 of the same length, for every element in numbers1, consider
+   * the corresponding element in numbers2 (at the same index). Return the count of the number of
+   * times that the two elements differ by 2 or less, but are not equal.
+   *
+   * @param numbers1 the first input numbers
+   * @param numbers2 the second input numbers
+   * @return the above mentioned number
+   */
+  public int matchUp(int[] numbers1, int[] numbers2) {
+    int result = 0;
+    for (int i = 0; i < numbers1.length; i++) {
+      boolean numbersNotEqual = numbers1[i] != numbers2[i];
+      boolean numbersDifferLessThanTwo = Math.abs(numbers1[i] - numbers2[i]) <= 2;
+      if (numbersNotEqual && numbersDifferLessThanTwo) {
+        result++;
+      }
+    }
+    return result;
   }
 }
