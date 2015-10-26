@@ -328,4 +328,35 @@ public class Array2 {
     }
     return result;
   }
+
+  /**
+   * Given an array of ints, return true if the array contains two 7's next to each other, or there
+   * are two 7's separated by one element, such as with {7, 1, 7}.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean has77(int[] numbers) {
+    if (numbers.length == 2) {
+      boolean firstElementIsSeven = numbers[0] == 7;
+      boolean secondElementIsSeven = numbers[1] == 7;
+      if (firstElementIsSeven && secondElementIsSeven) {
+        return true;
+      }
+    }
+    if (numbers.length > 2) {
+      for (int i = 0; i < numbers.length - 2; i++) {
+        boolean startElementIsSeven = numbers[i] == 7;
+        boolean middleElementIsSeven = numbers[i + 1] == 7;
+        boolean endElementIsSeven = numbers[i + 2] == 7;
+        boolean startAndMiddleCase = startElementIsSeven && middleElementIsSeven;
+        boolean middleAndEndCase = middleElementIsSeven && endElementIsSeven;
+        boolean startAndEndCase = startElementIsSeven && endElementIsSeven;
+        if (startAndMiddleCase || middleAndEndCase || startAndEndCase) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 }

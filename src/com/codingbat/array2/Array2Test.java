@@ -356,4 +356,30 @@ public class Array2Test {
     Assert.assertEquals(0, instance.matchUp(new int[] {4}, new int[] {4}));
     Assert.assertEquals(1, instance.matchUp(new int[] {4}, new int[] {5}));
   }
+
+  /**
+   * Test method for {@link Array2#has77(int[])}.
+   */
+  @Test
+  public void testHas77() {
+    Assert.assertEquals(true, instance.has77(new int[] {1, 7, 7}));
+    Assert.assertEquals(true, instance.has77(new int[] {1, 7, 1, 7}));
+    Assert.assertEquals(false, instance.has77(new int[] {1, 7, 1, 1, 7}));
+    Assert.assertEquals(true, instance.has77(new int[] {7, 7, 1, 1, 7}));
+    Assert.assertEquals(true, instance.has77(new int[] {7, 7, 2, 2, 7, 2}));
+    Assert.assertEquals(false, instance.has77(new int[] {2, 7, 2, 2, 7, 2}));
+    Assert.assertEquals(true, instance.has77(new int[] {2, 7, 2, 2, 7, 7}));
+    Assert.assertEquals(true, instance.has77(new int[] {7, 2, 7, 2, 2, 7}));
+    Assert.assertEquals(false, instance.has77(new int[] {7, 2, 6, 2, 2, 7}));
+    Assert.assertEquals(true, instance.has77(new int[] {7, 7, 7}));
+    Assert.assertEquals(true, instance.has77(new int[] {7, 1, 7}));
+    Assert.assertEquals(true, instance.has77(new int[] {1, 7, 7}));
+    Assert.assertEquals(true, instance.has77(new int[] {7, 7, 1}));
+    Assert.assertEquals(true, instance.has77(new int[] {7, 7}));
+    Assert.assertEquals(false, instance.has77(new int[] {7, 3}));
+    Assert.assertEquals(false, instance.has77(new int[] {1, 2}));
+    Assert.assertEquals(false, instance.has77(new int[] {1, 7}));
+    Assert.assertEquals(false, instance.has77(new int[] {7}));
+    Assert.assertEquals(false, instance.has77(new int[] {}));
+  }
 }
