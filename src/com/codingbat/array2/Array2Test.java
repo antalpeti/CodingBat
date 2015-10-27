@@ -382,4 +382,27 @@ public class Array2Test {
     Assert.assertEquals(false, instance.has77(new int[] {7}));
     Assert.assertEquals(false, instance.has77(new int[] {}));
   }
+
+  /**
+   * Test method for {@link Array2#has12(int[])}.
+   */
+  @Test
+  public void testHas12() {
+    Assert.assertEquals(true, instance.has12(new int[] {1, 3, 2}));
+    Assert.assertEquals(true, instance.has12(new int[] {3, 1, 2}));
+    Assert.assertEquals(true, instance.has12(new int[] {3, 1, 4, 5, 2}));
+    Assert.assertEquals(false, instance.has12(new int[] {3, 1, 4, 5, 6}));
+    Assert.assertEquals(true, instance.has12(new int[] {3, 1, 4, 1, 6, 2}));
+    Assert.assertEquals(true, instance.has12(new int[] {2, 1, 4, 1, 6, 2}));
+    Assert.assertEquals(false, instance.has12(new int[] {2, 1, 4, 1, 6}));
+    Assert.assertEquals(false, instance.has12(new int[] {3, 5, 9}));
+    Assert.assertEquals(false, instance.has12(new int[] {3, 5, 1}));
+    Assert.assertEquals(false, instance.has12(new int[] {3, 2, 1}));
+    Assert.assertEquals(true, instance.has12(new int[] {1, 2, 2}));
+    Assert.assertEquals(true, instance.has12(new int[] {1, 2}));
+    Assert.assertEquals(false, instance.has12(new int[] {1, 1}));
+    Assert.assertEquals(false, instance.has12(new int[] {1}));
+    Assert.assertEquals(false, instance.has12(new int[] {2}));
+    Assert.assertEquals(false, instance.has12(new int[] {}));
+  }
 }

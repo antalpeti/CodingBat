@@ -359,4 +359,23 @@ public class Array2 {
     }
     return false;
   }
+
+  /**
+   * Given an array of ints, return true if there is a 1 in the array with a 2 somewhere later in
+   * the array.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean has12(int[] numbers) {
+    boolean hasOne = false;
+    for (int i = 0; i < numbers.length; i++) {
+      if (numbers[i] == 1) {
+        hasOne = true;
+      } else if (hasOne && numbers[i] == 2) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
