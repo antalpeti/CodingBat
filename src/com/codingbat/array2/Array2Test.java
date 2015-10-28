@@ -405,4 +405,33 @@ public class Array2Test {
     Assert.assertEquals(false, instance.has12(new int[] {2}));
     Assert.assertEquals(false, instance.has12(new int[] {}));
   }
+
+  /**
+   * Test method for {@link Array2#modThree(int[])}.
+   */
+  @Test
+  public void testModThree() {
+    Assert.assertEquals(true, instance.modThree(new int[] {2, 1, 3, 5}));
+    Assert.assertEquals(false, instance.modThree(new int[] {2, 1, 2, 5}));
+    Assert.assertEquals(true, instance.modThree(new int[] {2, 4, 2, 5}));
+    Assert.assertEquals(false, instance.modThree(new int[] {1, 2, 1, 2, 1}));
+    Assert.assertEquals(true, instance.modThree(new int[] {9, 9, 9}));
+    Assert.assertEquals(false, instance.modThree(new int[] {1, 2, 1}));
+    Assert.assertEquals(true, instance.modThree(new int[] {2, 4, 6}));
+    Assert.assertEquals(false, instance.modThree(new int[] {2, 4, 1}));
+    Assert.assertEquals(false, instance.modThree(new int[] {2, 5, 4}));
+    Assert.assertEquals(false, instance.modThree(new int[] {2, 5, 3}));
+    Assert.assertEquals(false, instance.modThree(new int[] {1, 6, 6}));
+    Assert.assertEquals(false, instance.modThree(new int[] {1, 6, 5}));
+    Assert.assertEquals(false, instance.modThree(new int[] {1, 3, 8}));
+    Assert.assertEquals(true, instance.modThree(new int[] {1, 3, 7}));
+    Assert.assertEquals(true, instance.modThree(new int[] {3, 1, 5}));
+    Assert.assertEquals(false, instance.modThree(new int[] {1, 2}));
+    Assert.assertEquals(false, instance.modThree(new int[] {1}));
+    Assert.assertEquals(false, instance.modThree(new int[] {}));
+    Assert.assertEquals(false, instance.modThree(new int[] {9, 7, 2, 9}));
+    Assert.assertEquals(false, instance.modThree(new int[] {9, 7, 2, 9, 2, 2}));
+    Assert.assertEquals(true, instance.modThree(new int[] {9, 7, 2, 4, 2, 5, 7}));
+    Assert.assertEquals(true, instance.modThree(new int[] {9, 7, 2, 9, 2, 2, 6}));
+  }
 }

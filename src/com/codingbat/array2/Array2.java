@@ -378,4 +378,25 @@ public class Array2 {
     }
     return false;
   }
+
+  /**
+   * Given an array of ints, return true if the array contains either 3 even or 3 odd values all
+   * next to each other.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean modThree(int[] numbers) {
+    for (int i = 0; i < numbers.length - 2; i++) {
+      boolean threeConsecutiveNumbersAreEven = numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0 && numbers[i + 2] % 2 == 0;
+      if (threeConsecutiveNumbersAreEven) {
+        return true;
+      }
+      boolean threeConsecutiveNumbersAreOdd = numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1;
+      if (threeConsecutiveNumbersAreOdd) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
