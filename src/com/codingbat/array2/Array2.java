@@ -388,15 +388,43 @@ public class Array2 {
    */
   public boolean modThree(int[] numbers) {
     for (int i = 0; i < numbers.length - 2; i++) {
-      boolean threeConsecutiveNumbersAreEven = numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0 && numbers[i + 2] % 2 == 0;
+      boolean threeConsecutiveNumbersAreEven =
+          numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0 && numbers[i + 2] % 2 == 0;
       if (threeConsecutiveNumbersAreEven) {
         return true;
       }
-      boolean threeConsecutiveNumbersAreOdd = numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1;
+      boolean threeConsecutiveNumbersAreOdd =
+          numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1;
       if (threeConsecutiveNumbersAreOdd) {
         return true;
       }
     }
     return false;
+  }
+
+  /**
+   * Given an array of ints, return true if the value 3 appears in the array exactly 3 times, and no
+   * 3's are next to each other.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean haveThree(int[] numbers) {
+    int numberOfProperOccurrence = 0;
+    for (int i = 0; i < numbers.length - 1; i++) {
+      boolean elementIsThree = numbers[i] == 3;
+      boolean nextElementIsNotThree = numbers[i + 1] != 3;
+      if (elementIsThree && nextElementIsNotThree) {
+        numberOfProperOccurrence++;
+      }
+    }
+    if (numbers.length > 1) {
+      boolean beforeLastElementIsNotThree = numbers[numbers.length - 2] != 3;
+      boolean lastElementIsThree = numbers[numbers.length - 1] == 3;
+      if (beforeLastElementIsNotThree && lastElementIsThree) {
+        numberOfProperOccurrence++;
+      }
+    }
+    return numberOfProperOccurrence == 3;
   }
 }
