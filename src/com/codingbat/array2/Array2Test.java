@@ -456,4 +456,31 @@ public class Array2Test {
     Assert.assertEquals(false, instance.haveThree(new int[] {1}));
     Assert.assertEquals(false, instance.haveThree(new int[] {}));
   }
+
+  /**
+   * Test method for {@link Array2#twoTwo(int[])}.
+   */
+  @Test
+  public void testTwoTwo() {
+    Assert.assertEquals(true, instance.twoTwo(new int[] {4, 2, 2, 3}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {2, 2, 4}));
+    Assert.assertEquals(false, instance.twoTwo(new int[] {2, 2, 4, 2}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {1, 3, 4}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {1, 2, 2, 3, 4}));
+    Assert.assertEquals(false, instance.twoTwo(new int[] {1, 2, 3, 4}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {2, 2}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {2, 2, 7}));
+    Assert.assertEquals(false, instance.twoTwo(new int[] {2, 2, 7, 2, 1}));
+    Assert.assertEquals(false, instance.twoTwo(new int[] {2, 2, 7, 2, 1, 1}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {4, 2, 2, 2}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {2, 2, 2}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {1, 2, 2, 2, 4}));
+    Assert.assertEquals(false, instance.twoTwo(new int[] {1, 2}));
+    Assert.assertEquals(false, instance.twoTwo(new int[] {1, 2, 1}));
+    Assert.assertEquals(false, instance.twoTwo(new int[] {2}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {1}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {1, 3, 5}));
+    Assert.assertEquals(true, instance.twoTwo(new int[] {5, 2, 2, 3}));
+    Assert.assertEquals(false, instance.twoTwo(new int[] {2, 2, 5, 2}));
+  }
 }

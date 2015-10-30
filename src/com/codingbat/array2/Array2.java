@@ -427,4 +427,27 @@ public class Array2 {
     }
     return numberOfProperOccurrence == 3;
   }
+
+  /**
+   * Given an array of ints, return true if every 2 that appears in the array is next to another 2.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean twoTwo(int[] numbers) {
+    int consecutiveNumberOfTwo = 0;
+    for (int i = 0; i < numbers.length; i++) {
+      boolean elementIsTwo = numbers[i] == 2;
+      if (elementIsTwo) {
+        consecutiveNumberOfTwo++;
+      } else {
+        if (consecutiveNumberOfTwo == 1) {
+          return false;
+        } else if (consecutiveNumberOfTwo >= 2) {
+          consecutiveNumberOfTwo = 0;
+        }
+      }
+    }
+    return consecutiveNumberOfTwo == 1 ? false : true;
+  }
 }
