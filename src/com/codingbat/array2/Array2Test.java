@@ -483,4 +483,25 @@ public class Array2Test {
     Assert.assertEquals(true, instance.twoTwo(new int[] {5, 2, 2, 3}));
     Assert.assertEquals(false, instance.twoTwo(new int[] {2, 2, 5, 2}));
   }
+
+  /**
+   * Test method for {@link Array2#sameEnds(int[], int)}.
+   */
+  @Test
+  public void testSameEnds() {
+    Assert.assertEquals(false, instance.sameEnds(new int[] {5, 6, 45, 99, 13, 5, 6}, 1));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {5, 6, 45, 99, 13, 5, 6}, 2));
+    Assert.assertEquals(false, instance.sameEnds(new int[] {5, 6, 45, 99, 13, 5, 6}, 3));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {1, 2, 5, 2, 1}, 1));
+    Assert.assertEquals(false, instance.sameEnds(new int[] {1, 2, 5, 2, 1}, 2));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {1, 2, 5, 2, 1}, 0));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {1, 2, 5, 2, 1}, 5));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {1, 1, 1}, 0));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {1, 1, 1}, 1));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {1, 1, 1}, 2));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {1, 1, 1}, 3));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {1}, 1));
+    Assert.assertEquals(true, instance.sameEnds(new int[] {}, 0));
+    Assert.assertEquals(false, instance.sameEnds(new int[] {4, 2, 4, 5}, 1));
+  }
 }
