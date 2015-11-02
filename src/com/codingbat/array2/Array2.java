@@ -470,4 +470,23 @@ public class Array2 {
     }
     return true;
   }
+
+  /**
+   * Return true if the array contains, somewhere, three increasing adjacent numbers like .... 4, 5,
+   * 6, ... or 23, 24, 25.
+   *
+   * @param numbers the input numbers
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean tripleUp(int[] numbers) {
+    for (int index = 0; index < numbers.length - 2; index++) {
+      int startElement = numbers[index];
+      int middleElement = numbers[index + 1];
+      int endElement = numbers[index + 2];
+      if (startElement + 1 == middleElement && middleElement + 1 == endElement) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

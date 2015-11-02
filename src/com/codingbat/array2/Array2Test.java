@@ -504,4 +504,23 @@ public class Array2Test {
     Assert.assertEquals(true, instance.sameEnds(new int[] {}, 0));
     Assert.assertEquals(false, instance.sameEnds(new int[] {4, 2, 4, 5}, 1));
   }
+
+  /**
+   * Test method for {@link Array2#tripleUp(int[])}.
+   */
+  @Test
+  public void testTripleUp() {
+    Assert.assertEquals(true, instance.tripleUp(new int[] {1, 4, 5, 6, 2}));
+    Assert.assertEquals(true, instance.tripleUp(new int[] {1, 2, 3}));
+    Assert.assertEquals(false, instance.tripleUp(new int[] {1, 2, 4}));
+    Assert.assertEquals(true, instance.tripleUp(new int[] {1, 2, 4, 5, 7, 6, 5, 6, 7, 6}));
+    Assert.assertEquals(false, instance.tripleUp(new int[] {1, 2, 4, 5, 7, 6, 5, 7, 7, 6}));
+    Assert.assertEquals(false, instance.tripleUp(new int[] {1, 2}));
+    Assert.assertEquals(false, instance.tripleUp(new int[] {1}));
+    Assert.assertEquals(false, instance.tripleUp(new int[] {}));
+    Assert.assertEquals(true, instance.tripleUp(new int[] {10, 9, 8, -100, -99, -98, 100}));
+    Assert.assertEquals(false, instance.tripleUp(new int[] {10, 9, 8, -100, -99, 99, 100}));
+    Assert.assertEquals(true, instance.tripleUp(new int[] {-100, -99, -99, 100, 101, 102}));
+    Assert.assertEquals(false, instance.tripleUp(new int[] {2, 3, 5, 6, 8, 9, 2, 3}));
+  }
 }
