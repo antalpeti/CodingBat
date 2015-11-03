@@ -489,4 +489,22 @@ public class Array2 {
     }
     return false;
   }
+
+  /**
+   * Given start and end numbers, return a new array containing the sequence of integers from start
+   * up to but not including end, so start=5 and end=10 yields {5, 6, 7, 8, 9}. The end number will
+   * be greater or equal to the start number.
+   *
+   * @param startNumber the start number
+   * @param endNumber the end number
+   * @return the above mentioned new array
+   */
+  public int[] fizzArray3(int startNumber, int endNumber) {
+    int arrayLength = endNumber - startNumber;
+    int[] result = new int[arrayLength];
+    for (int index = 0; index < arrayLength; index++) {
+      result[index] = startNumber + index;
+    }
+    return result;
+  }
 }

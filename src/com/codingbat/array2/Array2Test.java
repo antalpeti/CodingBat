@@ -523,4 +523,18 @@ public class Array2Test {
     Assert.assertEquals(true, instance.tripleUp(new int[] {-100, -99, -99, 100, 101, 102}));
     Assert.assertEquals(false, instance.tripleUp(new int[] {2, 3, 5, 6, 8, 9, 2, 3}));
   }
+
+  /**
+   * Test method for {@link Array2#fizzArray3(int, int)}.
+   */
+  @Test
+  public void testFizzArray3() {
+    Assert.assertArrayEquals(new int[] {5, 6, 7, 8, 9}, instance.fizzArray3(5, 10));
+    Assert.assertArrayEquals(new int[] {11, 12, 13, 14, 15, 16, 17}, instance.fizzArray3(11, 18));
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.fizzArray3(1, 3));
+    Assert.assertArrayEquals(new int[] {1}, instance.fizzArray3(1, 2));
+    Assert.assertArrayEquals(new int[] {}, instance.fizzArray3(1, 1));
+    Assert.assertArrayEquals(new int[] {1000, 1001, 1002, 1003, 1004},
+        instance.fizzArray3(1000, 1005));
+  }
 }
