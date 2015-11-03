@@ -409,7 +409,7 @@ public class String1 {
           return "a" + str.substring(2);
         } else if (str.charAt(0) != 'a' && str.charAt(1) == 'b') {
           return str.substring(1);
-        } else if (str.charAt(0) != 'a' && str.charAt(1) != 'b') {
+        } else if (str.charAt(1) != 'b') {
           return str.substring(2);
         }
       }
@@ -476,11 +476,9 @@ public class String1 {
     if (str.length() >= 2) {
       if (str.charAt(0) == 'x' && str.charAt(1) != 'x') {
         return str.substring(1);
-      }
-      if (str.charAt(0) != 'x' && str.charAt(1) == 'x') {
+      } else if (str.charAt(0) != 'x' && str.charAt(1) == 'x') {
         return str.charAt(0) + str.substring(2);
-      }
-      if (str.charAt(0) == 'x' && str.charAt(1) == 'x') {
+      } else if (str.charAt(0) == 'x') {
         return str.substring(2);
       }
     }
