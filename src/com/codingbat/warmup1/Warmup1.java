@@ -256,7 +256,7 @@ public class Warmup1 {
     int maxTemperature = 100;
     boolean oneIsGreaterThanOneHundred =
         temperature1 > maxTemperature || temperature2 > maxTemperature;
-        return oneIsLessThanZero && oneIsGreaterThanOneHundred;
+    return oneIsLessThanZero && oneIsGreaterThanOneHundred;
   }
 
   /**
@@ -398,12 +398,10 @@ public class Warmup1 {
     boolean bNumberInRange = 9 < bNumber && bNumber < 21;
     if (aNumberInRange && bNumberInRange) {
       ret = Math.max(aNumber, bNumber);
-    } else if (aNumberInRange && !bNumberInRange) {
+    } else if (aNumberInRange) {
       ret = aNumber;
-    } else if (!aNumberInRange && bNumberInRange) {
+    } else if (bNumberInRange) {
       ret = bNumber;
-    } else if (!aNumberInRange && !bNumberInRange) {
-      ret = 0;
     }
     return ret;
   }
