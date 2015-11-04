@@ -507,4 +507,23 @@ public class Array2 {
     }
     return result;
   }
+
+  /**
+   * Return an array that is "left shifted" by one -- so {6, 2, 5, 3} returns {2, 5, 3, 6}. You may
+   * modify and return the given array, or return a new array.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new array
+   */
+  public int[] shiftLeft(int[] numbers) {
+    int[] shiftedArray = new int[numbers.length];
+    int lastIndex = numbers.length - 1;
+    if (shiftedArray.length > 0) {
+      shiftedArray[lastIndex] = numbers[0];
+      for (int index = 0; index < lastIndex; index++) {
+        shiftedArray[index] = numbers[index + 1];
+      }
+    }
+    return shiftedArray;
+  }
 }

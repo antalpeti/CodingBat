@@ -537,4 +537,19 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {1000, 1001, 1002, 1003, 1004},
         instance.fizzArray3(1000, 1005));
   }
+
+  /**
+   * Test method for {@link Array2#shiftLeft(int[])}.
+   */
+  @Test
+  public void testShiftLeft() {
+    Assert.assertArrayEquals(new int[] {2, 5, 3, 6}, instance.shiftLeft(new int[] {6, 2, 5, 3}));
+    Assert.assertArrayEquals(new int[] {2, 1}, instance.shiftLeft(new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {1}, instance.shiftLeft(new int[] {1}));
+    Assert.assertArrayEquals(new int[] {}, instance.shiftLeft(new int[] {}));
+    Assert.assertArrayEquals(new int[] {1, 2, 2, 4, 1},
+        instance.shiftLeft(new int[] {1, 1, 2, 2, 4}));
+    Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.shiftLeft(new int[] {1, 1, 1}));
+    Assert.assertArrayEquals(new int[] {2, 3, 1}, instance.shiftLeft(new int[] {1, 2, 3}));
+  }
 }
