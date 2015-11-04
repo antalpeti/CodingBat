@@ -388,14 +388,13 @@ public class Array1 {
     int[] twoElementArray = new int[2];
     boolean twoAvailableFromFirstArray = aNumbers.length >= 2;
     boolean oneAvailableFromFirstArray = aNumbers.length == 1;
-    boolean zeroAvailableFromFirstArray = aNumbers.length == 0;
     if (twoAvailableFromFirstArray) {
       twoElementArray[0] = aNumbers[0];
       twoElementArray[1] = aNumbers[1];
     } else if (oneAvailableFromFirstArray) {
       twoElementArray[0] = aNumbers[0];
       twoElementArray[1] = bNumbers[0];
-    } else if (zeroAvailableFromFirstArray) {
+    } else {
       twoElementArray[0] = bNumbers[0];
       twoElementArray[1] = bNumbers[1];
     }
