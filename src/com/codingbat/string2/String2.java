@@ -277,7 +277,7 @@ public class String2 {
     String filling = "";
     int firstSlicePos = str.indexOf(bread);
     int lastSlicePos = str.lastIndexOf(bread);
-    if (firstSlicePos != -1 && lastSlicePos != -1 && firstSlicePos != lastSlicePos) {
+    if (firstSlicePos != -1 && firstSlicePos != lastSlicePos) {
       filling = str.substring(firstSlicePos + bread.length(), lastSlicePos);
     }
     return filling;
