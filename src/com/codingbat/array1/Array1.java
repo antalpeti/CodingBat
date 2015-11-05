@@ -412,11 +412,9 @@ public class Array1 {
   public int[] front11(int[] aNumbers, int[] bNumbers) {
     if (aNumbers.length > 0 && bNumbers.length > 0) {
       return new int[] {aNumbers[0], bNumbers[0]};
-    }
-    if (aNumbers.length > 0 && bNumbers.length == 0) {
+    } else if (aNumbers.length > 0) {
       return new int[] {aNumbers[0]};
-    }
-    if (aNumbers.length == 0 && bNumbers.length > 0) {
+    } else if (bNumbers.length > 0) {
       return new int[] {bNumbers[0]};
     }
     return new int[] {};
