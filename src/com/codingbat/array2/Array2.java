@@ -526,4 +526,25 @@ public class Array2 {
     }
     return shiftedArray;
   }
+
+  /**
+   * For each multiple of 10 in the given array, change all the values following it to be that
+   * multiple of 10, until encountering another multiple of 10. So {2, 10, 3, 4, 20, 5} yields {2,
+   * 10, 10, 10, 20, 20}.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned array
+   */
+  public int[] tenRun(int[] numbers) {
+    int multipleOfTen = 1;
+    for (int index = 0; index < numbers.length; index++) {
+      if (numbers[index] % 10 == 0) {
+        multipleOfTen = numbers[index];
+      }
+      if (multipleOfTen != 1) {
+        numbers[index] = multipleOfTen;
+      }
+    }
+    return numbers;
+  }
 }

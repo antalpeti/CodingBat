@@ -552,4 +552,23 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.shiftLeft(new int[] {1, 1, 1}));
     Assert.assertArrayEquals(new int[] {2, 3, 1}, instance.shiftLeft(new int[] {1, 2, 3}));
   }
+
+  /**
+   * Test method for {@link Array2#tenRun(int[])}.
+   */
+  @Test
+  public void testTenRun() {
+    Assert.assertArrayEquals(new int[] {2, 10, 10, 10, 20, 20},
+        instance.tenRun(new int[] {2, 10, 3, 4, 20, 5}));
+    Assert.assertArrayEquals(new int[] {10, 10, 20, 20}, instance.tenRun(new int[] {10, 1, 20, 2}));
+    Assert.assertArrayEquals(new int[] {10, 10, 10, 20}, instance.tenRun(new int[] {10, 1, 9, 20}));
+    Assert.assertArrayEquals(new int[] {1, 2, 50, 50}, instance.tenRun(new int[] {1, 2, 50, 1}));
+    Assert.assertArrayEquals(new int[] {1, 20, 50, 50}, instance.tenRun(new int[] {1, 20, 50, 1}));
+    Assert.assertArrayEquals(new int[] {10, 10}, instance.tenRun(new int[] {10, 10}));
+    Assert.assertArrayEquals(new int[] {10, 10}, instance.tenRun(new int[] {10, 2}));
+    Assert.assertArrayEquals(new int[] {0, 0}, instance.tenRun(new int[] {0, 2}));
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.tenRun(new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {1}, instance.tenRun(new int[] {1}));
+    Assert.assertArrayEquals(new int[] {}, instance.tenRun(new int[] {}));
+  }
 }
