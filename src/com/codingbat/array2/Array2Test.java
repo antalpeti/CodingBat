@@ -571,4 +571,23 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {1}, instance.tenRun(new int[] {1}));
     Assert.assertArrayEquals(new int[] {}, instance.tenRun(new int[] {}));
   }
+
+  /**
+   * Test method for {@link Array2#pre4(int[])}.
+   */
+  @Test
+  public void testPre4() {
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.pre4(new int[] {1, 2, 4, 1}));
+    Assert.assertArrayEquals(new int[] {3, 1}, instance.pre4(new int[] {3, 1, 4}));
+    Assert.assertArrayEquals(new int[] {1}, instance.pre4(new int[] {1, 4, 4}));
+    Assert.assertArrayEquals(new int[] {1}, instance.pre4(new int[] {1, 4, 4, 2}));
+    Assert.assertArrayEquals(new int[] {1, 3}, instance.pre4(new int[] {1, 3, 4, 2, 4}));
+    Assert.assertArrayEquals(new int[] {}, instance.pre4(new int[] {4, 4}));
+    Assert.assertArrayEquals(new int[] {}, instance.pre4(new int[] {}));
+    Assert.assertArrayEquals(new int[] {}, instance.pre4(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {3, 3}, instance.pre4(new int[] {3, 3, 4}));
+    Assert.assertArrayEquals(new int[] {1, 2, 1}, instance.pre4(new int[] {1, 2, 1, 4}));
+    Assert.assertArrayEquals(new int[] {2, 1}, instance.pre4(new int[] {2, 1, 4, 2}));
+    Assert.assertArrayEquals(new int[] {2, 1, 2, 1}, instance.pre4(new int[] {2, 1, 2, 1, 4, 2}));
+  }
 }

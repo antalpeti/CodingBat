@@ -1,5 +1,7 @@
 package com.codingbat.array2;
 
+import java.util.Arrays;
+
 /**
  * The class Array2 is contains solution for Array-2 section.
  */
@@ -546,5 +548,24 @@ public class Array2 {
       }
     }
     return numbers;
+  }
+
+  /**
+   * Given a non-empty array of ints, return a new array containing the elements from the original
+   * array that come before the first 4 in the original array. The original array will contain at
+   * least one 4. Note that it is valid in java to create an array of length 0.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new array
+   */
+  public int[] pre4(int[] numbers) {
+    int firstPositionOfNumberFour = 0;
+    for (int index = 0; index < numbers.length; index++) {
+      if (numbers[index] == 4) {
+        firstPositionOfNumberFour = index;
+        break;
+      }
+    }
+    return Arrays.copyOf(numbers, firstPositionOfNumberFour);
   }
 }
