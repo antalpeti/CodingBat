@@ -657,4 +657,26 @@ public class Array2 {
 
     return Arrays.copyOfRange(numbers, rangeIndexFrom, rangeIndexTo);
   }
+
+  /**
+   * We'll say that an element in an array is "alone" if there are values before and after it, and
+   * those values are different from it. Return a version of the given array where every instance of
+   * the given value which is alone is replaced by whichever value to its left or right is larger.
+   *
+   * @param numbers the input numbers
+   * @param value the searched value to replace
+   * @return the above mentioned array
+   */
+  public int[] notAlone(int[] numbers, int value) {
+    for (int index = 1; index < numbers.length - 1; index++) {
+      boolean elementIsValue = numbers[index] == value;
+      boolean leftElementIsDifferentValue = numbers[index - 1] != value;
+      boolean rightElementIsDifferentValue = numbers[index + 1] != value;
+
+      if (elementIsValue && leftElementIsDifferentValue && rightElementIsDifferentValue) {
+        numbers[index] = Math.max(numbers[index - 1], numbers[index + 1]);
+      }
+    }
+    return numbers;
+  }
 }

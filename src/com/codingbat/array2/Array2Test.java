@@ -608,4 +608,24 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {2, 2, 2}, instance.post4(new int[] {4, 1, 4, 2, 2, 2}));
     Assert.assertArrayEquals(new int[] {3, 2}, instance.post4(new int[] {3, 4, 3, 2}));
   }
+
+  /**
+   * Test method for {@link Array2#notAlone(int[], int)}.
+   */
+  @Test
+  public void testNotAlone() {
+    Assert.assertArrayEquals(new int[] {1, 3, 3}, instance.notAlone(new int[] {1, 2, 3}, 2));
+    Assert.assertArrayEquals(new int[] {1, 3, 3, 5, 5, 2},
+        instance.notAlone(new int[] {1, 2, 3, 2, 5, 2}, 2));
+    Assert.assertArrayEquals(new int[] {3, 4}, instance.notAlone(new int[] {3, 4}, 3));
+    Assert.assertArrayEquals(new int[] {3, 3}, instance.notAlone(new int[] {3, 3}, 3));
+    Assert.assertArrayEquals(new int[] {1, 3, 3, 2}, instance.notAlone(new int[] {1, 3, 1, 2}, 1));
+    Assert.assertArrayEquals(new int[] {3}, instance.notAlone(new int[] {3}, 3));
+    Assert.assertArrayEquals(new int[] {}, instance.notAlone(new int[] {}, 3));
+    Assert.assertArrayEquals(new int[] {7, 7, 6}, instance.notAlone(new int[] {7, 1, 6}, 1));
+    Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.notAlone(new int[] {1, 1, 1}, 1));
+    Assert.assertArrayEquals(new int[] {1, 1, 2}, instance.notAlone(new int[] {1, 1, 2}, 1));
+    Assert.assertArrayEquals(new int[] {2, 1, 1}, instance.notAlone(new int[] {2, 1, 1}, 1));
+    Assert.assertArrayEquals(new int[] {1, 1, 1, 2}, instance.notAlone(new int[] {1, 1, 1, 2}, 1));
+  }
 }
