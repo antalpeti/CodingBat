@@ -53,6 +53,7 @@ public class Array2 {
     int minimum = numbers[0];
     int maximum = numbers[0];
     int sum = 0;
+
     for (int number : numbers) {
       minimum = Math.min(minimum, number);
       maximum = Math.max(maximum, number);
@@ -73,7 +74,9 @@ public class Array2 {
     int sum = 0;
     int unluckyNumber = 13;
     int jumpIndex = 1;
+
     for (int index = 0; index < numbers.length; index++) {
+
       if (numbers[index] == unluckyNumber) {
         index += jumpIndex;
         continue;
@@ -96,14 +99,17 @@ public class Array2 {
     int sum = 0;
     int ignoredNumbersStart = 6;
     int ignoredNumbersEnd = 7;
+
     for (int number : numbers) {
       if (number == ignoredNumbersStart) {
         ignoredNumbers = true;
       }
+
       if (ignoredNumbers && number == ignoredNumbersEnd) {
         ignoredNumbers = false;
         continue;
       }
+
       if (ignoredNumbers) {
         continue;
       }
@@ -121,8 +127,10 @@ public class Array2 {
   public boolean has22(int[] numbers) {
     int searchedNumber = 2;
     int indexLeap = 1;
+
     for (int index = 0; index < numbers.length - indexLeap; index++) {
       int nextIndex = index + indexLeap;
+
       if (numbers[index] == searchedNumber && numbers[nextIndex] == searchedNumber) {
         return true;
       }
@@ -155,10 +163,12 @@ public class Array2 {
     int searchedNumber = 2;
     int sumOfSearchedNumber = 0;
     int limitOfSum = 8;
+
     for (int number : numbers) {
       if (number == searchedNumber) {
         sumOfSearchedNumber += searchedNumber;
       }
+
       if (sumOfSearchedNumber > limitOfSum) {
         break;
       }
@@ -177,10 +187,12 @@ public class Array2 {
     int numberOfFour = 0;
     int firstSearchedNumber = 1;
     int secondSearchedNumber = 4;
+
     for (int number : numbers) {
       if (number == firstSearchedNumber) {
         numberOfOne++;
       }
+
       if (number == secondSearchedNumber) {
         numberOfFour++;
       }
@@ -247,10 +259,12 @@ public class Array2 {
   public boolean no14(int[] numbers) {
     boolean hasNumber1 = false;
     boolean hasNumber4 = false;
+
     for (int number : numbers) {
       if (number == 1) {
         hasNumber1 = true;
       }
+
       if (number == 4) {
         hasNumber4 = true;
       }
@@ -271,6 +285,7 @@ public class Array2 {
     for (int i = 0; i < numbers.length - 1; i++) {
       boolean elementIsNotValue = numbers[i] != value;
       boolean nextElementIsNotValue = numbers[i + 1] != value;
+
       if (elementIsNotValue && nextElementIsNotValue) {
         return false;
       }
@@ -324,6 +339,7 @@ public class Array2 {
     for (int i = 0; i < numbers1.length; i++) {
       boolean numbersNotEqual = numbers1[i] != numbers2[i];
       boolean numbersDifferLessThanTwo = Math.abs(numbers1[i] - numbers2[i]) <= 2;
+
       if (numbersNotEqual && numbersDifferLessThanTwo) {
         result++;
       }
@@ -342,10 +358,12 @@ public class Array2 {
     if (numbers.length == 2) {
       boolean firstElementIsSeven = numbers[0] == 7;
       boolean secondElementIsSeven = numbers[1] == 7;
+
       if (firstElementIsSeven && secondElementIsSeven) {
         return true;
       }
     }
+
     if (numbers.length > 2) {
       for (int i = 0; i < numbers.length - 2; i++) {
         boolean startElementIsSeven = numbers[i] == 7;
@@ -354,6 +372,7 @@ public class Array2 {
         boolean startAndMiddleCase = startElementIsSeven && middleElementIsSeven;
         boolean middleAndEndCase = middleElementIsSeven && endElementIsSeven;
         boolean startAndEndCase = startElementIsSeven && endElementIsSeven;
+
         if (startAndMiddleCase || middleAndEndCase || startAndEndCase) {
           return true;
         }
@@ -395,6 +414,7 @@ public class Array2 {
       if (threeConsecutiveNumbersAreEven) {
         return true;
       }
+
       boolean threeConsecutiveNumbersAreOdd =
           numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1;
       if (threeConsecutiveNumbersAreOdd) {
@@ -420,6 +440,7 @@ public class Array2 {
         numberOfProperOccurrence++;
       }
     }
+
     if (numbers.length > 1) {
       boolean beforeLastElementIsNotThree = numbers[numbers.length - 2] != 3;
       boolean lastElementIsThree = numbers[numbers.length - 1] == 3;
@@ -485,6 +506,7 @@ public class Array2 {
       int startElement = numbers[index];
       int middleElement = numbers[index + 1];
       int endElement = numbers[index + 2];
+
       if (startElement + 1 == middleElement && middleElement + 1 == endElement) {
         return true;
       }
@@ -575,7 +597,7 @@ public class Array2 {
    * least one 4. Note that it is valid in java to create an array of length 0.
    *
    * @param numbers the input numbers
-   * @return the above mentioned new arraz
+   * @return the above mentioned new array
    */
   public int[] post4(int[] numbers) {
     int notExistingIndex = -1;
