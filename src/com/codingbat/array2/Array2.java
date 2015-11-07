@@ -15,11 +15,13 @@ public class Array2 {
    */
   public int countEvens(int[] numbers) {
     int numberOfEven = 0;
+
     for (int number : numbers) {
       if (number % 2 == 0) {
         numberOfEven++;
       }
     }
+
     return numberOfEven;
   }
 
@@ -33,10 +35,12 @@ public class Array2 {
   public int bigDiff(int[] numbers) {
     int minimum = numbers[0];
     int maximum = numbers[0];
+
     for (int number : numbers) {
       minimum = Math.min(minimum, number);
       maximum = Math.max(maximum, number);
     }
+
     return maximum - minimum;
   }
 
@@ -59,6 +63,7 @@ public class Array2 {
       maximum = Math.max(maximum, number);
       sum += number;
     }
+
     return (sum - (minimum + maximum)) / (numbers.length - 2);
   }
 
@@ -83,6 +88,7 @@ public class Array2 {
       }
       sum += numbers[index];
     }
+
     return sum;
   }
 
@@ -115,6 +121,7 @@ public class Array2 {
       }
       sum += number;
     }
+
     return sum;
   }
 
@@ -135,6 +142,7 @@ public class Array2 {
         return true;
       }
     }
+
     return false;
   }
 
@@ -150,6 +158,7 @@ public class Array2 {
         return false;
       }
     }
+
     return true;
   }
 
@@ -173,6 +182,7 @@ public class Array2 {
         break;
       }
     }
+
     return sumOfSearchedNumber == limitOfSum;
   }
 
@@ -197,6 +207,7 @@ public class Array2 {
         numberOfFour++;
       }
     }
+
     return numberOfOne > numberOfFour;
   }
 
@@ -209,9 +220,11 @@ public class Array2 {
    */
   public int[] fizzArray(int number) {
     int result[] = new int[number];
+
     for (int index = 0; index < result.length; index++) {
       result[index] = index;
     }
+
     return result;
   }
 
@@ -224,12 +237,14 @@ public class Array2 {
   public boolean only14(int[] numbers) {
     int numberOne = 1;
     int numberFour = 4;
+
     for (int number : numbers) {
       boolean notPermitedNumber = number != numberOne && number != numberFour;
       if (notPermitedNumber) {
         return false;
       }
     }
+
     return true;
   }
 
@@ -244,9 +259,11 @@ public class Array2 {
    */
   public String[] fizzArray2(int number) {
     String result[] = new String[number];
+
     for (int index = 0; index < result.length; index++) {
       result[index] = String.valueOf(index);
     }
+
     return result;
   }
 
@@ -269,6 +286,7 @@ public class Array2 {
         hasNumber4 = true;
       }
     }
+
     return !(hasNumber1 && hasNumber4);
   }
 
@@ -290,6 +308,7 @@ public class Array2 {
         return false;
       }
     }
+
     return true;
   }
 
@@ -336,6 +355,7 @@ public class Array2 {
    */
   public int matchUp(int[] numbers1, int[] numbers2) {
     int result = 0;
+
     for (int i = 0; i < numbers1.length; i++) {
       boolean numbersNotEqual = numbers1[i] != numbers2[i];
       boolean numbersDifferLessThanTwo = Math.abs(numbers1[i] - numbers2[i]) <= 2;
@@ -344,6 +364,7 @@ public class Array2 {
         result++;
       }
     }
+
     return result;
   }
 
@@ -390,6 +411,7 @@ public class Array2 {
    */
   public boolean has12(int[] numbers) {
     boolean hasOne = false;
+
     for (int i = 0; i < numbers.length; i++) {
       if (numbers[i] == 1) {
         hasOne = true;
@@ -397,6 +419,7 @@ public class Array2 {
         return true;
       }
     }
+
     return false;
   }
 
@@ -421,6 +444,7 @@ public class Array2 {
         return true;
       }
     }
+
     return false;
   }
 
@@ -433,6 +457,7 @@ public class Array2 {
    */
   public boolean haveThree(int[] numbers) {
     int numberOfProperOccurrence = 0;
+
     for (int i = 0; i < numbers.length - 1; i++) {
       boolean elementIsThree = numbers[i] == 3;
       boolean nextElementIsNotThree = numbers[i + 1] != 3;
@@ -448,6 +473,7 @@ public class Array2 {
         numberOfProperOccurrence++;
       }
     }
+
     return numberOfProperOccurrence == 3;
   }
 
@@ -459,6 +485,7 @@ public class Array2 {
    */
   public boolean twoTwo(int[] numbers) {
     int consecutiveNumberOfTwo = 0;
+
     for (int i = 0; i < numbers.length; i++) {
       boolean elementIsTwo = numbers[i] == 2;
       if (elementIsTwo) {
@@ -471,6 +498,7 @@ public class Array2 {
         }
       }
     }
+
     return consecutiveNumberOfTwo == 1 ? false : true;
   }
 
@@ -491,6 +519,7 @@ public class Array2 {
         return false;
       }
     }
+
     return true;
   }
 
@@ -511,6 +540,7 @@ public class Array2 {
         return true;
       }
     }
+
     return false;
   }
 
@@ -525,10 +555,12 @@ public class Array2 {
    */
   public int[] fizzArray3(int startNumber, int endNumber) {
     int arrayLength = endNumber - startNumber;
+
     int[] result = new int[arrayLength];
     for (int index = 0; index < arrayLength; index++) {
       result[index] = startNumber + index;
     }
+
     return result;
   }
 
@@ -542,12 +574,14 @@ public class Array2 {
   public int[] shiftLeft(int[] numbers) {
     int[] shiftedArray = new int[numbers.length];
     int lastIndex = numbers.length - 1;
+
     if (shiftedArray.length > 0) {
       shiftedArray[lastIndex] = numbers[0];
       for (int index = 0; index < lastIndex; index++) {
         shiftedArray[index] = numbers[index + 1];
       }
     }
+
     return shiftedArray;
   }
 
@@ -561,6 +595,7 @@ public class Array2 {
    */
   public int[] tenRun(int[] numbers) {
     int multipleOfTen = 1;
+
     for (int index = 0; index < numbers.length; index++) {
       if (numbers[index] % 10 == 0) {
         multipleOfTen = numbers[index];
@@ -569,6 +604,7 @@ public class Array2 {
         numbers[index] = multipleOfTen;
       }
     }
+
     return numbers;
   }
 
@@ -582,12 +618,14 @@ public class Array2 {
    */
   public int[] pre4(int[] numbers) {
     int firstPositionOfNumberFour = 0;
+
     for (int index = 0; index < numbers.length; index++) {
       if (numbers[index] == 4) {
         firstPositionOfNumberFour = index;
         break;
       }
     }
+
     return Arrays.copyOf(numbers, firstPositionOfNumberFour);
   }
 
