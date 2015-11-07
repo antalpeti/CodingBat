@@ -590,4 +590,22 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {2, 1}, instance.pre4(new int[] {2, 1, 4, 2}));
     Assert.assertArrayEquals(new int[] {2, 1, 2, 1}, instance.pre4(new int[] {2, 1, 2, 1, 4, 2}));
   }
+
+  /**
+   * Test method for {@link Array2#post4(int[])}.
+   */
+  @Test
+  public void testPost4() {
+    Assert.assertArrayEquals(new int[] {1, 2}, instance.post4(new int[] {2, 4, 1, 2}));
+    Assert.assertArrayEquals(new int[] {1, 2, 3}, instance.post4(new int[] {4, 4, 1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {2}, instance.post4(new int[] {4, 2}));
+    Assert.assertArrayEquals(new int[] {3}, instance.post4(new int[] {4, 4, 3}));
+    Assert.assertArrayEquals(new int[] {}, instance.post4(new int[] {4, 4}));
+    Assert.assertArrayEquals(new int[] {}, instance.post4(new int[] {4}));
+    Assert.assertArrayEquals(new int[] {}, instance.post4(new int[] {}));
+    Assert.assertArrayEquals(new int[] {}, instance.post4(new int[] {1, 2, 3}));
+    Assert.assertArrayEquals(new int[] {3, 2}, instance.post4(new int[] {2, 4, 1, 4, 3, 2}));
+    Assert.assertArrayEquals(new int[] {2, 2, 2}, instance.post4(new int[] {4, 1, 4, 2, 2, 2}));
+    Assert.assertArrayEquals(new int[] {3, 2}, instance.post4(new int[] {3, 4, 3, 2}));
+  }
 }

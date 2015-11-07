@@ -568,4 +568,33 @@ public class Array2 {
     }
     return Arrays.copyOf(numbers, firstPositionOfNumberFour);
   }
+
+  /**
+   * Given a non-empty array of ints, return a new array containing the elements from the original
+   * array that come after the last 4 in the original array. The original array will contain at
+   * least one 4. Note that it is valid in java to create an array of length 0.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new arraz
+   */
+  public int[] post4(int[] numbers) {
+    int notExistingIndex = -1;
+    int lastPositionOfNubmerFour = notExistingIndex;
+    int rangeIndexTo = numbers.length;
+    for (int index = rangeIndexTo - 1; index > notExistingIndex; index--) {
+      if (numbers[index] == 4) {
+        lastPositionOfNubmerFour = index;
+        break;
+      }
+    }
+
+    int rangeIndexFrom;
+    if (lastPositionOfNubmerFour != notExistingIndex) {
+      rangeIndexFrom = lastPositionOfNubmerFour + 1;
+    } else {
+      rangeIndexFrom = numbers.length;
+    }
+
+    return Arrays.copyOfRange(numbers, rangeIndexFrom, rangeIndexTo);
+  }
 }
