@@ -647,9 +647,38 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {0, 0, 0, -1, -1},
         instance.zeroFront(new int[] {-1, 0, 0, -1, 0}));
     Assert
-    .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
+        .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
     Assert.assertArrayEquals(new int[] {}, instance.zeroFront(new int[] {}));
     Assert.assertArrayEquals(new int[] {0, 0, 9, 9, 9, 9},
         instance.zeroFront(new int[] {9, 9, 0, 9, 0, 9}));
+  }
+
+  /**
+   * Test method for {@link Array2#zeroFront2(int[])}.
+   */
+  @Test
+  public void testZeroFront2() {
+    Assert.assertArrayEquals(new int[] {0, 0, 1, 1}, instance.zeroFront2(new int[] {1, 0, 0, 1}));
+    Assert.assertArrayEquals(new int[] {0, 0, 1, 1, 1},
+        instance.zeroFront2(new int[] {0, 1, 1, 0, 1}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 1, 1, 1},
+        instance.zeroFront2(new int[] {0, 1, 1, 0, 0, 1}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 1, 2, 3},
+        instance.zeroFront2(new int[] {0, 1, 2, 0, 0, 3}));
+    Assert.assertArrayEquals(new int[] {0, 1}, instance.zeroFront2(new int[] {1, 0}));
+    Assert.assertArrayEquals(new int[] {0, 1}, instance.zeroFront2(new int[] {0, 1}));
+    Assert.assertArrayEquals(new int[] {0, 1, 1, 1}, instance.zeroFront2(new int[] {1, 1, 1, 0}));
+    Assert.assertArrayEquals(new int[] {0, 3, 2, 1}, instance.zeroFront2(new int[] {3, 2, 1, 0}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5},
+        instance.zeroFront2(new int[] {0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0}));
+    Assert.assertArrayEquals(new int[] {2, 2, 2, 2}, instance.zeroFront2(new int[] {2, 2, 2, 2}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 1}, instance.zeroFront2(new int[] {0, 0, 1, 0}));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, -1, -1},
+        instance.zeroFront2(new int[] {-1, 0, 0, -1, 0}));
+    Assert.assertArrayEquals(new int[] {0, 0, -3, -3},
+        instance.zeroFront2(new int[] {0, -3, 0, -3}));
+    Assert.assertArrayEquals(new int[] {}, instance.zeroFront2(new int[] {}));
+    Assert.assertArrayEquals(new int[] {0, 0, 9, 9, 9, 9},
+        instance.zeroFront2(new int[] {9, 9, 0, 9, 0, 9}));
   }
 }

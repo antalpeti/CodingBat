@@ -702,4 +702,27 @@ public class Array2 {
 
     return numbers;
   }
+
+  /**
+   * Return an array that contains the exact same numbers as the given array, but rearranged so that
+   * all the zeros are grouped at the start of the array. The order of the non-zero numbers matters.
+   * So {1, 0, 0, 2} becomes {0 ,0, 1, 2}.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new array
+   */
+  public int[] zeroFront2(int[] numbers) {
+    int notZeroElementIndex = numbers.length - 1;
+    int[] groupedElements = new int[numbers.length];
+
+    for (int index = notZeroElementIndex; index > -1; index--) {
+      boolean elementIsNotZero = numbers[index] != 0;
+
+      if (elementIsNotZero) {
+        groupedElements[notZeroElementIndex--] = numbers[index];
+      }
+    }
+
+    return groupedElements;
+  }
 }
