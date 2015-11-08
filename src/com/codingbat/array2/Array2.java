@@ -677,6 +677,29 @@ public class Array2 {
         numbers[index] = Math.max(numbers[index - 1], numbers[index + 1]);
       }
     }
+
+    return numbers;
+  }
+
+  /**
+   * Return an array that contains the exact same numbers as the given array, but rearranged so that
+   * all the zeros are grouped at the start of the array. The order of the non-zero numbers does not
+   * matter. So {1, 0, 0, 1} becomes {0 ,0, 1, 1}.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned array
+   */
+  public int[] zeroFront(int[] numbers) {
+    int notZeroElementIndex = 0;
+    for (int index = notZeroElementIndex; index < numbers.length; index++) {
+      boolean elementIsZero = numbers[index] == 0;
+
+      if (elementIsZero) {
+        numbers[index] = numbers[notZeroElementIndex];
+        numbers[notZeroElementIndex++] = 0;
+      }
+    }
+
     return numbers;
   }
 }
