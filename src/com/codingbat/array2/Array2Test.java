@@ -647,7 +647,7 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {0, 0, 0, -1, -1},
         instance.zeroFront(new int[] {-1, 0, 0, -1, 0}));
     Assert
-        .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
+    .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
     Assert.assertArrayEquals(new int[] {}, instance.zeroFront(new int[] {}));
     Assert.assertArrayEquals(new int[] {0, 0, 9, 9, 9, 9},
         instance.zeroFront(new int[] {9, 9, 0, 9, 0, 9}));
@@ -680,5 +680,24 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {}, instance.zeroFront2(new int[] {}));
     Assert.assertArrayEquals(new int[] {0, 0, 9, 9, 9, 9},
         instance.zeroFront2(new int[] {9, 9, 0, 9, 0, 9}));
+  }
+
+  /**
+   * Test method for {@link Array2#withoutTen(int[])}.
+   */
+  @Test
+  public void testWithoutTen() {
+    Assert.assertArrayEquals(new int[] {1, 2, 0, 0}, instance.withoutTen(new int[] {1, 10, 10, 2}));
+    Assert.assertArrayEquals(new int[] {2, 0, 0}, instance.withoutTen(new int[] {10, 2, 10}));
+    Assert.assertArrayEquals(new int[] {1, 99, 0}, instance.withoutTen(new int[] {1, 99, 10}));
+    Assert.assertArrayEquals(new int[] {13, 14, 0, 0},
+        instance.withoutTen(new int[] {10, 13, 10, 14}));
+    Assert.assertArrayEquals(new int[] {13, 14, 0, 0, 0},
+        instance.withoutTen(new int[] {10, 13, 10, 14, 10}));
+    Assert.assertArrayEquals(new int[] {3, 0, 0}, instance.withoutTen(new int[] {10, 10, 3}));
+    Assert.assertArrayEquals(new int[] {1}, instance.withoutTen(new int[] {1}));
+    Assert.assertArrayEquals(new int[] {13, 1}, instance.withoutTen(new int[] {13, 1}));
+    Assert.assertArrayEquals(new int[] {0}, instance.withoutTen(new int[] {10}));
+    Assert.assertArrayEquals(new int[] {}, instance.withoutTen(new int[] {}));
   }
 }
