@@ -748,4 +748,29 @@ public class Array2 {
 
     return shiftedElements;
   }
+
+  /**
+   * Return a version of the given array where each zero value in the array is replaced by the
+   * largest odd value to the right of the zero in the array. If there is no odd value to the right
+   * of the zero, leave the zero as a zero.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned array
+   */
+  public int[] zeroMax(int[] numbers) {
+    int maxOddNumber = 0;
+    for (int index = numbers.length - 1; index >= 0; index--) {
+      boolean elementIsOdd = numbers[index] % 2 == 1;
+
+      if (elementIsOdd) {
+        maxOddNumber = numbers[index] > maxOddNumber ? numbers[index] : maxOddNumber;
+      }
+
+      if (numbers[index] == 0) {
+        numbers[index] = maxOddNumber;
+      }
+    }
+
+    return numbers;
+  }
 }
