@@ -16,6 +16,7 @@ public class Array1 {
     int firstIndex = 0;
     int lastIndex = numbers.length - 1;
     int searchedNumber = 6;
+
     return numbers[firstIndex] == searchedNumber || numbers[lastIndex] == searchedNumber;
   }
 
@@ -29,6 +30,7 @@ public class Array1 {
   public boolean sameFirstLast(int[] numbers) {
     int firstIndex = 0;
     int lastIndex = numbers.length - 1;
+
     return numbers.length > firstIndex && numbers[firstIndex] == numbers[lastIndex];
   }
 
@@ -39,6 +41,7 @@ public class Array1 {
    */
   public int[] makePi() {
     int[] piNumbers = new int[] {3, 1, 4};
+
     return piNumbers;
   }
 
@@ -51,9 +54,10 @@ public class Array1 {
    * @return true, if the above mentioned conditions fulfilled
    */
   public boolean commonEnd(int[] aNumbers, int[] bNumbers) {
-    boolean firstElementSame = aNumbers[0] == bNumbers[0];
-    boolean lastElementSame = aNumbers[aNumbers.length - 1] == bNumbers[bNumbers.length - 1];
-    return firstElementSame || lastElementSame;
+    boolean firstElementIsSame = aNumbers[0] == bNumbers[0];
+    boolean lastElementIsSame = aNumbers[aNumbers.length - 1] == bNumbers[bNumbers.length - 1];
+
+    return firstElementIsSame || lastElementIsSame;
   }
 
   /**
@@ -64,9 +68,11 @@ public class Array1 {
    */
   public int sum3(int[] numbers) {
     int sumOfNumbers = 0;
+
     for (int i = 0; i < numbers.length; i++) {
       sumOfNumbers += numbers[i];
     }
+
     return sumOfNumbers;
   }
 
@@ -102,6 +108,7 @@ public class Array1 {
   public int[] maxEnd3(int[] numbers) {
     int max = Math.max(numbers[0], numbers[numbers.length - 1]);
     numbers = new int[] {max, max, max};
+
     return numbers;
   }
 
@@ -114,13 +121,13 @@ public class Array1 {
    * @return the above mentioned result
    */
   public int sum2(int[] numbers) {
-    if (numbers.length > 1) {
-      return numbers[0] + numbers[1];
-    } else if (numbers.length == 1) {
-      return numbers[0];
-    } else {
-      return 0;
+    int sum = 0;
+
+    for (int index = 0; index < numbers.length && index < 2; index++) {
+      sum += numbers[index];
     }
+
+    return sum;
   }
 
   /**
@@ -144,8 +151,10 @@ public class Array1 {
    */
   public int[] makeEnds(int[] numbers) {
     if (numbers.length > 0) {
+
       return new int[] {numbers[0], numbers[numbers.length - 1]};
     } else {
+
       return new int[] {};
     }
   }
@@ -159,6 +168,7 @@ public class Array1 {
   public boolean has23(int[] numbers) {
     boolean arrayContains2 = numbers[0] == 2 || numbers[1] == 2;
     boolean arrayContains3 = numbers[0] == 3 || numbers[1] == 3;
+
     return arrayContains2 || arrayContains3;
   }
 
@@ -171,6 +181,7 @@ public class Array1 {
   public boolean no23(int[] numbers) {
     boolean arrayNotContains2 = numbers[0] != 2 && numbers[1] != 2;
     boolean arrayNotContains3 = numbers[0] != 3 && numbers[1] != 3;
+
     return arrayNotContains2 && arrayNotContains3;
   }
 
@@ -185,6 +196,7 @@ public class Array1 {
   public int[] makeLast(int[] numbers) {
     int[] result = new int[numbers.length * 2];
     result[result.length - 1] = numbers[numbers.length - 1];
+
     return result;
   }
 
@@ -198,13 +210,16 @@ public class Array1 {
   public boolean double23(int[] numbers) {
     int amountOf2 = 0;
     int amountOf3 = 0;
+
     for (int i = 0; i < numbers.length; i++) {
+
       if (numbers[i] == 2) {
         amountOf2++;
       } else if (numbers[i] == 3) {
         amountOf3++;
       }
     }
+
     return amountOf2 == 2 || amountOf3 == 2;
   }
 
@@ -218,13 +233,17 @@ public class Array1 {
   public int[] fix23(int[] numbers) {
     int numberTwo = 2;
     int numberThree = 3;
+
     for (int i = 0; i < numbers.length - 1; i++) {
+
       boolean actualNumberIsTwo = numbers[i] == numberTwo;
       boolean nextNumberIsThree = numbers[i + 1] == numberThree;
+
       if (actualNumberIsTwo && nextNumberIsThree) {
         numbers[i + 1] = 0;
       }
     }
+
     return numbers;
   }
 
@@ -238,12 +257,14 @@ public class Array1 {
    */
   public int start1(int[] aNumbers, int[] bNumbers) {
     int numberOfArrayStartWithOne = 0;
+
     if (aNumbers.length > 0 && aNumbers[0] == 1) {
       ++numberOfArrayStartWithOne;
     }
     if (bNumbers.length > 0 && bNumbers[0] == 1) {
       ++numberOfArrayStartWithOne;
     }
+
     return numberOfArrayStartWithOne;
   }
 
@@ -258,6 +279,7 @@ public class Array1 {
   public int[] biggerTwo(int[] aNumbers, int[] bNumbers) {
     int sumOfANumbers = aNumbers[0] + aNumbers[1];
     int sumOfBNumbers = bNumbers[0] + bNumbers[1];
+
     return sumOfANumbers >= sumOfBNumbers ? aNumbers : bNumbers;
   }
 
@@ -270,6 +292,7 @@ public class Array1 {
    */
   public int[] makeMiddle(int[] numbers) {
     int afterMiddleIndex = numbers.length / 2;
+
     return new int[] {numbers[afterMiddleIndex - 1], numbers[afterMiddleIndex]};
   }
 
@@ -293,12 +316,15 @@ public class Array1 {
    */
   public int[] swapEnds(int[] numbers) {
     int[] result = numbers.clone();
+
     int lastIndex = numbers.length - 1;
     int lastElement = numbers[lastIndex];
     int firstIndex = 0;
     int firstElement = numbers[firstIndex];
+
     result[firstIndex] = lastElement;
     result[lastIndex] = firstElement;
+
     return result;
   }
 
@@ -313,6 +339,7 @@ public class Array1 {
     int middleIndex = numbers.length / 2;
     int beforeMiddleIndex = middleIndex - 1;
     int afterMiddleIndex = middleIndex + 1;
+
     return new int[] {numbers[beforeMiddleIndex], numbers[middleIndex], numbers[afterMiddleIndex]};
   }
 
@@ -335,6 +362,7 @@ public class Array1 {
     } else if (maxNumber < numbers[middleIndex]) {
       maxNumber = numbers[middleIndex];
     }
+
     return maxNumber;
   }
 
@@ -359,16 +387,20 @@ public class Array1 {
   public boolean unlucky1(int[] numbers) {
     boolean unluckyInTheArray = false;
     boolean unluckyPossibleOnZeroAndBeforeEndIndex = numbers.length > 1;
+
     if (unluckyPossibleOnZeroAndBeforeEndIndex) {
       boolean unluckyOnZeroIndex = numbers[0] == 1 && numbers[1] == 3;
       boolean unluckyOnBeforeEndIndex =
           numbers[numbers.length - 2] == 1 && numbers[numbers.length - 1] == 3;
+
       unluckyInTheArray = unluckyOnZeroIndex || unluckyOnBeforeEndIndex;
     }
 
     boolean unluckyPossibleOnFirstIndex = numbers.length > 2;
+
     if (unluckyPossibleOnFirstIndex && !unluckyInTheArray) {
       boolean unluckyOnFirstIndex = numbers[1] == 1 && numbers[2] == 3;
+
       unluckyInTheArray = unluckyOnFirstIndex;
     }
 
@@ -386,8 +418,10 @@ public class Array1 {
    */
   public int[] make2(int[] aNumbers, int[] bNumbers) {
     int[] twoElementArray = new int[2];
+
     boolean twoAvailableFromFirstArray = aNumbers.length >= 2;
     boolean oneAvailableFromFirstArray = aNumbers.length == 1;
+
     if (twoAvailableFromFirstArray) {
       twoElementArray[0] = aNumbers[0];
       twoElementArray[1] = aNumbers[1];
@@ -398,6 +432,7 @@ public class Array1 {
       twoElementArray[0] = bNumbers[0];
       twoElementArray[1] = bNumbers[1];
     }
+
     return twoElementArray;
   }
 
@@ -411,12 +446,16 @@ public class Array1 {
    */
   public int[] front11(int[] aNumbers, int[] bNumbers) {
     if (aNumbers.length > 0 && bNumbers.length > 0) {
+
       return new int[] {aNumbers[0], bNumbers[0]};
     } else if (aNumbers.length > 0) {
+
       return new int[] {aNumbers[0]};
     } else if (bNumbers.length > 0) {
+
       return new int[] {bNumbers[0]};
     }
+
     return new int[] {};
   }
 }
