@@ -647,7 +647,7 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {0, 0, 0, -1, -1},
         instance.zeroFront(new int[] {-1, 0, 0, -1, 0}));
     Assert
-    .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
+        .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
     Assert.assertArrayEquals(new int[] {}, instance.zeroFront(new int[] {}));
     Assert.assertArrayEquals(new int[] {0, 0, 9, 9, 9, 9},
         instance.zeroFront(new int[] {9, 9, 0, 9, 0, 9}));
@@ -722,5 +722,23 @@ public class Array2Test {
         instance.zeroMax(new int[] {7, 0, 4, 3, 0, 0}));
     Assert.assertArrayEquals(new int[] {7, 7, 1, 7, 7, 7},
         instance.zeroMax(new int[] {7, 0, 1, 0, 0, 7}));
+  }
+
+  /**
+   * Test method for {@link Array2#evenOdd(int[])}.
+   */
+  @Test
+  public void testEvenOdd() {
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 1, 1, 1, 1},
+        instance.evenOdd(new int[] {1, 0, 1, 0, 0, 1, 1}));
+    Assert.assertArrayEquals(new int[] {2, 3, 3}, instance.evenOdd(new int[] {3, 3, 2}));
+    Assert.assertArrayEquals(new int[] {2, 2, 2}, instance.evenOdd(new int[] {2, 2, 2}));
+    Assert.assertArrayEquals(new int[] {2, 2, 3}, instance.evenOdd(new int[] {3, 2, 2}));
+    Assert
+    .assertArrayEquals(new int[] {0, 0, 1, 1, 1}, instance.evenOdd(new int[] {1, 1, 0, 1, 0}));
+    Assert.assertArrayEquals(new int[] {1}, instance.evenOdd(new int[] {1}));
+    Assert.assertArrayEquals(new int[] {2, 1}, instance.evenOdd(new int[] {1, 2}));
+    Assert.assertArrayEquals(new int[] {2, 1}, instance.evenOdd(new int[] {2, 1}));
+    Assert.assertArrayEquals(new int[] {}, instance.evenOdd(new int[] {}));
   }
 }

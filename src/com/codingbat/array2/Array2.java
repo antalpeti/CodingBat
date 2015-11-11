@@ -773,4 +773,30 @@ public class Array2 {
 
     return numbers;
   }
+
+  /**
+   * Return an array that contains the exact same numbers as the given array, but rearranged so that
+   * all the even numbers come before all the odd numbers. Other than that, the numbers can be in
+   * any order. You may modify and return the given array, or make a new array.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned new array
+   */
+  public int[] evenOdd(int[] numbers) {
+    int[] rearrangedElements = new int[numbers.length];
+    int evenIndex = 0;
+    int oddIndex = numbers.length - 1;
+
+    for (int i = 0; i < numbers.length; i++) {
+      boolean elementIsEven = numbers[i] % 2 == 0;
+
+      if (elementIsEven) {
+        rearrangedElements[evenIndex++] = numbers[i];
+      } else {
+        rearrangedElements[oddIndex--] = numbers[i];
+      }
+    }
+
+    return rearrangedElements;
+  }
 }
