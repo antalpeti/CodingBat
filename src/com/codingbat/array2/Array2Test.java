@@ -647,7 +647,7 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {0, 0, 0, -1, -1},
         instance.zeroFront(new int[] {-1, 0, 0, -1, 0}));
     Assert
-        .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
+    .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
     Assert.assertArrayEquals(new int[] {}, instance.zeroFront(new int[] {}));
     Assert.assertArrayEquals(new int[] {0, 0, 9, 9, 9, 9},
         instance.zeroFront(new int[] {9, 9, 0, 9, 0, 9}));
@@ -735,10 +735,37 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {2, 2, 2}, instance.evenOdd(new int[] {2, 2, 2}));
     Assert.assertArrayEquals(new int[] {2, 2, 3}, instance.evenOdd(new int[] {3, 2, 2}));
     Assert
-    .assertArrayEquals(new int[] {0, 0, 1, 1, 1}, instance.evenOdd(new int[] {1, 1, 0, 1, 0}));
+        .assertArrayEquals(new int[] {0, 0, 1, 1, 1}, instance.evenOdd(new int[] {1, 1, 0, 1, 0}));
     Assert.assertArrayEquals(new int[] {1}, instance.evenOdd(new int[] {1}));
     Assert.assertArrayEquals(new int[] {2, 1}, instance.evenOdd(new int[] {1, 2}));
     Assert.assertArrayEquals(new int[] {2, 1}, instance.evenOdd(new int[] {2, 1}));
     Assert.assertArrayEquals(new int[] {}, instance.evenOdd(new int[] {}));
+  }
+
+  /**
+   * Test method for {@link Array2#fizzBuzz(int, int)}.
+   */
+  @Test
+  public void testFizzBuzz() {
+    Assert.assertArrayEquals(new String[] {"1", "2", "Fizz", "4", "Buzz"}, instance.fizzBuzz(1, 6));
+    Assert.assertArrayEquals(new String[] {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7"},
+        instance.fizzBuzz(1, 8));
+    Assert.assertArrayEquals(new String[] {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
+        "Buzz"}, instance.fizzBuzz(1, 11));
+    Assert.assertArrayEquals(new String[] {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
+        "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"}, instance.fizzBuzz(1, 16));
+    Assert.assertArrayEquals(new String[] {"1", "2", "Fizz"}, instance.fizzBuzz(1, 4));
+    Assert.assertArrayEquals(new String[] {}, instance.fizzBuzz(1, 1));
+    Assert.assertArrayEquals(new String[] {"1"}, instance.fizzBuzz(1, 2));
+    Assert.assertArrayEquals(new String[] {"Buzz", "Fizz", "52", "53", "Fizz", "Buzz"},
+        instance.fizzBuzz(50, 56));
+    Assert.assertArrayEquals(new String[] {"FizzBuzz", "16"}, instance.fizzBuzz(15, 17));
+    Assert.assertArrayEquals(new String[] {"FizzBuzz", "31", "32", "Fizz", "34", "Buzz"},
+        instance.fizzBuzz(30, 36));
+    Assert.assertArrayEquals(new String[] {"Buzz", "1001", "Fizz", "1003", "1004", "FizzBuzz"},
+        instance.fizzBuzz(1000, 1006));
+    Assert.assertArrayEquals(new String[] {"Fizz", "Buzz", "101"}, instance.fizzBuzz(99, 102));
+    Assert.assertArrayEquals(new String[] {"14", "FizzBuzz", "16", "17", "Fizz", "19"},
+        instance.fizzBuzz(14, 20));
   }
 }
