@@ -51,4 +51,33 @@ public class Logic1Test {
       Assert.assertEquals(true, instance.cigarParty(i, true));
     }
   }
+
+  /**
+   * Test method for {@link Logic1#dateFashion(int, int)}.
+   */
+  @Test
+  public void testDateFashion() {
+    for (int i = 0; i < 11; i++) {
+      Assert.assertEquals(0, instance.dateFashion(0, i));
+      Assert.assertEquals(0, instance.dateFashion(1, i));
+      Assert.assertEquals(0, instance.dateFashion(2, i));
+      Assert.assertEquals(0, instance.dateFashion(i, 0));
+      Assert.assertEquals(0, instance.dateFashion(i, 1));
+      Assert.assertEquals(0, instance.dateFashion(i, 2));
+    }
+    for (int i = 3; i < 11; i++) {
+      Assert.assertEquals(2, instance.dateFashion(8, i));
+      Assert.assertEquals(2, instance.dateFashion(9, i));
+      Assert.assertEquals(2, instance.dateFashion(10, i));
+      Assert.assertEquals(2, instance.dateFashion(i, 8));
+      Assert.assertEquals(2, instance.dateFashion(i, 9));
+      Assert.assertEquals(2, instance.dateFashion(i, 10));
+
+    }
+    for (int i = 3; i < 7; i++) {
+      for (int j = 3; j < 7; j++) {
+        Assert.assertEquals(1, instance.dateFashion(i, j));
+      }
+    }
+  }
 }
