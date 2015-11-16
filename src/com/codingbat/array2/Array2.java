@@ -439,7 +439,8 @@ public class Array2 {
       }
 
       boolean threeConsecutiveNumbersAreOdd =
-          numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1;
+          Math.abs(numbers[i] % 2) == 1 && Math.abs(numbers[i + 1]) % 2 == 1
+              && Math.abs(numbers[i + 2]) % 2 == 1;
       if (threeConsecutiveNumbersAreOdd) {
         return true;
       }
@@ -760,7 +761,7 @@ public class Array2 {
   public int[] zeroMax(int[] numbers) {
     int maxOddNumber = 0;
     for (int index = numbers.length - 1; index >= 0; index--) {
-      boolean elementIsOdd = numbers[index] % 2 == 1;
+      boolean elementIsOdd = Math.abs(numbers[index] % 2) == 1;
 
       if (elementIsOdd) {
         maxOddNumber = numbers[index] > maxOddNumber ? numbers[index] : maxOddNumber;
