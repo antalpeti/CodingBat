@@ -80,4 +80,27 @@ public class Logic1Test {
       }
     }
   }
+
+  /**
+   * Test method for {@link Logic1#squirrelPlay(int, boolean)}.
+   */
+  @Test
+  public void testSquirrelPlay() {
+    Assert.assertEquals(false, instance.squirrelPlay(50, false));
+    Assert.assertEquals(false, instance.squirrelPlay(50, true));
+    Assert.assertEquals(false, instance.squirrelPlay(59, false));
+    Assert.assertEquals(false, instance.squirrelPlay(59, true));
+    Assert.assertEquals(true, instance.squirrelPlay(60, false));
+    Assert.assertEquals(true, instance.squirrelPlay(60, true));
+    Assert.assertEquals(true, instance.squirrelPlay(70, false));
+    Assert.assertEquals(true, instance.squirrelPlay(70, true));
+    Assert.assertEquals(true, instance.squirrelPlay(90, false));
+    Assert.assertEquals(true, instance.squirrelPlay(90, true));
+    Assert.assertEquals(false, instance.squirrelPlay(95, false));
+    Assert.assertEquals(true, instance.squirrelPlay(95, true));
+    Assert.assertEquals(false, instance.squirrelPlay(100, false));
+    Assert.assertEquals(true, instance.squirrelPlay(100, true));
+    Assert.assertEquals(false, instance.squirrelPlay(101, false));
+    Assert.assertEquals(false, instance.squirrelPlay(101, true));
+  }
 }
