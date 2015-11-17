@@ -3,7 +3,7 @@ package com.codingbat.array1;
 /**
  * The class Array1 is contains solution for Array-1 section.
  */
-public class Array1 {
+class Array1 {
 
   /**
    * Given an array of ints, return true if 6 appears as either the first or last element in the
@@ -12,7 +12,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean firstLast6(int[] numbers) {
+  boolean firstLast6(int[] numbers) {
     int firstIndex = 0;
     int lastIndex = numbers.length - 1;
     int searchedNumber = 6;
@@ -27,7 +27,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean sameFirstLast(int[] numbers) {
+  boolean sameFirstLast(int[] numbers) {
     int firstIndex = 0;
     int lastIndex = numbers.length - 1;
 
@@ -39,7 +39,7 @@ public class Array1 {
    *
    * @return the above mentioned new array
    */
-  public int[] makePi() {
+  int[] makePi() {
     int[] piNumbers = new int[] {3, 1, 4};
 
     return piNumbers;
@@ -53,7 +53,7 @@ public class Array1 {
    * @param bNumbers the second array of numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean commonEnd(int[] aNumbers, int[] bNumbers) {
+  boolean commonEnd(int[] aNumbers, int[] bNumbers) {
     boolean firstElementIsSame = aNumbers[0] == bNumbers[0];
     boolean lastElementIsSame = aNumbers[aNumbers.length - 1] == bNumbers[bNumbers.length - 1];
 
@@ -66,7 +66,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the result of the above mentioned calculation
    */
-  public int sum3(int[] numbers) {
+  int sum3(int[] numbers) {
     int sumOfNumbers = 0;
 
     for (int i = 0; i < numbers.length; i++) {
@@ -83,7 +83,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] rotateLeft3(int[] numbers) {
+  int[] rotateLeft3(int[] numbers) {
     return new int[] {numbers[1], numbers[2], numbers[0]};
   }
 
@@ -94,7 +94,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] reverse3(int[] numbers) {
+  int[] reverse3(int[] numbers) {
     return new int[] {numbers[2], numbers[1], numbers[0]};
   }
 
@@ -105,7 +105,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned changed array
    */
-  public int[] maxEnd3(int[] numbers) {
+  int[] maxEnd3(int[] numbers) {
     int max = Math.max(numbers[0], numbers[numbers.length - 1]);
     numbers = new int[] {max, max, max};
 
@@ -120,7 +120,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned result
    */
-  public int sum2(int[] numbers) {
+  int sum2(int[] numbers) {
     int sum = 0;
 
     for (int index = 0; index < numbers.length && index < 2; index++) {
@@ -138,7 +138,7 @@ public class Array1 {
    * @param bNumbers the second array of numbers
    * @return the above mentioned new array
    */
-  public int[] middleWay(int[] aNumbers, int[] bNumbers) {
+  int[] middleWay(int[] aNumbers, int[] bNumbers) {
     return new int[] {aNumbers[1], bNumbers[1]};
   }
 
@@ -149,7 +149,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] makeEnds(int[] numbers) {
+  int[] makeEnds(int[] numbers) {
     if (numbers.length > 0) {
 
       return new int[] {numbers[0], numbers[numbers.length - 1]};
@@ -165,7 +165,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean has23(int[] numbers) {
+  boolean has23(int[] numbers) {
     boolean arrayContains2 = numbers[0] == 2 || numbers[1] == 2;
     boolean arrayContains3 = numbers[0] == 3 || numbers[1] == 3;
 
@@ -178,7 +178,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean no23(int[] numbers) {
+  boolean no23(int[] numbers) {
     boolean arrayNotContains2 = numbers[0] != 2 && numbers[1] != 2;
     boolean arrayNotContains3 = numbers[0] != 3 && numbers[1] != 3;
 
@@ -193,7 +193,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] makeLast(int[] numbers) {
+  int[] makeLast(int[] numbers) {
     int[] result = new int[numbers.length * 2];
     result[result.length - 1] = numbers[numbers.length - 1];
 
@@ -207,7 +207,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return true, if above mentioned condition is fulfilled
    */
-  public boolean double23(int[] numbers) {
+  boolean double23(int[] numbers) {
     int amountOf2 = 0;
     int amountOf3 = 0;
 
@@ -230,7 +230,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned changed array
    */
-  public int[] fix23(int[] numbers) {
+  int[] fix23(int[] numbers) {
     int numberTwo = 2;
     int numberThree = 3;
 
@@ -255,7 +255,7 @@ public class Array1 {
    * @param bNumbers the second array of numbers
    * @return the above mentioned number
    */
-  public int start1(int[] aNumbers, int[] bNumbers) {
+  int start1(int[] aNumbers, int[] bNumbers) {
     int numberOfArrayStartWithOne = 0;
 
     if (aNumbers.length > 0 && aNumbers[0] == 1) {
@@ -276,7 +276,7 @@ public class Array1 {
    * @param bNumbers the second array of numbers
    * @return the above mentioned array
    */
-  public int[] biggerTwo(int[] aNumbers, int[] bNumbers) {
+  int[] biggerTwo(int[] aNumbers, int[] bNumbers) {
     int sumOfANumbers = aNumbers[0] + aNumbers[1];
     int sumOfBNumbers = bNumbers[0] + bNumbers[1];
 
@@ -290,7 +290,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] makeMiddle(int[] numbers) {
+  int[] makeMiddle(int[] numbers) {
     int afterMiddleIndex = numbers.length / 2;
 
     return new int[] {numbers[afterMiddleIndex - 1], numbers[afterMiddleIndex]};
@@ -303,7 +303,7 @@ public class Array1 {
    * @param bNumbers the second array of numbers
    * @return the above mentioned new array
    */
-  public int[] plusTwo(int[] aNumbers, int[] bNumbers) {
+  int[] plusTwo(int[] aNumbers, int[] bNumbers) {
     return new int[] {aNumbers[0], aNumbers[1], bNumbers[0], bNumbers[1]};
   }
 
@@ -314,7 +314,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] swapEnds(int[] numbers) {
+  int[] swapEnds(int[] numbers) {
     int[] result = numbers.clone();
 
     int lastIndex = numbers.length - 1;
@@ -335,7 +335,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int[] midThree(int[] numbers) {
+  int[] midThree(int[] numbers) {
     int middleIndex = numbers.length / 2;
     int beforeMiddleIndex = middleIndex - 1;
     int afterMiddleIndex = middleIndex + 1;
@@ -350,7 +350,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int maxTriple(int[] numbers) {
+  int maxTriple(int[] numbers) {
     int firstIndex = 0;
     int lastIndex = numbers.length - 1;
     int middleIndex = numbers.length / 2;
@@ -373,7 +373,7 @@ public class Array1 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] frontPiece(int[] numbers) {
+  int[] frontPiece(int[] numbers) {
     return numbers.length > 1 ? new int[] {numbers[0], numbers[1]} : numbers;
   }
 
@@ -384,7 +384,7 @@ public class Array1 {
    * @param numbers the numbers
    * @return true, if the above mentioned condition fulfilled
    */
-  public boolean unlucky1(int[] numbers) {
+  boolean unlucky1(int[] numbers) {
     boolean unluckyInTheArray = false;
     boolean unluckyPossibleOnZeroAndBeforeEndIndex = numbers.length > 1;
 
@@ -416,7 +416,7 @@ public class Array1 {
    * @param bNumbers the second input array
    * @return the above mentioned new array
    */
-  public int[] make2(int[] aNumbers, int[] bNumbers) {
+  int[] make2(int[] aNumbers, int[] bNumbers) {
     int[] twoElementArray = new int[2];
 
     boolean twoAvailableFromFirstArray = aNumbers.length >= 2;
@@ -444,7 +444,7 @@ public class Array1 {
    * @param bNumbers the second input array
    * @return the above mentioned new array
    */
-  public int[] front11(int[] aNumbers, int[] bNumbers) {
+  int[] front11(int[] aNumbers, int[] bNumbers) {
     if (aNumbers.length > 0 && bNumbers.length > 0) {
 
       return new int[] {aNumbers[0], bNumbers[0]};
