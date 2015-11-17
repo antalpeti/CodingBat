@@ -103,4 +103,31 @@ public class Logic1Test {
     Assert.assertEquals(false, instance.squirrelPlay(101, false));
     Assert.assertEquals(false, instance.squirrelPlay(101, true));
   }
+
+  /**
+   * Test method for {@link Logic1#caughtSpeeding(int, boolean)}.
+   */
+  @Test
+  public void testCaughtSpeeding() {
+    Assert.assertEquals(0, instance.caughtSpeeding(40, false));
+    Assert.assertEquals(0, instance.caughtSpeeding(40, true));
+    Assert.assertEquals(0, instance.caughtSpeeding(60, false));
+    Assert.assertEquals(0, instance.caughtSpeeding(60, true));
+    Assert.assertEquals(1, instance.caughtSpeeding(61, false));
+    Assert.assertEquals(0, instance.caughtSpeeding(61, true));
+    Assert.assertEquals(1, instance.caughtSpeeding(65, false));
+    Assert.assertEquals(0, instance.caughtSpeeding(65, true));
+    Assert.assertEquals(1, instance.caughtSpeeding(66, false));
+    Assert.assertEquals(1, instance.caughtSpeeding(66, true));
+    Assert.assertEquals(1, instance.caughtSpeeding(75, false));
+    Assert.assertEquals(1, instance.caughtSpeeding(75, true));
+    Assert.assertEquals(1, instance.caughtSpeeding(80, false));
+    Assert.assertEquals(1, instance.caughtSpeeding(80, true));
+    Assert.assertEquals(2, instance.caughtSpeeding(85, false));
+    Assert.assertEquals(1, instance.caughtSpeeding(85, true));
+    Assert.assertEquals(2, instance.caughtSpeeding(86, false));
+    Assert.assertEquals(2, instance.caughtSpeeding(86, true));
+    Assert.assertEquals(2, instance.caughtSpeeding(90, false));
+    Assert.assertEquals(2, instance.caughtSpeeding(90, true));
+  }
 }
