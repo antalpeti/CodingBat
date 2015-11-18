@@ -130,4 +130,21 @@ public class Logic1Test {
     Assert.assertEquals(2, instance.caughtSpeeding(90, false));
     Assert.assertEquals(2, instance.caughtSpeeding(90, true));
   }
+
+  /**
+   * Test method for {@link Logic1#sortaSum(int, int)}.
+   */
+  @Test
+  public void testSortaSum() {
+    Assert.assertEquals(7, instance.sortaSum(3, 4));
+    Assert.assertEquals(20, instance.sortaSum(9, 4));
+    Assert.assertEquals(21, instance.sortaSum(10, 11));
+    Assert.assertEquals(9, instance.sortaSum(12, -3));
+    Assert.assertEquals(9, instance.sortaSum(-3, 12));
+    Assert.assertEquals(9, instance.sortaSum(4, 5));
+    Assert.assertEquals(20, instance.sortaSum(4, 6));
+    Assert.assertEquals(21, instance.sortaSum(14, 7));
+    Assert.assertEquals(20, instance.sortaSum(14, 6));
+    Assert.assertEquals(20, instance.sortaSum(8, 8));
+  }
 }

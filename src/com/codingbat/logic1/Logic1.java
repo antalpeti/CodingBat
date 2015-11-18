@@ -99,4 +99,23 @@ class Logic1 {
 
     return receivedTicket;
   }
+
+  /**
+   * Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are
+   * forbidden, so in that case just return 20.
+   *
+   * @param aNumber the a number
+   * @param bNumber the b number
+   * @return the above mentioned number
+   */
+  public int sortaSum(int aNumber, int bNumber) {
+    int sum = aNumber + bNumber;
+    boolean sumIsForbidden = 10 <= sum && sum <= 19;
+
+    if (sumIsForbidden) {
+      sum = 20;
+    }
+
+    return sum;
+  }
 }
