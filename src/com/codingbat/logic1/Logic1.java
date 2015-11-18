@@ -108,7 +108,7 @@ class Logic1 {
    * @param bNumber the b number
    * @return the above mentioned number
    */
-  public int sortaSum(int aNumber, int bNumber) {
+  int sortaSum(int aNumber, int bNumber) {
     int sum = aNumber + bNumber;
     boolean sumIsForbidden = 10 <= sum && sum <= 19;
 
