@@ -1,9 +1,11 @@
 package com.codingbat.warmup1;
 
+import java.util.Locale;
+
 /**
  * The class Warmup1 is contains solution for Warmup-1 section.
  */
-public class Warmup1 {
+class Warmup1 {
 
   /**
    * The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are
@@ -14,7 +16,7 @@ public class Warmup1 {
    * @param vacation the vacation indicate it is a vacation
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean sleepIn(boolean weekday, boolean vacation) {
+  boolean sleepIn(boolean weekday, boolean vacation) {
     return !weekday || vacation;
   }
 
@@ -27,7 +29,7 @@ public class Warmup1 {
    * @param bMonkeySmiling the second monkey is smiling
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean monkeyTrouble(boolean aMonkeySmiling, boolean bMonkeySmiling) {
+  boolean monkeyTrouble(boolean aMonkeySmiling, boolean bMonkeySmiling) {
     boolean troubleStatus = aMonkeySmiling && bMonkeySmiling || !aMonkeySmiling && !bMonkeySmiling;
     return troubleStatus;
   }
@@ -40,7 +42,7 @@ public class Warmup1 {
    * @param secondNumber the second number
    * @return the result of the above mentioned calculation
    */
-  public int sumDouble(int firstNumber, int secondNumber) {
+  int sumDouble(int firstNumber, int secondNumber) {
     int sumOfBoth = firstNumber + secondNumber;
     int multiplier = 2;
     return firstNumber == secondNumber ? multiplier * sumOfBoth : sumOfBoth;
@@ -53,7 +55,7 @@ public class Warmup1 {
    * @param inputNumber the input number
    * @return the result of the above mentioned calculation
    */
-  public int diff21(int inputNumber) {
+  int diff21(int inputNumber) {
     int border = 21;
     int absoluteDifferenceFrom21 = Math.abs(inputNumber - border);
     int multiplier = 2;
@@ -69,7 +71,7 @@ public class Warmup1 {
    * @param actualHourOfDay the hour parameter of the day
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean parrotTrouble(boolean parrotTalking, int actualHourOfDay) {
+  boolean parrotTrouble(boolean parrotTalking, int actualHourOfDay) {
     int zeroHour = 0;
     int sixHour = 6;
     boolean inForbiddenMorningHours = zeroHour <= actualHourOfDay && actualHourOfDay <= sixHour;
@@ -89,7 +91,7 @@ public class Warmup1 {
    * @param bNumber the second number
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean makes10(int aNumber, int bNumber) {
+  boolean makes10(int aNumber, int bNumber) {
     int searchedNumber = 10;
     boolean oneIs10 = aNumber == searchedNumber || bNumber == searchedNumber;
     boolean sumIs10 = aNumber + bNumber == searchedNumber;
@@ -103,7 +105,7 @@ public class Warmup1 {
    * @param number the number
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean nearHundred(int number) {
+  boolean nearHundred(int number) {
     int distantFrom100 = Math.abs(100 - number);
     int distantFrom200 = Math.abs(200 - number);
     int limitOfDistance = 11;
@@ -119,7 +121,7 @@ public class Warmup1 {
    * @param negativeAllowed indicate is only negative number allowable
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean posNeg(int aNumber, int bNumber, boolean negativeAllowed) {
+  boolean posNeg(int aNumber, int bNumber, boolean negativeAllowed) {
     boolean bothNegative = aNumber < 0 && bNumber < 0 && negativeAllowed;
     boolean onePositiveOneNegative =
         (aNumber < 0 && bNumber > 0 || aNumber > 0 && bNumber < 0) && !negativeAllowed;
@@ -134,7 +136,7 @@ public class Warmup1 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String notString(String text) {
+  String notString(String text) {
     String prefix = "not";
     return text.startsWith(prefix) ? text : prefix + " " + text;
   }
@@ -148,7 +150,7 @@ public class Warmup1 {
    * @param index the index of the input string
    * @return the above mentioned new string, or the input string if n is not valid index
    */
-  public String missingChar(String text, int index) {
+  String missingChar(String text, int index) {
     boolean validIndex = 0 <= index && index < text.length();
     if (validIndex) {
       String removedCharOnIndexN =
@@ -164,7 +166,7 @@ public class Warmup1 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String frontBack(String text) {
+  String frontBack(String text) {
     if (text.length() > 1) {
       String exchangedFirstLastCharsText =
           text.charAt(text.length() - 1) + text.substring(1, text.length() - 1) + text.charAt(0);
@@ -181,7 +183,7 @@ public class Warmup1 {
    * @param text the input string with arbitrary length
    * @return the above mentioned new string
    */
-  public String front3(String text) {
+  String front3(String text) {
     String frontOfText = text.length() > 2 ? text.substring(0, 3) : text;
     return frontOfText + frontOfText + frontOfText;
   }
@@ -193,7 +195,7 @@ public class Warmup1 {
    * @param text the input string with at least length 1
    * @return the above mentioned new string
    */
-  public String backAround(String text) {
+  String backAround(String text) {
     boolean notEmptyText = !text.isEmpty();
     String lastCharAroundText = null;
     if (notEmptyText) {
@@ -209,7 +211,7 @@ public class Warmup1 {
    * @param number the non-negative number
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean or35(int number) {
+  boolean or35(int number) {
     boolean divisibleWithThree = number % 3 == 0;
     boolean divisibleWithFive = number % 5 == 0;
     return divisibleWithThree || divisibleWithFive;
@@ -223,7 +225,7 @@ public class Warmup1 {
    * @param text the arbitrary length string
    * @return the above mentioned new string
    */
-  public String front22(String text) {
+  String front22(String text) {
     int takeLength = 2;
     if (takeLength > text.length()) {
       takeLength = text.length();
@@ -239,7 +241,7 @@ public class Warmup1 {
    * @param text the arbitrary length input string
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean startHi(String text) {
+  boolean startHi(String text) {
     return text.startsWith("hi");
   }
 
@@ -250,13 +252,13 @@ public class Warmup1 {
    * @param temperature2 the second temperature
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean icyHot(int temperature1, int temperature2) {
+  boolean icyHot(int temperature1, int temperature2) {
     int minTemperature = 0;
     boolean oneIsLessThanZero = temperature1 < minTemperature || temperature2 < minTemperature;
     int maxTemperature = 100;
     boolean oneIsGreaterThanOneHundred =
         temperature1 > maxTemperature || temperature2 > maxTemperature;
-    return oneIsLessThanZero && oneIsGreaterThanOneHundred;
+        return oneIsLessThanZero && oneIsGreaterThanOneHundred;
   }
 
   /**
@@ -266,7 +268,7 @@ public class Warmup1 {
    * @param bNumber the second number
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean in1020(int aNumber, int bNumber) {
+  boolean in1020(int aNumber, int bNumber) {
     boolean aNumberInRange = 10 <= aNumber && aNumber <= 20;
     boolean bNumberInRange = 10 <= bNumber && bNumber <= 20;
     return aNumberInRange || bNumberInRange;
@@ -281,7 +283,7 @@ public class Warmup1 {
    * @param cNumber the third number
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean hasTeen(int aNumber, int bNumber, int cNumber) {
+  boolean hasTeen(int aNumber, int bNumber, int cNumber) {
     boolean aNumberInRange = 12 < aNumber && aNumber < 20;
     boolean bNumberInRange = 12 < bNumber && bNumber < 20;
     boolean cNumberInRange = 12 < cNumber && cNumber < 20;
@@ -296,7 +298,7 @@ public class Warmup1 {
    * @param bNumber the second number
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean loneTeen(int aNumber, int bNumber) {
+  boolean loneTeen(int aNumber, int bNumber) {
     boolean aNumberInRange = 12 < aNumber && aNumber < 20;
     boolean bNumberInRange = 12 < bNumber && bNumber < 20;
     return aNumberInRange ^ bNumberInRange;
@@ -309,7 +311,7 @@ public class Warmup1 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String delDel(String text) {
+  String delDel(String text) {
     return text.indexOf("del") == 1 ? text.replaceFirst("del", "") : text;
   }
 
@@ -320,7 +322,7 @@ public class Warmup1 {
    * @param text the input string
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean mixStart(String text) {
+  boolean mixStart(String text) {
     return text.length() > 2 ? text.substring(1, 3).equals("ix") : false;
   }
 
@@ -331,7 +333,7 @@ public class Warmup1 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String startOz(String text) {
+  String startOz(String text) {
     String firstChar = text.length() > 0 && text.charAt(0) == 'o' ? "o" : "";
     String secondChar = text.length() > 1 && text.charAt(1) == 'z' ? "z" : "";
     return firstChar + secondChar;
@@ -345,7 +347,7 @@ public class Warmup1 {
    * @param cNumber the third number
    * @return the above mentioned number
    */
-  public int intMax(int aNumber, int bNumber, int cNumber) {
+  int intMax(int aNumber, int bNumber, int cNumber) {
     int maxNumber = Math.max(aNumber, bNumber);
     return Math.max(cNumber, maxNumber);
   }
@@ -358,7 +360,7 @@ public class Warmup1 {
    * @param bNumber the second number
    * @return the above mentioned number
    */
-  public int close10(int aNumber, int bNumber) {
+  int close10(int aNumber, int bNumber) {
     int aNumberDistanceFromTen = Math.abs(10 - aNumber);
     int bNumberDistanceFromTen = Math.abs(10 - bNumber);
     int result;
@@ -378,7 +380,7 @@ public class Warmup1 {
    * @param bNumber the second number
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean in3050(int aNumber, int bNumber) {
+  boolean in3050(int aNumber, int bNumber) {
     boolean bothInRange3040 = 29 < aNumber && aNumber < 41 && 29 < bNumber && bNumber < 41;
     boolean bothInRange4050 = 39 < aNumber && aNumber < 51 && 39 < bNumber && bNumber < 51;
     return bothInRange3040 || bothInRange4050;
@@ -392,7 +394,7 @@ public class Warmup1 {
    * @param bNumber the second number
    * @return the above mentioned number
    */
-  public int max1020(int aNumber, int bNumber) {
+  int max1020(int aNumber, int bNumber) {
     int ret = 0;
     boolean aNumberInRange = 9 < aNumber && aNumber < 21;
     boolean bNumberInRange = 9 < bNumber && bNumber < 21;
@@ -412,7 +414,7 @@ public class Warmup1 {
    * @param text the input string
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean stringE(String text) {
+  boolean stringE(String text) {
     int amountOfCharE = 0;
     for (int i = 0; i < text.length(); i++) {
       if (text.charAt(i) == 'e') {
@@ -431,7 +433,7 @@ public class Warmup1 {
    * @param bNumber the second number
    * @return true, if the above mentioned condition is fulfilled
    */
-  public boolean lastDigit(int aNumber, int bNumber) {
+  boolean lastDigit(int aNumber, int bNumber) {
     int aNumberLastDigit = aNumber % 10;
     int bNumberLastDigit = bNumber % 10;
     return aNumberLastDigit == bNumberLastDigit;
@@ -445,13 +447,13 @@ public class Warmup1 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String endUp(String text) {
+  String endUp(String text) {
     if (text.length() < 3) {
-      return text.toUpperCase();
+      return text.toUpperCase(Locale.getDefault());
     } else {
       String stringBeginPart = text.substring(0, text.length() - 3);
       String stringEndPart = text.substring(text.length() - 3, text.length());
-      return stringBeginPart + stringEndPart.toUpperCase();
+      return stringBeginPart + stringEndPart.toUpperCase(Locale.getDefault());
     }
   }
 
@@ -463,7 +465,7 @@ public class Warmup1 {
    * @param number the input number
    * @return the above mentioned new string
    */
-  public String everyNth(String text, int number) {
+  String everyNth(String text, int number) {
     StringBuilder builder = new StringBuilder();
     for (int i = 0; i < text.length(); i = i + number) {
       builder.append(text.charAt(i));

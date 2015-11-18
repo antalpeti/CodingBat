@@ -3,7 +3,7 @@ package com.codingbat.string1;
 /**
  * The class String1 is contains solution for String-1 section.
  */
-public class String1 {
+class String1 {
 
   /**
    * Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!".
@@ -11,7 +11,7 @@ public class String1 {
    * @param name the input name
    * @return the above mentioned new string
    */
-  public String helloName(String name) {
+  String helloName(String name) {
     return "Hello " + name + "!";
   }
 
@@ -23,7 +23,7 @@ public class String1 {
    * @param bText the second input string
    * @return the above mentioned new string
    */
-  public String makeAbba(String aText, String bText) {
+  String makeAbba(String aText, String bText) {
     return aText + bText + bText + aText;
   }
 
@@ -36,7 +36,7 @@ public class String1 {
    * @param word the input word string
    * @return the above mentioned new string
    */
-  public String makeTags(String tag, String word) {
+  String makeTags(String tag, String word) {
     return "<" + tag + ">" + word + "</" + tag + ">";
   }
 
@@ -49,8 +49,11 @@ public class String1 {
    * @param word the input word string
    * @return the above defined new string
    */
-  public String makeOutWord(String out, String word) {
-    return out.substring(0, 2) + word + out.substring(2, 4);
+  String makeOutWord(String out, String word) {
+    String outFrontPart = out.substring(0, 2);
+    String outRightPart = out.substring(2, 4);
+
+    return outFrontPart + word + outRightPart;
   }
 
   /**
@@ -60,9 +63,10 @@ public class String1 {
    * @param str the input string
    * @return a new string made of 3 copies of the last 2 chars
    */
-  public String extraEnd(String str) {
-    String end = str.substring(str.length() - 2);
-    return end + end + end;
+  String extraEnd(String str) {
+    String lastTwoChars = str.substring(str.length() - 2);
+
+    return lastTwoChars + lastTwoChars + lastTwoChars;
   }
 
   /**
@@ -74,7 +78,7 @@ public class String1 {
    * @param str the input string
    * @return the above defined substring of the input string
    */
-  public String firstTwo(String str) {
+  String firstTwo(String str) {
     return str.length() < 2 ? str : str.substring(0, 2);
   }
 
@@ -84,7 +88,7 @@ public class String1 {
    * @param str the input string
    * @return the first half of the input string
    */
-  public String firstHalf(String str) {
+  String firstHalf(String str) {
     return str.substring(0, str.length() / 2);
   }
 
@@ -95,7 +99,7 @@ public class String1 {
    * @param str the input string
    * @return the input string without the first and last char
    */
-  public String withoutEnd(String str) {
+  String withoutEnd(String str) {
     return str.length() > 1 ? str.substring(1, str.length() - 1) : "";
   }
 
@@ -108,7 +112,7 @@ public class String1 {
    * @param b the second input string
    * @return a string of the form short+long+short input strings
    */
-  public String comboString(String a, String b) {
+  String comboString(String a, String b) {
     return a.length() > b.length() ? b + a + b : a + b + a;
   }
 
@@ -120,9 +124,10 @@ public class String1 {
    * @param b the second input string
    * @return the concatenation of the input strings without the first chars
    */
-  public String nonStart(String a, String b) {
+  String nonStart(String a, String b) {
     String shortA = a.length() > 0 ? a.substring(1) : a;
     String shortB = b.length() > 0 ? b.substring(1) : b;
+
     return shortA + shortB;
   }
 
@@ -133,7 +138,7 @@ public class String1 {
    * @param str the input string
    * @return the rotated left 2 version of the input string
    */
-  public String left2(String str) {
+  String left2(String str) {
     return str.length() > 2 ? str.substring(2) + str.substring(0, 2) : str;
   }
 
@@ -144,9 +149,11 @@ public class String1 {
    * @param str the input string
    * @return the rotated right 2 version of the input string
    */
-  public String right2(String str) {
-    return str.length() > 2 ? str.substring(str.length() - 2) + str.substring(0, str.length() - 2)
-        : str;
+  String right2(String str) {
+    String lastTwoChars = str.substring(str.length() - 2);
+    String frontPart = str.substring(0, str.length() - 2);
+
+    return str.length() > 2 ? lastTwoChars + frontPart : str;
   }
 
   /**
@@ -157,7 +164,7 @@ public class String1 {
    * @param front request the front or the back part of the input string
    * @return the front or the back part of the input string
    */
-  public String theEnd(String str, boolean front) {
+  String theEnd(String str, boolean front) {
     return front && str.length() > 0 ? str.substring(0, 1) : str.substring(str.length() - 1,
         str.length());
   }
@@ -169,7 +176,7 @@ public class String1 {
    * @param str the input string
    * @return a version without both the first and last char of the input string
    */
-  public String withouEnd2(String str) {
+  String withouEnd2(String str) {
     return str.length() > 2 ? str.substring(1, str.length() - 1) : "";
   }
 
@@ -180,7 +187,7 @@ public class String1 {
    * @param str the input string with even length
    * @return a string made of the middle two chars
    */
-  public String middleTwo(String str) {
+  String middleTwo(String str) {
     return str.length() > 1 ? str.substring(str.length() / 2 - 1, str.length() / 2 + 1) : str;
   }
 
@@ -190,7 +197,7 @@ public class String1 {
    * @param str the input string
    * @return true, if the string ends with "ly"
    */
-  public boolean endsLy(String str) {
+  boolean endsLy(String str) {
     return str.length() > 1 ? str.substring(str.length() - 2, str.length()).equals("ly") : false;
   }
 
@@ -202,9 +209,17 @@ public class String1 {
    * @param n the number of chars from the front and the back of the input string
    * @return a string made of the first and last n chars
    */
-  public String nTwice(String str, int n) {
-    return str.length() > n - 1 ? str.substring(0, n)
-        + str.substring(str.length() - n, str.length()) : str;
+  String nTwice(String str, int n) {
+    String result = str;
+
+    if (str.length() > n - 1) {
+      String frontChars = str.substring(0, n);
+      String backChars = str.substring(str.length() - n, str.length());
+
+      result = frontChars + backChars;
+    }
+
+    return result;
   }
 
   /**
@@ -216,7 +231,7 @@ public class String1 {
    * @param index the start index from the input string
    * @return a string length 2 starting at the given index
    */
-  public String twoChar(String str, int index) {
+  String twoChar(String str, int index) {
     return index > 0 && index < str.length() - 1 ? str.substring(index, index + 2) : str.substring(
         0, 2);
   }
@@ -228,8 +243,9 @@ public class String1 {
    * @param str the input string
    * @return the string length 3 from its middle of the input string
    */
-  public String middleThree(String str) {
+  String middleThree(String str) {
     int middlePoint = str.length() / 2;
+
     return str.length() > 2 ? str.substring(middlePoint - 1, middlePoint + 2) : str;
   }
 
@@ -240,10 +256,10 @@ public class String1 {
    * @param str the input string
    * @return true, if "bad" appears starting at index 0 or 1 in the string
    */
-  public boolean hasBad(String str) {
+  boolean hasBad(String str) {
     String word = "bad";
-    // this is a short but not efficient solution because of the whole string check
-    int indexOf = str.indexOf(word);
+
+    int indexOf = str.lastIndexOf(word);
     return indexOf == 0 || indexOf == 1;
   }
 
@@ -254,7 +270,7 @@ public class String1 {
    * @param str the input string
    * @return a string length 2 made of its first 2 chars
    */
-  public String atFirst(String str) {
+  String atFirst(String str) {
     return str.length() > 1 ? str.substring(0, 2) : (str + "@@").substring(0, 2);
   }
 
@@ -266,18 +282,21 @@ public class String1 {
    * @param b the second input string
    * @return a new string made of the first char of a and the last char of b
    */
-  public String lastChars(String a, String b) {
+  String lastChars(String a, String b) {
     String result = "";
+
     if (a.isEmpty()) {
       result += "@";
     } else {
       result += a.charAt(0);
     }
+
     if (b.isEmpty()) {
       result += "@";
     } else {
       result += b.charAt(b.length() - 1);
     }
+
     return result;
   }
 
@@ -290,8 +309,9 @@ public class String1 {
    * @param b the second input string
    * @return the concatenation of the two input strings
    */
-  public String conCat(String a, String b) {
+  String conCat(String a, String b) {
     String res = "";
+
     if (a.length() > 0 && b.length() > 0) {
       if (a.charAt(a.length() - 1) == b.charAt(0)) {
         res = a + b.substring(1);
@@ -301,6 +321,7 @@ public class String1 {
     } else {
       res = a + b;
     }
+
     return res;
   }
 
@@ -311,7 +332,7 @@ public class String1 {
    * @param str the input string
    * @return a new string where the last 2 chars, are swapped
    */
-  public String lastTwo(String str) {
+  String lastTwo(String str) {
     return str.length() > 1 ? str.substring(0, str.length() - 2) + str.charAt(str.length() - 1)
         + str.charAt(str.length() - 2) : str;
   }
@@ -323,13 +344,14 @@ public class String1 {
    * @param str the input string
    * @return a "red", a "blue" or an empty string
    */
-  public String seeColor(String str) {
+  String seeColor(String str) {
     if (str.startsWith("red")) {
       return "red";
     }
     if (str.startsWith("blue")) {
       return "blue";
     }
+
     return "";
   }
 
@@ -340,7 +362,7 @@ public class String1 {
    * @param str the input string
    * @return true if the first 2 chars in the string also appear at the end of the string
    */
-  public boolean frontAgain(String str) {
+  boolean frontAgain(String str) {
     if (str.length() > 1 && str.substring(0, 2).equals(str.substring(str.length() - 2))) {
       return true;
     }
@@ -357,10 +379,12 @@ public class String1 {
    * @param b the second string
    * @return the above described concatenation
    */
-  public String minCat(String a, String b) {
+  String minCat(String a, String b) {
     if (a.length() > b.length()) {
+
       return a.substring(a.length() - b.length()) + b;
     } else {
+
       return a + b.substring(b.length() - a.length());
     }
   }
@@ -372,8 +396,9 @@ public class String1 {
    * @param str the input string
    * @return a new string made of 3 copies of the first 2 chars of the input string
    */
-  public String extraFront(String str) {
+  String extraFront(String str) {
     String base = str.length() > 2 ? str.substring(0, 2) : str;
+
     return base + base + base;
   }
 
@@ -385,13 +410,15 @@ public class String1 {
    * @param str the input string
    * @return an above defined new string
    */
-  public String without2(String str) {
+  String without2(String str) {
     if (str.length() > 2 && str.substring(0, 2).equals(str.substring(str.length() - 2))) {
       return str.substring(2);
     }
+
     if (str.length() == 2) {
       return "";
     }
+
     return str;
   }
 
@@ -402,23 +429,28 @@ public class String1 {
    * @param str the input string
    * @return an above defined new string
    */
-  public String deFront(String str) {
+  String deFront(String str) {
     if (!str.isEmpty()) {
       if (str.length() > 1) {
         if (str.charAt(0) == 'a' && str.charAt(1) != 'b') {
+
           return "a" + str.substring(2);
         } else if (str.charAt(0) != 'a' && str.charAt(1) == 'b') {
+
           return str.substring(1);
         } else if (str.charAt(1) != 'b') {
+
           return str.substring(2);
         }
       }
       if (str.length() == 1) {
         if (str.charAt(0) != 'a') {
+
           return "";
         }
       }
     }
+
     return str;
   }
 
@@ -433,14 +465,17 @@ public class String1 {
    * @param word the input word
    * @return an above defined new string
    */
-  public String startWord(String str, String word) {
+  String startWord(String str, String word) {
     if (str.length() > 0 && word.length() > 0) {
       String strSub = str.substring(1);
       String wordSub = word.substring(1);
+
       if (strSub.startsWith(wordSub)) {
+
         return str.charAt(0) + wordSub;
       }
     }
+
     return "";
   }
 
@@ -451,7 +486,7 @@ public class String1 {
    * @param str the input string
    * @return an above defined new string
    */
-  public String withoutX(String str) {
+  String withoutX(String str) {
     if (str.length() > 0 && str.charAt(0) == 'x') {
       str = str.substring(1);
     }
@@ -469,7 +504,7 @@ public class String1 {
    * @param str the input string
    * @return an above described new string
    */
-  public String withoutX2(String str) {
+  String withoutX2(String str) {
     if (str.length() == 1 && str.charAt(0) == 'x') {
       return "";
     }

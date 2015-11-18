@@ -3,7 +3,7 @@ package com.codingbat.warmup2;
 /**
  * The class Warmup2 is contains solution for Warmup-2 section.
  */
-public class Warmup2 {
+class Warmup2 {
 
   /**
    * Given a string and a non-negative int n, return a larger string that is n copies of the
@@ -13,7 +13,7 @@ public class Warmup2 {
    * @param number the number of copies
    * @return the above mentioned new string
    */
-  public String stringTimes(String text, int number) {
+  String stringTimes(String text, int number) {
     StringBuilder builder = new StringBuilder();
     for (int i = 0; i < number; i++) {
       builder.append(text);
@@ -29,7 +29,7 @@ public class Warmup2 {
    * @param number the number of copies
    * @return the above mentioned new string
    */
-  public String frontTimes(String text, int number) {
+  String frontTimes(String text, int number) {
     int frontLength = 3;
     StringBuilder builder = new StringBuilder();
     String frontPart = text.length() > frontLength ? text.substring(0, frontLength) : text;
@@ -46,7 +46,7 @@ public class Warmup2 {
    * @param text the input string
    * @return the above mentioned number
    */
-  public int countXX(String text) {
+  int countXX(String text) {
     int amountOfXX = 0;
     for (int i = 0; i < text.length() - 1; i++) {
       if ("xx".equals(text.substring(i, i + 2))) {
@@ -64,7 +64,7 @@ public class Warmup2 {
    * @return true, if the above mentioned conditions is fulfilled
    */
   boolean doubleX(String text) {
-    int i = text.indexOf("x");
+    int i = text.indexOf('x');
     if (i == -1) {
       return false;
     }
@@ -79,7 +79,7 @@ public class Warmup2 {
    * @param text input string
    * @return the above mentioned new string
    */
-  public String stringBits(String text) {
+  String stringBits(String text) {
     StringBuilder builder = new StringBuilder();
     for (int i = 0; i < text.length(); i += 2) {
       builder.append(text.charAt(i));
@@ -93,7 +93,7 @@ public class Warmup2 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String stringSplosion(String text) {
+  String stringSplosion(String text) {
     StringBuilder builder = new StringBuilder();
     for (int i = 1; i <= text.length(); i++) {
       String part = text.substring(0, i);
@@ -110,7 +110,7 @@ public class Warmup2 {
    * @param text the input string
    * @return the above mentioned number
    */
-  public int last2(String text) {
+  int last2(String text) {
     int result = 0;
     String endPart = text.length() > 1 ? text.substring(text.length() - 2) : "";
     for (int i = 0; i < text.length() - 2; i++) {
@@ -128,7 +128,7 @@ public class Warmup2 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int arrayCount9(int[] numbers) {
+  int arrayCount9(int[] numbers) {
     int amountOf9 = 0;
     for (int i = 0; i < numbers.length; i++) {
       if (numbers[i] == 9) {
@@ -145,7 +145,7 @@ public class Warmup2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean arrayFront9(int[] numbers) {
+  boolean arrayFront9(int[] numbers) {
     for (int i = 0; i < numbers.length && i < 4; i++) {
       if (numbers[i] == 9) {
         return true;
@@ -160,7 +160,7 @@ public class Warmup2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean array123(int[] numbers) {
+  boolean array123(int[] numbers) {
     for (int i = 0; i < numbers.length - 2; i++) {
       boolean numberOnePresent = numbers[i] == 1;
       boolean numberTwoPresent = numbers[i + 1] == 2;
@@ -181,7 +181,7 @@ public class Warmup2 {
    * @param bText the second input string
    * @return the above mentioned number
    */
-  public int stringMatch(String aText, String bText) {
+  int stringMatch(String aText, String bText) {
     int minLength = Math.min(aText.length(), bText.length());
     int amountOfSameStringPart = 0;
 
@@ -203,7 +203,7 @@ public class Warmup2 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String stringX(String text) {
+  String stringX(String text) {
     if (text.length() > 2) {
       String withoutStartEnd = text.substring(1, text.length() - 1);
       withoutStartEnd = withoutStartEnd.replaceAll("x", "");
@@ -222,15 +222,17 @@ public class Warmup2 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String altPairs(String text) {
-    String result = "";
+  String altPairs(String text) {
+    StringBuilder builder = new StringBuilder();
+
     for (int i = 0; i < text.length(); i = i + 4) {
       int endPosition = i + 2;
       endPosition = Math.min(text.length(), endPosition);
       String part = text.substring(i, endPosition);
-      result = result + part;
+      builder.append(part);
     }
-    return result;
+
+    return builder.toString();
   }
 
   /**
@@ -240,7 +242,7 @@ public class Warmup2 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String stringYak(String text) {
+  String stringYak(String text) {
     return text.replaceAll("y.k", "");
   }
 
@@ -251,7 +253,7 @@ public class Warmup2 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int array667(int[] numbers) {
+  int array667(int[] numbers) {
     int amountOf66And67 = 0;
     for (int i = 0; i < numbers.length - 1; i++) {
       boolean firstNumberIsSix = numbers[i] == 6;
@@ -270,7 +272,7 @@ public class Warmup2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean noTriples(int[] numbers) {
+  boolean noTriples(int[] numbers) {
     int sameNumberInRow = 1;
     for (int i = 0; i < numbers.length - 1; i++) {
       boolean nextIsSameNumber = numbers[i] == numbers[i + 1];
@@ -294,7 +296,7 @@ public class Warmup2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean has271(int[] numbers) {
+  boolean has271(int[] numbers) {
     for (int i = 0; i < numbers.length - 2; i++) {
       int value = numbers[i];
       boolean valueWithPlusFive = numbers[i + 1] == value + 5;

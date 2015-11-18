@@ -1,10 +1,11 @@
 package com.codingbat.string2;
 
+import java.util.Locale;
 
 /**
  * The class String2 is contains solution for String-2 section.
  */
-public class String2 {
+class String2 {
 
   /**
    * Given a string, return a string where for every char in the original, there are two chars.
@@ -12,13 +13,14 @@ public class String2 {
    * @param text the input string
    * @return an above described new string
    */
-  public String doubleChar(String text) {
-    String doubleStr = "";
+  String doubleChar(String text) {
+    StringBuilder builder = new StringBuilder();
     for (int i = 0; i < text.length(); i++) {
       String ch = text.charAt(i) + "";
-      doubleStr += ch + ch;
+      builder.append(ch);
+      builder.append(ch);
     }
-    return doubleStr;
+    return builder.toString();
   }
 
   /**
@@ -27,7 +29,7 @@ public class String2 {
    * @param str the input string
    * @return the number of times that the string "hi" appears anywhere in the given string
    */
-  public int countHi(String str) {
+  int countHi(String str) {
     int count = 0;
     int index = 0;
     while (index != -1) {
@@ -46,7 +48,7 @@ public class String2 {
    * @param str the input string
    * @return true, if the string "cat" and "dog" appear the same number of times in the given string
    */
-  public boolean catDog(String str) {
+  boolean catDog(String str) {
     int countCat = 0;
     for (int i = 0; i < str.length() - 2; i++) {
       if (str.substring(i, i + 3).equals("cat")) {
@@ -69,7 +71,7 @@ public class String2 {
    * @param str the input string
    * @return the number of the above defined substring
    */
-  public int countCode(String str) {
+  int countCode(String str) {
     str = str.replaceAll("co.e", "*");
     int count = 0;
     for (int i = 0; i < str.length(); i++) {
@@ -87,9 +89,9 @@ public class String2 {
    * @param b the second string
    * @return true, if either of the strings appears at the very end of the other string
    */
-  public boolean endOther(String a, String b) {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
+  boolean endOther(String a, String b) {
+    a = a.toLowerCase(Locale.getDefault());
+    b = b.toLowerCase(Locale.getDefault());
     return a.endsWith(b) || b.endsWith(a);
   }
 
@@ -100,7 +102,7 @@ public class String2 {
    * @param str the input string
    * @return true, if appears the above described substring
    */
-  public boolean xyzThere(String str) {
+  boolean xyzThere(String str) {
     boolean ok = false;
     for (int i = 0; i < str.length() - 2; i++) {
       if (str.substring(i, i + 3).equals("xyz")) {
@@ -122,7 +124,7 @@ public class String2 {
    * @param str the input string
    * @return true, if appears the above described substring
    */
-  public boolean bobThere(String str) {
+  boolean bobThere(String str) {
     if (str.length() < 3) {
       return false;
     } else {
@@ -143,7 +145,7 @@ public class String2 {
    * @param str the input string
    * @return true, if the above described condition is fulfilled
    */
-  public boolean xyBalance(String str) {
+  boolean xyBalance(String str) {
     int indexOfX = str.lastIndexOf('x');
     int indexOfY = str.lastIndexOf('y');
     return indexOfY >= indexOfX;
@@ -158,7 +160,7 @@ public class String2 {
    * @param b the second string
    * @return the above described new string
    */
-  public String mixString(String a, String b) {
+  String mixString(String a, String b) {
     int maxLength = Math.max(a.length(), b.length());
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < maxLength; i++) {
@@ -180,7 +182,7 @@ public class String2 {
    * @param n the repetition
    * @return the above described news string
    */
-  public String repeatEnd(String str, int n) {
+  String repeatEnd(String str, int n) {
     String rep = str.substring(str.length() - n, str.length());
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < n; i++) {
@@ -198,7 +200,7 @@ public class String2 {
    * @param n the n >= 0 and n <= str.length()
    * @return the above described new string
    */
-  public String repeatFront(String str, int n) {
+  String repeatFront(String str, int n) {
     n = str.length() < n ? str.length() : n;
     StringBuilder sb = new StringBuilder();
     while (n > 0) {
@@ -216,7 +218,7 @@ public class String2 {
    * @param count the count
    * @return the above described new string
    */
-  public String repeatSeparator(String word, String sep, int count) {
+  String repeatSeparator(String word, String sep, int count) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < count; i++) {
       sb.append(word);
@@ -235,7 +237,7 @@ public class String2 {
    * @param n the prefix length
    * @return true, if the above defined appearance fulfill
    */
-  public boolean prefixAgain(String str, int n) {
+  boolean prefixAgain(String str, int n) {
     String prefix = str.substring(0, n);
     String sub = str.substring(n);
     return sub.contains(prefix);
@@ -249,7 +251,7 @@ public class String2 {
    * @param str the input string
    * @return true, if the above described restriction fulfill
    */
-  public boolean xyzMiddle(String str) {
+  boolean xyzMiddle(String str) {
     boolean middle = false;
     int length = str.length();
     if (length >= 3) {
@@ -272,7 +274,7 @@ public class String2 {
    * @param str the input string
    * @return the above described new string
    */
-  public String getSandwich(String str) {
+  String getSandwich(String str) {
     String bread = "bread";
     String filling = "";
     int firstSlicePos = str.indexOf(bread);
@@ -290,7 +292,7 @@ public class String2 {
    * @param str the input string
    * @return true, if the above described restriction fulfill
    */
-  public boolean sameStarChar(String str) {
+  boolean sameStarChar(String str) {
     for (int i = 1; i < str.length() - 1; i++) {
       if (str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1)) {
         return false;
@@ -307,7 +309,7 @@ public class String2 {
    * @param str the input string
    * @return the above described new string
    */
-  public String zipZap(String str) {
+  String zipZap(String str) {
     return str.replaceAll("z.p", "zp");
   }
 
@@ -319,7 +321,7 @@ public class String2 {
    * @param str
    * @return
    */
-  public String starOut(String str) {
+  String starOut(String str) {
     return str.replaceAll(".{0,1}\\*+.{0,1}", "");
   }
 
@@ -328,20 +330,22 @@ public class String2 {
    * chars have been replaced by pluses ("+"), except for appearances of the word string which are
    * preserved unchanged.
    *
-   * @param str the input string
+   * @param text the input text
    * @param word the word
    * @return the above described new string
    */
-  public String plusOut(String str, String word) {
+  String plusOut(String text, String word) {
     String wordWithoutPlusSign = word.replaceAll("\\+", "");
     String plusSignWithWord;
+
     if (!wordWithoutPlusSign.isEmpty()) {
-      String wordReplacedWithEqualSign = str.replaceAll(wordWithoutPlusSign, "=");
+      String wordReplacedWithEqualSign = text.replaceAll(wordWithoutPlusSign, "=");
       String otherCharsReplacedWithPlusSign = wordReplacedWithEqualSign.replaceAll("[^=]", "+");
       plusSignWithWord = otherCharsReplacedWithPlusSign.replaceAll("=", word);
     } else {
-      plusSignWithWord = str.replaceAll(".", "+");
+      plusSignWithWord = text.replaceAll(".", "+");
     }
+
     return plusSignWithWord;
   }
 
@@ -354,7 +358,7 @@ public class String2 {
    * @param word the word
    * @return the above described new string
    */
-  public String wordEnds(String str, String word) {
+  String wordEnds(String str, String word) {
     StringBuilder sb = new StringBuilder();
     int actualWordStartPosition = 0;
     while (actualWordStartPosition != -1) {
