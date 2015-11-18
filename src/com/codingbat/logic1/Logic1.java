@@ -3,7 +3,7 @@ package com.codingbat.logic1;
 /**
  * The class Logic1 is contains solution for Logic-1 section.
  */
-public class Logic1 {
+class Logic1 {
 
   /**
    * When squirrels get together for a party, they like to have cigars. A squirrel party is
@@ -15,7 +15,7 @@ public class Logic1 {
    * @param isWeekend the weekend indicator
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean cigarParty(int cigars, boolean isWeekend) {
+  boolean cigarParty(int cigars, boolean isWeekend) {
     boolean partyIsSuccessfulAtWeekday = 39 < cigars && cigars < 61 && !isWeekend;
     boolean partyIsSuccessfulAtWeekend = 39 < cigars && isWeekend;
 
@@ -34,7 +34,7 @@ public class Logic1 {
    * @param date the stylishness of your date's clothes
    * @return one of the above mentioned number
    */
-  public int dateFashion(int you, int date) {
+  int dateFashion(int you, int date) {
     if (you < 3 || date < 3) {
       return 0;
     } else if (you > 7 || date > 7) {
@@ -54,7 +54,7 @@ public class Logic1 {
    * @param isSummer the summer indicator
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean squirrelPlay(int temperature, boolean isSummer) {
+  boolean squirrelPlay(int temperature, boolean isSummer) {
     if (isSummer) {
       return 60 <= temperature && temperature <= 100;
     } else {
@@ -73,7 +73,7 @@ public class Logic1 {
    * @param isBirthday the birthday indicator
    * @return the above mentioned number
    */
-  public int caughtSpeeding(int speed, boolean isBirthday) {
+  int caughtSpeeding(int speed, boolean isBirthday) {
     int noTicket = 0;
     int smallTicket = 1;
     int bigTicket = 2;

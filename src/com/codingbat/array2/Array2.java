@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * The class Array2 is contains solution for Array-2 section.
  */
-public class Array2 {
+class Array2 {
 
   /**
    * Return the number of even ints in the given array.
@@ -13,7 +13,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int countEvens(int[] numbers) {
+  int countEvens(int[] numbers) {
     int numberOfEven = 0;
 
     for (int number : numbers) {
@@ -32,7 +32,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int bigDiff(int[] numbers) {
+  int bigDiff(int[] numbers) {
     int minimum = numbers[0];
     int maximum = numbers[0];
 
@@ -53,7 +53,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int centeredAverage(int[] numbers) {
+  int centeredAverage(int[] numbers) {
     int minimum = numbers[0];
     int maximum = numbers[0];
     int sum = 0;
@@ -75,7 +75,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int sum13(int[] numbers) {
+  int sum13(int[] numbers) {
     int sum = 0;
     int unluckyNumber = 13;
     int jumpIndex = 1;
@@ -100,7 +100,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int sum67(int[] numbers) {
+  int sum67(int[] numbers) {
     boolean ignoredNumbers = false;
     int sum = 0;
     int ignoredNumbersStart = 6;
@@ -131,7 +131,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean has22(int[] numbers) {
+  boolean has22(int[] numbers) {
     int searchedNumber = 2;
     int indexLeap = 1;
 
@@ -152,7 +152,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean lucky13(int[] numbers) {
+  boolean lucky13(int[] numbers) {
     for (int number : numbers) {
       if (number == 1 || number == 3) {
         return false;
@@ -168,7 +168,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean sum28(int[] numbers) {
+  boolean sum28(int[] numbers) {
     int searchedNumber = 2;
     int sumOfSearchedNumber = 0;
     int limitOfSum = 8;
@@ -192,7 +192,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean more14(int[] numbers) {
+  boolean more14(int[] numbers) {
     int numberOfOne = 0;
     int numberOfFour = 0;
     int firstSearchedNumber = 1;
@@ -218,7 +218,7 @@ public class Array2 {
    * @param number the input number
    * @return the above mentioned new array
    */
-  public int[] fizzArray(int number) {
+  int[] fizzArray(int number) {
     int result[] = new int[number];
 
     for (int index = 0; index < result.length; index++) {
@@ -234,7 +234,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean only14(int[] numbers) {
+  boolean only14(int[] numbers) {
     int numberOne = 1;
     int numberFour = 4;
 
@@ -257,7 +257,7 @@ public class Array2 {
    * @param number the input number
    * @return the above mentioned new array
    */
-  public String[] fizzArray2(int number) {
+  String[] fizzArray2(int number) {
     String result[] = new String[number];
 
     for (int index = 0; index < result.length; index++) {
@@ -273,7 +273,7 @@ public class Array2 {
    * @param numbers the numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean no14(int[] numbers) {
+  boolean no14(int[] numbers) {
     boolean hasNumber1 = false;
     boolean hasNumber4 = false;
 
@@ -299,7 +299,7 @@ public class Array2 {
    * @param value the input value
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean isEverywhere(int[] numbers, int value) {
+  boolean isEverywhere(int[] numbers, int value) {
     for (int i = 0; i < numbers.length - 1; i++) {
       boolean elementIsNotValue = numbers[i] != value;
       boolean nextElementIsNotValue = numbers[i + 1] != value;
@@ -319,7 +319,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean either24(int[] numbers) {
+  boolean either24(int[] numbers) {
     boolean hasNextToTwo = false;
     boolean hasNextToFour = false;
     int numberTwo = 2;
@@ -353,7 +353,7 @@ public class Array2 {
    * @param numbers2 the second input numbers
    * @return the above mentioned number
    */
-  public int matchUp(int[] numbers1, int[] numbers2) {
+  int matchUp(int[] numbers1, int[] numbers2) {
     int result = 0;
 
     for (int i = 0; i < numbers1.length; i++) {
@@ -375,7 +375,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean has77(int[] numbers) {
+  boolean has77(int[] numbers) {
     if (numbers.length == 2) {
       boolean firstElementIsSeven = numbers[0] == 7;
       boolean secondElementIsSeven = numbers[1] == 7;
@@ -409,7 +409,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean has12(int[] numbers) {
+  boolean has12(int[] numbers) {
     boolean hasOne = false;
 
     for (int i = 0; i < numbers.length; i++) {
@@ -430,7 +430,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean modThree(int[] numbers) {
+  boolean modThree(int[] numbers) {
     for (int i = 0; i < numbers.length - 2; i++) {
       boolean threeConsecutiveNumbersAreEven =
           numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0 && numbers[i + 2] % 2 == 0;
@@ -440,7 +440,7 @@ public class Array2 {
 
       boolean threeConsecutiveNumbersAreOdd =
           Math.abs(numbers[i] % 2) == 1 && Math.abs(numbers[i + 1]) % 2 == 1
-              && Math.abs(numbers[i + 2]) % 2 == 1;
+          && Math.abs(numbers[i + 2]) % 2 == 1;
       if (threeConsecutiveNumbersAreOdd) {
         return true;
       }
@@ -456,7 +456,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean haveThree(int[] numbers) {
+  boolean haveThree(int[] numbers) {
     int numberOfProperOccurrence = 0;
 
     for (int i = 0; i < numbers.length - 1; i++) {
@@ -484,7 +484,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean twoTwo(int[] numbers) {
+  boolean twoTwo(int[] numbers) {
     int consecutiveNumberOfTwo = 0;
 
     for (int i = 0; i < numbers.length; i++) {
@@ -512,7 +512,7 @@ public class Array2 {
    * @param sameNumbersLength the examined same length
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean sameEnds(int[] numbers, int sameNumbersLength) {
+  boolean sameEnds(int[] numbers, int sameNumbersLength) {
     for (int i = 0; i < sameNumbersLength; i++) {
       int leftElement = numbers[i];
       int rightElement = numbers[numbers.length - sameNumbersLength + i];
@@ -531,7 +531,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean tripleUp(int[] numbers) {
+  boolean tripleUp(int[] numbers) {
     for (int index = 0; index < numbers.length - 2; index++) {
       int startElement = numbers[index];
       int middleElement = numbers[index + 1];
@@ -554,7 +554,7 @@ public class Array2 {
    * @param endNumber the end number
    * @return the above mentioned new array
    */
-  public int[] fizzArray3(int startNumber, int endNumber) {
+  int[] fizzArray3(int startNumber, int endNumber) {
     int arrayLength = endNumber - startNumber;
 
     int[] result = new int[arrayLength];
@@ -572,7 +572,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] shiftLeft(int[] numbers) {
+  int[] shiftLeft(int[] numbers) {
     int[] shiftedArray = new int[numbers.length];
     int lastIndex = numbers.length - 1;
 
@@ -594,7 +594,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned array
    */
-  public int[] tenRun(int[] numbers) {
+  int[] tenRun(int[] numbers) {
     int multipleOfTen = 1;
 
     for (int index = 0; index < numbers.length; index++) {
@@ -617,7 +617,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] pre4(int[] numbers) {
+  int[] pre4(int[] numbers) {
     int firstPositionOfNumberFour = 0;
 
     for (int index = 0; index < numbers.length; index++) {
@@ -638,7 +638,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] post4(int[] numbers) {
+  int[] post4(int[] numbers) {
     int notExistingIndex = -1;
     int lastPositionOfNubmerFour = notExistingIndex;
     int rangeIndexTo = numbers.length;
@@ -668,7 +668,7 @@ public class Array2 {
    * @param value the searched value to replace
    * @return the above mentioned array
    */
-  public int[] notAlone(int[] numbers, int value) {
+  int[] notAlone(int[] numbers, int value) {
     for (int index = 1; index < numbers.length - 1; index++) {
       boolean elementIsValue = numbers[index] == value;
       boolean leftElementIsDifferentValue = numbers[index - 1] != value;
@@ -690,7 +690,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned array
    */
-  public int[] zeroFront(int[] numbers) {
+  int[] zeroFront(int[] numbers) {
     int notZeroElementIndex = 0;
     for (int index = notZeroElementIndex; index < numbers.length; index++) {
       boolean elementIsZero = numbers[index] == 0;
@@ -712,7 +712,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] zeroFront2(int[] numbers) {
+  int[] zeroFront2(int[] numbers) {
     int notZeroElementIndex = numbers.length - 1;
     int[] groupedElements = new int[numbers.length];
 
@@ -736,7 +736,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] withoutTen(int[] numbers) {
+  int[] withoutTen(int[] numbers) {
     int notTenElementIndex = 0;
     int[] shiftedElements = new int[numbers.length];
     for (int i = notTenElementIndex; i < numbers.length; i++) {
@@ -758,7 +758,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned array
    */
-  public int[] zeroMax(int[] numbers) {
+  int[] zeroMax(int[] numbers) {
     int maxOddNumber = 0;
     for (int index = numbers.length - 1; index >= 0; index--) {
       boolean elementIsOdd = Math.abs(numbers[index] % 2) == 1;
@@ -783,7 +783,7 @@ public class Array2 {
    * @param numbers the input numbers
    * @return the above mentioned new array
    */
-  public int[] evenOdd(int[] numbers) {
+  int[] evenOdd(int[] numbers) {
     int[] rearrangedElements = new int[numbers.length];
     int evenIndex = 0;
     int oddIndex = numbers.length - 1;
@@ -811,7 +811,7 @@ public class Array2 {
    * @param endNumber the end number
    * @return the above mentioned new array
    */
-  public String[] fizzBuzz(int startNumber, int endNumber) {
+  String[] fizzBuzz(int startNumber, int endNumber) {
     String[] fizzBuzzNumbers = new String[endNumber - startNumber];
     int fizzBuzzNumberIndex = 0;
     for (int number = startNumber; number < endNumber; number++) {
