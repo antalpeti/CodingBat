@@ -147,4 +147,19 @@ public class Logic1Test {
     Assert.assertEquals(20, instance.sortaSum(14, 6));
     Assert.assertEquals(20, instance.sortaSum(8, 8));
   }
+
+  /**
+   * Test method for {@link Logic1#alarmClock(int, boolean)}.
+   */
+  @Test
+  public void testAlarmClock() {
+    for (int index = 1; index < 6; index++) {
+      Assert.assertEquals("7:00", instance.alarmClock(index, false));
+      Assert.assertEquals("10:00", instance.alarmClock(index, true));
+    }
+    Assert.assertEquals("10:00", instance.alarmClock(0, false));
+    Assert.assertEquals("off", instance.alarmClock(0, true));
+    Assert.assertEquals("10:00", instance.alarmClock(6, false));
+    Assert.assertEquals("off", instance.alarmClock(6, true));
+  }
 }
