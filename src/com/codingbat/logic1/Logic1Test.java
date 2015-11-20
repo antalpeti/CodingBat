@@ -162,4 +162,31 @@ public class Logic1Test {
     Assert.assertEquals("10:00", instance.alarmClock(6, false));
     Assert.assertEquals("off", instance.alarmClock(6, true));
   }
+
+  /**
+   * Test method for {@link Logic1#love6(int, int)}.
+   */
+  @Test
+  public void testLove6() {
+    Assert.assertEquals(true, instance.love6(6, 4));
+    Assert.assertEquals(false, instance.love6(4, 5));
+    Assert.assertEquals(true, instance.love6(1, 5));
+    Assert.assertEquals(true, instance.love6(1, 6));
+    Assert.assertEquals(false, instance.love6(1, 8));
+    Assert.assertEquals(true, instance.love6(1, 7));
+    Assert.assertEquals(false, instance.love6(7, 5));
+    Assert.assertEquals(true, instance.love6(8, 2));
+    Assert.assertEquals(true, instance.love6(6, 6));
+    Assert.assertEquals(false, instance.love6(-6, 2));
+    Assert.assertEquals(true, instance.love6(-4, -10));
+    Assert.assertEquals(false, instance.love6(-7, 1));
+    Assert.assertEquals(true, instance.love6(-7, -1));
+    Assert.assertEquals(true, instance.love6(-6, 12));
+    Assert.assertEquals(false, instance.love6(-2, -4));
+    Assert.assertEquals(true, instance.love6(1, 7));
+    Assert.assertEquals(false, instance.love6(0, 9));
+    Assert.assertEquals(false, instance.love6(8, 3));
+    Assert.assertEquals(true, instance.love6(3, 3));
+    Assert.assertEquals(false, instance.love6(3, 4));
+  }
 }
