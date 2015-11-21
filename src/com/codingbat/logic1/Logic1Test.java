@@ -189,4 +189,25 @@ public class Logic1Test {
     Assert.assertEquals(true, instance.love6(3, 3));
     Assert.assertEquals(false, instance.love6(3, 4));
   }
+
+  /**
+   * Test method for {@link Logic1#in1To10(int, boolean)}.
+   */
+  @Test
+  public void testIn1To10() {
+    Assert.assertEquals(true, instance.in1To10(5, false));
+    Assert.assertEquals(false, instance.in1To10(5, true));
+    Assert.assertEquals(false, instance.in1To10(11, false));
+    Assert.assertEquals(true, instance.in1To10(11, true));
+    Assert.assertEquals(true, instance.in1To10(10, true));
+    Assert.assertEquals(true, instance.in1To10(10, false));
+    Assert.assertEquals(true, instance.in1To10(9, false));
+    Assert.assertEquals(false, instance.in1To10(9, true));
+    Assert.assertEquals(true, instance.in1To10(1, false));
+    Assert.assertEquals(true, instance.in1To10(1, true));
+    Assert.assertEquals(false, instance.in1To10(0, false));
+    Assert.assertEquals(true, instance.in1To10(0, true));
+    Assert.assertEquals(false, instance.in1To10(-1, false));
+    Assert.assertEquals(true, instance.in1To10(-1, true));
+  }
 }
