@@ -188,4 +188,18 @@ class Logic1 {
     boolean inRangeOutside = (number <= 1 || 10 <= number) && outsideMode;
     return inRangeNotOutside || inRangeOutside;
   }
+
+  /**
+   * We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of
+   * 11. Return true if the given non-negative number is special.
+   *
+   * @param number the input number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean specialEleven(int number) {
+    boolean remainderIsZero = number % 11 == 0;
+    boolean remainderIsOne = number % 11 == 1;
+
+    return remainderIsZero || remainderIsOne;
+  }
 }

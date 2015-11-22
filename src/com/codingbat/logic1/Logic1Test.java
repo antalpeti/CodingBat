@@ -210,4 +210,36 @@ public class Logic1Test {
     Assert.assertEquals(false, instance.in1To10(-1, false));
     Assert.assertEquals(true, instance.in1To10(-1, true));
   }
+
+  /**
+   * Test method for {@link Logic1#specialEleven(int)}.
+   */
+  @Test
+  public void testSpecialEleven() {
+    Assert.assertEquals(true, instance.specialEleven(22));
+    Assert.assertEquals(true, instance.specialEleven(23));
+    Assert.assertEquals(false, instance.specialEleven(21));
+    Assert.assertEquals(false, instance.specialEleven(24));
+    Assert.assertEquals(true, instance.specialEleven(11));
+    Assert.assertEquals(true, instance.specialEleven(12));
+    Assert.assertEquals(false, instance.specialEleven(10));
+    Assert.assertEquals(false, instance.specialEleven(9));
+    Assert.assertEquals(false, instance.specialEleven(8));
+    Assert.assertEquals(false, instance.specialEleven(7));
+    Assert.assertEquals(false, instance.specialEleven(6));
+    Assert.assertEquals(false, instance.specialEleven(5));
+    Assert.assertEquals(false, instance.specialEleven(4));
+    Assert.assertEquals(false, instance.specialEleven(3));
+    Assert.assertEquals(false, instance.specialEleven(2));
+    Assert.assertEquals(true, instance.specialEleven(1));
+    Assert.assertEquals(true, instance.specialEleven(0));
+    Assert.assertEquals(true, instance.specialEleven(121));
+    Assert.assertEquals(true, instance.specialEleven(122));
+    Assert.assertEquals(false, instance.specialEleven(123));
+    Assert.assertEquals(false, instance.specialEleven(46));
+    Assert.assertEquals(false, instance.specialEleven(49));
+    Assert.assertEquals(false, instance.specialEleven(52));
+    Assert.assertEquals(false, instance.specialEleven(54));
+    Assert.assertEquals(true, instance.specialEleven(55));
+  }
 }
