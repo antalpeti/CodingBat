@@ -129,7 +129,7 @@ class Logic1 {
    * @param onVacation the vacation indicator
    * @return the above mentioned new string
    */
-  public String alarmClock(int actualDay, boolean onVacation) {
+  String alarmClock(int actualDay, boolean onVacation) {
     int monday = 1;
     int friday = 5;
     boolean itIsWeekday = monday <= actualDay && actualDay <= friday;
@@ -161,7 +161,7 @@ class Logic1 {
    * @param bNumber the second number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean love6(int aNumber, int bNumber) {
+  boolean love6(int aNumber, int bNumber) {
     boolean conditionIsFulfilled = false;
 
     if (aNumber == 6 || bNumber == 6) {
@@ -183,7 +183,7 @@ class Logic1 {
    * @param outsideMode the indicator of outside mode
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean in1To10(int number, boolean outsideMode) {
+  boolean in1To10(int number, boolean outsideMode) {
     boolean inRangeNotOutside = 1 <= number && number <= 10 && !outsideMode;
     boolean inRangeOutside = (number <= 1 || 10 <= number) && outsideMode;
     return inRangeNotOutside || inRangeOutside;
@@ -196,7 +196,7 @@ class Logic1 {
    * @param number the input number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean specialEleven(int number) {
+  boolean specialEleven(int number) {
     boolean remainderIsZero = number % 11 == 0;
     boolean remainderIsOne = number % 11 == 1;
 
