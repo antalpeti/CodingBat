@@ -202,4 +202,17 @@ class Logic1 {
 
     return remainderIsZero || remainderIsOne;
   }
+
+  /**
+   * Return true if the given non-negative number is 1 or 2 more than a multiple of 20.
+   *
+   * @param number the input number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean more20(int number) {
+    boolean reminderIsOne = number % 20 == 1;
+    boolean reminderIsTwo = number % 20 == 2;
+
+    return reminderIsOne || reminderIsTwo;
+  }
 }
