@@ -209,7 +209,7 @@ class Logic1 {
    * @param number the input number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean more20(int number) {
+  boolean more20(int number) {
     boolean reminderIsOne = number % 20 == 1;
     boolean reminderIsTwo = number % 20 == 2;
 
@@ -222,7 +222,7 @@ class Logic1 {
    * @param number the input number
    * @return true, if above mentioned conditions fulfilled
    */
-  public boolean odd35(int number) {
+  boolean odd35(int number) {
     boolean onlyDividableByThree = number % 3 == 0 && number % 5 != 0;
     boolean onlyDividableByFive = number % 3 != 0 && number % 5 == 0;
 
