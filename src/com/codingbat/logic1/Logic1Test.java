@@ -271,4 +271,27 @@ public class Logic1Test {
       Assert.assertEquals(false, instance.more20(i + 19));
     }
   }
+
+  /**
+   * Test method for {@link Logic1#odd35(int)}.
+   */
+  @Test
+  public void testOdd35() {
+    Assert.assertEquals(true, instance.odd35(3));
+    Assert.assertEquals(true, instance.odd35(10));
+    Assert.assertEquals(false, instance.odd35(15));
+    Assert.assertEquals(true, instance.odd35(5));
+    Assert.assertEquals(true, instance.odd35(9));
+    Assert.assertEquals(false, instance.odd35(8));
+    Assert.assertEquals(false, instance.odd35(7));
+    Assert.assertEquals(true, instance.odd35(6));
+    Assert.assertEquals(false, instance.odd35(17));
+    Assert.assertEquals(true, instance.odd35(18));
+    Assert.assertEquals(true, instance.odd35(20));
+    Assert.assertEquals(false, instance.odd35(29));
+    Assert.assertEquals(true, instance.odd35(21));
+    Assert.assertEquals(false, instance.odd35(22));
+    Assert.assertEquals(false, instance.odd35(45));
+    Assert.assertEquals(true, instance.odd35(99));
+  }
 }

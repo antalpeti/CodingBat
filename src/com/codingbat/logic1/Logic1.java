@@ -215,4 +215,17 @@ class Logic1 {
 
     return reminderIsOne || reminderIsTwo;
   }
+
+  /**
+   * Return true if the given non-negative number is a multiple of 3 or 5, but not both.
+   *
+   * @param number the input number
+   * @return true, if above mentioned conditions fulfilled
+   */
+  public boolean odd35(int number) {
+    boolean onlyDividableByThree = number % 3 == 0 && number % 5 != 0;
+    boolean onlyDividableByFive = number % 3 != 0 && number % 5 == 0;
+
+    return onlyDividableByThree || onlyDividableByFive;
+  }
 }
