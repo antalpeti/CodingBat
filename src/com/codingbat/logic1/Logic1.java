@@ -228,4 +228,18 @@ class Logic1 {
 
     return onlyDividableByThree || onlyDividableByFive;
   }
+
+  /**
+   * Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for
+   * example 38 and 39 return true, but 40 returns false.
+   *
+   * @param number the input number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  boolean less20(int number) {
+    boolean remainderIs19 = number % 20 == 19;
+    boolean remainderIs18 = number % 20 == 18;
+
+    return remainderIs19 || remainderIs18;
+  }
 }

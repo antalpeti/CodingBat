@@ -248,7 +248,7 @@ public class Logic1Test {
    */
   @Test
   public void testMore20() {
-    for (int i = 0; i < 2014; i += 20) {
+    for (int i = 0; i < 2015; i += 20) {
       Assert.assertEquals(false, instance.more20(i));
       Assert.assertEquals(true, instance.more20(i + 1));
       Assert.assertEquals(true, instance.more20(i + 2));
@@ -293,5 +293,35 @@ public class Logic1Test {
     Assert.assertEquals(false, instance.odd35(22));
     Assert.assertEquals(false, instance.odd35(45));
     Assert.assertEquals(true, instance.odd35(99));
+  }
+
+  /**
+   * Test method for {@link Logic1#less20(int)}.
+   */
+  @Test
+  public void testLess20() {
+    int i = -1;
+    while (i < 2015) {
+      Assert.assertEquals(false, instance.less20(++i)); // 0
+      Assert.assertEquals(false, instance.less20(++i)); // 1
+      Assert.assertEquals(false, instance.less20(++i)); // 2
+      Assert.assertEquals(false, instance.less20(++i)); // 3
+      Assert.assertEquals(false, instance.less20(++i)); // 4
+      Assert.assertEquals(false, instance.less20(++i)); // 5
+      Assert.assertEquals(false, instance.less20(++i)); // 6
+      Assert.assertEquals(false, instance.less20(++i)); // 7
+      Assert.assertEquals(false, instance.less20(++i)); // 8
+      Assert.assertEquals(false, instance.less20(++i)); // 9
+      Assert.assertEquals(false, instance.less20(++i)); // 10
+      Assert.assertEquals(false, instance.less20(++i)); // 11
+      Assert.assertEquals(false, instance.less20(++i)); // 12
+      Assert.assertEquals(false, instance.less20(++i)); // 13
+      Assert.assertEquals(false, instance.less20(++i)); // 14
+      Assert.assertEquals(false, instance.less20(++i)); // 15
+      Assert.assertEquals(false, instance.less20(++i)); // 16
+      Assert.assertEquals(false, instance.less20(++i)); // 17
+      Assert.assertEquals(true, instance.less20(++i)); // 18
+      Assert.assertEquals(true, instance.less20(++i)); // 19
+    }
   }
 }
