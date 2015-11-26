@@ -242,4 +242,18 @@ class Logic1 {
 
     return remainderIs19 || remainderIs18;
   }
+
+  /**
+   * Given a non-negative number "num", return true if num is within 2 of a multiple of 10. Note: (a
+   * % b) is the remainder of dividing a by b, so (7 % 5) is 2.
+   *
+   * @param number the input number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean nearTen(int number) {
+    boolean remainderIsLessThan3 = number % 10 < 3;
+    boolean remainderIsBiggerThan7 = number % 10 > 7;
+
+    return remainderIsLessThan3 || remainderIsBiggerThan7;
+  }
 }

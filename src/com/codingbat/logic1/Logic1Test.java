@@ -324,4 +324,23 @@ public class Logic1Test {
       Assert.assertEquals(true, instance.less20(++i)); // 19
     }
   }
+
+  /**
+   * Test method for {@link Logic1#nearTen(int)}.
+   */
+  @Test
+  public void testNearTen() {
+    for (int i = 0; i < 2015; i += 10) {
+      Assert.assertEquals(true, instance.nearTen(i));
+      Assert.assertEquals(true, instance.nearTen(i + 1));
+      Assert.assertEquals(true, instance.nearTen(i + 2));
+      Assert.assertEquals(false, instance.nearTen(i + 3));
+      Assert.assertEquals(false, instance.nearTen(i + 4));
+      Assert.assertEquals(false, instance.nearTen(i + 5));
+      Assert.assertEquals(false, instance.nearTen(i + 6));
+      Assert.assertEquals(false, instance.nearTen(i + 7));
+      Assert.assertEquals(true, instance.nearTen(i + 8));
+      Assert.assertEquals(true, instance.nearTen(i + 9));
+    }
+  }
 }
