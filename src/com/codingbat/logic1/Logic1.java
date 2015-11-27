@@ -256,4 +256,21 @@ class Logic1 {
 
     return remainderIsLessThan3 || remainderIsBiggerThan7;
   }
+
+  /**
+   * Given 2 ints, a and b, return their sum. However, "teen" values in the range 13..19 inclusive,
+   * are extra lucky. So if either value is a teen, just return 19.
+   *
+   * @param aNumber the first input number
+   * @param bNumber the second input number
+   * @return the above mentioned new number
+   */
+  public int teenSum(int aNumber, int bNumber) {
+    int leftBound = 13;
+    int rightBound = 19;
+    boolean aNumberIsInTeenRange = leftBound <= aNumber && aNumber <= rightBound;
+    boolean bNumberIsInTeenRange = leftBound <= bNumber && bNumber <= rightBound;
+
+    return aNumberIsInTeenRange || bNumberIsInTeenRange ? rightBound : aNumber + bNumber;
+  }
 }

@@ -343,4 +343,64 @@ public class Logic1Test {
       Assert.assertEquals(true, instance.nearTen(i + 9));
     }
   }
+
+  /**
+   * Test method for {@link Logic1#teenSum(int, int)}.
+   */
+  @Test
+  public void testTeenSum() {
+    // full scale check
+    int leftOutside = 0;
+    int leftNearBound = 12;
+    int leftBound = 13;
+    int rightBound = 19;
+    int rightNearBound = 20;
+    int rightOutside = 120;
+
+    for (int a = leftOutside; a <= leftNearBound; a++) {
+      for (int b = leftOutside; b <= leftNearBound; b++) {
+        Assert.assertEquals(a + b, instance.teenSum(a, b));
+      }
+    }
+    for (int a = leftOutside; a <= leftNearBound; a++) {
+      for (int b = leftBound; b <= rightBound; b++) {
+        Assert.assertEquals(rightBound, instance.teenSum(a, b));
+      }
+    }
+    for (int a = leftOutside; a <= leftNearBound; a++) {
+      for (int b = rightNearBound; b <= rightOutside; b++) {
+        Assert.assertEquals(a + b, instance.teenSum(a, b));
+      }
+    }
+    for (int a = leftBound; a <= rightBound; a++) {
+      for (int b = leftOutside; b <= leftNearBound; b++) {
+        Assert.assertEquals(rightBound, instance.teenSum(a, b));
+      }
+    }
+    for (int a = leftBound; a <= rightBound; a++) {
+      for (int b = leftBound; b <= rightBound; b++) {
+        Assert.assertEquals(rightBound, instance.teenSum(a, b));
+      }
+    }
+    for (int a = leftBound; a <= rightBound; a++) {
+      for (int b = rightNearBound; b <= rightOutside; b++) {
+        Assert.assertEquals(rightBound, instance.teenSum(a, b));
+      }
+    }
+    for (int a = rightNearBound; a <= rightOutside; a++) {
+      for (int b = leftOutside; b <= leftNearBound; b++) {
+        Assert.assertEquals(a + b, instance.teenSum(a, b));
+      }
+    }
+    for (int a = rightNearBound; a <= rightOutside; a++) {
+      for (int b = leftBound; b <= rightBound; b++) {
+        Assert.assertEquals(rightBound, instance.teenSum(a, b));
+      }
+    }
+    for (int a = rightNearBound; a <= rightOutside; a++) {
+      for (int b = rightNearBound; b <= rightOutside; b++) {
+        Assert.assertEquals(a + b, instance.teenSum(a, b));
+      }
+    }
+  }
 }
