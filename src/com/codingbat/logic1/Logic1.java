@@ -273,4 +273,19 @@ class Logic1 {
 
     return aNumberIsInTeenRange || bNumberIsInTeenRange ? rightBound : aNumber + bNumber;
   }
+
+  /**
+   * Your cell phone rings. Return true if you should answer it. Normally you answer, except in the
+   * morning you only answer if it is your mom calling. In all cases, if you are asleep, you do not
+   * answer.
+   *
+   * @param isMorning the morning indicator
+   * @param isMom the is mom indicator
+   * @param isAsleep the asleep indicator
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+
+    return (!isMorning || isMom) && !isAsleep;
+  }
 }

@@ -403,4 +403,19 @@ public class Logic1Test {
       }
     }
   }
+
+  /**
+   * Test method for {@link Logic1#answerCell(boolean, boolean, boolean)}.
+   */
+  @Test
+  public void testAnswerCell() {
+    Assert.assertEquals(true, instance.answerCell(false, false, false));
+    Assert.assertEquals(false, instance.answerCell(false, false, true));
+    Assert.assertEquals(true, instance.answerCell(false, true, false));
+    Assert.assertEquals(false, instance.answerCell(false, true, true));
+    Assert.assertEquals(false, instance.answerCell(true, false, false));
+    Assert.assertEquals(false, instance.answerCell(true, false, true));
+    Assert.assertEquals(true, instance.answerCell(true, true, false));
+    Assert.assertEquals(false, instance.answerCell(true, true, true));
+  }
 }
