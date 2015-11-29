@@ -250,7 +250,7 @@ class Logic1 {
    * @param number the input number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean nearTen(int number) {
+  boolean nearTen(int number) {
     boolean remainderIsLessThan3 = number % 10 < 3;
     boolean remainderIsBiggerThan7 = number % 10 > 7;
 
@@ -265,7 +265,7 @@ class Logic1 {
    * @param bNumber the second input number
    * @return the above mentioned new number
    */
-  public int teenSum(int aNumber, int bNumber) {
+  int teenSum(int aNumber, int bNumber) {
     int leftBound = 13;
     int rightBound = 19;
     boolean aNumberIsInTeenRange = leftBound <= aNumber && aNumber <= rightBound;
@@ -284,7 +284,7 @@ class Logic1 {
    * @param isAsleep the asleep indicator
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+  boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
 
     return (!isMorning || isMom) && !isAsleep;
   }
@@ -300,7 +300,7 @@ class Logic1 {
    * @param candy the number of candy
    * @return the above mentioned new number
    */
-  public int teaParty(int tea, int candy) {
+  int teaParty(int tea, int candy) {
     int greatParty = 2;
     int goodParty = 1;
     int badParty = 0;
