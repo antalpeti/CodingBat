@@ -15,9 +15,11 @@ class Warmup2 {
    */
   String stringTimes(String text, int number) {
     StringBuilder builder = new StringBuilder();
-    for (int i = 0; i < number; i++) {
+
+    for (int index = 0; index < number; index++) {
       builder.append(text);
     }
+
     return builder.toString();
   }
 
@@ -33,9 +35,11 @@ class Warmup2 {
     int frontLength = 3;
     StringBuilder builder = new StringBuilder();
     String frontPart = text.length() > frontLength ? text.substring(0, frontLength) : text;
-    for (int i = 0; i < number; i++) {
+
+    for (int index = 0; index < number; index++) {
       builder.append(frontPart);
     }
+
     return builder.toString();
   }
 
@@ -48,11 +52,13 @@ class Warmup2 {
    */
   int countXX(String text) {
     int amountOfXX = 0;
-    for (int i = 0; i < text.length() - 1; i++) {
-      if ("xx".equals(text.substring(i, i + 2))) {
+
+    for (int index = 0; index < text.length() - 1; index++) {
+      if ("xx".equals(text.substring(index, index + 2))) {
         ++amountOfXX;
       }
     }
+
     return amountOfXX;
   }
 
@@ -64,11 +70,14 @@ class Warmup2 {
    * @return true, if the above mentioned conditions is fulfilled
    */
   boolean doubleX(String text) {
-    int i = text.indexOf('x');
-    if (i == -1) {
+    int indexOfX = text.indexOf('x');
+    int notExistingIndex = -1;
+
+    if (indexOfX == notExistingIndex) {
       return false;
     }
-    String startWithXSubstring = text.substring(i);
+
+    String startWithXSubstring = text.substring(indexOfX);
     return startWithXSubstring.startsWith("xx");
   }
 
@@ -81,9 +90,11 @@ class Warmup2 {
    */
   String stringBits(String text) {
     StringBuilder builder = new StringBuilder();
-    for (int i = 0; i < text.length(); i += 2) {
-      builder.append(text.charAt(i));
+
+    for (int index = 0; index < text.length(); index += 2) {
+      builder.append(text.charAt(index));
     }
+
     return builder.toString();
   }
 
@@ -112,13 +123,15 @@ class Warmup2 {
    */
   int last2(String text) {
     int result = 0;
-    String endPart = text.length() > 1 ? text.substring(text.length() - 2) : "";
-    for (int i = 0; i < text.length() - 2; i++) {
-      String part = text.substring(i, i + 2);
-      if (part.equals(endPart)) {
+    String textEndPart = text.length() > 1 ? text.substring(text.length() - 2) : "";
+
+    for (int index = 0; index < text.length() - 2; index++) {
+      String textPart = text.substring(index, index + 2);
+      if (textPart.equals(textEndPart)) {
         result++;
       }
     }
+
     return result;
   }
 
@@ -129,13 +142,15 @@ class Warmup2 {
    * @return the above mentioned number
    */
   int arrayCount9(int[] numbers) {
-    int amountOf9 = 0;
-    for (int i = 0; i < numbers.length; i++) {
-      if (numbers[i] == 9) {
-        amountOf9++;
+    int numberOf9 = 0;
+
+    for (int index = 0; index < numbers.length; index++) {
+      if (numbers[index] == 9) {
+        numberOf9++;
       }
     }
-    return amountOf9;
+
+    return numberOf9;
   }
 
   /**
@@ -146,12 +161,16 @@ class Warmup2 {
    * @return true, if the above mentioned conditions fulfilled
    */
   boolean arrayFront9(int[] numbers) {
-    for (int i = 0; i < numbers.length && i < 4; i++) {
-      if (numbers[i] == 9) {
-        return true;
+    boolean result = false;
+
+    for (int index = 0; index < numbers.length && index < 4; index++) {
+      if (numbers[index] == 9) {
+        result = true;
+        break;
       }
     }
-    return false;
+
+    return result;
   }
 
   /**
@@ -161,15 +180,20 @@ class Warmup2 {
    * @return true, if the above mentioned conditions fulfilled
    */
   boolean array123(int[] numbers) {
+    boolean result = false;
+
     for (int i = 0; i < numbers.length - 2; i++) {
       boolean numberOnePresent = numbers[i] == 1;
       boolean numberTwoPresent = numbers[i + 1] == 2;
       boolean numberThreePresent = numbers[i + 2] == 3;
+
       if (numberOnePresent && numberTwoPresent && numberThreePresent) {
-        return true;
+        result = true;
+        break;
       }
     }
-    return false;
+
+    return result;
   }
 
   /**
@@ -204,15 +228,17 @@ class Warmup2 {
    * @return the above mentioned new string
    */
   String stringX(String text) {
+    String result = text;
+
     if (text.length() > 2) {
       String withoutStartEnd = text.substring(1, text.length() - 1);
       withoutStartEnd = withoutStartEnd.replaceAll("x", "");
       char startChar = text.charAt(0);
       char endChar = text.charAt(text.length() - 1);
-      return startChar + withoutStartEnd + endChar;
-    } else {
-      return text;
+      result = startChar + withoutStartEnd + endChar;
     }
+
+    return result;
   }
 
   /**
@@ -225,9 +251,10 @@ class Warmup2 {
   String altPairs(String text) {
     StringBuilder builder = new StringBuilder();
 
-    for (int i = 0; i < text.length(); i = i + 4) {
+    int textLength = text.length();
+    for (int i = 0; i < textLength; i = i + 4) {
       int endPosition = i + 2;
-      endPosition = Math.min(text.length(), endPosition);
+      endPosition = Math.min(textLength, endPosition);
       String part = text.substring(i, endPosition);
       builder.append(part);
     }
@@ -243,6 +270,7 @@ class Warmup2 {
    * @return the above mentioned new string
    */
   String stringYak(String text) {
+
     return text.replaceAll("y.k", "");
   }
 
@@ -262,6 +290,7 @@ class Warmup2 {
         amountOf66And67++;
       }
     }
+
     return amountOf66And67;
   }
 
@@ -274,6 +303,7 @@ class Warmup2 {
    */
   boolean noTriples(int[] numbers) {
     int sameNumberInRow = 1;
+
     for (int i = 0; i < numbers.length - 1; i++) {
       boolean nextIsSameNumber = numbers[i] == numbers[i + 1];
       if (nextIsSameNumber) {
@@ -285,6 +315,7 @@ class Warmup2 {
         return false;
       }
     }
+
     return true;
   }
 
@@ -301,10 +332,12 @@ class Warmup2 {
       int value = numbers[i];
       boolean valueWithPlusFive = numbers[i + 1] == value + 5;
       boolean valueDifferTwoOrLess = Math.abs(numbers[i + 2] - (value - 1)) <= 2;
+
       if (valueWithPlusFive && valueDifferTwoOrLess) {
         return true;
       }
     }
+
     return false;
   }
 }
