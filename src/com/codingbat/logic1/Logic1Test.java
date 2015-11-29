@@ -418,4 +418,24 @@ public class Logic1Test {
     Assert.assertEquals(true, instance.answerCell(true, true, false));
     Assert.assertEquals(false, instance.answerCell(true, true, true));
   }
+
+  /**
+   * Test method for {@link Logic1#teaParty(int, int)}.
+   */
+  @Test
+  public void testTeaParty() {
+    Assert.assertEquals(0, instance.teaParty(3, 8));
+    Assert.assertEquals(0, instance.teaParty(10, 4));
+    Assert.assertEquals(0, instance.teaParty(11, 4));
+    Assert.assertEquals(0, instance.teaParty(4, 5));
+    Assert.assertEquals(1, instance.teaParty(5, 5));
+    Assert.assertEquals(1, instance.teaParty(6, 8));
+    Assert.assertEquals(1, instance.teaParty(5, 9));
+    Assert.assertEquals(1, instance.teaParty(6, 6));
+    Assert.assertEquals(1, instance.teaParty(11, 6));
+    Assert.assertEquals(2, instance.teaParty(12, 6));
+    Assert.assertEquals(2, instance.teaParty(20, 6));
+    Assert.assertEquals(2, instance.teaParty(5, 10));
+    Assert.assertEquals(2, instance.teaParty(10, 20));
+  }
 }
