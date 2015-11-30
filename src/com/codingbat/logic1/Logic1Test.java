@@ -438,4 +438,27 @@ public class Logic1Test {
     Assert.assertEquals(2, instance.teaParty(5, 10));
     Assert.assertEquals(2, instance.teaParty(10, 20));
   }
+
+  /**
+   * Test method for {@link Logic1#fizzString(String)}.
+   */
+  @Test
+  public void testFizzString() {
+    Assert.assertEquals("Fizz", instance.fizzString("fig"));
+    Assert.assertEquals("Buzz", instance.fizzString("dib"));
+    Assert.assertEquals("FizzBuzz", instance.fizzString("fib"));
+    Assert.assertEquals("abc", instance.fizzString("abc"));
+    Assert.assertEquals("Fizz", instance.fizzString("fooo"));
+    Assert.assertEquals("booo", instance.fizzString("booo"));
+    Assert.assertEquals("Buzz", instance.fizzString("ooob"));
+    Assert.assertEquals("FizzBuzz", instance.fizzString("fooob"));
+    Assert.assertEquals("Fizz", instance.fizzString("f"));
+    Assert.assertEquals("Buzz", instance.fizzString("b"));
+    Assert.assertEquals("Buzz", instance.fizzString("abcb"));
+    Assert.assertEquals("Hello", instance.fizzString("Hello"));
+    Assert.assertEquals("Buzz", instance.fizzString("Hellob"));
+    Assert.assertEquals("af", instance.fizzString("af"));
+    Assert.assertEquals("bf", instance.fizzString("bf"));
+    Assert.assertEquals("FizzBuzz", instance.fizzString("fb"));
+  }
 }

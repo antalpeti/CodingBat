@@ -313,4 +313,24 @@ class Logic1 {
       return greatParty;
     }
   }
+
+  /**
+   * Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b"
+   * return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all other
+   * cases, return the string unchanged.
+   *
+   * @param text the input string
+   * @return the above mentioned new string
+   */
+  public String fizzString(String text) {
+    StringBuilder builder = new StringBuilder();
+    if (text.startsWith("f")) {
+      builder.append("Fizz");
+    }
+    if (text.endsWith("b")) {
+      builder.append("Buzz");
+    }
+
+    return builder.length() == 0 ? text : builder.toString();
+  }
 }
