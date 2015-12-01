@@ -461,4 +461,26 @@ public class Logic1Test {
     Assert.assertEquals("bf", instance.fizzString("bf"));
     Assert.assertEquals("FizzBuzz", instance.fizzString("fb"));
   }
+
+  /**
+   * Test method for {@link Logic1#fizzString2(int)}.
+   */
+  @Test
+  public void testFizzString2() {
+    for (int i = 0; i < 2014; i++) {
+      if (i % 15 == 0) {
+        Assert.assertEquals("FizzBuzz!", instance.fizzString2(i));
+        continue;
+      }
+      if (i % 3 == 0) {
+        Assert.assertEquals("Fizz!", instance.fizzString2(i));
+        continue;
+      }
+      if (i % 5 == 0) {
+        Assert.assertEquals("Buzz!", instance.fizzString2(i));
+        continue;
+      }
+      Assert.assertEquals(i + "!", instance.fizzString2(i));
+    }
+  }
 }

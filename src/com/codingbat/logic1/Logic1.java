@@ -333,4 +333,28 @@ class Logic1 {
 
     return builder.length() == 0 ? text : builder.toString();
   }
+
+  /**
+   * Given an int n, return the string form of the number followed by "!". So the int 6 yields "6!".
+   * Except if the number is divisible by 3 use "Fizz" instead of the number, and if the number is
+   * divisible by 5 use "Buzz", and if divisible by both 3 and 5, use "FizzBuzz". Note: the % "mod"
+   * operator computes the remainder after division, so 23 % 10 yields 3.
+   *
+   * @param number the input number
+   * @return the above mentioned new string
+   */
+  public String fizzString2(int number) {
+    StringBuilder sb = new StringBuilder();
+    if (number % 3 == 0) {
+      sb.append("Fizz");
+    }
+    if (number % 5 == 0) {
+      sb.append("Buzz");
+    }
+    if (sb.length() == 0) {
+      sb.append(number);
+    }
+    sb.append("!");
+    return sb.toString();
+  }
 }
