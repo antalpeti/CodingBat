@@ -483,4 +483,31 @@ public class Logic1Test {
       Assert.assertEquals(i + "!", instance.fizzString2(i));
     }
   }
+
+  /**
+   * Test method for {@link Logic1#twoAsOne(int, int, int)}.
+   */
+  @Test
+  public void testTwoAsOne() {
+    Assert.assertEquals(true, instance.twoAsOne(1, 2, 3));
+    Assert.assertEquals(true, instance.twoAsOne(1, 3, 2));
+    Assert.assertEquals(true, instance.twoAsOne(2, 3, 1));
+    Assert.assertEquals(true, instance.twoAsOne(2, 1, 3));
+    Assert.assertEquals(true, instance.twoAsOne(3, 1, 2));
+    Assert.assertEquals(true, instance.twoAsOne(3, 2, 1));
+    Assert.assertEquals(false, instance.twoAsOne(3, 2, 2));
+    Assert.assertEquals(false, instance.twoAsOne(2, 3, 2));
+    Assert.assertEquals(false, instance.twoAsOne(2, 2, 3));
+    Assert.assertEquals(true, instance.twoAsOne(5, 3, -2));
+    Assert.assertEquals(false, instance.twoAsOne(5, 3, -3));
+    Assert.assertEquals(true, instance.twoAsOne(2, 5, 3));
+    Assert.assertEquals(false, instance.twoAsOne(9, 5, 5));
+    Assert.assertEquals(true, instance.twoAsOne(9, 4, 5));
+    Assert.assertEquals(true, instance.twoAsOne(5, 4, 9));
+    Assert.assertEquals(true, instance.twoAsOne(5, 9, 4));
+    Assert.assertEquals(true, instance.twoAsOne(3, 3, 0));
+    Assert.assertEquals(false, instance.twoAsOne(3, 3, 2));
+    Assert.assertEquals(false, instance.twoAsOne(3, 0, 0));
+    Assert.assertEquals(true, instance.twoAsOne(0, 0, 0));
+  }
 }

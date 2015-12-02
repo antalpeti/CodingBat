@@ -357,4 +357,20 @@ class Logic1 {
     sb.append("!");
     return sb.toString();
   }
+
+  /**
+   * Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean twoAsOne(int aNumber, int bNumber, int cNumber) {
+    boolean firstIsEqual = bNumber + cNumber == aNumber;
+    boolean secondIsEqual = aNumber + cNumber == bNumber;
+    boolean thirdIsEqual = aNumber + bNumber == cNumber;
+
+    return thirdIsEqual || secondIsEqual || firstIsEqual;
+  }
 }
