@@ -373,4 +373,18 @@ class Logic1 {
 
     return thirdIsEqual || secondIsEqual || firstIsEqual;
   }
+
+  /**
+   * Given three ints, a b c, return true if b is greater than a, and c is greater than b. However,
+   * with the exception that if "bOk" is true, b does not need to be greater than a.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @param bOk the second number indicator
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean inOrder(int aNumber, int bNumber, int cNumber, boolean bOk) {
+    return (bNumber > aNumber || bOk) && cNumber > bNumber;
+  }
 }
