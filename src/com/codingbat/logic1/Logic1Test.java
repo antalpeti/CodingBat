@@ -539,4 +539,33 @@ public class Logic1Test {
       Assert.assertEquals(true, instance.inOrder(3 + i, 1 + i, 2 + i, true));
     }
   }
+
+  /**
+   * Test method for {@link Logic1#inOrderEqual(int, int, int, boolean)}.
+   */
+  @Test
+  public void testInOrderEqual() {
+    for (int i = 0; i <= 12; i++) {
+      Assert.assertEquals(false, instance.inOrderEqual(1 + i, 1 + i, 1 + i, false));
+      Assert.assertEquals(true, instance.inOrderEqual(1 + i, 1 + i, 1 + i, true));
+      Assert.assertEquals(false, instance.inOrderEqual(1 + i, 2 + i, 1 + i, false));
+      Assert.assertEquals(false, instance.inOrderEqual(1 + i, 2 + i, 1 + i, true));
+      Assert.assertEquals(false, instance.inOrderEqual(2 + i, 1 + i, 1 + i, false));
+      Assert.assertEquals(false, instance.inOrderEqual(2 + i, 1 + i, 1 + i, true));
+      Assert.assertEquals(false, instance.inOrderEqual(1 + i, 1 + i, 2 + i, false));
+      Assert.assertEquals(true, instance.inOrderEqual(1 + i, 1 + i, 2 + i, true));
+      Assert.assertEquals(true, instance.inOrderEqual(1 + i, 2 + i, 3 + i, false));
+      Assert.assertEquals(true, instance.inOrderEqual(1 + i, 2 + i, 3 + i, true));
+      Assert.assertEquals(false, instance.inOrderEqual(1 + i, 3 + i, 2 + i, false));
+      Assert.assertEquals(false, instance.inOrderEqual(1 + i, 3 + i, 2 + i, true));
+      Assert.assertEquals(false, instance.inOrderEqual(3 + i, 1 + i, 2 + i, false));
+      Assert.assertEquals(false, instance.inOrderEqual(3 + i, 1 + i, 2 + i, true));
+      Assert.assertEquals(false, instance.inOrderEqual(3 + i, 2 + i, 1 + i, false));
+      Assert.assertEquals(false, instance.inOrderEqual(3 + i, 2 + i, 1 + i, true));
+      Assert.assertEquals(false, instance.inOrderEqual(2 + i, 1 + i, 3 + i, false));
+      Assert.assertEquals(false, instance.inOrderEqual(2 + i, 1 + i, 3 + i, true));
+      Assert.assertEquals(false, instance.inOrderEqual(2 + i, 3 + i, 1 + i, false));
+      Assert.assertEquals(false, instance.inOrderEqual(2 + i, 3 + i, 1 + i, true));
+    }
+  }
 }
