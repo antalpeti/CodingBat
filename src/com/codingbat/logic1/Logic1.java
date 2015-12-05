@@ -405,4 +405,21 @@ class Logic1 {
 
     return strictIncreasingOrder || equalityAllowedIncreasingOrder;
   }
+
+  /**
+   * Given three ints, a b c, return true if two or more of them have the same rightmost digit. The
+   * ints are non-negative.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean lastDigit(int aNumber, int bNumber, int cNumber) {
+    int aNumberMod = aNumber % 10;
+    int bNumberMod = bNumber % 10;
+    int cNumberMod = cNumber % 10;
+
+    return aNumberMod == bNumberMod || aNumberMod == cNumberMod || bNumberMod == cNumberMod;
+  }
 }

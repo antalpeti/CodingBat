@@ -568,4 +568,38 @@ public class Logic1Test {
       Assert.assertEquals(false, instance.inOrderEqual(2 + i, 3 + i, 1 + i, true));
     }
   }
+
+  /**
+   * Test method for {@link Logic1#lastDigit(int, int, int)}.
+   */
+  @Test
+  public void testLastDigit() {
+    Assert.assertEquals(false, instance.lastDigit(23, 12, 19));
+    Assert.assertEquals(false, instance.lastDigit(23, 19, 12));
+    Assert.assertEquals(false, instance.lastDigit(19, 23, 12));
+    Assert.assertEquals(false, instance.lastDigit(1, 2, 3));
+    Assert.assertEquals(false, instance.lastDigit(14, 25, 43));
+    Assert.assertEquals(false, instance.lastDigit(248, 106, 1002));
+    Assert.assertEquals(true, instance.lastDigit(23, 19, 13));
+    Assert.assertEquals(true, instance.lastDigit(19, 23, 13));
+    Assert.assertEquals(true, instance.lastDigit(23, 13, 19));
+    Assert.assertEquals(true, instance.lastDigit(23, 19, 3));
+    Assert.assertEquals(true, instance.lastDigit(23, 19, 39));
+    Assert.assertEquals(true, instance.lastDigit(14, 25, 45));
+    Assert.assertEquals(true, instance.lastDigit(14, 25, 45));
+    Assert.assertEquals(true, instance.lastDigit(1, 1, 2));
+    Assert.assertEquals(true, instance.lastDigit(1, 2, 2));
+    Assert.assertEquals(true, instance.lastDigit(0, 0, 0));
+    Assert.assertEquals(true, instance.lastDigit(1, 1, 1));
+    Assert.assertEquals(true, instance.lastDigit(2, 2, 2));
+    Assert.assertEquals(true, instance.lastDigit(3, 3, 3));
+    Assert.assertEquals(true, instance.lastDigit(4, 4, 4));
+    Assert.assertEquals(true, instance.lastDigit(5, 5, 5));
+    Assert.assertEquals(true, instance.lastDigit(6, 6, 6));
+    Assert.assertEquals(true, instance.lastDigit(7, 7, 7));
+    Assert.assertEquals(true, instance.lastDigit(8, 8, 8));
+    Assert.assertEquals(true, instance.lastDigit(9, 9, 9));
+    Assert.assertEquals(true, instance.lastDigit(10, 11, 20));
+    Assert.assertEquals(true, instance.lastDigit(0, 11, 0));
+  }
 }
