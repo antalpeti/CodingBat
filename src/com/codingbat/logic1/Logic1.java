@@ -422,4 +422,18 @@ class Logic1 {
 
     return aNumberMod == bNumberMod || aNumberMod == cNumberMod || bNumberMod == cNumberMod;
   }
+
+  /**
+   * Given three ints, a b c, return true if one of them is 10 or more less than one of the others.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean lessBy10(int aNumber, int bNumber, int cNumber) {
+    int limit = 10;
+    return Math.abs(aNumber - bNumber) >= limit || Math.abs(aNumber - cNumber) >= limit
+        || Math.abs(bNumber - cNumber) >= limit;
+  }
 }

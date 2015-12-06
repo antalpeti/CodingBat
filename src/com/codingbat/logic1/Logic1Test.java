@@ -602,4 +602,37 @@ public class Logic1Test {
     Assert.assertEquals(true, instance.lastDigit(10, 11, 20));
     Assert.assertEquals(true, instance.lastDigit(0, 11, 0));
   }
+
+  /**
+   * Test method for {@link Logic1#lessBy10(int, int, int)}.
+   */
+  @Test
+  public void testLessBy10() {
+    Assert.assertEquals(true, instance.lessBy10(1, 7, 11));
+    Assert.assertEquals(true, instance.lessBy10(7, 1, 11));
+    Assert.assertEquals(true, instance.lessBy10(1, 11, 7));
+    Assert.assertEquals(true, instance.lessBy10(7, 11, 1));
+    Assert.assertEquals(true, instance.lessBy10(11, 1, 7));
+    Assert.assertEquals(true, instance.lessBy10(11, 7, 1));
+    Assert.assertEquals(false, instance.lessBy10(1, 7, 10));
+    Assert.assertEquals(false, instance.lessBy10(7, 1, 10));
+    Assert.assertEquals(false, instance.lessBy10(7, 10, 1));
+    Assert.assertEquals(false, instance.lessBy10(1, 10, 7));
+    Assert.assertEquals(false, instance.lessBy10(10, 1, 7));
+    Assert.assertEquals(false, instance.lessBy10(10, 7, 1));
+    Assert.assertEquals(true, instance.lessBy10(-10, 2, 2));
+    Assert.assertEquals(true, instance.lessBy10(2, -10, 2));
+    Assert.assertEquals(true, instance.lessBy10(2, 2, -10));
+    Assert.assertEquals(false, instance.lessBy10(2, 11, 11));
+    Assert.assertEquals(false, instance.lessBy10(11, 2, 11));
+    Assert.assertEquals(false, instance.lessBy10(11, 11, 2));
+    Assert.assertEquals(true, instance.lessBy10(3, 3, 30));
+    Assert.assertEquals(false, instance.lessBy10(3, 3, 3));
+    Assert.assertEquals(true, instance.lessBy10(10, 1, 11));
+    Assert.assertEquals(true, instance.lessBy10(10, 11, 1));
+    Assert.assertEquals(false, instance.lessBy10(10, 11, 2));
+    Assert.assertEquals(true, instance.lessBy10(3, 30, 3));
+    Assert.assertEquals(true, instance.lessBy10(2, 2, -8));
+    Assert.assertEquals(true, instance.lessBy10(2, 8, 12));
+  }
 }
