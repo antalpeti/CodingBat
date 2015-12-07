@@ -436,4 +436,28 @@ class Logic1 {
     return Math.abs(aNumber - bNumber) >= limit || Math.abs(aNumber - cNumber) >= limit
         || Math.abs(bNumber - cNumber) >= limit;
   }
+
+  /**
+   * Return the sum of two 6-sided dice rolls, each in the range 1..6. However, if noDoubles is
+   * true, if the two dice show the same value, increment one die to the next value, wrapping around
+   * to 1 if its value was 6.
+   *
+   * @param dice1 the first dice
+   * @param dice2 the second dice
+   * @param noDoubles indicate that same value not allowed
+   * @return the above mentioned new integer
+   */
+  public int withoutDoubles(int dice1, int dice2, boolean noDoubles) {
+    int minValue = 1;
+    int maxValue = 6;
+
+    if (noDoubles && dice1 == dice2) {
+      ++dice1;
+      if (dice2 == maxValue) {
+        dice1 = minValue;
+      }
+    }
+
+    return dice1 + dice2;
+  }
 }

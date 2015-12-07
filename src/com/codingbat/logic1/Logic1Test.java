@@ -635,4 +635,33 @@ public class Logic1Test {
     Assert.assertEquals(true, instance.lessBy10(2, 2, -8));
     Assert.assertEquals(true, instance.lessBy10(2, 8, 12));
   }
+
+  /**
+   * Test method for {@link Logic1#withoutDoubles(int, int, boolean)}.
+   */
+  @Test
+  public void testWithoutDoubles() {
+    int minValue = 1;
+    int maxValue = 6;
+
+    for (int index1 = minValue; index1 <= maxValue; index1++) {
+      for (int index2 = minValue; index2 <= maxValue; index2++) {
+        Assert.assertEquals(index1 + index2, instance.withoutDoubles(index1, index2, false));
+      }
+    }
+
+    Assert.assertEquals(3, instance.withoutDoubles(1, 1, true));
+    Assert.assertEquals(5, instance.withoutDoubles(2, 2, true));
+    Assert.assertEquals(7, instance.withoutDoubles(3, 3, true));
+    Assert.assertEquals(9, instance.withoutDoubles(4, 4, true));
+    Assert.assertEquals(11, instance.withoutDoubles(5, 5, true));
+    Assert.assertEquals(7, instance.withoutDoubles(6, 6, true));
+    for (int index1 = minValue; index1 <= maxValue; index1++) {
+      for (int index2 = minValue; index2 <= maxValue; index2++) {
+        if (index1 != index2) {
+          Assert.assertEquals(index1 + index2, instance.withoutDoubles(index1, index2, true));
+        }
+      }
+    }
+  }
 }
