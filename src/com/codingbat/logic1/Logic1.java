@@ -322,7 +322,7 @@ class Logic1 {
    * @param text the input string
    * @return the above mentioned new string
    */
-  public String fizzString(String text) {
+  String fizzString(String text) {
     StringBuilder builder = new StringBuilder();
     if (text.startsWith("f")) {
       builder.append("Fizz");
@@ -343,7 +343,7 @@ class Logic1 {
    * @param number the input number
    * @return the above mentioned new string
    */
-  public String fizzString2(int number) {
+  String fizzString2(int number) {
     StringBuilder sb = new StringBuilder();
     if (number % 3 == 0) {
       sb.append("Fizz");
@@ -366,7 +366,7 @@ class Logic1 {
    * @param cNumber the third number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean twoAsOne(int aNumber, int bNumber, int cNumber) {
+  boolean twoAsOne(int aNumber, int bNumber, int cNumber) {
     boolean firstIsEqual = bNumber + cNumber == aNumber;
     boolean secondIsEqual = aNumber + cNumber == bNumber;
     boolean thirdIsEqual = aNumber + bNumber == cNumber;
@@ -384,7 +384,7 @@ class Logic1 {
    * @param bOk the second number indicator
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean inOrder(int aNumber, int bNumber, int cNumber, boolean bOk) {
+  boolean inOrder(int aNumber, int bNumber, int cNumber, boolean bOk) {
     return (bNumber > aNumber || bOk) && cNumber > bNumber;
   }
 
@@ -399,7 +399,7 @@ class Logic1 {
    * @param equalOk the equality indicator
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean inOrderEqual(int aNumber, int bNumber, int cNumber, boolean equalOk) {
+  boolean inOrderEqual(int aNumber, int bNumber, int cNumber, boolean equalOk) {
     boolean strictIncreasingOrder = aNumber < bNumber && bNumber < cNumber && !equalOk;
     boolean equalityAllowedIncreasingOrder = aNumber <= bNumber && bNumber <= cNumber && equalOk;
 
@@ -415,7 +415,7 @@ class Logic1 {
    * @param cNumber the third number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean lastDigit(int aNumber, int bNumber, int cNumber) {
+  boolean lastDigit(int aNumber, int bNumber, int cNumber) {
     int aNumberMod = aNumber % 10;
     int bNumberMod = bNumber % 10;
     int cNumberMod = cNumber % 10;
@@ -431,7 +431,7 @@ class Logic1 {
    * @param cNumber the third number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean lessBy10(int aNumber, int bNumber, int cNumber) {
+  boolean lessBy10(int aNumber, int bNumber, int cNumber) {
     int limit = 10;
     return Math.abs(aNumber - bNumber) >= limit || Math.abs(aNumber - cNumber) >= limit
         || Math.abs(bNumber - cNumber) >= limit;
@@ -447,7 +447,7 @@ class Logic1 {
    * @param noDoubles indicate that same value not allowed
    * @return the above mentioned new integer
    */
-  public int withoutDoubles(int dice1, int dice2, boolean noDoubles) {
+  int withoutDoubles(int dice1, int dice2, boolean noDoubles) {
     int minValue = 1;
     int maxValue = 6;
 
