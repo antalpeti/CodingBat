@@ -664,4 +664,33 @@ public class Logic1Test {
       }
     }
   }
+
+  /**
+   * Test method for {@link Logic1#maxMod5(int, int)}.
+   */
+  @Test
+  public void testMaxMod5() {
+    Assert.assertEquals(2, instance.maxMod5(1, 2));
+    Assert.assertEquals(2, instance.maxMod5(2, 1));
+    Assert.assertEquals(3, instance.maxMod5(2, 3));
+    Assert.assertEquals(3, instance.maxMod5(3, 2));
+    Assert.assertEquals(6, instance.maxMod5(2, 6));
+    Assert.assertEquals(6, instance.maxMod5(6, 2));
+    Assert.assertEquals(9, instance.maxMod5(9, 1));
+    Assert.assertEquals(9, instance.maxMod5(1, 9));
+    Assert.assertEquals(12, instance.maxMod5(8, 12));
+    Assert.assertEquals(12, instance.maxMod5(12, 8));
+    Assert.assertEquals(2, instance.maxMod5(2, 7));
+    Assert.assertEquals(2, instance.maxMod5(7, 2));
+    Assert.assertEquals(6, instance.maxMod5(6, 11));
+    Assert.assertEquals(6, instance.maxMod5(11, 6));
+    Assert.assertEquals(7, instance.maxMod5(12, 7));
+    Assert.assertEquals(7, instance.maxMod5(7, 12));
+    Assert.assertEquals(9, instance.maxMod5(9, 14));
+    Assert.assertEquals(9, instance.maxMod5(14, 9));
+    Assert.assertEquals(0, instance.maxMod5(0, 0));
+    Assert.assertEquals(0, instance.maxMod5(7, 7));
+    Assert.assertEquals(0, instance.maxMod5(6, 6));
+    Assert.assertEquals(0, instance.maxMod5(103, 103));
+  }
 }

@@ -460,4 +460,32 @@ class Logic1 {
 
     return dice1 + dice2;
   }
+
+  /**
+   * Given two int values, return whichever value is larger. However if the two values have the same
+   * remainder when divided by 5, then the return the smaller value. However, in all cases, if the
+   * two values are the same, return 0.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return the above mentioned new number
+   */
+  public int maxMod5(int aNumber, int bNumber) {
+    int remainderA = aNumber % 5;
+    int remainderB = bNumber % 5;
+
+    boolean aIsBigger = aNumber < bNumber;
+    int bigger = aIsBigger ? bNumber : aNumber;
+    int smaller = aIsBigger ? aNumber : bNumber;
+
+    boolean equality = aNumber == bNumber;
+    int result = 0;
+    if (!equality) {
+      result = bigger;
+      if (remainderA == remainderB) {
+        result = smaller;
+      }
+    }
+    return result;
+  }
 }
