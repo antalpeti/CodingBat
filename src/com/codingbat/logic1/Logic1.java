@@ -470,7 +470,7 @@ class Logic1 {
    * @param bNumber the second number
    * @return the above mentioned new number
    */
-  public int maxMod5(int aNumber, int bNumber) {
+  int maxMod5(int aNumber, int bNumber) {
     int remainderA = aNumber % 5;
     int remainderB = bNumber % 5;
 
@@ -500,7 +500,7 @@ class Logic1 {
    * @param cTicket the third ticket
    * @return the above mentioned new number
    */
-  public int redTicket(int aTicket, int bTicket, int cTicket) {
+  int redTicket(int aTicket, int bTicket, int cTicket) {
     int result = 0;
     if (aTicket == 2 && bTicket == 2 && cTicket == 2) {
       result = 10;
