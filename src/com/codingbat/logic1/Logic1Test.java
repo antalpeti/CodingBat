@@ -693,4 +693,41 @@ public class Logic1Test {
     Assert.assertEquals(0, instance.maxMod5(6, 6));
     Assert.assertEquals(0, instance.maxMod5(103, 103));
   }
+
+  /**
+   * Test method for {@link Logic1#redTicket(int, int, int)}.
+   */
+  @Test
+  public void testRedTicket() {
+    Assert.assertEquals(10, instance.redTicket(2, 2, 2));
+    Assert.assertEquals(5, instance.redTicket(0, 0, 0));
+    Assert.assertEquals(5, instance.redTicket(1, 1, 1));
+    Assert.assertEquals(5, instance.redTicket(3, 3, 3));
+    Assert.assertEquals(1, instance.redTicket(1, 0, 0));
+    Assert.assertEquals(1, instance.redTicket(0, 1, 1));
+    Assert.assertEquals(1, instance.redTicket(0, 1, 2));
+    Assert.assertEquals(1, instance.redTicket(0, 2, 1));
+    Assert.assertEquals(1, instance.redTicket(0, 2, 2));
+    Assert.assertEquals(1, instance.redTicket(1, 0, 2));
+    Assert.assertEquals(1, instance.redTicket(1, 2, 0));
+    Assert.assertEquals(1, instance.redTicket(1, 2, 2));
+    Assert.assertEquals(1, instance.redTicket(2, 0, 0));
+    Assert.assertEquals(1, instance.redTicket(2, 0, 1));
+    Assert.assertEquals(1, instance.redTicket(2, 1, 0));
+    Assert.assertEquals(1, instance.redTicket(2, 1, 1));
+    Assert.assertEquals(1, instance.redTicket(1, 2, 0));
+    Assert.assertEquals(1, instance.redTicket(1, 0, 2));
+    Assert.assertEquals(0, instance.redTicket(0, 0, 1));
+    Assert.assertEquals(0, instance.redTicket(0, 1, 0));
+    Assert.assertEquals(0, instance.redTicket(0, 0, 2));
+    Assert.assertEquals(0, instance.redTicket(0, 2, 0));
+    Assert.assertEquals(0, instance.redTicket(1, 0, 1));
+    Assert.assertEquals(0, instance.redTicket(1, 1, 0));
+    Assert.assertEquals(0, instance.redTicket(1, 1, 2));
+    Assert.assertEquals(0, instance.redTicket(1, 2, 1));
+    Assert.assertEquals(0, instance.redTicket(2, 0, 2));
+    Assert.assertEquals(0, instance.redTicket(2, 2, 0));
+    Assert.assertEquals(0, instance.redTicket(2, 1, 2));
+    Assert.assertEquals(0, instance.redTicket(2, 2, 1));
+  }
 }
