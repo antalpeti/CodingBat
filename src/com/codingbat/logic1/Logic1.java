@@ -511,4 +511,24 @@ class Logic1 {
     }
     return result;
   }
+
+  /**
+   * You have a green lottery ticket, with ints a, b, and c on it. If the numbers are all different
+   * from each other, the result is 0. If all of the numbers are the same, the result is 20. If two
+   * of the numbers are the same, the result is 10.
+   *
+   * @param aTicket the first ticket
+   * @param bTicket the second ticket
+   * @param cTicket the third ticket
+   * @return the above mentioned new number
+   */
+  int greenTicket(int aTicket, int bTicket, int cTicket) {
+    int result = 0;
+    if (aTicket == bTicket && bTicket == cTicket) {
+      result = 20;
+    } else if (aTicket == bTicket || aTicket == cTicket || cTicket == bTicket) {
+      result = 10;
+    }
+    return result;
+  }
 }

@@ -730,4 +730,28 @@ public class Logic1Test {
     Assert.assertEquals(0, instance.redTicket(2, 1, 2));
     Assert.assertEquals(0, instance.redTicket(2, 2, 1));
   }
+
+  /**
+   * Test method for {@link Logic1#greenTicket(int, int, int)}.
+   */
+  @Test
+  public void testGreenTicket() {
+    Assert.assertEquals(0, instance.greenTicket(1, 2, 3));
+    Assert.assertEquals(0, instance.greenTicket(2, 1, 3));
+    Assert.assertEquals(0, instance.greenTicket(2, 3, 1));
+    Assert.assertEquals(0, instance.greenTicket(1, 3, 2));
+    Assert.assertEquals(0, instance.greenTicket(3, 1, 2));
+    Assert.assertEquals(0, instance.greenTicket(3, 2, 1));
+    Assert.assertEquals(0, instance.greenTicket(0, 9, 10));
+    Assert.assertEquals(10, instance.greenTicket(1, 1, 2));
+    Assert.assertEquals(10, instance.greenTicket(1, 2, 1));
+    Assert.assertEquals(10, instance.greenTicket(2, 1, 1));
+    Assert.assertEquals(10, instance.greenTicket(2, 0, 0));
+    Assert.assertEquals(10, instance.greenTicket(0, 10, 0));
+    Assert.assertEquals(10, instance.greenTicket(9, 0, 9));
+    Assert.assertEquals(20, instance.greenTicket(0, 0, 0));
+    Assert.assertEquals(20, instance.greenTicket(1, 1, 1));
+    Assert.assertEquals(20, instance.greenTicket(2, 2, 2));
+    Assert.assertEquals(20, instance.greenTicket(9, 9, 9));
+  }
 }
