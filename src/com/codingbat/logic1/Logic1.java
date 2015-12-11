@@ -531,4 +531,31 @@ class Logic1 {
     }
     return result;
   }
+
+  /**
+   * You have a blue lottery ticket, with ints a, b, and c on it. This makes three pairs, which
+   * we'll call ab, bc, and ac. Consider the sum of the numbers in each pair. If any pair sums to
+   * exactly 10, the result is 10. Otherwise if the ab sum is exactly 15 more than either bc or ac
+   * sums, the result is 5. Otherwise the result is 0.
+   *
+   * @param aTicket the first ticket
+   * @param bTicket the second ticket
+   * @param cTicket the third ticket
+   * @return the above mentioned new number
+   */
+  public int blueTicket(int aTicket, int bTicket, int cTicket) {
+    int result = 0;
+    int number1 = 10;
+    if (aTicket + bTicket == number1 || aTicket + cTicket == number1
+        || bTicket + cTicket == number1) {
+      result = number1;
+    } else {
+      int number2 = 15;
+      if (aTicket + bTicket == number2
+          && (aTicket + cTicket < number2 || bTicket + cTicket < number2)) {
+        result = 5;
+      }
+    }
+    return result;
+  }
 }

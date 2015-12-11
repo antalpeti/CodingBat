@@ -754,4 +754,42 @@ public class Logic1Test {
     Assert.assertEquals(20, instance.greenTicket(2, 2, 2));
     Assert.assertEquals(20, instance.greenTicket(9, 9, 9));
   }
+
+  /**
+   * Test method for {@link Logic1#blueTicket(int, int, int)}.
+   */
+  @Test
+  public void testBlueTicket() {
+    Assert.assertEquals(10, instance.blueTicket(9, 1, 0));
+    Assert.assertEquals(10, instance.blueTicket(9, 0, 1));
+    Assert.assertEquals(10, instance.blueTicket(1, 9, 0));
+    Assert.assertEquals(10, instance.blueTicket(0, 9, 1));
+    Assert.assertEquals(10, instance.blueTicket(0, 1, 9));
+    Assert.assertEquals(10, instance.blueTicket(1, 0, 9));
+    Assert.assertEquals(10, instance.blueTicket(9, 1, 1));
+    Assert.assertEquals(10, instance.blueTicket(1, 9, 1));
+    Assert.assertEquals(10, instance.blueTicket(1, 1, 9));
+    Assert.assertEquals(10, instance.blueTicket(10, 0, 0));
+    Assert.assertEquals(10, instance.blueTicket(0, 10, 0));
+    Assert.assertEquals(10, instance.blueTicket(0, 0, 10));
+    Assert.assertEquals(10, instance.blueTicket(10, 10, 0));
+    Assert.assertEquals(10, instance.blueTicket(10, 0, 10));
+    Assert.assertEquals(10, instance.blueTicket(0, 10, 10));
+    Assert.assertEquals(10, instance.blueTicket(6, 1, 4));
+    Assert.assertEquals(10, instance.blueTicket(5, 15, 5));
+    Assert.assertEquals(10, instance.blueTicket(8, 4, 2));
+    Assert.assertEquals(5, instance.blueTicket(15, 0, 0));
+    Assert.assertEquals(5, instance.blueTicket(15, 0, 5));
+    Assert.assertEquals(5, instance.blueTicket(1, 14, 2));
+    Assert.assertEquals(5, instance.blueTicket(12, 3, 0));
+    Assert.assertEquals(5, instance.blueTicket(6, 9, 0));
+    Assert.assertEquals(5, instance.blueTicket(4, 11, 1));
+    Assert.assertEquals(5, instance.blueTicket(13, 2, 3));
+    Assert.assertEquals(0, instance.blueTicket(15, 1, 1));
+    Assert.assertEquals(0, instance.blueTicket(12, 3, 15));
+    Assert.assertEquals(0, instance.blueTicket(9, 2, 0));
+    Assert.assertEquals(0, instance.blueTicket(6, 1, 5));
+    Assert.assertEquals(0, instance.blueTicket(8, 4, 3));
+    Assert.assertEquals(0, instance.blueTicket(8, 4, 1));
+  }
 }
