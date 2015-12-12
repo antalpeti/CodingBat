@@ -792,4 +792,40 @@ public class Logic1Test {
     Assert.assertEquals(0, instance.blueTicket(8, 4, 3));
     Assert.assertEquals(0, instance.blueTicket(8, 4, 1));
   }
+
+  /**
+   * Test method for {@link Logic1#shareDigit(int, int)}.
+   */
+  @Test
+  public void testShareDigit() {
+    // left left
+    Assert.assertEquals(true, instance.shareDigit(12, 13));
+    Assert.assertEquals(true, instance.shareDigit(21, 23));
+    // right right
+    Assert.assertEquals(true, instance.shareDigit(30, 90));
+    Assert.assertEquals(true, instance.shareDigit(21, 31));
+    Assert.assertEquals(true, instance.shareDigit(12, 32));
+    // left right
+    Assert.assertEquals(true, instance.shareDigit(12, 31));
+    Assert.assertEquals(true, instance.shareDigit(23, 12));
+    Assert.assertEquals(true, instance.shareDigit(21, 32));
+    // right left
+    Assert.assertEquals(true, instance.shareDigit(12, 23));
+    Assert.assertEquals(true, instance.shareDigit(21, 13));
+    Assert.assertEquals(true, instance.shareDigit(23, 39));
+    // left left right right
+    Assert.assertEquals(true, instance.shareDigit(12, 12));
+    Assert.assertEquals(true, instance.shareDigit(21, 21));
+    Assert.assertEquals(true, instance.shareDigit(55, 55));
+    // left right right left
+    Assert.assertEquals(true, instance.shareDigit(12, 21));
+    Assert.assertEquals(true, instance.shareDigit(21, 12));
+    // none
+    Assert.assertEquals(false, instance.shareDigit(12, 43));
+    Assert.assertEquals(false, instance.shareDigit(11, 44));
+    Assert.assertEquals(false, instance.shareDigit(12, 44));
+    Assert.assertEquals(false, instance.shareDigit(23, 19));
+    Assert.assertEquals(false, instance.shareDigit(30, 91));
+    Assert.assertEquals(false, instance.shareDigit(55, 44));
+  }
 }

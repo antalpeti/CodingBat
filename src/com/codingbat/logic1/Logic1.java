@@ -558,4 +558,27 @@ class Logic1 {
     }
     return result;
   }
+
+  /**
+   * Given two ints, each in the range 10..99, return true if there is a digit that appears in both
+   * numbers, such as the 2 in 12 and 23. (Note: division, e.g. n/10, gives the left digit while the
+   * % "mod" n%10 gives the right digit.)
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean shareDigit(int aNumber, int bNumber) {
+    int aLeftDigit = aNumber % 10;
+    int aRightDigit = aNumber / 10;
+    int bLeftDigit = bNumber % 10;
+    int bRightDigit = bNumber / 10;
+
+    boolean firstEquality = aLeftDigit == bLeftDigit;
+    boolean secondEquality = aRightDigit == bRightDigit;
+    boolean thirdEquality = aLeftDigit == bRightDigit;
+    boolean fourthEquality = aRightDigit == bLeftDigit;
+
+    return firstEquality || secondEquality || thirdEquality || fourthEquality;
+  }
 }
