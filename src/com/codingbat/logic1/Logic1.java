@@ -543,7 +543,7 @@ class Logic1 {
    * @param cTicket the third ticket
    * @return the above mentioned new number
    */
-  public int blueTicket(int aTicket, int bTicket, int cTicket) {
+  int blueTicket(int aTicket, int bTicket, int cTicket) {
     int result = 0;
     int number1 = 10;
     if (aTicket + bTicket == number1 || aTicket + cTicket == number1
@@ -568,7 +568,7 @@ class Logic1 {
    * @param bNumber the second number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean shareDigit(int aNumber, int bNumber) {
+  boolean shareDigit(int aNumber, int bNumber) {
     int aLeftDigit = aNumber % 10;
     int aRightDigit = aNumber / 10;
     int bLeftDigit = bNumber % 10;
@@ -592,7 +592,7 @@ class Logic1 {
    * @param bNumber the second number
    * @return the above mentioned new number
    */
-  public int sumLimit(int aNumber, int bNumber) {
+  int sumLimit(int aNumber, int bNumber) {
     int aLength = String.valueOf(aNumber).length();
     int sum = aNumber + bNumber;
     int sumLength = String.valueOf(sum).length();
