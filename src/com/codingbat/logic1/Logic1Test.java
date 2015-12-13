@@ -828,4 +828,28 @@ public class Logic1Test {
     Assert.assertEquals(false, instance.shareDigit(30, 91));
     Assert.assertEquals(false, instance.shareDigit(55, 44));
   }
+
+  /**
+   * Test method for {@link Logic1#sumLimit(int, int)}.
+   */
+  @Test
+  public void testSumLimit() {
+    // aNumber
+    Assert.assertEquals(1, instance.sumLimit(1, 123));
+    Assert.assertEquals(8, instance.sumLimit(8, 3));
+    Assert.assertEquals(11, instance.sumLimit(11, 99));
+    Assert.assertEquals(23, instance.sumLimit(23, 80));
+    Assert.assertEquals(99, instance.sumLimit(99, 1));
+    Assert.assertEquals(9000, instance.sumLimit(9000, 1000));
+    // sum
+    Assert.assertEquals(0, instance.sumLimit(0, 0));
+    Assert.assertEquals(5, instance.sumLimit(2, 3));
+    Assert.assertEquals(9, instance.sumLimit(8, 1));
+    Assert.assertEquals(50, instance.sumLimit(11, 39));
+    Assert.assertEquals(99, instance.sumLimit(99, 0));
+    Assert.assertEquals(83, instance.sumLimit(23, 60));
+    Assert.assertEquals(124, instance.sumLimit(123, 1));
+    Assert.assertEquals(9001, instance.sumLimit(9000, 1));
+    Assert.assertEquals(90000001, instance.sumLimit(90000000, 1));
+  }
 }

@@ -581,4 +581,22 @@ class Logic1 {
 
     return firstEquality || secondEquality || thirdEquality || fourthEquality;
   }
+
+  /**
+   * Given 2 non-negative ints, a and b, return their sum, so long as the sum has the same number of
+   * digits as a. If the sum has more digits than a, just return a without b. (Note: one way to
+   * compute the number of digits of a non-negative int n is to convert it to a string with
+   * String.valueOf(n) and then check the length of the string.)
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return the above mentioned new number
+   */
+  public int sumLimit(int aNumber, int bNumber) {
+    int aLength = String.valueOf(aNumber).length();
+    int sum = aNumber + bNumber;
+    int sumLength = String.valueOf(sum).length();
+
+    return sumLength > aLength ? aNumber : sum;
+  }
 }
