@@ -1,7 +1,9 @@
 package com.codingbat.logic2;
 
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  * The class Logic2Test is contains tests for Logic-2 section.
@@ -31,4 +33,46 @@ public class Logic2Test {
     instance = null;
   }
 
+  /**
+   * Test method for {@link Logic2#makeBricks(int, int, int)}.
+   */
+  @Test
+  public void testMakeBricks() {
+    Assert.assertEquals(true, instance.makeBricks(0, 2, 10));
+    Assert.assertEquals(true, instance.makeBricks(0, 3, 10));
+    Assert.assertEquals(false, instance.makeBricks(0, 3, 11));
+    Assert.assertEquals(true, instance.makeBricks(2, 1, 7));
+    Assert.assertEquals(false, instance.makeBricks(2, 1, 8));
+    Assert.assertEquals(true, instance.makeBricks(3, 1, 7));
+    Assert.assertEquals(true, instance.makeBricks(3, 1, 8));
+    Assert.assertEquals(false, instance.makeBricks(3, 1, 9));
+    Assert.assertEquals(true, instance.makeBricks(3, 2, 8));
+    Assert.assertEquals(true, instance.makeBricks(3, 2, 10));
+    Assert.assertEquals(true, instance.makeBricks(3, 8, 22));
+    Assert.assertEquals(false, instance.makeBricks(3, 2, 20));
+    Assert.assertEquals(false, instance.makeBricks(3, 2, 22));
+    Assert.assertEquals(false, instance.makeBricks(3, 2, 9));
+    Assert.assertEquals(true, instance.makeBricks(6, 1, 11));
+    Assert.assertEquals(false, instance.makeBricks(6, 0, 11));
+    Assert.assertEquals(true, instance.makeBricks(1, 4, 11));
+    Assert.assertEquals(false, instance.makeBricks(1, 4, 12));
+    Assert.assertEquals(true, instance.makeBricks(1, 1, 5));
+    Assert.assertEquals(true, instance.makeBricks(1, 1, 6));
+    Assert.assertEquals(false, instance.makeBricks(1, 1, 7));
+    Assert.assertEquals(true, instance.makeBricks(7, 1, 8));
+    Assert.assertEquals(true, instance.makeBricks(7, 1, 11));
+    Assert.assertEquals(false, instance.makeBricks(7, 1, 13));
+    Assert.assertEquals(true, instance.makeBricks(20, 0, 19));
+    Assert.assertEquals(false, instance.makeBricks(20, 0, 21));
+    Assert.assertEquals(true, instance.makeBricks(20, 4, 39));
+    Assert.assertEquals(false, instance.makeBricks(20, 4, 51));
+    Assert.assertEquals(false, instance.makeBricks(22, 2, 33));
+    Assert.assertEquals(true, instance.makeBricks(40, 2, 47));
+    Assert.assertEquals(true, instance.makeBricks(40, 2, 50));
+    Assert.assertEquals(false, instance.makeBricks(40, 2, 52));
+    Assert.assertEquals(false, instance.makeBricks(40, 1, 46));
+    Assert.assertEquals(true, instance.makeBricks(43, 1, 46));
+    Assert.assertEquals(true, instance.makeBricks(1000000, 1000, 1000100));
+    Assert.assertEquals(false, instance.makeBricks(2, 1000000, 1000003));
+  }
 }
