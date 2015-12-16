@@ -32,4 +32,34 @@ class Logic2 {
     }
     return true;
   }
+
+  /**
+   * Given 3 int values, a b c, return their sum. However, if one of the values is the same as
+   * another of the values, it does not count towards the sum.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return the above mentioned new number
+   */
+  int loneSum(int aNumber, int bNumber, int cNumber) {
+    int sum = 0;
+    boolean aIsUnique = aNumber != bNumber && aNumber != cNumber;
+
+    if (aIsUnique) {
+      sum += aNumber;
+    }
+
+    boolean bIsUnique = bNumber != aNumber && bNumber != cNumber;
+    if (bIsUnique) {
+      sum += bNumber;
+    }
+
+    boolean cIsUnique = cNumber != aNumber && cNumber != bNumber;
+    if (cIsUnique) {
+      sum += cNumber;
+    }
+
+    return sum;
+  }
 }

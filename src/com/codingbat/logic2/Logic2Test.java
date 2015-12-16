@@ -75,4 +75,20 @@ public class Logic2Test {
     Assert.assertEquals(true, instance.makeBricks(1000000, 1000, 1000100));
     Assert.assertEquals(false, instance.makeBricks(2, 1000000, 1000003));
   }
+
+  /**
+   * Test method for {@link Logic2#loneSum(int, int, int)}.
+   */
+  @Test
+  public void testLoneSum() {
+    Assert.assertEquals(6, instance.loneSum(1, 2, 3));
+    Assert.assertEquals(3, instance.loneSum(1, 3, 1));
+    Assert.assertEquals(9, instance.loneSum(2, 2, 9));
+    Assert.assertEquals(9, instance.loneSum(2, 9, 2));
+    Assert.assertEquals(9, instance.loneSum(9, 2, 2));
+    Assert.assertEquals(14, instance.loneSum(2, 9, 3));
+    Assert.assertEquals(2, instance.loneSum(3, 2, 3));
+    Assert.assertEquals(0, instance.loneSum(3, 3, 3));
+    Assert.assertEquals(9, instance.loneSum(4, 2, 3));
+  }
 }
