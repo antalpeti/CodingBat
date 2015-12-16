@@ -23,12 +23,8 @@ class Logic2 {
     int availableLength = bigBrickLength * bigBricks + smallBricks;
     if (availableLength < goal) {
       return false;
-    } else {
-      if (bigBricksNeeded < bigBricks && bigBricks * bigBrickLength + smallBricks < goal) {
-        return false;
-      } else if (bigBricksNeeded * bigBrickLength + smallBricks < goal) {
-        return false;
-      }
+    } else if (bigBricksNeeded * bigBrickLength + smallBricks < goal) {
+      return false;
     }
     return true;
   }
