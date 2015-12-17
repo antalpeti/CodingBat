@@ -58,4 +58,29 @@ class Logic2 {
 
     return sum;
   }
+
+  /**
+   * Given 3 int values, a b c, return their sum. However, if one of the values is 13 then it does
+   * not count towards the sum and values to its right do not count. So for example, if b is 13,
+   * then both b and c do not count.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return the above mentioned new number
+   */
+  int luckySum(int aNumber, int bNumber, int cNumber) {
+    int result = aNumber + bNumber + cNumber;
+
+    int luckyNumber = 13;
+    if (aNumber == luckyNumber) {
+      result = 0;
+    } else if (bNumber == luckyNumber) {
+      result -= bNumber + cNumber;
+    } else if (cNumber == luckyNumber) {
+      result -= cNumber;
+    }
+
+    return result;
+  }
 }

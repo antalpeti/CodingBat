@@ -91,4 +91,24 @@ public class Logic2Test {
     Assert.assertEquals(0, instance.loneSum(3, 3, 3));
     Assert.assertEquals(9, instance.loneSum(4, 2, 3));
   }
+
+  /**
+   * Test method for {@link Logic2#luckySum(int, int, int)}.
+   */
+  @Test
+  public void testLuckySum() {
+    Assert.assertEquals(6, instance.luckySum(1, 2, 3));
+    Assert.assertEquals(3, instance.luckySum(1, 2, 13));
+    Assert.assertEquals(1, instance.luckySum(1, 13, 3));
+    Assert.assertEquals(1, instance.luckySum(1, 13, 13));
+    Assert.assertEquals(13, instance.luckySum(6, 5, 2));
+    Assert.assertEquals(0, instance.luckySum(13, 2, 3));
+    Assert.assertEquals(0, instance.luckySum(13, 2, 13));
+    Assert.assertEquals(0, instance.luckySum(13, 13, 2));
+    Assert.assertEquals(0, instance.luckySum(13, 13, 13));
+    Assert.assertEquals(13, instance.luckySum(9, 4, 13));
+    Assert.assertEquals(8, instance.luckySum(8, 13, 2));
+    Assert.assertEquals(10, instance.luckySum(7, 2, 1));
+    Assert.assertEquals(6, instance.luckySum(3, 3, 13));
+  }
 }
