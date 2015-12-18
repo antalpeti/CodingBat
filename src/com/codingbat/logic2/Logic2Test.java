@@ -111,4 +111,27 @@ public class Logic2Test {
     Assert.assertEquals(10, instance.luckySum(7, 2, 1));
     Assert.assertEquals(6, instance.luckySum(3, 3, 13));
   }
+
+  /**
+   * Test method for {@link Logic2#noTeenSum(int, int, int)}.
+   */
+  @Test
+  public void testNoTeenSum() {
+    Assert.assertEquals(6, instance.noTeenSum(1, 2, 3));
+    Assert.assertEquals(3, instance.noTeenSum(2, 13, 1));
+    Assert.assertEquals(3, instance.noTeenSum(2, 1, 14));
+    Assert.assertEquals(18, instance.noTeenSum(2, 1, 15));
+    Assert.assertEquals(19, instance.noTeenSum(2, 1, 16));
+    Assert.assertEquals(3, instance.noTeenSum(2, 1, 17));
+    Assert.assertEquals(3, instance.noTeenSum(17, 1, 2));
+    Assert.assertEquals(19, instance.noTeenSum(2, 15, 2));
+    Assert.assertEquals(16, instance.noTeenSum(16, 17, 18));
+    Assert.assertEquals(0, instance.noTeenSum(17, 18, 19));
+    Assert.assertEquals(32, instance.noTeenSum(15, 16, 1));
+    Assert.assertEquals(30, instance.noTeenSum(15, 15, 19));
+    Assert.assertEquals(31, instance.noTeenSum(15, 19, 16));
+    Assert.assertEquals(5, instance.noTeenSum(5, 17, 18));
+    Assert.assertEquals(16, instance.noTeenSum(17, 18, 16));
+    Assert.assertEquals(0, instance.noTeenSum(17, 19, 18));
+  }
 }

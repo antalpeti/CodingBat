@@ -83,4 +83,31 @@ class Logic2 {
 
     return result;
   }
+
+  /**
+   * Given 3 int values, a b c, return their sum. However, if any of the values is a teen -- in the
+   * range 13..19 inclusive -- then that value counts as 0, except 15 and 16 do not count as a
+   * teens.
+   *
+   * @param aTeen the first teen
+   * @param bTeen the second teen
+   * @param cTeen the third teen
+   * @return the above mentioned new number
+   */
+  public int noTeenSum(int aTeen, int bTeen, int cTeen) {
+    return fixTeen(aTeen) + fixTeen(bTeen) + fixTeen(cTeen);
+  }
+
+  /**
+   * Separate helper for {@link #fixTeen(int) fixTeen} method.
+   *
+   * @param age the age
+   * @return the filtered age
+   */
+  public int fixTeen(int age) {
+    if (age >= 13 && age < 15 || age > 16 && age <= 19) {
+      return 0;
+    }
+    return age;
+  }
 }
