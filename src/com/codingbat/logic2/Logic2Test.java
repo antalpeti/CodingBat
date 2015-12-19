@@ -134,4 +134,75 @@ public class Logic2Test {
     Assert.assertEquals(16, instance.noTeenSum(17, 18, 16));
     Assert.assertEquals(0, instance.noTeenSum(17, 19, 18));
   }
+
+  /**
+   * Test method for {@link Logic2#fixTeen(int)}.
+   */
+  @Test
+  public void testFixTeen() {
+    Assert.assertEquals(10, instance.fixTeen(10));
+    Assert.assertEquals(11, instance.fixTeen(11));
+    Assert.assertEquals(12, instance.fixTeen(12));
+    Assert.assertEquals(0, instance.fixTeen(13));
+    Assert.assertEquals(0, instance.fixTeen(14));
+    Assert.assertEquals(15, instance.fixTeen(15));
+    Assert.assertEquals(16, instance.fixTeen(16));
+    Assert.assertEquals(0, instance.fixTeen(17));
+    Assert.assertEquals(0, instance.fixTeen(18));
+    Assert.assertEquals(0, instance.fixTeen(19));
+    Assert.assertEquals(20, instance.fixTeen(20));
+  }
+
+  /**
+   * Test method for {@link Logic2#roundSum(int, int, int)}.
+   */
+  @Test
+  public void testRoundSum() {
+    Assert.assertEquals(0, instance.roundSum(0, 0, 1));
+    Assert.assertEquals(10, instance.roundSum(0, 9, 0));
+    Assert.assertEquals(10, instance.roundSum(4, 4, 6));
+    Assert.assertEquals(20, instance.roundSum(4, 6, 5));
+    Assert.assertEquals(10, instance.roundSum(6, 4, 4));
+    Assert.assertEquals(10, instance.roundSum(9, 4, 4));
+    Assert.assertEquals(40, instance.roundSum(10, 10, 19));
+    Assert.assertEquals(70, instance.roundSum(11, 24, 36));
+    Assert.assertEquals(40, instance.roundSum(12, 10, 24));
+    Assert.assertEquals(30, instance.roundSum(12, 13, 14));
+    Assert.assertEquals(50, instance.roundSum(14, 12, 26));
+    Assert.assertEquals(60, instance.roundSum(16, 17, 18));
+    Assert.assertEquals(90, instance.roundSum(20, 30, 40));
+    Assert.assertEquals(60, instance.roundSum(23, 11, 26));
+    Assert.assertEquals(70, instance.roundSum(23, 24, 25));
+    Assert.assertEquals(70, instance.roundSum(23, 24, 29));
+    Assert.assertEquals(90, instance.roundSum(24, 36, 32));
+    Assert.assertEquals(80, instance.roundSum(25, 24, 25));
+    Assert.assertEquals(100, instance.roundSum(45, 21, 30));
+  }
+
+  /**
+   * Test method for {@link Logic2#roundTo10(int)}.
+   */
+  @Test
+  public void testRound10() {
+    Assert.assertEquals(0, instance.roundTo10(1));
+    Assert.assertEquals(0, instance.roundTo10(2));
+    Assert.assertEquals(0, instance.roundTo10(3));
+    Assert.assertEquals(0, instance.roundTo10(4));
+    Assert.assertEquals(10, instance.roundTo10(5));
+    Assert.assertEquals(10, instance.roundTo10(6));
+    Assert.assertEquals(10, instance.roundTo10(7));
+    Assert.assertEquals(10, instance.roundTo10(8));
+    Assert.assertEquals(10, instance.roundTo10(9));
+    Assert.assertEquals(10, instance.roundTo10(10));
+    Assert.assertEquals(10, instance.roundTo10(11));
+    Assert.assertEquals(10, instance.roundTo10(12));
+    Assert.assertEquals(10, instance.roundTo10(13));
+    Assert.assertEquals(10, instance.roundTo10(14));
+    Assert.assertEquals(20, instance.roundTo10(15));
+    Assert.assertEquals(20, instance.roundTo10(16));
+    Assert.assertEquals(20, instance.roundTo10(17));
+    Assert.assertEquals(20, instance.roundTo10(18));
+    Assert.assertEquals(20, instance.roundTo10(19));
+    Assert.assertEquals(20, instance.roundTo10(20));
+  }
 }
