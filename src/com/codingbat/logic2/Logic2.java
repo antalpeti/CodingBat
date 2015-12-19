@@ -94,7 +94,7 @@ class Logic2 {
    * @param cTeen the third teen
    * @return the above mentioned new number
    */
-  public int noTeenSum(int aTeen, int bTeen, int cTeen) {
+  int noTeenSum(int aTeen, int bTeen, int cTeen) {
     return fixTeen(aTeen) + fixTeen(bTeen) + fixTeen(cTeen);
   }
 
@@ -104,7 +104,7 @@ class Logic2 {
    * @param age the age
    * @return the filtered age
    */
-  public int fixTeen(int age) {
+  int fixTeen(int age) {
     if (age >= 13 && age < 15 || age > 16 && age <= 19) {
       return 0;
     }
@@ -122,7 +122,7 @@ class Logic2 {
    * @param cNumber the third number
    * @return the above mentioned new number
    */
-  public int roundSum(int aNumber, int bNumber, int cNumber) {
+  int roundSum(int aNumber, int bNumber, int cNumber) {
     return roundTo10(aNumber) + roundTo10(bNumber) + roundTo10(cNumber);
   }
 
@@ -132,7 +132,7 @@ class Logic2 {
    * @param number the number
    * @return the above mentioned new number
    */
-  public int roundTo10(int number) {
+  int roundTo10(int number) {
     double divided = number / 10.0;
     divided = Math.round(divided);
     return (int) (divided * 10);
