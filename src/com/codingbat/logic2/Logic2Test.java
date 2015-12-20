@@ -205,4 +205,31 @@ public class Logic2Test {
     Assert.assertEquals(20, instance.roundTo10(19));
     Assert.assertEquals(20, instance.roundTo10(20));
   }
+
+  /**
+   * Test method for {@link Logic2#closeFar(int, int, int)}.
+   */
+  @Test
+  public void testCloseFar() {
+    Assert.assertEquals(true, instance.closeFar(-1, 10, 0));
+    Assert.assertEquals(true, instance.closeFar(0, -1, 10));
+    Assert.assertEquals(true, instance.closeFar(1, 2, 10));
+    Assert.assertEquals(true, instance.closeFar(1, 10, 2));
+    Assert.assertEquals(false, instance.closeFar(1, 2, 3));
+    Assert.assertEquals(false, instance.closeFar(1, 3, 2));
+    Assert.assertEquals(true, instance.closeFar(4, 1, 3));
+    Assert.assertEquals(false, instance.closeFar(4, 5, 3));
+    Assert.assertEquals(false, instance.closeFar(4, 3, 5));
+    Assert.assertEquals(false, instance.closeFar(8, 9, 10));
+    Assert.assertEquals(false, instance.closeFar(8, 9, 7));
+    Assert.assertEquals(true, instance.closeFar(8, 6, 9));
+    Assert.assertEquals(true, instance.closeFar(8, 9, 6));
+    Assert.assertEquals(true, instance.closeFar(10, 10, 8));
+    Assert.assertEquals(false, instance.closeFar(10, 8, 9));
+    Assert.assertEquals(true, instance.closeFar(5, 5, 7));
+    Assert.assertEquals(false, instance.closeFar(6, 5, 7));
+    Assert.assertEquals(true, instance.closeFar(8, 5, 7));
+    Assert.assertEquals(false, instance.closeFar(11, 5, 7));
+    Assert.assertEquals(false, instance.closeFar(5, 5, 5));
+  }
 }

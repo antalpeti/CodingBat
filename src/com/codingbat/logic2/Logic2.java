@@ -137,4 +137,23 @@ class Logic2 {
     divided = Math.round(divided);
     return (int) (divided * 10);
   }
+
+  /**
+   * Given three ints, a b c, return true if one of b or c is "close" (differing from a by at most
+   * 1), while the other is "far", differing from both other values by 2 or more.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean closeFar(int aNumber, int bNumber, int cNumber) {
+    boolean bIsClose = Math.abs(bNumber - aNumber) <= 1;
+    boolean cIsFar = Math.abs(cNumber - aNumber) >= 2;
+    boolean cIsClose = Math.abs(cNumber - aNumber) <= 1;
+    boolean bIsFar = Math.abs(bNumber - aNumber) >= 2;
+    boolean abAreFar = Math.abs(cNumber - bNumber) >= 2;
+
+    return abAreFar && (bIsClose && cIsFar || cIsClose && bIsFar);
+  }
 }
