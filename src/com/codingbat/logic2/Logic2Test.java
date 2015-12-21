@@ -232,4 +232,26 @@ public class Logic2Test {
     Assert.assertEquals(false, instance.closeFar(11, 5, 7));
     Assert.assertEquals(false, instance.closeFar(5, 5, 5));
   }
+
+  /**
+   * Test method for {@link Logic2#blackjack(int, int)}.
+   */
+  @Test
+  public void testBlackjack() {
+    Assert.assertEquals(0, instance.blackjack(22, 22));
+    Assert.assertEquals(0, instance.blackjack(22, 50));
+    Assert.assertEquals(0, instance.blackjack(34, 33));
+    Assert.assertEquals(1, instance.blackjack(33, 1));
+    Assert.assertEquals(2, instance.blackjack(1, 2));
+    Assert.assertEquals(3, instance.blackjack(3, 2));
+    Assert.assertEquals(4, instance.blackjack(3, 4));
+    Assert.assertEquals(18, instance.blackjack(18, 17));
+    Assert.assertEquals(16, instance.blackjack(16, 23));
+    Assert.assertEquals(19, instance.blackjack(17, 19));
+    Assert.assertEquals(19, instance.blackjack(19, 22));
+    Assert.assertEquals(19, instance.blackjack(22, 19));
+    Assert.assertEquals(21, instance.blackjack(19, 21));
+    Assert.assertEquals(21, instance.blackjack(21, 19));
+    Assert.assertEquals(21, instance.blackjack(21, 20));
+  }
 }

@@ -156,4 +156,20 @@ class Logic2 {
 
     return abAreFar && (bIsClose && cIsFar || cIsClose && bIsFar);
   }
+
+  /**
+   * Given 2 int values greater than 0, return whichever value is nearest to 21 without going over.
+   * Return 0 if they both go over.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @return the above mentioned new number
+   */
+  public int blackjack(int aNumber, int bNumber) {
+    int treshold = 21;
+    aNumber = aNumber > treshold ? 0 : aNumber;
+    bNumber = bNumber > treshold ? 0 : bNumber;
+
+    return aNumber > bNumber ? aNumber : bNumber;
+  }
 }
