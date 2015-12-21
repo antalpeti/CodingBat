@@ -147,7 +147,7 @@ class Logic2 {
    * @param cNumber the third number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean closeFar(int aNumber, int bNumber, int cNumber) {
+  boolean closeFar(int aNumber, int bNumber, int cNumber) {
     boolean bIsClose = Math.abs(bNumber - aNumber) <= 1;
     boolean cIsFar = Math.abs(cNumber - aNumber) >= 2;
     boolean cIsClose = Math.abs(cNumber - aNumber) <= 1;
@@ -165,7 +165,7 @@ class Logic2 {
    * @param bNumber the second number
    * @return the above mentioned new number
    */
-  public int blackjack(int aNumber, int bNumber) {
+  int blackjack(int aNumber, int bNumber) {
     int treshold = 21;
     aNumber = aNumber > treshold ? 0 : aNumber;
     bNumber = bNumber > treshold ? 0 : bNumber;
