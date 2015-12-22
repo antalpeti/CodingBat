@@ -172,4 +172,27 @@ class Logic2 {
 
     return aNumber > bNumber ? aNumber : bNumber;
   }
+
+  /**
+   * Given three ints, a b c, one of them is small, one is medium and one is large. Return true if
+   * the three values are evenly spaced, so the difference between small and medium is the same as
+   * the difference between medium and large.
+   *
+   * @param aNumber the first number
+   * @param bNumber the second number
+   * @param cNumber the third number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean evenlySpaced(int aNumber, int bNumber, int cNumber) {
+    int diffenceAB = Math.abs(aNumber - bNumber);
+    int diffenceAC = Math.abs(aNumber - cNumber);
+    int diffenceBC = Math.abs(bNumber - cNumber);
+
+    boolean abcEqual = aNumber == bNumber && bNumber == cNumber;
+    boolean aMiddle = diffenceAB == diffenceAC && (bNumber != cNumber || abcEqual);
+    boolean bMiddle = diffenceAB == diffenceBC && (aNumber != cNumber || abcEqual);
+    boolean cMiddle = diffenceAC == diffenceBC && (aNumber != bNumber || abcEqual);
+
+    return aMiddle || bMiddle || cMiddle;
+  }
 }

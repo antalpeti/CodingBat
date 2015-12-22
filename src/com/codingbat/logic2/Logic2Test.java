@@ -254,4 +254,28 @@ public class Logic2Test {
     Assert.assertEquals(21, instance.blackjack(21, 19));
     Assert.assertEquals(21, instance.blackjack(21, 20));
   }
+
+  /**
+   * Test method for {@link Logic2#evenlySpaced(int, int, int)}.
+   */
+  @Test
+  public void testEvenlySpaced() {
+    Assert.assertEquals(true, instance.evenlySpaced(2, 2, 2));
+    Assert.assertEquals(true, instance.evenlySpaced(2, 4, 6));
+    Assert.assertEquals(true, instance.evenlySpaced(2, 6, 4));
+    Assert.assertEquals(true, instance.evenlySpaced(4, 2, 6));
+    Assert.assertEquals(true, instance.evenlySpaced(6, 2, 4));
+    Assert.assertEquals(true, instance.evenlySpaced(4, 6, 2));
+    Assert.assertEquals(true, instance.evenlySpaced(6, 4, 2));
+    Assert.assertEquals(false, instance.evenlySpaced(4, 6, 3));
+    Assert.assertEquals(false, instance.evenlySpaced(6, 2, 8));
+    Assert.assertEquals(true, instance.evenlySpaced(9, 10, 11));
+    Assert.assertEquals(true, instance.evenlySpaced(10, 9, 11));
+    Assert.assertEquals(false, instance.evenlySpaced(2, 2, 3));
+    Assert.assertEquals(false, instance.evenlySpaced(2, 2, 4));
+    Assert.assertEquals(false, instance.evenlySpaced(2, 4, 4));
+    Assert.assertEquals(false, instance.evenlySpaced(10, 9, 9));
+    Assert.assertEquals(false, instance.evenlySpaced(3, 6, 12));
+    Assert.assertEquals(false, instance.evenlySpaced(12, 3, 6));
+  }
 }
