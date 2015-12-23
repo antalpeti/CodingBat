@@ -183,7 +183,7 @@ class Logic2 {
    * @param cNumber the third number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean evenlySpaced(int aNumber, int bNumber, int cNumber) {
+  boolean evenlySpaced(int aNumber, int bNumber, int cNumber) {
     int diffenceAB = Math.abs(aNumber - bNumber);
     int diffenceAC = Math.abs(aNumber - cNumber);
     int diffenceBC = Math.abs(bNumber - cNumber);
@@ -207,7 +207,7 @@ class Logic2 {
    * @param goal the goal
    * @return the above mentioned new number
    */
-  public int makeChocolate(int smallBar, int bigBar, int goal) {
+  int makeChocolate(int smallBar, int bigBar, int goal) {
     int bigBarNeeded = goal / 5;
     // to default -1 result
     int smallBarNeeded = smallBar + 1;
