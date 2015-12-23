@@ -195,4 +195,27 @@ class Logic2 {
 
     return aMiddle || bMiddle || cMiddle;
   }
+
+
+  /**
+   * We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big
+   * bars (5 kilos each). Return the number of small bars to use, assuming we always use big bars
+   * before small bars. Return -1 if it can't be done.
+   *
+   * @param smallBar the number of small bar
+   * @param bigBar the number of big bar
+   * @param goal the goal
+   * @return the above mentioned new number
+   */
+  public int makeChocolate(int smallBar, int bigBar, int goal) {
+    int bigBarNeeded = goal / 5;
+    // to default -1 result
+    int smallBarNeeded = smallBar + 1;
+    if (bigBarNeeded > bigBar) {
+      smallBarNeeded = goal - bigBar * 5;
+    } else {
+      smallBarNeeded = goal - bigBarNeeded * 5;
+    }
+    return smallBarNeeded <= smallBar ? smallBarNeeded : -1;
+  }
 }

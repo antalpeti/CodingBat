@@ -281,4 +281,34 @@ public class Logic2Test {
     Assert.assertEquals(false, instance.evenlySpaced(3, 6, 12));
     Assert.assertEquals(false, instance.evenlySpaced(12, 3, 6));
   }
+
+  /**
+   * Test method for {@link Logic2#makeChocolate(int, int, int)}.
+   */
+  @Test
+  public void testMakeChocolate() {
+    Assert.assertEquals(-1, instance.makeChocolate(1, 2, 7));
+    Assert.assertEquals(1, instance.makeChocolate(1, 2, 6));
+    Assert.assertEquals(0, instance.makeChocolate(1, 2, 5));
+    Assert.assertEquals(-1, instance.makeChocolate(3, 1, 9));
+    Assert.assertEquals(-1, instance.makeChocolate(4, 1, 10));
+    Assert.assertEquals(2, instance.makeChocolate(4, 1, 7));
+    Assert.assertEquals(2, instance.makeChocolate(6, 2, 7));
+    Assert.assertEquals(0, instance.makeChocolate(4, 1, 5));
+    Assert.assertEquals(4, instance.makeChocolate(4, 1, 4));
+    Assert.assertEquals(4, instance.makeChocolate(5, 4, 9));
+    Assert.assertEquals(5, instance.makeChocolate(6, 1, 10));
+    Assert.assertEquals(6, instance.makeChocolate(6, 1, 11));
+    Assert.assertEquals(-1, instance.makeChocolate(6, 1, 12));
+    Assert.assertEquals(-1, instance.makeChocolate(6, 1, 13));
+    Assert.assertEquals(0, instance.makeChocolate(6, 2, 10));
+    Assert.assertEquals(1, instance.makeChocolate(6, 2, 11));
+    Assert.assertEquals(2, instance.makeChocolate(6, 2, 12));
+    Assert.assertEquals(7, instance.makeChocolate(7, 1, 12));
+    Assert.assertEquals(-1, instance.makeChocolate(7, 1, 13));
+    Assert.assertEquals(3, instance.makeChocolate(7, 2, 13));
+    Assert.assertEquals(3, instance.makeChocolate(9, 3, 18));
+    Assert.assertEquals(50, instance.makeChocolate(60, 100, 550));
+    Assert.assertEquals(6, instance.makeChocolate(1000, 1000000, 5000006));
+  }
 }
