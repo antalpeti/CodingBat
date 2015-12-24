@@ -348,6 +348,32 @@ public class String2Test {
   }
 
   /**
+   * Test method for {@link String2#oneTwo(String)}.
+   */
+  @Test
+  public void testOneTwo() {
+    Assert.assertEquals("", instance.oneTwo(""));
+    Assert.assertEquals("bca", instance.oneTwo("abc"));
+    Assert.assertEquals("cat", instance.oneTwo("tca"));
+    Assert.assertEquals("catdog", instance.oneTwo("tcagdo"));
+    Assert.assertEquals("hocolctea", instance.oneTwo("chocolate"));
+    Assert.assertEquals("231564897", instance.oneTwo("1234567890"));
+    Assert.assertEquals("abxabxabxabxabxabxabx", instance.oneTwo("xabxabxabxabxabxabxab"));
+    Assert.assertEquals("bcaefd", instance.oneTwo("abcdefx"));
+    Assert.assertEquals("bcaefd", instance.oneTwo("abcdefxy"));
+    Assert.assertEquals("bcaefdyzx", instance.oneTwo("abcdefxyz"));
+    Assert.assertEquals("", instance.oneTwo("x"));
+    Assert.assertEquals("", instance.oneTwo("xy"));
+    Assert.assertEquals("yzx", instance.oneTwo("xyz"));
+    Assert.assertEquals("bcaefdhigkljmnkpqostrvwuyzx231564897",
+        instance.oneTwo("abcdefghijklkmnopqrstuvwxyz1234567890"));
+    Assert.assertEquals("bcaefdhigkljmnkpqostrvwuyzx231564897",
+        instance.oneTwo("abcdefghijklkmnopqrstuvwxyz123456789"));
+    Assert.assertEquals("bcaefdhigkljmnkpqostrvwuyzx231564",
+        instance.oneTwo("abcdefghijklkmnopqrstuvwxyz12345678"));
+  }
+
+  /**
    * Test method for {@link String2#zipZap(String)}.
    */
   @Test

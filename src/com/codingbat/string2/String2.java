@@ -302,6 +302,30 @@ class String2 {
   }
 
   /**
+   * Given a string, compute a new string by moving the first char to come after the next two chars,
+   * so "abc" yields "bca". Repeat this process for each subsequent group of 3 chars, so "abcdef"
+   * yields "bcaefd". Ignore any group of fewer than 3 chars at the end.
+   *
+   * @param text the input string
+   * @return the above mentioned new string
+   */
+  String oneTwo(String text) {
+    StringBuilder builder = new StringBuilder();
+
+    for (int index = 0; index < text.length(); index = index + 3) {
+      if (index + 2 < text.length()) {
+        char frontPart = text.charAt(index);
+        String endPart = text.substring(index + 1, index + 3);
+        builder.append(endPart);
+        builder.append(frontPart);
+      }
+    }
+
+    return builder.toString();
+  }
+
+
+  /**
    * Look for patterns like "zip" and "zap" in the string -- length-3, starting with 'z' and ending
    * with 'p'. Return a string where for all such words, the middle letter is gone, so "zipXzap"
    * yields "zpXzp".
