@@ -11,72 +11,83 @@ class String2 {
    * Given a string, return a string where for every char in the original, there are two chars.
    *
    * @param text the input string
-   * @return an above described new string
+   * @return the above mentioned new string
    */
   String doubleChar(String text) {
     StringBuilder builder = new StringBuilder();
+
     for (int i = 0; i < text.length(); i++) {
-      String ch = text.charAt(i) + "";
-      builder.append(ch);
-      builder.append(ch);
+      char part = text.charAt(i);
+      builder.append(part);
+      builder.append(part);
     }
+
     return builder.toString();
   }
 
   /**
    * Return the number of times that the string "hi" appears anywhere in the given string.
    *
-   * @param str the input string
-   * @return the number of times that the string "hi" appears anywhere in the given string
+   * @param text the input string
+   * @return the above mentioned new number
    */
-  int countHi(String str) {
+  int countHi(String text) {
     int count = 0;
     int index = 0;
+
     while (index != -1) {
-      index = str.indexOf("hi", index);
+      index = text.indexOf("hi", index);
       if (index != -1) {
         count++;
         index++;
       }
     }
+
     return count;
   }
 
   /**
    * Return true if the string "cat" and "dog" appear the same number of times in the given string.
    *
-   * @param str the input string
-   * @return true, if the string "cat" and "dog" appear the same number of times in the given string
+   * @param text the input string
+   * @return true, if the above mentioned conditions fulfilled
    */
-  boolean catDog(String str) {
-    int countCat = 0;
-    for (int i = 0; i < str.length() - 2; i++) {
-      if (str.substring(i, i + 3).equals("cat")) {
-        countCat++;
+  boolean catDog(String text) {
+    int catCount = 0;
+
+    for (int index = 0; index < text.length() - 2; index++) {
+      if (text.substring(index, index + 3).equals("cat")) {
+        catCount++;
       }
     }
-    int countDog = 0;
-    for (int i = 0; i < str.length() - 2; i++) {
-      if (str.substring(i, i + 3).equals("dog")) {
-        countDog++;
+
+    int dogCount = 0;
+    for (int index = 0; index < text.length() - 2; index++) {
+      if (text.substring(index, index + 3).equals("dog")) {
+        dogCount++;
       }
     }
-    return countCat == countDog;
+
+    return catCount == dogCount;
   }
 
   /**
    * Return the number of times that the string "code" appears anywhere in the given string, except
    * we'll accept any letter for the 'd', so "cope" and "cooe" count.
    *
-   * @param str the input string
-   * @return the number of the above defined substring
+   * @param text the input string
+   * @return the above mentioned new number
    */
-  int countCode(String str) {
-    str = str.replaceAll("co.e", "*");
+  int countCode(String text) {
+    text = text.replaceAll("co.e", "*");
+
     int count = 0;
-    for (int i = 0; i < str.length(); i++) {
-      count = str.charAt(i) == '*' ? count + 1 : count;
+    for (int index = 0; index < text.length(); index++) {
+      if (text.charAt(index) == '*') {
+        count = count + 1;
+      }
     }
+
     return count;
   }
 
