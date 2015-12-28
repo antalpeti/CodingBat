@@ -14,7 +14,7 @@ class String3 {
    * @param text the input string
    * @return the above mentioned new number
    */
-  public int countYZ(String text) {
+  int countYZ(String text) {
     int count = 0;
 
     if (isYZ(text.charAt(text.length() - 1))) {
@@ -34,7 +34,7 @@ class String3 {
    * @param character the input character
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean isYZ(char character) {
+  boolean isYZ(char character) {
     character = Character.toLowerCase(character);
     return character == 'y' || character == 'z';
   }
@@ -49,7 +49,7 @@ class String3 {
    * @param removeText the remove string
    * @return the above mentioned new string
    */
-  public String withoutString(String baseText, String removeText) {
+  String withoutString(String baseText, String removeText) {
     return baseText.replaceAll("(?i)" + removeText, "");
   }
 
