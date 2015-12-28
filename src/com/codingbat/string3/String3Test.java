@@ -65,4 +65,31 @@ public class String3Test {
     Assert.assertEquals(false, instance.isYZ('1'));
     Assert.assertEquals(false, instance.isYZ(':'));
   }
+
+  /**
+   * Test method for {@link String3#withoutString(String, String)}.
+   */
+  @Test
+  public void testWithoutString() {
+    Assert.assertEquals("He there", instance.withoutString("Hello there", "llo"));
+    Assert.assertEquals("Hllo thr", instance.withoutString("Hello there", "e"));
+    Assert.assertEquals("Hello there", instance.withoutString("Hello there", "x"));
+    Assert.assertEquals("Th  a FH", instance.withoutString("This is a FISH", "IS"));
+    Assert.assertEquals("Th  a FH", instance.withoutString("This is a FISH", "is"));
+    Assert.assertEquals("Th  a FH", instance.withoutString("This is a FISH", "iS"));
+    Assert.assertEquals("abab", instance.withoutString("abxxxxab", "xx"));
+    Assert.assertEquals("abxab", instance.withoutString("abxxxab", "xx"));
+    Assert.assertEquals("abab", instance.withoutString("abxxxab", "x"));
+    Assert.assertEquals("", instance.withoutString("xxx", "x"));
+    Assert.assertEquals("x", instance.withoutString("xxx", "xx"));
+    Assert.assertEquals("xzz", instance.withoutString("xyzzy", "Y"));
+    Assert.assertEquals("", instance.withoutString("", "x"));
+    Assert.assertEquals("acac", instance.withoutString("abcabc", "b"));
+    Assert.assertEquals("AAbb", instance.withoutString("AA22bb", "2"));
+    Assert.assertEquals("", instance.withoutString("1111", "1"));
+    Assert.assertEquals("", instance.withoutString("1111", "11"));
+    Assert.assertEquals("1", instance.withoutString("1111", "111"));
+    Assert.assertEquals("jtx", instance.withoutString("MkjtMkx", "Mk"));
+    Assert.assertEquals("Hi ", instance.withoutString("Hi HoHo", "Ho"));
+  }
 }

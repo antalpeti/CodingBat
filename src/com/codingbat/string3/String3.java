@@ -39,4 +39,18 @@ class String3 {
     return character == 'y' || character == 'z';
   }
 
+  /**
+   * Given two strings, base and remove, return a version of the base string where all instances of
+   * the remove string have been removed (not case sensitive). You may assume that the remove string
+   * is length 1 or more. Remove only non-overlapping instances, so with "xxx" removing "xx" leaves
+   * "x".
+   *
+   * @param baseText the base string
+   * @param removeText the remove string
+   * @return the above mentioned new string
+   */
+  public String withoutString(String baseText, String removeText) {
+    return baseText.replaceAll("(?i)" + removeText, "");
+  }
+
 }
