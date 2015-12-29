@@ -92,4 +92,25 @@ public class String3Test {
     Assert.assertEquals("jtx", instance.withoutString("MkjtMkx", "Mk"));
     Assert.assertEquals("Hi ", instance.withoutString("Hi HoHo", "Ho"));
   }
+
+  /**
+   * Test method for {@link String3#equalIsNot(String)}.
+   */
+  @Test
+  public void testEqualIsNot() {
+    Assert.assertEquals(false, instance.equalIsNot("This is not"));
+    Assert.assertEquals(true, instance.equalIsNot("This is notnot"));
+    Assert.assertEquals(true, instance.equalIsNot("noisxxnotyynotxisi"));
+    Assert.assertEquals(false, instance.equalIsNot("noisxxnotyynotxsi"));
+    Assert.assertEquals(true, instance.equalIsNot("xxxyyyzzzintint"));
+    Assert.assertEquals(true, instance.equalIsNot(""));
+    Assert.assertEquals(true, instance.equalIsNot("isisnotnot"));
+    Assert.assertEquals(false, instance.equalIsNot("isisnotno7Not"));
+    Assert.assertEquals(false, instance.equalIsNot("isnotis"));
+    Assert.assertEquals(true, instance.equalIsNot("isnot"));
+    Assert.assertEquals(true, instance.equalIsNot("notis"));
+    Assert.assertEquals(false, instance.equalIsNot("notIs"));
+    Assert.assertEquals(false, instance.equalIsNot("noTis"));
+    Assert.assertEquals(false, instance.equalIsNot("mis3notpotbotis"));
+  }
 }

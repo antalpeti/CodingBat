@@ -53,4 +53,17 @@ class String3 {
     return baseText.replaceAll("(?i)" + removeText, "");
   }
 
+  /**
+   * Given a string, return true if the number of appearances of "is" anywhere in the string is
+   * equal to the number of appearances of "not" anywhere in the string (case sensitive).
+   *
+   * @param text the input string
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  boolean equalIsNot(String text) {
+    int isCount = text.split("is", -1).length - 1;
+    int notCount = text.split("not", -1).length - 1;
+
+    return isCount == notCount;
+  }
 }
