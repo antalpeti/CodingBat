@@ -66,4 +66,16 @@ class String3 {
 
     return isCount == notCount;
   }
+
+  /**
+   * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to
+   * its left or right. Return true if all the g's in the given string are happy.
+   *
+   * @param text the input string
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  boolean gHappy(String text) {
+    String result = text.replaceAll("gg+", "");
+    return result.indexOf("g") == -1;
+  }
 }

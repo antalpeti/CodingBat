@@ -113,4 +113,24 @@ public class String3Test {
     Assert.assertEquals(false, instance.equalIsNot("noTis"));
     Assert.assertEquals(false, instance.equalIsNot("mis3notpotbotis"));
   }
+
+  /**
+   * Test method for {@link String3#gHappy(String)}.
+   */
+  @Test
+  public void testGHappy() {
+    Assert.assertEquals(true, instance.gHappy("xxggxx"));
+    Assert.assertEquals(false, instance.gHappy("xxgxx"));
+    Assert.assertEquals(false, instance.gHappy("xxggyygxx"));
+    Assert.assertEquals(false, instance.gHappy("g"));
+    Assert.assertEquals(true, instance.gHappy("gg"));
+    Assert.assertEquals(true, instance.gHappy("ggg"));
+    Assert.assertEquals(true, instance.gHappy(""));
+    Assert.assertEquals(true, instance.gHappy("xxgggxyz"));
+    Assert.assertEquals(false, instance.gHappy("xxgggxyg"));
+    Assert.assertEquals(true, instance.gHappy("xxgggxygg"));
+    Assert.assertEquals(false, instance.gHappy("mgm"));
+    Assert.assertEquals(true, instance.gHappy("mggm"));
+    Assert.assertEquals(true, instance.gHappy("yyygggxyy"));
+  }
 }
