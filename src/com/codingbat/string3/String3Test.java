@@ -133,4 +133,22 @@ public class String3Test {
     Assert.assertEquals(true, instance.gHappy("mggm"));
     Assert.assertEquals(true, instance.gHappy("yyygggxyy"));
   }
+
+  /**
+   * Test method for {@link String3#countTriple(String)}.
+   */
+  @Test
+  public void testCountTriple() {
+    Assert.assertEquals(1, instance.countTriple("abcXXXabc"));
+    Assert.assertEquals(3, instance.countTriple("xxxabyyyycd"));
+    Assert.assertEquals(0, instance.countTriple("a"));
+    Assert.assertEquals(0, instance.countTriple(""));
+    Assert.assertEquals(1, instance.countTriple("XXXabc"));
+    Assert.assertEquals(2, instance.countTriple("XXXXabc"));
+    Assert.assertEquals(3, instance.countTriple("XXXXXabc"));
+    Assert.assertEquals(3, instance.countTriple("222abyyycdXXX"));
+    Assert.assertEquals(4, instance.countTriple("abYYYabXXXXXab"));
+    Assert.assertEquals(0, instance.countTriple("abYYXabXXYXXab"));
+    Assert.assertEquals(1, instance.countTriple("122abhhh2"));
+  }
 }

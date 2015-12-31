@@ -78,4 +78,26 @@ class String3 {
     String result = text.replaceAll("gg+", "");
     return result.indexOf("g") == -1;
   }
+
+  /**
+   * We'll say that a "triple" in a string is a char appearing three times in a row. Return the
+   * number of triples in the given string. The triples may overlap.
+   *
+   * @param text the input string
+   * @return the above mentioned new number
+   */
+  int countTriple(String text) {
+    int triple = 0;
+
+    for (int i = 0; i < text.length() - 2; i++) {
+      boolean tripleFrontPart = text.charAt(i) == text.charAt(i + 1);
+      boolean tripleBackPart = text.charAt(i) == text.charAt(i + 2);
+
+      if (tripleFrontPart && tripleBackPart) {
+        triple++;
+      }
+    }
+
+    return triple;
+  }
 }
