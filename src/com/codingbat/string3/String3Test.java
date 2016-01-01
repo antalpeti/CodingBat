@@ -151,4 +151,20 @@ public class String3Test {
     Assert.assertEquals(0, instance.countTriple("abYYXabXXYXXab"));
     Assert.assertEquals(1, instance.countTriple("122abhhh2"));
   }
+
+  /**
+   * Test method for {@link String3#sumDigits(String)}.
+   */
+  @Test
+  public void testSumDigits() {
+    Assert.assertEquals(6, instance.sumDigits("aa1bc2d3"));
+    Assert.assertEquals(8, instance.sumDigits("aa11b33"));
+    Assert.assertEquals(0, instance.sumDigits("Chocolate"));
+    Assert.assertEquals(7, instance.sumDigits("5hoco1a1e"));
+    Assert.assertEquals(12, instance.sumDigits("123abc123"));
+    Assert.assertEquals(0, instance.sumDigits(""));
+    Assert.assertEquals(0, instance.sumDigits("Hello"));
+    Assert.assertEquals(12, instance.sumDigits("X1z9b2"));
+    Assert.assertEquals(14, instance.sumDigits("5432a"));
+  }
 }
