@@ -167,4 +167,27 @@ public class String3Test {
     Assert.assertEquals(12, instance.sumDigits("X1z9b2"));
     Assert.assertEquals(14, instance.sumDigits("5432a"));
   }
+
+  /**
+   * Test method for {@link String3#sameEnds(String)}.
+   */
+  @Test
+  public void testSameEnds() {
+    Assert.assertEquals("ab", instance.sameEnds("abXYab"));
+    Assert.assertEquals("x", instance.sameEnds("xx"));
+    Assert.assertEquals("x", instance.sameEnds("xxx"));
+    Assert.assertEquals("xx", instance.sameEnds("xxxx"));
+    Assert.assertEquals("java", instance.sameEnds("javaXYZjava"));
+    Assert.assertEquals("java", instance.sameEnds("javajava"));
+    Assert.assertEquals("", instance.sameEnds("xavaXYZjava"));
+    Assert.assertEquals("Hello!", instance.sameEnds("Hello! and Hello!"));
+    Assert.assertEquals("y", instance.sameEnds("ynyy"));
+    Assert.assertEquals("", instance.sameEnds("ynn"));
+    Assert.assertEquals("", instance.sameEnds("x"));
+    Assert.assertEquals("", instance.sameEnds(""));
+    Assert.assertEquals("", instance.sameEnds(" "));
+    Assert.assertEquals(" ", instance.sameEnds("  "));
+    Assert.assertEquals("", instance.sameEnds("abcb"));
+    Assert.assertEquals("my", instance.sameEnds("mymmy"));
+  }
 }
