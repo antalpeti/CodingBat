@@ -190,4 +190,24 @@ public class String3Test {
     Assert.assertEquals("", instance.sameEnds("abcb"));
     Assert.assertEquals("my", instance.sameEnds("mymmy"));
   }
+
+  /**
+   * Test method for {@link String3#mirrorEnds(String)}.
+   */
+  @Test
+  public void testMirrorEnds() {
+    Assert.assertEquals("ab", instance.mirrorEnds("abXYZba"));
+    Assert.assertEquals("a", instance.mirrorEnds("abca"));
+    Assert.assertEquals("aba", instance.mirrorEnds("aba"));
+    Assert.assertEquals("", instance.mirrorEnds("abab"));
+    Assert.assertEquals("xxx", instance.mirrorEnds("xxx"));
+    Assert.assertEquals("xxYxx", instance.mirrorEnds("xxYxx"));
+    Assert.assertEquals("Hi ", instance.mirrorEnds("Hi and iH"));
+    Assert.assertEquals("x", instance.mirrorEnds("x"));
+    Assert.assertEquals("", instance.mirrorEnds("hi"));
+    Assert.assertEquals("hih", instance.mirrorEnds("hih"));
+    Assert.assertEquals("", instance.mirrorEnds(""));
+    Assert.assertEquals("123", instance.mirrorEnds("123and then 321"));
+    Assert.assertEquals("ba", instance.mirrorEnds("band andab"));
+  }
 }

@@ -131,15 +131,38 @@ class String3 {
    * @return the above mentioned new string
    */
   String sameEnds(String text) {
-    String longestSameEnd = "";
+    String maxSameEnd = "";
 
     for (int i = 1; i <= text.length() / 2; i++) {
-      String end = text.substring(0, i);
-      if (text.startsWith(end) && text.endsWith(end)) {
-        longestSameEnd = end;
+      String part = text.substring(0, i);
+      if (text.startsWith(part) && text.endsWith(part)) {
+        maxSameEnd = part;
       }
     }
 
-    return longestSameEnd;
+    return maxSameEnd;
+  }
+
+  /**
+   * Given a string, look for a mirror image (backwards) string at both the beginning and end of the
+   * given string. In other words, zero or more characters at the very beginning of the given
+   * string, and at the very end of the string in reverse order (possibly overlapping). For example,
+   * the string "abXYZba" has the mirror end "ab".
+   *
+   * @param text the input string
+   * @return the above mentioned new string
+   */
+  String mirrorEnds(String text) {
+    String maxMirroredPart = "";
+
+    for (int index = 1; index <= text.length(); index++) {
+      String part = text.substring(0, index);
+      String reversedPart = new StringBuilder(part).reverse().toString();
+      if (text.startsWith(part) && text.endsWith(reversedPart)) {
+        maxMirroredPart = part;
+      }
+    }
+
+    return maxMirroredPart;
   }
 }
