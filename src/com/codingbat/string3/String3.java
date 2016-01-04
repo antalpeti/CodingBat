@@ -158,11 +158,53 @@ class String3 {
     for (int index = 1; index <= text.length(); index++) {
       String part = text.substring(0, index);
       String reversedPart = new StringBuilder(part).reverse().toString();
+
       if (text.startsWith(part) && text.endsWith(reversedPart)) {
         maxMirroredPart = part;
       }
     }
 
     return maxMirroredPart;
+  }
+
+  /**
+   * Given a string, return the length of the largest "block" in the string. A block is a run of
+   * adjacent chars that are the same.
+   *
+   * @param text the input string
+   * @return the above mentioned new number
+   */
+  int maxBlock(String text) {
+    int maxBlockSize = 0;
+    int actualBlockSize = 0;
+
+    for (int index = 0; index < text.length(); index++) {
+      actualBlockSize++;
+
+      if (index == text.length() - 1) {
+
+        maxBlockSize = maxNumber(maxBlockSize, actualBlockSize);
+      } else if (index != text.length() - 1 && text.charAt(index) != text.charAt(index + 1)) {
+
+        maxBlockSize = maxNumber(maxBlockSize, actualBlockSize);
+        actualBlockSize = 0;
+      }
+    }
+
+    return maxBlockSize;
+  }
+
+  /**
+   * Give back bigger number.
+   *
+   * @param maxBlockSize the first input number
+   * @param actualBlockSize the second input number
+   * @return the above mentioned new number
+   */
+  private int maxNumber(int maxBlockSize, int actualBlockSize) {
+    if (maxBlockSize < actualBlockSize) {
+      maxBlockSize = actualBlockSize;
+    }
+    return maxBlockSize;
   }
 }

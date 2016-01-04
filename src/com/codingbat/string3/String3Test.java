@@ -210,4 +210,22 @@ public class String3Test {
     Assert.assertEquals("123", instance.mirrorEnds("123and then 321"));
     Assert.assertEquals("ba", instance.mirrorEnds("band andab"));
   }
+
+  /**
+   * Test method for {@link String3#maxBlock(String)}.
+   */
+  @Test
+  public void testMaxBlock() {
+    Assert.assertEquals(2, instance.maxBlock("hoopla"));
+    Assert.assertEquals(3, instance.maxBlock("abbCCCddBBBxx"));
+    Assert.assertEquals(0, instance.maxBlock(""));
+    Assert.assertEquals(1, instance.maxBlock("xyz"));
+    Assert.assertEquals(2, instance.maxBlock("xxyz"));
+    Assert.assertEquals(2, instance.maxBlock("xyzz"));
+    Assert.assertEquals(3, instance.maxBlock("abbbcbbbxbbbx"));
+    Assert.assertEquals(3, instance.maxBlock("XXBBBbbxx"));
+    Assert.assertEquals(4, instance.maxBlock("XXBBBBbbxx"));
+    Assert.assertEquals(4, instance.maxBlock("XXBBBbbxxXXXX"));
+    Assert.assertEquals(4, instance.maxBlock("XX2222BBBbbXX2222"));
+  }
 }
