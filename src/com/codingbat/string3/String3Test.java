@@ -228,4 +228,17 @@ public class String3Test {
     Assert.assertEquals(4, instance.maxBlock("XXBBBbbxxXXXX"));
     Assert.assertEquals(4, instance.maxBlock("XX2222BBBbbXX2222"));
   }
+
+  /**
+   * Test method for {@link String3#maxNumber(int, int)}.
+   */
+  @Test
+  public void testMaxNumber() {
+    Assert.assertEquals(0, instance.maxNumber(0, 0));
+    Assert.assertEquals(3, instance.maxNumber(3, 3));
+    Assert.assertEquals(3, instance.maxNumber(2, 3));
+    Assert.assertEquals(3, instance.maxNumber(3, 2));
+    Assert.assertEquals(4, instance.maxNumber(4, 0));
+    Assert.assertEquals(4, instance.maxNumber(2, 4));
+  }
 }

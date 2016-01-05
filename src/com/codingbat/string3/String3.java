@@ -201,7 +201,7 @@ class String3 {
    * @param actualBlockSize the second input number
    * @return the above mentioned new number
    */
-  private int maxNumber(int maxBlockSize, int actualBlockSize) {
+  int maxNumber(int maxBlockSize, int actualBlockSize) {
     if (maxBlockSize < actualBlockSize) {
       maxBlockSize = actualBlockSize;
     }
