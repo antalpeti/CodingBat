@@ -241,4 +241,20 @@ public class String3Test {
     Assert.assertEquals(4, instance.maxNumber(4, 0));
     Assert.assertEquals(4, instance.maxNumber(2, 4));
   }
+
+  /**
+   * Test method for {@link String3#sumNumbers(String)}.
+   */
+  @Test
+  public void testSumNumbers() {
+    Assert.assertEquals(123, instance.sumNumbers("abc123xyz"));
+    Assert.assertEquals(44, instance.sumNumbers("aa11b33"));
+    Assert.assertEquals(18, instance.sumNumbers("7 11"));
+    Assert.assertEquals(0, instance.sumNumbers("Chocolate"));
+    Assert.assertEquals(7, instance.sumNumbers("5hoco1a1e"));
+    Assert.assertEquals(7, instance.sumNumbers("5$$1;;1!!"));
+    Assert.assertEquals(1245, instance.sumNumbers("a1234bb11"));
+    Assert.assertEquals(0, instance.sumNumbers(""));
+    Assert.assertEquals(25, instance.sumNumbers("a22bbb3"));
+  }
 }

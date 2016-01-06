@@ -207,4 +207,37 @@ class String3 {
     }
     return maxBlockSize;
   }
+
+  /**
+   * Given a string, return the sum of the numbers appearing in the string, ignoring all other
+   * characters. A number is a series of 1 or more digit chars in a row.
+   *
+   * @param text the input string
+   * @return the above mentioned new number
+   */
+  int sumNumbers(String text) {
+    int sum = 0;
+    int numberStartIndex = -1;
+    for (int index = 0; index < text.length(); index++) {
+      // find start position
+      if (Character.isDigit(text.charAt(index))
+          && (index == 0 || !Character.isDigit(text.charAt(index - 1)))) {
+        numberStartIndex = index;
+      }
+      // find the end of digit(s)
+      if (!Character.isDigit(text.charAt(index)) && numberStartIndex != -1) {
+        String number = text.substring(numberStartIndex, index);
+        sum += Integer.parseInt(number);
+        numberStartIndex = -1;
+      }
+      // last character is digit
+      if (index == text.length() - 1 && numberStartIndex != -1) {
+        String number = text.substring(numberStartIndex, index + 1);
+        sum += Integer.parseInt(number);
+      }
+    }
+
+    return sum;
+  }
+
 }
