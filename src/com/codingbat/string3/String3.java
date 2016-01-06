@@ -135,7 +135,7 @@ class String3 {
 
     for (int i = 1; i <= text.length() / 2; i++) {
       String part = text.substring(0, i);
-      if (text.startsWith(part) && text.endsWith(part)) {
+      if (text.endsWith(part)) {
         maxSameEnd = part;
       }
     }
@@ -159,7 +159,7 @@ class String3 {
       String part = text.substring(0, index);
       String reversedPart = new StringBuilder(part).reverse().toString();
 
-      if (text.startsWith(part) && text.endsWith(reversedPart)) {
+      if (text.endsWith(reversedPart)) {
         maxMirroredPart = part;
       }
     }
