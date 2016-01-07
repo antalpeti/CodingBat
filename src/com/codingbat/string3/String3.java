@@ -184,7 +184,7 @@ class String3 {
       if (index == text.length() - 1) {
 
         maxBlockSize = maxNumber(maxBlockSize, actualBlockSize);
-      } else if (index != text.length() - 1 && text.charAt(index) != text.charAt(index + 1)) {
+      } else if (text.charAt(index) != text.charAt(index + 1)) {
 
         maxBlockSize = maxNumber(maxBlockSize, actualBlockSize);
         actualBlockSize = 0;
