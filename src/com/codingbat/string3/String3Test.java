@@ -257,4 +257,22 @@ public class String3Test {
     Assert.assertEquals(0, instance.sumNumbers(""));
     Assert.assertEquals(25, instance.sumNumbers("a22bbb3"));
   }
+
+  /**
+   * Test method for {@link String3#notReplace(String)}.
+   */
+  @Test
+  public void testNotReplace() {
+    Assert.assertEquals("is not test", instance.notReplace("is test"));
+    Assert.assertEquals("is not-is not", instance.notReplace("is-is"));
+    Assert.assertEquals("This is not right", instance.notReplace("This is right"));
+    Assert.assertEquals("This is not isabell", instance.notReplace("This is isabell"));
+    Assert.assertEquals("", instance.notReplace(""));
+    Assert.assertEquals("is not", instance.notReplace("is"));
+    Assert.assertEquals("isis", instance.notReplace("isis"));
+    Assert.assertEquals("Dis is not bliss is not", instance.notReplace("Dis is bliss is"));
+    Assert.assertEquals("is not his", instance.notReplace("is his"));
+    Assert.assertEquals("xis yis", instance.notReplace("xis yis"));
+    Assert.assertEquals("AAAis is not", instance.notReplace("AAAis is"));
+  }
 }

@@ -240,4 +240,15 @@ class String3 {
     return sum;
   }
 
+  /**
+   * Given a string, return a string where every appearance of the lowercase word "is" has been
+   * replaced with "is not". The word "is" should not be immediately preceeded or followed by a
+   * letter -- so for example the "is" in "this" does not count.
+   *
+   * @param text the input string
+   * @return the above mentioned new string
+   */
+  String notReplace(String text) {
+    return text.replaceAll("\\bis\\b", "is not");
+  }
 }
