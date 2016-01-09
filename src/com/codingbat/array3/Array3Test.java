@@ -50,4 +50,31 @@ public class Array3Test {
     Assert.assertEquals(1, instance.maxSpan(new int[] {1}));
   }
 
+  /**
+   * Test method for {@link Array3#fix34(int[])}.
+   */
+  @Test
+  public void testFix34() {
+    Assert.assertArrayEquals(new int[] {1, 3, 4, 1}, instance.fix34(new int[] {1, 3, 1, 4}));
+    Assert.assertArrayEquals(new int[] {1, 3, 4, 1, 1, 3, 4},
+        instance.fix34(new int[] {1, 3, 1, 4, 4, 3, 1}));
+    Assert.assertArrayEquals(new int[] {3, 4, 2, 2}, instance.fix34(new int[] {3, 2, 2, 4}));
+    Assert.assertArrayEquals(new int[] {3, 4, 3, 4, 2, 2},
+        instance.fix34(new int[] {3, 2, 3, 2, 4, 4}));
+    Assert.assertArrayEquals(new int[] {2, 3, 4, 3, 4, 2, 2},
+        instance.fix34(new int[] {2, 3, 2, 3, 2, 4, 4}));
+    Assert.assertArrayEquals(new int[] {3, 4, 1}, instance.fix34(new int[] {3, 1, 4}));
+    Assert.assertArrayEquals(new int[] {3, 4, 1}, instance.fix34(new int[] {3, 4, 1}));
+    Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.fix34(new int[] {1, 1, 1}));
+    Assert.assertArrayEquals(new int[] {1}, instance.fix34(new int[] {1}));
+    Assert.assertArrayEquals(new int[] {}, instance.fix34(new int[] {}));
+    Assert.assertArrayEquals(new int[] {7, 3, 4, 7, 7}, instance.fix34(new int[] {7, 3, 7, 7, 4}));
+    Assert.assertArrayEquals(new int[] {3, 4, 1, 3, 4, 1},
+        instance.fix34(new int[] {3, 1, 4, 3, 1, 4}));
+    Assert.assertArrayEquals(new int[] {3, 4, 1, 3, 4, 1},
+        instance.fix34(new int[] {3, 1, 1, 3, 4, 4}));
+    Assert.assertArrayEquals(new int[] {3, 4, 2, 3, 4, 1},
+        instance.fix34(new int[] {3, 1, 2, 3, 4, 4}));
+    Assert.assertArrayEquals(new int[] {3, 4, 2, 5, 1}, instance.fix34(new int[] {3, 1, 2, 5, 4}));
+  }
 }
