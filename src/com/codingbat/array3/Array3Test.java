@@ -37,7 +37,7 @@ public class Array3Test {
    * Test method for {@link Array3#maxSpan(int[])}.
    */
   @Test
-  public void testMaxSpan() {
+  void testMaxSpan() {
     Assert.assertEquals(4, instance.maxSpan(new int[] {1, 2, 1, 1, 3}));
     Assert.assertEquals(6, instance.maxSpan(new int[] {1, 4, 2, 1, 4, 1, 4}));
     Assert.assertEquals(6, instance.maxSpan(new int[] {1, 4, 2, 1, 4, 4, 4}));
@@ -54,7 +54,7 @@ public class Array3Test {
    * Test method for {@link Array3#fix34(int[])}.
    */
   @Test
-  public void testFix34() {
+  void testFix34() {
     Assert.assertArrayEquals(new int[] {1, 3, 4, 1}, instance.fix34(new int[] {1, 3, 1, 4}));
     Assert.assertArrayEquals(new int[] {1, 3, 4, 1, 1, 3, 4},
         instance.fix34(new int[] {1, 3, 1, 4, 4, 3, 1}));
