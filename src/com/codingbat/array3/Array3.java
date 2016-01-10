@@ -14,7 +14,7 @@ class Array3 {
    * @param numbers the input numbers
    * @return the above mentioned number
    */
-  public int maxSpan(int[] numbers) {
+  int maxSpan(int[] numbers) {
     int maxSpan = 0;
 
     for (int i = 0; i < numbers.length; i++) {
@@ -74,7 +74,7 @@ class Array3 {
    * @param numbers the input numbers
    * @return the above mentioned array
    */
-  public int[] fix45(int[] numbers) {
+  int[] fix45(int[] numbers) {
     int[] positionNew5 = new int[numbers.length];
     int[] poritionAct5 = new int[numbers.length];
     int indexNew5 = 0;
