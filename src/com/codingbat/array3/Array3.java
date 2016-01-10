@@ -64,4 +64,39 @@ class Array3 {
 
     return numbers;
   }
+
+  /**
+   * Return an array that contains exactly the same numbers as the given array, but rearranged so
+   * that every 4 is immediately followed by a 5. Do not move the 4's, but every other number may
+   * move. The array contains the same number of 4's and 5's, and every 4 has a number after it that
+   * is not a 4. In this version, 5's may appear anywhere in the original array.
+   *
+   * @param numbers the input numbers
+   * @return the above mentioned array
+   */
+  public int[] fix45(int[] numbers) {
+    int[] positionNew5 = new int[numbers.length];
+    int[] poritionAct5 = new int[numbers.length];
+    int indexNew5 = 0;
+    int indexAct5 = 0;
+    int replaces = 0;
+
+    for (int i = 0; i < numbers.length; i++) {
+      if (numbers[i] == 4 && numbers[i + 1] != 5) {
+        positionNew5[indexNew5++] = i + 1;
+        replaces++;
+      }
+      if (numbers[i] == 5 && (i == 0 || numbers[i - 1] != 4)) {
+        poritionAct5[indexAct5++] = i;
+      }
+    }
+
+    for (int i = 0; i < replaces; i++) {
+      int number = numbers[positionNew5[i]];
+      numbers[positionNew5[i]] = numbers[poritionAct5[i]];
+      numbers[poritionAct5[i]] = number;
+    }
+
+    return numbers;
+  }
 }

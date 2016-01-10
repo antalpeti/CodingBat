@@ -37,7 +37,7 @@ public class Array3Test {
    * Test method for {@link Array3#maxSpan(int[])}.
    */
   @Test
-  void testMaxSpan() {
+  public void testMaxSpan() {
     Assert.assertEquals(4, instance.maxSpan(new int[] {1, 2, 1, 1, 3}));
     Assert.assertEquals(6, instance.maxSpan(new int[] {1, 4, 2, 1, 4, 1, 4}));
     Assert.assertEquals(6, instance.maxSpan(new int[] {1, 4, 2, 1, 4, 4, 4}));
@@ -54,7 +54,7 @@ public class Array3Test {
    * Test method for {@link Array3#fix34(int[])}.
    */
   @Test
-  void testFix34() {
+  public void testFix34() {
     Assert.assertArrayEquals(new int[] {1, 3, 4, 1}, instance.fix34(new int[] {1, 3, 1, 4}));
     Assert.assertArrayEquals(new int[] {1, 3, 4, 1, 1, 3, 4},
         instance.fix34(new int[] {1, 3, 1, 4, 4, 3, 1}));
@@ -76,5 +76,35 @@ public class Array3Test {
     Assert.assertArrayEquals(new int[] {3, 4, 2, 3, 4, 1},
         instance.fix34(new int[] {3, 1, 2, 3, 4, 4}));
     Assert.assertArrayEquals(new int[] {3, 4, 2, 5, 1}, instance.fix34(new int[] {3, 1, 2, 5, 4}));
+  }
+
+  /**
+   * Test method for {@link Array3#fix45(int[])}.
+   */
+  @Test
+  public void testFix45() {
+    Assert.assertArrayEquals(new int[] {9, 4, 5, 4, 5, 9},
+        instance.fix45(new int[] {5, 4, 9, 4, 9, 5}));
+    Assert.assertArrayEquals(new int[] {1, 4, 5, 1}, instance.fix45(new int[] {1, 4, 1, 5}));
+    Assert.assertArrayEquals(new int[] {1, 4, 5, 1, 1, 4, 5},
+        instance.fix45(new int[] {1, 4, 1, 5, 5, 4, 1}));
+    Assert.assertArrayEquals(new int[] {4, 5, 4, 5, 9, 9, 4, 5, 9},
+        instance.fix45(new int[] {4, 9, 4, 9, 5, 5, 4, 9, 5}));
+    Assert.assertArrayEquals(new int[] {1, 1, 4, 5, 4, 5},
+        instance.fix45(new int[] {5, 5, 4, 1, 4, 1}));
+    Assert.assertArrayEquals(new int[] {4, 5, 2, 2}, instance.fix45(new int[] {4, 2, 2, 5}));
+    Assert.assertArrayEquals(new int[] {4, 5, 4, 5, 2, 2},
+        instance.fix45(new int[] {4, 2, 4, 2, 5, 5}));
+    Assert.assertArrayEquals(new int[] {4, 5, 4, 5, 2}, instance.fix45(new int[] {4, 2, 4, 5, 5}));
+    Assert.assertArrayEquals(new int[] {1, 1, 1}, instance.fix45(new int[] {1, 1, 1}));
+    Assert.assertArrayEquals(new int[] {4, 5}, instance.fix45(new int[] {4, 5}));
+    Assert.assertArrayEquals(new int[] {1, 4, 5}, instance.fix45(new int[] {5, 4, 1}));
+    Assert.assertArrayEquals(new int[] {}, instance.fix45(new int[] {}));
+    Assert.assertArrayEquals(new int[] {1, 4, 5, 4, 5}, instance.fix45(new int[] {5, 4, 5, 4, 1}));
+    Assert.assertArrayEquals(new int[] {4, 5, 4, 5, 1}, instance.fix45(new int[] {4, 5, 4, 1, 5}));
+    Assert.assertArrayEquals(new int[] {3, 4, 5}, instance.fix45(new int[] {3, 4, 5}));
+    Assert.assertArrayEquals(new int[] {4, 5, 1}, instance.fix45(new int[] {4, 1, 5}));
+    Assert.assertArrayEquals(new int[] {1, 4, 5}, instance.fix45(new int[] {5, 4, 1}));
+    Assert.assertArrayEquals(new int[] {2, 4, 5, 2}, instance.fix45(new int[] {2, 4, 2, 5}));
   }
 }
