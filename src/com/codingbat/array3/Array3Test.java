@@ -107,4 +107,22 @@ public class Array3Test {
     Assert.assertArrayEquals(new int[] {1, 4, 5}, instance.fix45(new int[] {5, 4, 1}));
     Assert.assertArrayEquals(new int[] {2, 4, 5, 2}, instance.fix45(new int[] {2, 4, 2, 5}));
   }
+
+  /**
+   * Test method for {@link Array3#canBalance(int[])}.
+   */
+  @Test
+  public void testCanBalance() {
+    Assert.assertEquals(true, instance.canBalance(new int[] {1, 1, 1, 2, 1}));
+    Assert.assertEquals(true, instance.canBalance(new int[] {10, 10}));
+    Assert.assertEquals(true, instance.canBalance(new int[] {10, 0, 1, -1, 10}));
+    Assert.assertEquals(true, instance.canBalance(new int[] {1, 1, 1, 1, 4}));
+    Assert.assertEquals(false, instance.canBalance(new int[] {2, 1, 1, 1, 4}));
+    Assert.assertEquals(false, instance.canBalance(new int[] {2, 3, 4, 1, 2}));
+    Assert.assertEquals(true, instance.canBalance(new int[] {1, 2, 3, 1, 0, 2, 3}));
+    Assert.assertEquals(false, instance.canBalance(new int[] {1, 2, 3, 1, 0, 1, 3}));
+    Assert.assertEquals(false, instance.canBalance(new int[] {1}));
+    Assert.assertEquals(false, instance.canBalance(new int[] {}));
+    Assert.assertEquals(true, instance.canBalance(new int[] {1, 1, 1, 2, 1}));
+  }
 }

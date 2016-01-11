@@ -39,7 +39,7 @@ class Array3 {
    * @param numbers the input numbers
    * @return the above mentioned array
    */
-  public int[] fix34(int[] numbers) {
+  int[] fix34(int[] numbers) {
     int[] positon4New = new int[numbers.length];
     int[] position4Actual = new int[numbers.length];
     int index4New = 0;
@@ -98,5 +98,30 @@ class Array3 {
     }
 
     return numbers;
+  }
+
+  /**
+   * Given a non-empty array, return true if there is a place to split the array so that the sum of
+   * the numbers on one side is equal to the sum of the numbers on the other side.
+   *
+   * @param numbers the input numbers
+   * @return true, if above mentioned conditions fulfilled
+   */
+  boolean canBalance(int[] numbers) {
+    int frontSum = 0;
+
+    for (int i = 0; i < numbers.length - 1; i++) {
+      frontSum += numbers[i];
+
+      int backSum = 0;
+      for (int j = i + 1; j < numbers.length; j++) {
+        backSum += numbers[j];
+      }
+      if (frontSum == backSum) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
