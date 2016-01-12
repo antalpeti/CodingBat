@@ -124,4 +124,32 @@ class Array3 {
 
     return false;
   }
+
+
+  /**
+   * Given two arrays of ints sorted in increasing order, outer and inner, return true if all of the
+   * numbers in inner appear in outer. The best solution makes only a single "linear" pass of both
+   * arrays, taking advantage of the fact that both arrays are already in sorted order.
+   *
+   * @param outer the outer ordered array
+   * @param inner the inner ordered array
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  boolean linearIn(int[] outer, int[] inner) {
+    if (inner.length == 0) {
+      return true;
+    }
+
+    int innerIndex = 0;
+    for (int outerIndex = 0; outerIndex < outer.length; outerIndex++) {
+      if (outer[outerIndex] == inner[innerIndex]) {
+        innerIndex++;
+        if (innerIndex == inner.length) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
 }

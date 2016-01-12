@@ -125,4 +125,28 @@ public class Array3Test {
     Assert.assertEquals(false, instance.canBalance(new int[] {}));
     Assert.assertEquals(true, instance.canBalance(new int[] {1, 1, 1, 2, 1}));
   }
+
+  /**
+   * Test method for {@link Array3#linearIn(int[], int[])}.
+   */
+  @Test
+  public void testLinearIn() {
+    Assert.assertEquals(true, instance.linearIn(new int[] {1, 2, 4, 6}, new int[] {2, 4}));
+    Assert.assertEquals(false, instance.linearIn(new int[] {1, 2, 4, 6}, new int[] {2, 3, 4}));
+    Assert.assertEquals(true, instance.linearIn(new int[] {1, 2, 4, 4, 6}, new int[] {2, 4}));
+    Assert.assertEquals(true, instance.linearIn(new int[] {2, 2, 4, 4, 6, 6}, new int[] {2, 4}));
+    Assert.assertEquals(true, instance.linearIn(new int[] {2, 2, 2, 2, 2}, new int[] {2, 2}));
+    Assert.assertEquals(false, instance.linearIn(new int[] {2, 2, 2, 2, 2}, new int[] {2, 4}));
+    Assert.assertEquals(true, instance.linearIn(new int[] {2, 2, 2, 2, 4}, new int[] {2, 4}));
+    Assert.assertEquals(true, instance.linearIn(new int[] {2, 2, 3, 2, 4}, new int[] {3, 4}));
+    Assert.assertEquals(true, instance.linearIn(new int[] {1, 2, 3}, new int[] {2}));
+    Assert.assertEquals(false, instance.linearIn(new int[] {1, 2, 3}, new int[] {-1}));
+    Assert.assertEquals(true, instance.linearIn(new int[] {1, 2, 3}, new int[] {}));
+    Assert.assertEquals(true,
+        instance.linearIn(new int[] {-1, 0, 3, 3, 3, 10, 12}, new int[] {-1, 0, 3, 12}));
+    Assert.assertEquals(false,
+        instance.linearIn(new int[] {-1, 0, 3, 3, 3, 10, 12}, new int[] {0, 3, 12, 14}));
+    Assert.assertEquals(false,
+        instance.linearIn(new int[] {-1, 0, 3, 3, 3, 10, 12}, new int[] {-1, 10, 11}));
+  }
 }
