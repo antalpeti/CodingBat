@@ -152,4 +152,31 @@ class Array3 {
 
     return false;
   }
+
+  /**
+   * Given n>=0, create an array length n*n with the following pattern, shown here for n=3 : {0, 0,
+   * 1, 0, 2, 1, 3, 2, 1} (spaces added to show the 3 groups).
+   *
+   * @param number the input number
+   * @return the above mentioned new array
+   */
+  int[] squareUp(int number) {
+    int[] result = new int[number * number];
+    int index = 0;
+    int notZeroBoundary = 0;
+
+    for (int i = 0; i < number; i++) {
+      notZeroBoundary++;
+      for (int j = number; j > 0; j--) {
+        if (j <= notZeroBoundary) {
+          result[index] = j;
+        } else {
+          result[index] = 0;
+        }
+        index++;
+      }
+    }
+
+    return result;
+  }
 }

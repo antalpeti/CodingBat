@@ -149,4 +149,21 @@ public class Array3Test {
     Assert.assertEquals(false,
         instance.linearIn(new int[] {-1, 0, 3, 3, 3, 10, 12}, new int[] {-1, 10, 11}));
   }
+
+  /**
+   * Test method for {@link Array3#squareUp(int)}.
+   */
+  @Test
+  public void testSquareUp() {
+    Assert.assertArrayEquals(new int[] {}, instance.squareUp(0));
+    Assert.assertArrayEquals(new int[] {1}, instance.squareUp(1));
+    Assert.assertArrayEquals(new int[] {0, 1, 2, 1}, instance.squareUp(2));
+    Assert.assertArrayEquals(new int[] {0, 0, 1, 0, 2, 1, 3, 2, 1}, instance.squareUp(3));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 2, 1, 4, 3, 2, 1},
+        instance.squareUp(4));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 1, 0, 0, 0, 2, 1, 0, 0, 3, 2, 1, 0, 4, 3, 2, 1,
+        5, 4, 3, 2, 1}, instance.squareUp(5));
+    Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 3, 2, 1, 0, 0,
+        4, 3, 2, 1, 0, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1}, instance.squareUp(6));
+  }
 }
