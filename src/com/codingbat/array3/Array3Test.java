@@ -166,4 +166,20 @@ public class Array3Test {
     Assert.assertArrayEquals(new int[] {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 3, 2, 1, 0, 0,
         4, 3, 2, 1, 0, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1}, instance.squareUp(6));
   }
+
+  /**
+   * Test method for {@link Array3#seriesUp(int)}.
+   */
+  @Test
+  public void testSeriesUp() {
+    Assert.assertArrayEquals(new int[] {}, instance.seriesUp(0));
+    Assert.assertArrayEquals(new int[] {1}, instance.seriesUp(1));
+    Assert.assertArrayEquals(new int[] {1, 1, 2}, instance.seriesUp(2));
+    Assert.assertArrayEquals(new int[] {1, 1, 2, 1, 2, 3}, instance.seriesUp(3));
+    Assert.assertArrayEquals(new int[] {1, 1, 2, 1, 2, 3, 1, 2, 3, 4}, instance.seriesUp(4));
+    Assert.assertArrayEquals(new int[] {1, 1, 2, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5},
+        instance.seriesUp(5));
+    Assert.assertArrayEquals(new int[] {1, 1, 2, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5,
+        6}, instance.seriesUp(6));
+  }
 }
