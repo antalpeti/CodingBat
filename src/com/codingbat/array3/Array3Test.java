@@ -182,4 +182,28 @@ public class Array3Test {
     Assert.assertArrayEquals(new int[] {1, 1, 2, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5,
         6}, instance.seriesUp(6));
   }
+
+  /**
+   * Test method for {@link Array3#maxMirror(int[])}.
+   */
+  @Test
+  public void testMaxMirror() {
+    Assert.assertEquals(3, instance.maxMirror(new int[] {1, 2, 3, 8, 9, 3, 2, 1}));
+    Assert.assertEquals(3, instance.maxMirror(new int[] {1, 2, 1, 4}));
+    Assert.assertEquals(2, instance.maxMirror(new int[] {7, 1, 2, 9, 7, 2, 1}));
+    Assert.assertEquals(4,
+        instance.maxMirror(new int[] {21, 22, 9, 8, 7, 6, 23, 24, 6, 7, 8, 9, 25, 7, 8, 9}));
+    Assert.assertEquals(4,
+        instance.maxMirror(new int[] {1, 2, 1, 20, 21, 1, 2, 1, 2, 23, 24, 2, 1, 2, 1, 25}));
+    Assert.assertEquals(5, instance.maxMirror(new int[] {1, 2, 3, 2, 1}));
+    Assert.assertEquals(2, instance.maxMirror(new int[] {1, 2, 3, 3, 8}));
+    Assert.assertEquals(2, instance.maxMirror(new int[] {1, 2, 7, 8, 1, 7, 2}));
+    Assert.assertEquals(3, instance.maxMirror(new int[] {1, 1, 1}));
+    Assert.assertEquals(0, instance.maxMirror(new int[] {}));
+    Assert.assertEquals(3, instance.maxMirror(new int[] {9, 1, 1, 4, 2, 1, 1, 1}));
+    Assert.assertEquals(7, instance.maxMirror(new int[] {5, 9, 9, 4, 5, 4, 9, 9, 2}));
+    Assert.assertEquals(2, instance.maxMirror(new int[] {5, 9, 9, 6, 5, 4, 9, 9, 2}));
+    Assert.assertEquals(3, instance.maxMirror(new int[] {5, 9, 1, 6, 5, 4, 1, 9, 5}));
+    Assert.assertEquals(8, instance.maxMirror(new int[] {1, 4, 5, 6, 6, 5, 4, 1, 5, 4, 1}));
+  }
 }
