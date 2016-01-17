@@ -38,4 +38,17 @@ public class AP1Test {
     Assert.assertEquals(true, instance.scoresIncreasing(new int[] {-19, -18, -10}));
   }
 
+  /**
+   * Test method for {@link AP1#scores100(int[])}.
+   */
+  @Test
+  public void testScores100() {
+    Assert.assertEquals(false, instance.scores100(new int[] {}));
+    Assert.assertEquals(true, instance.scores100(new int[] {1, 100, 100}));
+    Assert.assertEquals(false, instance.scores100(new int[] {1, 100, 99, 100}));
+    Assert.assertEquals(true, instance.scores100(new int[] {100, 1, 100, 100}));
+    Assert.assertEquals(false, instance.scores100(new int[] {100, 1, 100, 1}));
+    Assert.assertEquals(false, instance.scores100(new int[] {1, 2, 3, 4, 5}));
+    Assert.assertEquals(false, instance.scores100(new int[] {1, 2, 100, 4, 5}));
+  }
 }
