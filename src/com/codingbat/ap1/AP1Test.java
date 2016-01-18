@@ -51,4 +51,25 @@ public class AP1Test {
     Assert.assertEquals(false, instance.scores100(new int[] {1, 2, 3, 4, 5}));
     Assert.assertEquals(false, instance.scores100(new int[] {1, 2, 100, 4, 5}));
   }
+
+  /**
+   * Test method for {@link AP1#scoresClump(int[])}.
+   */
+  @Test
+  public void testScoresClump() {
+    Assert.assertEquals(false, instance.scoresClump(new int[] {}));
+    Assert.assertEquals(false, instance.scoresClump(new int[] {3}));
+    Assert.assertEquals(false, instance.scoresClump(new int[] {3, 4}));
+    Assert.assertEquals(true, instance.scoresClump(new int[] {3, 4, 5}));
+    Assert.assertEquals(false, instance.scoresClump(new int[] {3, 4, 6}));
+    Assert.assertEquals(true, instance.scoresClump(new int[] {1, 3, 5, 5}));
+    Assert.assertEquals(true, instance.scoresClump(new int[] {2, 4, 5, 6}));
+    Assert.assertEquals(true, instance.scoresClump(new int[] {2, 4, 6, 5}));
+    Assert.assertEquals(false, instance.scoresClump(new int[] {2, 4, 5, 7}));
+    Assert.assertEquals(false, instance.scoresClump(new int[] {2, 4, 5, 7}));
+    Assert.assertEquals(true, instance.scoresClump(new int[] {2, 4, 4, 7}));
+    Assert.assertEquals(false, instance.scoresClump(new int[] {3, 3, 6, 7, 9}));
+    Assert.assertEquals(true, instance.scoresClump(new int[] {3, 3, 7, 7, 9}));
+    Assert.assertEquals(false, instance.scoresClump(new int[] {4, 5, 8}));
+  }
 }

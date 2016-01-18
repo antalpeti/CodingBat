@@ -36,4 +36,22 @@ public class AP1 {
     }
     return false;
   }
+
+  /**
+   * Given an array of scores sorted in increasing order, return true if the array contains 3
+   * adjacent scores that differ from each other by at most 2, such as with {3, 4, 5} or {3, 5, 5}.
+   *
+   * @param scores the input scores
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean scoresClump(int[] scores) {
+    for (int i = 0; i < scores.length - 2; i++) {
+      boolean firstComparison = Math.abs(scores[i] - scores[i + 1]) <= 2;
+      boolean secondComparison = Math.abs(scores[i] - scores[i + 2]) <= 2;
+      if (firstComparison && secondComparison) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
