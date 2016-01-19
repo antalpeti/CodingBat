@@ -72,4 +72,30 @@ public class AP1Test {
     Assert.assertEquals(true, instance.scoresClump(new int[] {3, 3, 7, 7, 9}));
     Assert.assertEquals(false, instance.scoresClump(new int[] {4, 5, 8}));
   }
+
+  /**
+   * Test method for {@link AP1#scoresAverage(int[])}.
+   */
+  @Test
+  public void testScoresAverage() {
+    Assert.assertEquals(4, instance.scoresAverage(new int[] {2, 2, 4, 4}));
+    Assert.assertEquals(4, instance.scoresAverage(new int[] {4, 4, 4, 2, 2, 2}));
+    Assert.assertEquals(4, instance.scoresAverage(new int[] {3, 4, 5, 1, 2, 3}));
+    Assert.assertEquals(6, instance.scoresAverage(new int[] {5, 6}));
+    Assert.assertEquals(5, instance.scoresAverage(new int[] {5, 4}));
+    Assert.assertEquals(1, instance.scoresAverage(new int[] {1, 1}));
+    Assert.assertEquals(5, instance.scoresAverage(new int[] {5, 4, 5, 6, 2, 1, 2, 3}));
+  }
+
+  /**
+   * Test method for {@link AP1#calculateAverage(int[], int, int)}.
+   */
+  @Test
+  public void testCalculateAverage() {
+    Assert.assertEquals(1, instance.calculateAverage(new int[] {1, 3, 5, 7, 9}, 0, 1));
+    Assert.assertEquals(2, instance.calculateAverage(new int[] {1, 3, 5, 7, 9}, 0, 2));
+    Assert.assertEquals(3, instance.calculateAverage(new int[] {1, 3, 5, 7, 9}, 0, 3));
+    Assert.assertEquals(4, instance.calculateAverage(new int[] {1, 3, 5, 7, 9}, 0, 4));
+    Assert.assertEquals(5, instance.calculateAverage(new int[] {1, 3, 5, 7, 9}, 0, 5));
+  }
 }

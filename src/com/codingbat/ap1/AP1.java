@@ -54,4 +54,37 @@ public class AP1 {
     }
     return false;
   }
+
+  /**
+   * Given an array of scores, compute the int average of the first half and the second half, and
+   * return whichever is larger. We'll say that the second half begins at index length/2. The array
+   * length will be at least 2.
+   *
+   * @param scores the input scores
+   * @return the above mentioned new number
+   */
+  public int scoresAverage(int[] scores) {
+    int firstHalf = calculateAverage(scores, 0, scores.length / 2);
+    int secondHalf = calculateAverage(scores, scores.length / 2, scores.length);
+
+    return firstHalf > secondHalf ? firstHalf : secondHalf;
+  }
+
+  /**
+   * Helper function for {@link #scoresAverage(int[])} Computes the average of the elements between
+   * indexes start..end.
+   *
+   * @param scores the input scores
+   * @param start the start index
+   * @param end the end index
+   * @return the above mentioned new number
+   */
+  public int calculateAverage(int[] scores, int start, int end) {
+    int sum = 0;
+    for (int i = start; i < end; i++) {
+      sum += scores[i];
+    }
+
+    return sum / (end - start);
+  }
 }
