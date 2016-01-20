@@ -87,4 +87,23 @@ public class AP1 {
 
     return sum / (end - start);
   }
+
+  /**
+   * Given an array of strings, return the count of the number of strings with the given length.
+   *
+   * @param words the input words
+   * @param length the length of word
+   * @return the above mentioned new number
+   */
+  public int wordsCount(String[] words, int length) {
+    int countOfWordsWithGivenLength = 0;
+
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].length() == length) {
+        countOfWordsWithGivenLength++;
+      }
+    }
+
+    return countOfWordsWithGivenLength;
+  }
 }
