@@ -44,7 +44,7 @@ public class AP1 {
    * @param scores the input scores
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean scoresClump(int[] scores) {
+  boolean scoresClump(int[] scores) {
     for (int i = 0; i < scores.length - 2; i++) {
       boolean firstComparison = Math.abs(scores[i] - scores[i + 1]) <= 2;
       boolean secondComparison = Math.abs(scores[i] - scores[i + 2]) <= 2;
@@ -63,7 +63,7 @@ public class AP1 {
    * @param scores the input scores
    * @return the above mentioned new number
    */
-  public int scoresAverage(int[] scores) {
+  int scoresAverage(int[] scores) {
     int firstHalf = calculateAverage(scores, 0, scores.length / 2);
     int secondHalf = calculateAverage(scores, scores.length / 2, scores.length);
 
@@ -79,7 +79,7 @@ public class AP1 {
    * @param end the end index
    * @return the above mentioned new number
    */
-  public int calculateAverage(int[] scores, int start, int end) {
+  int calculateAverage(int[] scores, int start, int end) {
     int sum = 0;
     for (int i = start; i < end; i++) {
       sum += scores[i];
@@ -95,7 +95,7 @@ public class AP1 {
    * @param length the length of word
    * @return the above mentioned new number
    */
-  public int wordsCount(String[] words, int length) {
+  int wordsCount(String[] words, int length) {
     int countOfWordsWithGivenLength = 0;
 
     for (int i = 0; i < words.length; i++) {
