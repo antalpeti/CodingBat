@@ -1,5 +1,7 @@
 package com.codingbat.ap1;
 
+import java.util.Arrays;
+
 /**
  * The class AP1 is contains solution for AP-1 section.
  */
@@ -105,5 +107,17 @@ public class AP1 {
     }
 
     return countOfWordsWithGivenLength;
+  }
+
+  /**
+   * Given an array of strings, return a new array containing the first N strings. N will be in the
+   * range 1..length.
+   *
+   * @param words the input words
+   * @param number the input number
+   * @return the above mentioned new array
+   */
+  String[] wordsFront(String[] words, int number) {
+    return Arrays.copyOfRange(words, 0, number);
   }
 }

@@ -112,4 +112,23 @@ public class AP1Test {
     Assert.assertEquals(2, instance.wordsCount(new String[] {"xx", "yyy", "x", "yy", "z"}, 2));
     Assert.assertEquals(1, instance.wordsCount(new String[] {"xx", "yyy", "x", "yy", "z"}, 3));
   }
+
+  /**
+   * Test method for {@link AP1#wordsFront(String[], int)}.
+   */
+  @Test
+  public void testWordsFront() {
+    Assert.assertArrayEquals(new String[] {"a"},
+        instance.wordsFront(new String[] {"a", "b", "c", "d"}, 1));
+    Assert.assertArrayEquals(new String[] {"a", "b"},
+        instance.wordsFront(new String[] {"a", "b", "c", "d"}, 2));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c"},
+        instance.wordsFront(new String[] {"a", "b", "c", "d"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c", "d"},
+        instance.wordsFront(new String[] {"a", "b", "c", "d"}, 4));
+    Assert.assertArrayEquals(new String[] {"Hi"},
+        instance.wordsFront(new String[] {"Hi", "There"}, 1));
+    Assert.assertArrayEquals(new String[] {"Hi", "There"},
+        instance.wordsFront(new String[] {"Hi", "There"}, 2));
+  }
 }
