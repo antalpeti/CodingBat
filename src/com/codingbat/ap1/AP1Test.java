@@ -1,5 +1,6 @@
 package com.codingbat.ap1;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -130,5 +131,26 @@ public class AP1Test {
         instance.wordsFront(new String[] {"Hi", "There"}, 1));
     Assert.assertArrayEquals(new String[] {"Hi", "There"},
         instance.wordsFront(new String[] {"Hi", "There"}, 2));
+  }
+
+  /**
+   * Test method for {@link AP1#wordsWithoutList(String[], int)}.
+   */
+  @Test
+  public void testWordsWithoutList() {
+    Assert.assertThat(instance.wordsWithoutList(new String[] {"a", "bb", "b", "ccc"}, 1),
+        CoreMatchers.hasItems("bb", "ccc"));
+    Assert.assertThat(instance.wordsWithoutList(new String[] {"a", "bb", "b", "ccc"}, 2),
+        CoreMatchers.hasItems("a", "b", "ccc"));
+    Assert.assertThat(instance.wordsWithoutList(new String[] {"a", "bb", "b", "ccc"}, 3),
+        CoreMatchers.hasItems("a", "bb", "b"));
+    Assert.assertThat(instance.wordsWithoutList(new String[] {"a", "bb", "b", "ccc"}, 4),
+        CoreMatchers.hasItems("a", "bb", "b", "ccc"));
+    Assert.assertThat(instance.wordsWithoutList(new String[] {"xx", "yyy", "x", "yy", "z"}, 1),
+        CoreMatchers.hasItems("xx", "yyy", "yy"));
+    Assert.assertThat(instance.wordsWithoutList(new String[] {"xx", "yyy", "x", "yy", "z"}, 2),
+        CoreMatchers.hasItems("yyy", "x", "z"));
+    Assert.assertThat(instance.wordsWithoutList(new String[] {"xx", "yyy", "x", "yy", "z"}, 3),
+        CoreMatchers.hasItems("xx", "x", "yy", "z"));
   }
 }

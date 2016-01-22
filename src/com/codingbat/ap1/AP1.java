@@ -1,6 +1,8 @@
 package com.codingbat.ap1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * The class AP1 is contains solution for AP-1 section.
@@ -119,5 +121,23 @@ public class AP1 {
    */
   String[] wordsFront(String[] words, int number) {
     return Arrays.copyOfRange(words, 0, number);
+  }
+
+  /**
+   * Given an array of strings, return a new List (e.g. an ArrayList) where all the strings of the
+   * given length are omitted.
+   *
+   * @param words the input words
+   * @param length the given length
+   * @return the above mentioned new list
+   */
+  public List<String> wordsWithoutList(String[] words, int length) {
+    List<String> lengthOmittedList = new ArrayList<String>();
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].length() != length) {
+        lengthOmittedList.add(words[i]);
+      }
+    }
+    return lengthOmittedList;
   }
 }
