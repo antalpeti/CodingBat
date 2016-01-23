@@ -138,6 +138,24 @@ public class AP1 {
         lengthOmittedList.add(words[i]);
       }
     }
+
     return lengthOmittedList;
+  }
+
+  /**
+   * Given a positive int n, return true if it contains a 1 digit.
+   *
+   * @param number the input number
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean hasOne(int number) {
+    while (number != 0) {
+      if (number % 10 == 1) {
+        return true;
+      }
+      number /= 10;
+    }
+
+    return false;
   }
 }

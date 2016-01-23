@@ -153,4 +153,22 @@ public class AP1Test {
     Assert.assertThat(instance.wordsWithoutList(new String[] {"xx", "yyy", "x", "yy", "z"}, 3),
         CoreMatchers.hasItems("xx", "x", "yy", "z"));
   }
+
+  /**
+   * Test method for {@link AP1#hasOne(int)}.
+   */
+  @Test
+  public void testHasOne() {
+    Assert.assertEquals(true, instance.hasOne(10));
+    Assert.assertEquals(false, instance.hasOne(22));
+    Assert.assertEquals(false, instance.hasOne(220));
+    Assert.assertEquals(true, instance.hasOne(212));
+    Assert.assertEquals(true, instance.hasOne(1));
+    Assert.assertEquals(false, instance.hasOne(9));
+    Assert.assertEquals(true, instance.hasOne(211112));
+    Assert.assertEquals(true, instance.hasOne(121121));
+    Assert.assertEquals(false, instance.hasOne(22222));
+    Assert.assertEquals(true, instance.hasOne(56156));
+    Assert.assertEquals(false, instance.hasOne(56556));
+  }
 }
