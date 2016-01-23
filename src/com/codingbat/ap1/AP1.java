@@ -131,7 +131,7 @@ public class AP1 {
    * @param length the given length
    * @return the above mentioned new list
    */
-  public List<String> wordsWithoutList(String[] words, int length) {
+  List<String> wordsWithoutList(String[] words, int length) {
     List<String> lengthOmittedList = new ArrayList<String>();
     for (int i = 0; i < words.length; i++) {
       if (words[i].length() != length) {
@@ -148,7 +148,7 @@ public class AP1 {
    * @param number the input number
    * @return true, if the above mentioned conditions fulfilled
    */
-  public boolean hasOne(int number) {
+  boolean hasOne(int number) {
     while (number != 0) {
       if (number % 10 == 1) {
         return true;
