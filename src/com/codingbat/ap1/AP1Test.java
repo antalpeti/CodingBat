@@ -171,4 +171,22 @@ public class AP1Test {
     Assert.assertEquals(true, instance.hasOne(56156));
     Assert.assertEquals(false, instance.hasOne(56556));
   }
+
+  /**
+   * Test method for {@link AP1#dividesSelf(int)}.
+   */
+  @Test
+  public void testDividesSelf() {
+    Assert.assertEquals(true, instance.dividesSelf(128));
+    Assert.assertEquals(true, instance.dividesSelf(12));
+    Assert.assertEquals(false, instance.dividesSelf(120));
+    Assert.assertEquals(true, instance.dividesSelf(122));
+    Assert.assertEquals(false, instance.dividesSelf(13));
+    Assert.assertEquals(false, instance.dividesSelf(32));
+    Assert.assertEquals(true, instance.dividesSelf(22));
+    Assert.assertEquals(false, instance.dividesSelf(42));
+    Assert.assertEquals(true, instance.dividesSelf(212));
+    Assert.assertEquals(false, instance.dividesSelf(213));
+    Assert.assertEquals(true, instance.dividesSelf(162));
+  }
 }
