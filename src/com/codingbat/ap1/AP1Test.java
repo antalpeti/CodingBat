@@ -189,4 +189,30 @@ public class AP1Test {
     Assert.assertEquals(false, instance.dividesSelf(213));
     Assert.assertEquals(true, instance.dividesSelf(162));
   }
+
+  /**
+   * Test method for {@link AP1#copyEvens(int[], int)}.
+   */
+  @Test
+  public void testCopyEvens() {
+    Assert.assertArrayEquals(new int[] {}, instance.copyEvens(new int[] {}, 0));
+    Assert.assertArrayEquals(new int[] {2}, instance.copyEvens(new int[] {3, 2, 4, 5, 8}, 1));
+    Assert.assertArrayEquals(new int[] {2, 4}, instance.copyEvens(new int[] {3, 2, 4, 5, 8}, 2));
+    Assert.assertArrayEquals(new int[] {2, 4, 8}, instance.copyEvens(new int[] {3, 2, 4, 5, 8}, 3));
+    Assert.assertArrayEquals(new int[] {6}, instance.copyEvens(new int[] {6, 1, 2, 4, 5, 8}, 1));
+    Assert.assertArrayEquals(new int[] {6, 2}, instance.copyEvens(new int[] {6, 1, 2, 4, 5, 8}, 2));
+    Assert.assertArrayEquals(new int[] {6, 2, 4},
+        instance.copyEvens(new int[] {6, 1, 2, 4, 5, 8}, 3));
+    Assert.assertArrayEquals(new int[] {6, 2, 4, 8},
+        instance.copyEvens(new int[] {6, 1, 2, 4, 5, 8}, 4));
+    Assert.assertArrayEquals(new int[] {4}, instance.copyEvens(new int[] {3, 1, 4, 1, 5}, 1));
+    Assert.assertArrayEquals(new int[] {2}, instance.copyEvens(new int[] {2}, 1));
+    Assert.assertArrayEquals(new int[] {6}, instance.copyEvens(new int[] {6, 2, 4, 8}, 1));
+    Assert.assertArrayEquals(new int[] {6, 2}, instance.copyEvens(new int[] {6, 2, 4, 8}, 2));
+    Assert.assertArrayEquals(new int[] {6, 2, 4}, instance.copyEvens(new int[] {6, 2, 4, 8}, 3));
+    Assert.assertArrayEquals(new int[] {6, 2, 4, 8}, instance.copyEvens(new int[] {6, 2, 4, 8}, 4));
+    Assert.assertArrayEquals(new int[] {8}, instance.copyEvens(new int[] {1, 8, 4}, 1));
+    Assert.assertArrayEquals(new int[] {8, 4}, instance.copyEvens(new int[] {1, 8, 4}, 2));
+    Assert.assertArrayEquals(new int[] {2, 8}, instance.copyEvens(new int[] {2, 8, 4}, 2));
+  }
 }
