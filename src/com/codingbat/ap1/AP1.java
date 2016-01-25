@@ -179,4 +179,28 @@ public class AP1 {
     }
     return true;
   }
+
+  /**
+   * Given an array of positive ints, return a new array of length "count" containing the first even
+   * numbers from the original array. The original array will contain at least "count" even numbers.
+   *
+   * @param numbers the input numbers
+   * @param count the count
+   * @return the above mentioned new array
+   */
+  int[] copyEvens(int[] numbers, int count) {
+    int[] evens = new int[count];
+    int evenIndex = 0;
+
+    for (int i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 2 == 0) {
+        evens[evenIndex++] = numbers[i];
+        if (evenIndex == count) {
+          break;
+        }
+      }
+    }
+
+    return evens;
+  }
 }
