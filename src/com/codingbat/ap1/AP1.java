@@ -185,7 +185,7 @@ public class AP1 {
    * numbers from the original array. The original array will contain at least "count" even numbers.
    *
    * @param numbers the input numbers
-   * @param count the count
+   * @param count the given count
    * @return the above mentioned new array
    */
   int[] copyEvens(int[] numbers, int count) {
@@ -202,5 +202,32 @@ public class AP1 {
     }
 
     return evens;
+  }
+
+  /**
+   * We'll say that a positive int n is "endy" if it is in the range 0..10 or 90..100 (inclusive).
+   * Given an array of positive ints, return a new array of length "count" containing the first endy
+   * numbers from the original array. The original array will contain at least "count" endy numbers.
+   *
+   * @param numbers the input numbers
+   * @param count the given count
+   * @return the above mentioned new array
+   */
+  int[] copyEndy(int[] numbers, int count) {
+    int[] endies = new int[count];
+    int endiesIndex = 0;
+
+    for (int i = 0; i < numbers.length; i++) {
+      boolean insideLowerRange = numbers[i] >= 0 && numbers[i] <= 10;
+      boolean insideUpperRange = numbers[i] >= 90 && numbers[i] <= 100;
+      if (insideLowerRange || insideUpperRange) {
+        endies[endiesIndex++] = numbers[i];
+        if (endiesIndex == count) {
+          break;
+        }
+      }
+    }
+
+    return endies;
   }
 }

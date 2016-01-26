@@ -215,4 +215,40 @@ public class AP1Test {
     Assert.assertArrayEquals(new int[] {8, 4}, instance.copyEvens(new int[] {1, 8, 4}, 2));
     Assert.assertArrayEquals(new int[] {2, 8}, instance.copyEvens(new int[] {2, 8, 4}, 2));
   }
+
+  /**
+   * Test method for {@link AP1#copyEndy(int[], int)}.
+   */
+  @Test
+  public void testCopyEndy() {
+    Assert.assertArrayEquals(new int[] {}, instance.copyEndy(new int[] {}, 0));
+    Assert.assertArrayEquals(new int[] {0, 10, 90, 100},
+        instance.copyEndy(new int[] {-1, 11, 89, 101, 0, 10, 90, 100}, 4));
+    Assert.assertArrayEquals(new int[] {9}, instance.copyEndy(new int[] {9, 11, 90, 22, 6}, 1));
+    Assert.assertArrayEquals(new int[] {9, 90}, instance.copyEndy(new int[] {9, 11, 90, 22, 6}, 2));
+    Assert.assertArrayEquals(new int[] {9, 90, 6},
+        instance.copyEndy(new int[] {9, 11, 90, 22, 6}, 3));
+    Assert.assertArrayEquals(new int[] {1}, instance.copyEndy(new int[] {12, 1, 1, 13, 0, 20}, 1));
+    Assert.assertArrayEquals(new int[] {1, 1},
+        instance.copyEndy(new int[] {12, 1, 1, 13, 0, 20}, 2));
+    Assert.assertArrayEquals(new int[] {1, 1, 0},
+        instance.copyEndy(new int[] {12, 1, 1, 13, 0, 20}, 3));
+    Assert.assertArrayEquals(new int[] {0}, instance.copyEndy(new int[] {0}, 1));
+    Assert.assertArrayEquals(new int[] {10}, instance.copyEndy(new int[] {10, 11, 90}, 1));
+    Assert.assertArrayEquals(new int[] {10, 90}, instance.copyEndy(new int[] {10, 11, 90}, 2));
+    Assert.assertArrayEquals(new int[] {90}, instance.copyEndy(new int[] {90, 22, 100}, 1));
+    Assert.assertArrayEquals(new int[] {90, 100}, instance.copyEndy(new int[] {90, 22, 100}, 2));
+    Assert.assertArrayEquals(new int[] {10},
+        instance.copyEndy(new int[] {12, 11, 10, 89, 101, 4}, 1));
+    Assert.assertArrayEquals(new int[] {10, 4},
+        instance.copyEndy(new int[] {12, 11, 10, 89, 101, 4}, 2));
+    Assert.assertArrayEquals(new int[] {2}, instance.copyEndy(new int[] {13, 2, 2, 0}, 1));
+    Assert.assertArrayEquals(new int[] {2, 2}, instance.copyEndy(new int[] {13, 2, 2, 0}, 2));
+    Assert.assertArrayEquals(new int[] {2, 2, 0}, instance.copyEndy(new int[] {13, 2, 2, 0}, 3));
+    Assert.assertArrayEquals(new int[] {2}, instance.copyEndy(new int[] {13, 2, 13, 2, 0, 30}, 1));
+    Assert.assertArrayEquals(new int[] {2, 2},
+        instance.copyEndy(new int[] {13, 2, 13, 2, 0, 30}, 2));
+    Assert.assertArrayEquals(new int[] {2, 2, 0},
+        instance.copyEndy(new int[] {13, 2, 13, 2, 0, 30}, 3));
+  }
 }
