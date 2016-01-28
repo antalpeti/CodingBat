@@ -280,11 +280,51 @@ public class AP1Test {
     Assert.assertEquals(2,
         instance.matchUp(new String[] {"x", "y", "z"}, new String[] {"xx", "yyy", ""}));
     Assert
-        .assertEquals(
-            3,
-            instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
-                "zzz"}));
+    .assertEquals(
+        3,
+        instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
+        "zzz"}));
     Assert.assertEquals(1,
         instance.matchUp(new String[] {"aaa", "bb", "c"}, new String[] {"aaa", "xx", "bb"}));
+  }
+
+  /**
+   * Test method for {@link AP1#scoreUp(String[], String[])}.
+   */
+  @Test
+  public void testScoreUp() {
+    Assert.assertEquals(0, instance.scoreUp(new String[] {}, new String[] {}));
+    Assert.assertEquals(2,
+        instance.scoreUp(new String[] {"a", "b", "c"}, new String[] {"c", "b", "a"}));
+    Assert.assertEquals(6,
+        instance.scoreUp(new String[] {"a", "a", "b", "b"}, new String[] {"a", "c", "b", "c"}));
+    Assert.assertEquals(11,
+        instance.scoreUp(new String[] {"a", "a", "b", "b"}, new String[] {"a", "a", "b", "c"}));
+    Assert.assertEquals(16,
+        instance.scoreUp(new String[] {"a", "a", "b", "b"}, new String[] {"a", "a", "b", "b"}));
+    Assert.assertEquals(3,
+        instance.scoreUp(new String[] {"a", "a", "b", "b"}, new String[] {"?", "c", "b", "?"}));
+    Assert.assertEquals(-1,
+        instance.scoreUp(new String[] {"a", "a", "b", "b"}, new String[] {"?", "c", "?", "?"}));
+    Assert.assertEquals(7,
+        instance.scoreUp(new String[] {"a", "a", "b", "b"}, new String[] {"c", "?", "b", "b"}));
+    Assert.assertEquals(3,
+        instance.scoreUp(new String[] {"a", "a", "b", "b"}, new String[] {"c", "?", "b", "?"}));
+    Assert.assertEquals(2,
+        instance.scoreUp(new String[] {"a", "b", "c"}, new String[] {"a", "c", "b"}));
+    Assert.assertEquals(
+        4,
+        instance.scoreUp(new String[] {"a", "a", "b", "b", "c", "c"}, new String[] {"a", "c", "a",
+            "c", "a", "c"}));
+    Assert.assertEquals(
+        6,
+        instance.scoreUp(new String[] {"a", "a", "b", "b", "c", "c"}, new String[] {"a", "c", "?",
+            "?", "a", "c"}));
+    Assert.assertEquals(
+        11,
+        instance.scoreUp(new String[] {"a", "a", "b", "b", "c", "c"}, new String[] {"a", "c", "?",
+            "?", "c", "c"}));
+    Assert.assertEquals(12,
+        instance.scoreUp(new String[] {"a", "b", "c"}, new String[] {"a", "b", "c"}));
   }
 }

@@ -257,4 +257,34 @@ public class AP1 {
 
     return sameCharCount;
   }
+
+  /**
+   * The "key" array is an array containing the correct answers to an exam, like {"a", "a", "b",
+   * "b"}. the "answers" array contains a student's answers, with "?" representing a question left
+   * blank. The two arrays are not empty and are the same length. Return the score for this array of
+   * answers, giving +4 for each correct answer, -1 for each incorrect answer, and +0 for each blank
+   * answer.
+   *
+   * @param key the key array
+   * @param answers the answers array
+   * @return the above mentioned number
+   */
+  public int scoreUp(String[] key, String[] answers) {
+    int points = 0;
+
+    for (int i = 0; i < key.length; i++) {
+      boolean blankAnswer = answers[i].equals("?");
+      boolean rightAnswer = key[i] == answers[i];
+
+      if (blankAnswer) {
+        continue;
+      } else if (rightAnswer) {
+        points += 4;
+      } else {
+        points -= 1;
+      }
+    }
+
+    return points;
+  }
 }
