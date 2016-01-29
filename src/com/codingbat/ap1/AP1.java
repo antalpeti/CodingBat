@@ -241,7 +241,7 @@ public class AP1 {
    * @param b the second array
    * @return the above mentioned new number
    */
-  public int matchUp(String[] a, String[] b) {
+  int matchUp(String[] a, String[] b) {
     int sameCharCount = 0;
 
     for (int i = 0; i < a.length; i++) {
@@ -269,7 +269,7 @@ public class AP1 {
    * @param answers the answers array
    * @return the above mentioned number
    */
-  public int scoreUp(String[] key, String[] answers) {
+  int scoreUp(String[] key, String[] answers) {
     int points = 0;
 
     for (int i = 0; i < key.length; i++) {
@@ -298,7 +298,7 @@ public class AP1 {
    * @param target the target word
    * @return the above mentioned new array
    */
-  public String[] wordsWithout(String[] words, String target) {
+  String[] wordsWithout(String[] words, String target) {
     ArrayList<String> wordsList = new ArrayList<String>(Arrays.asList(words));
     while (wordsList.remove(target)) {
     }
