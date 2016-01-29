@@ -287,4 +287,22 @@ public class AP1 {
 
     return points;
   }
+
+  /**
+   * Given an array of strings, return a new array without the strings that are equal to the target
+   * string. One approach is to count the occurrences of the target string, make a new array of the
+   * correct length, and then copy over the correct strings. Another approach is to convert it to a
+   * list then remove all the target elements an finally convert it back to an array.
+   *
+   * @param words the words array
+   * @param target the target word
+   * @return the above mentioned new array
+   */
+  public String[] wordsWithout(String[] words, String target) {
+    ArrayList<String> wordsList = new ArrayList<String>(Arrays.asList(words));
+    while (wordsList.remove(target)) {
+    }
+
+    return wordsList.toArray(new String[wordsList.size()]);
+  }
 }

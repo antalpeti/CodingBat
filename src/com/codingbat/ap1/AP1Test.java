@@ -280,10 +280,10 @@ public class AP1Test {
     Assert.assertEquals(2,
         instance.matchUp(new String[] {"x", "y", "z"}, new String[] {"xx", "yyy", ""}));
     Assert
-    .assertEquals(
-        3,
-        instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
-        "zzz"}));
+        .assertEquals(
+            3,
+            instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
+                "zzz"}));
     Assert.assertEquals(1,
         instance.matchUp(new String[] {"aaa", "bb", "c"}, new String[] {"aaa", "xx", "bb"}));
   }
@@ -326,5 +326,31 @@ public class AP1Test {
             "?", "c", "c"}));
     Assert.assertEquals(12,
         instance.scoreUp(new String[] {"a", "b", "c"}, new String[] {"a", "b", "c"}));
+  }
+
+  /**
+   * Test method for {@link AP1#wordsWithout(String[], String)}.
+   */
+  @Test
+  public void testWordsWithout() {
+    Assert.assertArrayEquals(new String[] {}, instance.wordsWithout(new String[] {}, "e"));
+    Assert.assertArrayEquals(new String[] {},
+        instance.wordsWithout(new String[] {"a", "a", "a"}, "a"));
+    Assert.assertArrayEquals(new String[] {"b", "c"},
+        instance.wordsWithout(new String[] {"a", "b", "c", "a"}, "a"));
+    Assert.assertArrayEquals(new String[] {"b", "c"},
+        instance.wordsWithout(new String[] {"a", "b", "c", "a"}, "a"));
+    Assert.assertArrayEquals(new String[] {"a", "c", "a"},
+        instance.wordsWithout(new String[] {"a", "b", "c", "a"}, "b"));
+    Assert.assertArrayEquals(new String[] {"a", "b", "a"},
+        instance.wordsWithout(new String[] {"a", "b", "c", "a"}, "c"));
+    Assert.assertArrayEquals(new String[] {"c", "a", "a"},
+        instance.wordsWithout(new String[] {"b", "c", "a", "a"}, "b"));
+    Assert.assertArrayEquals(new String[] {"xx", "yyy", "yy"},
+        instance.wordsWithout(new String[] {"xx", "yyy", "x", "yy", "x"}, "x"));
+    Assert.assertArrayEquals(new String[] {"xx", "yyy", "x", "x"},
+        instance.wordsWithout(new String[] {"xx", "yyy", "x", "yy", "x"}, "yy"));
+    Assert.assertArrayEquals(new String[] {"ab", "ac"},
+        instance.wordsWithout(new String[] {"aa", "ab", "ac", "aa"}, "aa"));
   }
 }
