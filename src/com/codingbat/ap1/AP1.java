@@ -305,4 +305,31 @@ public class AP1 {
 
     return wordsList.toArray(new String[wordsList.size()]);
   }
+
+  /**
+   * Given two arrays, A and B, of non-negative int scores. A "special" score is one which is a
+   * multiple of 10, such as 40 or 90. Return the sum of largest special score in A and the largest
+   * special score in B.
+   *
+   * @param aScores the first scores
+   * @param bScores the second scores
+   * @return the above mentioned number
+   */
+  int scoresSpecial(int[] aScores, int[] bScores) {
+    return findLargestSpecialScore(aScores) + findLargestSpecialScore(bScores);
+  }
+
+  /**
+   * Helper method which finds the largest special score in an array.
+   *
+   * @param scores the input scores
+   * @return the above mentioned number
+   */
+  int findLargestSpecialScore(int[] scores) {
+    int maxScore = 0;
+    for (int score : scores) {
+      maxScore = score % 10 == 0 && score > maxScore ? score : maxScore;
+    }
+    return maxScore;
+  }
 }

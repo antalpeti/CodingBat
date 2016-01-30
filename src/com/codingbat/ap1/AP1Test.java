@@ -280,10 +280,10 @@ public class AP1Test {
     Assert.assertEquals(2,
         instance.matchUp(new String[] {"x", "y", "z"}, new String[] {"xx", "yyy", ""}));
     Assert
-        .assertEquals(
-            3,
-            instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
-                "zzz"}));
+    .assertEquals(
+        3,
+        instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
+        "zzz"}));
     Assert.assertEquals(1,
         instance.matchUp(new String[] {"aaa", "bb", "c"}, new String[] {"aaa", "xx", "bb"}));
   }
@@ -352,5 +352,25 @@ public class AP1Test {
         instance.wordsWithout(new String[] {"xx", "yyy", "x", "yy", "x"}, "yy"));
     Assert.assertArrayEquals(new String[] {"ab", "ac"},
         instance.wordsWithout(new String[] {"aa", "ab", "ac", "aa"}, "aa"));
+  }
+
+  /**
+   * Test method for {@link AP1#scoresSpecial(int[], int[])}.
+   */
+  @Test
+  public void testScoresSpecial() {
+    Assert.assertEquals(40, instance.scoresSpecial(new int[] {12, 10, 4}, new int[] {2, 20, 30}));
+    Assert.assertEquals(40, instance.scoresSpecial(new int[] {20, 10, 4}, new int[] {2, 20, 10}));
+    Assert.assertEquals(20, instance.scoresSpecial(new int[] {12, 11, 4}, new int[] {2, 20, 31}));
+    Assert.assertEquals(50, instance.scoresSpecial(new int[] {1, 20, 2, 50}, new int[] {3, 4, 5}));
+    Assert.assertEquals(50, instance.scoresSpecial(new int[] {3, 4, 5}, new int[] {1, 50, 2, 20}));
+    Assert.assertEquals(50, instance.scoresSpecial(new int[] {10, 4, 20, 30}, new int[] {20}));
+    Assert.assertEquals(50,
+        instance.scoresSpecial(new int[] {10, 4, 20, 30}, new int[] {3, 20, 99}));
+    Assert.assertEquals(60,
+        instance.scoresSpecial(new int[] {10, 4, 20, 30}, new int[] {30, 20, 99}));
+    Assert.assertEquals(0, instance.scoresSpecial(new int[] {}, new int[] {2}));
+    Assert.assertEquals(20, instance.scoresSpecial(new int[] {}, new int[] {20}));
+    Assert.assertEquals(40, instance.scoresSpecial(new int[] {14, 10, 4}, new int[] {4, 20, 30}));
   }
 }
