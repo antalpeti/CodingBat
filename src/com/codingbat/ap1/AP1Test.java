@@ -280,10 +280,10 @@ public class AP1Test {
     Assert.assertEquals(2,
         instance.matchUp(new String[] {"x", "y", "z"}, new String[] {"xx", "yyy", ""}));
     Assert
-    .assertEquals(
-        3,
-        instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
-        "zzz"}));
+        .assertEquals(
+            3,
+            instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
+                "zzz"}));
     Assert.assertEquals(1,
         instance.matchUp(new String[] {"aaa", "bb", "c"}, new String[] {"aaa", "xx", "bb"}));
   }
@@ -372,5 +372,39 @@ public class AP1Test {
     Assert.assertEquals(0, instance.scoresSpecial(new int[] {}, new int[] {2}));
     Assert.assertEquals(20, instance.scoresSpecial(new int[] {}, new int[] {20}));
     Assert.assertEquals(40, instance.scoresSpecial(new int[] {14, 10, 4}, new int[] {4, 20, 30}));
+  }
+
+  /**
+   * Test method for {@link AP1#findLargestSpecialScore(int[])}.
+   */
+  @Test
+  public void testFindLargestSpecialScore() {
+    Assert.assertEquals(10, instance.findLargestSpecialScore(new int[] {1, 2, 0, 10, 15}));
+    Assert.assertEquals(20, instance.findLargestSpecialScore(new int[] {1, 20, 0, 10, 15}));
+    Assert.assertEquals(0, instance.findLargestSpecialScore(new int[] {}));
+    Assert.assertEquals(50, instance.findLargestSpecialScore(new int[] {99, 50}));
+    Assert.assertEquals(20, instance.findLargestSpecialScore(new int[] {20, 10, 20}));
+    Assert.assertEquals(30, instance.findLargestSpecialScore(new int[] {30, 20, 10}));
+    Assert.assertEquals(40, instance.findLargestSpecialScore(new int[] {39, 40, 41}));
+  }
+
+  /**
+   * Test method for {@link AP1#sumHeights(int[], int, int)}.
+   */
+  @Test
+  public void testSumHeights() {
+    Assert.assertEquals(6, instance.sumHeights(new int[] {5, 3, 6, 7, 2}, 2, 4));
+    Assert.assertEquals(2, instance.sumHeights(new int[] {5, 3, 6, 7, 2}, 0, 1));
+    Assert.assertEquals(11, instance.sumHeights(new int[] {5, 3, 6, 7, 2}, 0, 4));
+    Assert.assertEquals(0, instance.sumHeights(new int[] {5, 3, 6, 7, 2}, 1, 1));
+    Assert.assertEquals(3, instance.sumHeights(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 0, 3));
+    Assert.assertEquals(11, instance.sumHeights(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 4, 8));
+    Assert.assertEquals(8, instance.sumHeights(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 7, 8));
+    Assert.assertEquals(0, instance.sumHeights(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 8, 8));
+    Assert.assertEquals(0, instance.sumHeights(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 2, 2));
+    Assert.assertEquals(3, instance.sumHeights(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 3, 6));
+    Assert.assertEquals(1, instance.sumHeights(new int[] {10, 8, 7, 7, 7, 6, 7}, 1, 4));
+    Assert.assertEquals(2, instance.sumHeights(new int[] {10, 8, 7, 7, 7, 6, 7}, 1, 5));
+    Assert.assertEquals(0, instance.sumHeights(new int[] {10, 8, 7, 7, 7, 6, 7}, 2, 4));
   }
 }
