@@ -345,7 +345,7 @@ public class AP1 {
    * @param endIndex the end index
    * @return the above mentioned number
    */
-  public int sumHeights(int[] heights, int startIndex, int endIndex) {
+  int sumHeights(int[] heights, int startIndex, int endIndex) {
     int changes = 0;
     for (int i = startIndex; i < endIndex; i++) {
       changes += Math.abs(heights[i] - heights[i + 1]);
@@ -366,7 +366,7 @@ public class AP1 {
    * @param endIndex the end index
    * @return the above mentioned number
    */
-  public int sumHeights2(int[] heights, int startIndex, int endIndex) {
+  int sumHeights2(int[] heights, int startIndex, int endIndex) {
     int changes = 0;
 
     for (int i = startIndex; i < endIndex; i++) {
