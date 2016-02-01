@@ -280,10 +280,10 @@ public class AP1Test {
     Assert.assertEquals(2,
         instance.matchUp(new String[] {"x", "y", "z"}, new String[] {"xx", "yyy", ""}));
     Assert
-        .assertEquals(
-            3,
-            instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
-                "zzz"}));
+    .assertEquals(
+        3,
+        instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
+        "zzz"}));
     Assert.assertEquals(1,
         instance.matchUp(new String[] {"aaa", "bb", "c"}, new String[] {"aaa", "xx", "bb"}));
   }
@@ -406,5 +406,25 @@ public class AP1Test {
     Assert.assertEquals(1, instance.sumHeights(new int[] {10, 8, 7, 7, 7, 6, 7}, 1, 4));
     Assert.assertEquals(2, instance.sumHeights(new int[] {10, 8, 7, 7, 7, 6, 7}, 1, 5));
     Assert.assertEquals(0, instance.sumHeights(new int[] {10, 8, 7, 7, 7, 6, 7}, 2, 4));
+  }
+
+  /**
+   * Test method for {@link AP1#sumHeights2(int[], int, int)}.
+   */
+  @Test
+  public void testSumHeights2() {
+    Assert.assertEquals(7, instance.sumHeights2(new int[] {5, 3, 6, 7, 2}, 2, 4));
+    Assert.assertEquals(2, instance.sumHeights2(new int[] {5, 3, 6, 7, 2}, 0, 1));
+    Assert.assertEquals(15, instance.sumHeights2(new int[] {5, 3, 6, 7, 2}, 0, 4));
+    Assert.assertEquals(0, instance.sumHeights2(new int[] {5, 3, 6, 7, 2}, 1, 1));
+    Assert.assertEquals(6, instance.sumHeights2(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 0, 3));
+    Assert.assertEquals(19, instance.sumHeights2(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 4, 8));
+    Assert.assertEquals(16, instance.sumHeights2(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 7, 8));
+    Assert.assertEquals(0, instance.sumHeights2(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 8, 8));
+    Assert.assertEquals(0, instance.sumHeights2(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 2, 2));
+    Assert.assertEquals(4, instance.sumHeights2(new int[] {1, 2, 3, 4, 5, 4, 3, 2, 10}, 3, 6));
+    Assert.assertEquals(1, instance.sumHeights2(new int[] {10, 8, 7, 7, 7, 6, 7}, 1, 4));
+    Assert.assertEquals(2, instance.sumHeights2(new int[] {10, 8, 7, 7, 7, 6, 7}, 1, 5));
+    Assert.assertEquals(0, instance.sumHeights2(new int[] {10, 8, 7, 7, 7, 6, 7}, 2, 4));
   }
 }
