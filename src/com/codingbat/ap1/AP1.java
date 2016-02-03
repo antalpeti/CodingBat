@@ -416,7 +416,7 @@ public class AP1 {
    * @param bId the second input id
    * @return the above mentioned new number
    */
-  public int userCompare(String aName, int aId, String bName, int bId) {
+  int userCompare(String aName, int aId, String bName, int bId) {
     float comparison = Math.signum(aName.compareTo(bName));
     if (comparison == 0) {
       comparison = Math.signum(aId - bId);
