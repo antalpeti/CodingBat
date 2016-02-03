@@ -403,4 +403,24 @@ public class AP1 {
 
     return bigSteps;
   }
+
+  /**
+   * We have data for two users, A and B, each with a String name and an int id. The goal is to
+   * order the users such as for sorting. Return -1 if A comes before B, 1 if A comes after B, and 0
+   * if they are the same. Order first by the string names, and then by the id numbers if the names
+   * are the same.
+   *
+   * @param aName the first input name
+   * @param aId the first input id
+   * @param bName the second input name
+   * @param bId the second input id
+   * @return the above mentioned new number
+   */
+  public int userCompare(String aName, int aId, String bName, int bId) {
+    float comparison = Math.signum(aName.compareTo(bName));
+    if (comparison == 0) {
+      comparison = Math.signum(aId - bId);
+    }
+    return (int) comparison;
+  }
 }

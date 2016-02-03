@@ -450,4 +450,37 @@ public class AP1Test {
     Assert.assertEquals(2, instance.bigHeights(new int[] {1, 2, 3, 14, 5, 4, 3, 2, 10}, 3, 8));
     Assert.assertEquals(3, instance.bigHeights(new int[] {1, 2, 3, 14, 5, 4, 3, 2, 10}, 2, 8));
   }
+
+  /**
+   * Test method for {@link AP1#userCompare(String, int, String, int)}.
+   */
+  @Test
+  public void testUserCompare() {
+    Assert.assertEquals(0, instance.userCompare("", 0, "", 0));
+    Assert.assertEquals(-1, instance.userCompare("", 0, "a", 0));
+    Assert.assertEquals(1, instance.userCompare("a", 0, "", 0));
+    Assert.assertEquals(0, instance.userCompare("a", 0, "a", 0));
+    Assert.assertEquals(1, instance.userCompare("a", 1, "a", 0));
+    Assert.assertEquals(-1, instance.userCompare("a", 0, "a", 1));
+    Assert.assertEquals(-1, instance.userCompare("", 5, "", 6));
+    Assert.assertEquals(1, instance.userCompare("", 4, "", 3));
+    Assert.assertEquals(0, instance.userCompare("", 2, "", 2));
+    Assert.assertEquals(-1, instance.userCompare("", 1, "b", 2));
+    Assert.assertEquals(1, instance.userCompare("e", 1, "", 2));
+    Assert.assertEquals(-1, instance.userCompare("a", 1, "b", 2));
+    Assert.assertEquals(-1, instance.userCompare("a", 1, "a", 2));
+    Assert.assertEquals(1, instance.userCompare("a", 7, "a", 5));
+    Assert.assertEquals(0, instance.userCompare("a", 8, "a", 8));
+    Assert.assertEquals(1, instance.userCompare("c", 1, "b", 2));
+    Assert.assertEquals(-1, instance.userCompare("abcd", 1, "abcdef", 1));
+    Assert.assertEquals(1, instance.userCompare("abcdef", 1, "abcd", 1));
+    Assert.assertEquals(-1, instance.userCompare("bb", 1, "zz", 2));
+    Assert.assertEquals(1, instance.userCompare("bb", 1, "aa", 2));
+    Assert.assertEquals(0, instance.userCompare("bb", 1, "bb", 1));
+    Assert.assertEquals(1, instance.userCompare("bb", 5, "bb", 2));
+    Assert.assertEquals(-1, instance.userCompare("bb", 1, "bb", 10));
+    Assert.assertEquals(-1, instance.userCompare("adam", 1, "bob", 2));
+    Assert.assertEquals(-1, instance.userCompare("bob", 1, "bob", 2));
+    Assert.assertEquals(1, instance.userCompare("bzb", 1, "bob", 2));
+  }
 }
