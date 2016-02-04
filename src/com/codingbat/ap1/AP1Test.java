@@ -280,10 +280,10 @@ public class AP1Test {
     Assert.assertEquals(2,
         instance.matchUp(new String[] {"x", "y", "z"}, new String[] {"xx", "yyy", ""}));
     Assert
-        .assertEquals(
-            3,
-            instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
-                "zzz"}));
+    .assertEquals(
+        3,
+        instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
+        "zzz"}));
     Assert.assertEquals(1,
         instance.matchUp(new String[] {"aaa", "bb", "c"}, new String[] {"aaa", "xx", "bb"}));
   }
@@ -482,5 +482,62 @@ public class AP1Test {
     Assert.assertEquals(-1, instance.userCompare("adam", 1, "bob", 2));
     Assert.assertEquals(-1, instance.userCompare("bob", 1, "bob", 2));
     Assert.assertEquals(1, instance.userCompare("bzb", 1, "bob", 2));
+  }
+
+  /**
+   * Test method for {@link AP1#mergeTwo(String[], String[], int)}.
+   */
+  @Test
+  public void testMergeTwo() {
+    Assert.assertArrayEquals(new String[] {},
+        instance.mergeTwo(new String[] {}, new String[] {}, 0));
+    Assert.assertArrayEquals(new String[] {},
+        instance.mergeTwo(new String[] {"a"}, new String[] {}, 0));
+    Assert.assertArrayEquals(new String[] {},
+        instance.mergeTwo(new String[] {}, new String[] {"b"}, 0));
+    Assert.assertArrayEquals(new String[] {},
+        instance.mergeTwo(new String[] {"a"}, new String[] {"b"}, 0));
+    Assert.assertArrayEquals(new String[] {"a"},
+        instance.mergeTwo(new String[] {"a"}, new String[] {"a"}, 1));
+    Assert.assertArrayEquals(new String[] {"a"},
+        instance.mergeTwo(new String[] {"a"}, new String[] {"b"}, 1));
+    Assert.assertArrayEquals(new String[] {"aa"},
+        instance.mergeTwo(new String[] {"aa"}, new String[] {"b"}, 1));
+    Assert.assertArrayEquals(new String[] {"ac"},
+        instance.mergeTwo(new String[] {"ad"}, new String[] {"ac"}, 1));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c"},
+        instance.mergeTwo(new String[] {"a", "c", "z"}, new String[] {"b", "f", "z"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "c", "f"},
+        instance.mergeTwo(new String[] {"a", "c", "z"}, new String[] {"c", "f", "z"}, 3));
+    Assert.assertArrayEquals(new String[] {"c", "f", "g"},
+        instance.mergeTwo(new String[] {"f", "g", "z"}, new String[] {"c", "f", "g"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "c", "z"},
+        instance.mergeTwo(new String[] {"a", "c", "z"}, new String[] {"a", "c", "z"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c"},
+        instance.mergeTwo(new String[] {"a", "b", "c", "z"}, new String[] {"a", "c", "z"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c"},
+        instance.mergeTwo(new String[] {"a", "b", "z"}, new String[] {"a", "c", "z"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c"},
+        instance.mergeTwo(new String[] {"a", "c", "z"}, new String[] {"a", "b", "c", "z"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "c"},
+        instance.mergeTwo(new String[] {"a", "c", "z"}, new String[] {"a", "c", "z"}, 2));
+    Assert.assertArrayEquals(new String[] {"a", "c", "y"},
+        instance.mergeTwo(new String[] {"a", "c", "z"}, new String[] {"a", "c", "y", "z"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "b", "x"},
+        instance.mergeTwo(new String[] {"x", "y", "z"}, new String[] {"a", "b", "z"}, 3));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c", "d"},
+        instance.mergeTwo(new String[] {"a", "b", "x", "y"}, new String[] {"c", "d", "e", "f"}, 4));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c", "d"},
+        instance.mergeTwo(new String[] {"a", "b", "x", "y"}, new String[] {"a", "b", "c", "d"}, 4));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c", "d"},
+        instance.mergeTwo(new String[] {"a", "b", "c", "y"}, new String[] {"d", "e", "f", "g"}, 4));
+    Assert.assertArrayEquals(new String[] {"a", "b", "c", "d"},
+        instance.mergeTwo(new String[] {"a", "d", "e", "f"}, new String[] {"b", "c", "f", "g"}, 4));
+    Assert.assertArrayEquals(
+        new String[] {"aa", "ba", "ca", "da"},
+        instance.mergeTwo(new String[] {"aa", "da", "ea", "fa"}, new String[] {"ba", "ca", "fa",
+            "ga"}, 4));
+    Assert.assertArrayEquals(new String[] {"1", "2", "3"}, instance.mergeTwo(new String[] {"1",
+        "2", "3", "fa"}, new String[] {"4", "5", "6", "ga"}, 3));
   }
 }
