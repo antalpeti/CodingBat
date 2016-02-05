@@ -2,7 +2,9 @@ package com.codingbat.ap1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.TreeSet;
 
 /**
@@ -440,6 +442,7 @@ public class AP1 {
    */
   String[] mergeTwo(String[] a, String[] b, int n) {
     TreeSet<String> treeSet = new TreeSet<String>();
+
     for (int i = 0; i < n; i++) {
       treeSet.add(a[i]);
       treeSet.add(b[i]);
@@ -447,6 +450,29 @@ public class AP1 {
     while (treeSet.size() > n) {
       treeSet.pollLast();
     }
+
     return treeSet.toArray(new String[treeSet.size()]);
+  }
+
+  /**
+   * Start with two arrays of strings, a and b, each in alphabetical order, possibly with
+   * duplicates. Return the count of the number of strings which appear in both arrays. The best
+   * "linear" solution makes a single pass over both arrays, taking advantage of the fact that they
+   * are in alphabetical order. Duplicates don't matter.
+   *
+   * @param a the first array
+   * @param b the second array
+   * @return the int
+   */
+  public int commonTwo(String[] a, String[] b) {
+    Set<String> aSet = new HashSet<String>(Arrays.asList(a));
+    Set<String> bSet = new HashSet<String>(Arrays.asList(b));
+
+    int number = 0;
+    for (String element : aSet) {
+      number = bSet.contains(element) ? ++number : number;
+    }
+
+    return number;
   }
 }

@@ -280,10 +280,10 @@ public class AP1Test {
     Assert.assertEquals(2,
         instance.matchUp(new String[] {"x", "y", "z"}, new String[] {"xx", "yyy", ""}));
     Assert
-    .assertEquals(
-        3,
-        instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
-        "zzz"}));
+        .assertEquals(
+            3,
+            instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
+                "zzz"}));
     Assert.assertEquals(1,
         instance.matchUp(new String[] {"aaa", "bb", "c"}, new String[] {"aaa", "xx", "bb"}));
   }
@@ -536,8 +536,56 @@ public class AP1Test {
     Assert.assertArrayEquals(
         new String[] {"aa", "ba", "ca", "da"},
         instance.mergeTwo(new String[] {"aa", "da", "ea", "fa"}, new String[] {"ba", "ca", "fa",
-            "ga"}, 4));
+        "ga"}, 4));
     Assert.assertArrayEquals(new String[] {"1", "2", "3"}, instance.mergeTwo(new String[] {"1",
         "2", "3", "fa"}, new String[] {"4", "5", "6", "ga"}, 3));
+  }
+
+  /**
+   * Test method for {@link AP1#commonTwo(String[], String[])}.
+   */
+  @Test
+  public void testCommonTwo() {
+    Assert.assertEquals(2,
+        instance.commonTwo(new String[] {"a", "c", "x"}, new String[] {"b", "c", "d", "x"}));
+    Assert.assertEquals(3,
+        instance.commonTwo(new String[] {"a", "c", "x"}, new String[] {"a", "b", "c", "x", "z"}));
+    Assert.assertEquals(3,
+        instance.commonTwo(new String[] {"a", "b", "c"}, new String[] {"a", "b", "c"}));
+    Assert.assertEquals(3,
+        instance.commonTwo(new String[] {"a", "a", "b", "b", "c"}, new String[] {"a", "b", "c"}));
+    Assert.assertEquals(
+        3,
+        instance.commonTwo(new String[] {"a", "a", "b", "b", "c"}, new String[] {"a", "b", "b",
+            "b", "c"}));
+    Assert.assertEquals(
+        2,
+        instance.commonTwo(new String[] {"b", "b", "b", "b", "c"}, new String[] {"a", "b", "b",
+            "b", "c"}));
+    Assert.assertEquals(
+        4,
+        instance.commonTwo(new String[] {"a", "b", "c", "c", "d"}, new String[] {"a", "b", "b",
+            "c", "d", "d"}));
+    Assert.assertEquals(1,
+        instance.commonTwo(new String[] {"a", "a", "b", "b", "c"}, new String[] {"b", "b", "b"}));
+    Assert.assertEquals(1,
+        instance.commonTwo(new String[] {"a", "a", "b", "b", "c"}, new String[] {"c", "c"}));
+    Assert.assertEquals(1, instance.commonTwo(new String[] {"a", "a", "b", "b", "c"}, new String[] {
+        "b", "b", "b", "x"}));
+    Assert.assertEquals(1,
+        instance.commonTwo(new String[] {"a", "a", "b", "b", "c"}, new String[] {"b", "b"}));
+    Assert.assertEquals(1, instance.commonTwo(new String[] {"a"}, new String[] {"a", "b"}));
+    Assert.assertEquals(0, instance.commonTwo(new String[] {"a"}, new String[] {"b"}));
+    Assert.assertEquals(0, instance.commonTwo(new String[] {"a", "a"}, new String[] {"b", "b"}));
+    Assert.assertEquals(2, instance.commonTwo(new String[] {"a", "b"}, new String[] {"a", "b"}));
+    Assert.assertEquals(0, instance.commonTwo(new String[] {}, new String[] {}));
+    Assert.assertEquals(0, instance.commonTwo(new String[] {"a"}, new String[] {}));
+    Assert.assertEquals(0, instance.commonTwo(new String[] {}, new String[] {"b"}));
+    Assert.assertEquals(0,
+        instance.commonTwo(new String[] {"1", "2", "3"}, new String[] {"4", "5"}));
+    Assert.assertEquals(0,
+        instance.commonTwo(new String[] {"6", "7", "8"}, new String[] {"4", "5"}));
+    Assert.assertEquals(1,
+        instance.commonTwo(new String[] {"3", "4", "8"}, new String[] {"4", "5"}));
   }
 }
