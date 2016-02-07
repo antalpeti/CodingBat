@@ -464,7 +464,7 @@ public class AP1 {
    * @param b the second array
    * @return the int
    */
-  public int commonTwo(String[] a, String[] b) {
+  int commonTwo(String[] a, String[] b) {
     Set<String> aSet = new HashSet<String>(Arrays.asList(a));
     Set<String> bSet = new HashSet<String>(Arrays.asList(b));
 
