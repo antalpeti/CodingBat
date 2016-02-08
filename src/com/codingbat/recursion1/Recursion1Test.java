@@ -52,4 +52,21 @@ public class Recursion1Test {
     Assert.assertEquals(39916800, instance.factorial(11));
     Assert.assertEquals(479001600, instance.factorial(12));
   }
+
+  /**
+   * Test method for {@link Recursion1#bunnyEars(int)}.
+   */
+  @Test
+  public void testBunnyEars() {
+    Assert.assertEquals(0, instance.bunnyEars(0));
+    Assert.assertEquals(2, instance.bunnyEars(1));
+    Assert.assertEquals(4, instance.bunnyEars(2));
+    Assert.assertEquals(6, instance.bunnyEars(3));
+    Assert.assertEquals(8, instance.bunnyEars(4));
+    Assert.assertEquals(10, instance.bunnyEars(5));
+    Assert.assertEquals(24, instance.bunnyEars(12));
+    Assert.assertEquals(100, instance.bunnyEars(50));
+    Assert.assertEquals(468, instance.bunnyEars(234));
+    Assert.assertEquals(500, instance.bunnyEars(250));
+  }
 }
