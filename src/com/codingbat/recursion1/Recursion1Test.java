@@ -69,4 +69,22 @@ public class Recursion1Test {
     Assert.assertEquals(468, instance.bunnyEars(234));
     Assert.assertEquals(500, instance.bunnyEars(250));
   }
+
+  /**
+   * Test method for {@link Recursion1#fibonacci(int)}.
+   */
+  @Test
+  public void testFibonacci() {
+    Assert.assertEquals(0, instance.fibonacci(0));
+    Assert.assertEquals(1, instance.fibonacci(1));
+    Assert.assertEquals(1, instance.fibonacci(2));
+    Assert.assertEquals(2, instance.fibonacci(3));
+    Assert.assertEquals(3, instance.fibonacci(4));
+    Assert.assertEquals(5, instance.fibonacci(5));
+    Assert.assertEquals(8, instance.fibonacci(6));
+    Assert.assertEquals(13, instance.fibonacci(7));
+    Assert.assertEquals(21, instance.fibonacci(8));
+    Assert.assertEquals(34, instance.fibonacci(9));
+    Assert.assertEquals(55, instance.fibonacci(10));
+  }
 }
