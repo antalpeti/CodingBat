@@ -9,14 +9,14 @@ public class Recursion1 {
    * Given n of 1 or more, return the factorial of n, which is n * (n-1) * (n-2) ... 1. Compute the
    * result recursively (without loops).
    *
-   * @param n the input number
+   * @param number the input number
    * @return the above mentioned new number
    */
-  int factorial(int n) {
-    if (n == 0 || n == 1) {
+  int factorial(int number) {
+    if (number == 0 || number == 1) {
       return 1;
     }
-    return n * factorial(n - 1);
+    return number * factorial(number - 1);
   }
 
   /**
@@ -40,17 +40,17 @@ public class Recursion1 {
    * 3, 5, 8, 13, 21 and so on. Define a recursive fibonacci(n) method that returns the nth
    * fibonacci number, with n=0 representing the start of the sequence.
    *
-   * @param n the fibonacci index
+   * @param fibonacciIndex the fibonacci index
    * @return the above mentioned new number
    */
-  int fibonacci(int n) {
-    if (n == 0) {
+  int fibonacci(int fibonacciIndex) {
+    if (fibonacciIndex == 0) {
       return 0;
     }
-    if (n == 1) {
+    if (fibonacciIndex == 1) {
       return 1;
     }
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    return fibonacci(fibonacciIndex - 1) + fibonacci(fibonacciIndex - 2);
   }
 
   /**
