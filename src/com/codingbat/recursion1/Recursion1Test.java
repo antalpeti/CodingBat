@@ -105,4 +105,24 @@ public class Recursion1Test {
     Assert.assertEquals(45, instance.triangle(9));
     Assert.assertEquals(55, instance.triangle(10));
   }
+
+  /**
+   * Test method for {@link Recursion1#sumDigits(int)}.
+   */
+  @Test
+  public void testSumDigits() {
+    Assert.assertEquals(9, instance.sumDigits(126));
+    Assert.assertEquals(13, instance.sumDigits(49));
+    Assert.assertEquals(3, instance.sumDigits(12));
+    Assert.assertEquals(1, instance.sumDigits(10));
+    Assert.assertEquals(1, instance.sumDigits(1));
+    Assert.assertEquals(0, instance.sumDigits(0));
+    Assert.assertEquals(10, instance.sumDigits(730));
+    Assert.assertEquals(4, instance.sumDigits(1111));
+    Assert.assertEquals(5, instance.sumDigits(11111));
+    Assert.assertEquals(3, instance.sumDigits(10110));
+    Assert.assertEquals(10, instance.sumDigits(235));
+  }
+
+
 }

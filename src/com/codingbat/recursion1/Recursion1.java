@@ -67,4 +67,21 @@ public class Recursion1 {
     }
     return rows + triangle(rows - 1);
   }
+
+  /**
+   * Given a non-negative int n, return the sum of its digits recursively (no loops). Note that mod
+   * (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the
+   * rightmost digit (126 / 10 is 12).
+   *
+   * @param number the input number
+   * @return the above mentioned new number
+   */
+  int sumDigits(int number) {
+    int rightmostDigit = number % 10;
+    int rightmostRemoved = number / 10;
+    if (rightmostRemoved == 0) {
+      return rightmostDigit;
+    }
+    return rightmostDigit + sumDigits(rightmostRemoved);
+  }
 }
