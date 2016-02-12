@@ -84,4 +84,25 @@ public class Recursion1 {
     }
     return rightmostDigit + sumDigits(rightmostRemoved);
   }
+
+  /**
+   * Given a non-negative int n, return the count of the occurrences of 7 as a digit, so for example
+   * 717 yields 2. (no loops). Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6),
+   * while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
+   *
+   * @param n the input number
+   * @return the above mentioned new number
+   */
+  int count7(int n) {
+    int rightmostDigit = n % 10;
+    int rightmostRemoved = n / 10;
+    if (rightmostDigit == 7) {
+      return 1 + count7(rightmostRemoved);
+    }
+    if (rightmostRemoved == 0) {
+      return 0;
+    }
+    return count7(rightmostRemoved);
+  }
+
 }

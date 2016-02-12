@@ -124,5 +124,23 @@ public class Recursion1Test {
     Assert.assertEquals(10, instance.sumDigits(235));
   }
 
-
+  /**
+   * Test method for {@link Recursion1#count7(int)}.
+   */
+  @Test
+  public void testCount7() {
+    Assert.assertEquals(2, instance.count7(717));
+    Assert.assertEquals(1, instance.count7(7));
+    Assert.assertEquals(0, instance.count7(123));
+    Assert.assertEquals(2, instance.count7(77));
+    Assert.assertEquals(1, instance.count7(7123));
+    Assert.assertEquals(3, instance.count7(771237));
+    Assert.assertEquals(4, instance.count7(771737));
+    Assert.assertEquals(2, instance.count7(47571));
+    Assert.assertEquals(6, instance.count7(777777));
+    Assert.assertEquals(4, instance.count7(70701277));
+    Assert.assertEquals(5, instance.count7(777576197));
+    Assert.assertEquals(0, instance.count7(99999));
+    Assert.assertEquals(1, instance.count7(99799));
+  }
 }
