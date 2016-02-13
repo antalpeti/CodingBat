@@ -143,4 +143,29 @@ public class Recursion1Test {
     Assert.assertEquals(0, instance.count7(99999));
     Assert.assertEquals(1, instance.count7(99799));
   }
+
+  /**
+   * Test method for {@link Recursion1#count8(int)}.
+   */
+  @Test
+  public void testCount8() {
+    Assert.assertEquals(1, instance.count8(8));
+    Assert.assertEquals(2, instance.count8(818));
+    Assert.assertEquals(4, instance.count8(8818));
+    Assert.assertEquals(4, instance.count8(8088));
+    Assert.assertEquals(0, instance.count8(123));
+    Assert.assertEquals(2, instance.count8(81238));
+    Assert.assertEquals(6, instance.count8(88788));
+    Assert.assertEquals(1, instance.count8(8234));
+    Assert.assertEquals(1, instance.count8(2348));
+    Assert.assertEquals(3, instance.count8(23884));
+    Assert.assertEquals(0, instance.count8(0));
+    Assert.assertEquals(5, instance.count8(1818188));
+    Assert.assertEquals(5, instance.count8(8818181));
+    Assert.assertEquals(1, instance.count8(1080));
+    Assert.assertEquals(3, instance.count8(188));
+    Assert.assertEquals(9, instance.count8(88888));
+    Assert.assertEquals(2, instance.count8(9898));
+    Assert.assertEquals(1, instance.count8(78));
+  }
 }
