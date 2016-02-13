@@ -78,11 +78,11 @@ public class Recursion1 {
    */
   int sumDigits(int number) {
     int rightmostDigit = number % 10;
-    int rightmostRemoved = number / 10;
-    if (rightmostRemoved == 0) {
+    int rightmostDigitRemoved = number / 10;
+    if (rightmostDigitRemoved == 0) {
       return rightmostDigit;
     }
-    return rightmostDigit + sumDigits(rightmostRemoved);
+    return rightmostDigit + sumDigits(rightmostDigitRemoved);
   }
 
   /**
@@ -95,14 +95,14 @@ public class Recursion1 {
    */
   int count7(int n) {
     int rightmostDigit = n % 10;
-    int rightmostRemoved = n / 10;
+    int rightmostDigitRemoved = n / 10;
     if (rightmostDigit == 7) {
-      return 1 + count7(rightmostRemoved);
+      return 1 + count7(rightmostDigitRemoved);
     }
-    if (rightmostRemoved == 0) {
+    if (rightmostDigitRemoved == 0) {
       return 0;
     }
-    return count7(rightmostRemoved);
+    return count7(rightmostDigitRemoved);
   }
 
   /**
