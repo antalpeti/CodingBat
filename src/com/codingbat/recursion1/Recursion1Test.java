@@ -168,4 +168,22 @@ public class Recursion1Test {
     Assert.assertEquals(2, instance.count8(9898));
     Assert.assertEquals(1, instance.count8(78));
   }
+
+  /**
+   * Test method for {@link Recursion1#powerN(int, int)}.
+   */
+  @Test
+  public void testPowerN() {
+    Assert.assertEquals(3, instance.powerN(3, 1));
+    Assert.assertEquals(9, instance.powerN(3, 2));
+    Assert.assertEquals(27, instance.powerN(3, 3));
+    Assert.assertEquals(2, instance.powerN(2, 1));
+    Assert.assertEquals(4, instance.powerN(2, 2));
+    Assert.assertEquals(8, instance.powerN(2, 3));
+    Assert.assertEquals(16, instance.powerN(2, 4));
+    Assert.assertEquals(32, instance.powerN(2, 5));
+    Assert.assertEquals(10, instance.powerN(10, 1));
+    Assert.assertEquals(100, instance.powerN(10, 2));
+    Assert.assertEquals(1000, instance.powerN(10, 3));
+  }
 }
