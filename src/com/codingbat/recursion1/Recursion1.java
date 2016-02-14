@@ -90,12 +90,12 @@ public class Recursion1 {
    * 717 yields 2. (no loops). Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6),
    * while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
    *
-   * @param n the input number
+   * @param number the input number
    * @return the above mentioned new number
    */
-  int count7(int n) {
-    int rightmostDigit = n % 10;
-    int rightmostDigitRemoved = n / 10;
+  int count7(int number) {
+    int rightmostDigit = number % 10;
+    int rightmostDigitRemoved = number / 10;
     if (rightmostDigit == 7) {
       return 1 + count7(rightmostDigitRemoved);
     }
@@ -111,12 +111,12 @@ public class Recursion1 {
    * 4. Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10
    * removes the rightmost digit (126 / 10 is 12).
    *
-   * @param n the input number
+   * @param number the input number
    * @return the above mentioned new number
    */
-  int count8(int n) {
-    int rightmostDigit = n % 10;
-    int rightmostDigitRemoved = n / 10;
+  int count8(int number) {
+    int rightmostDigit = number % 10;
+    int rightmostDigitRemoved = number / 10;
     int beforeRightmostDigit = rightmostDigitRemoved % 10;
     if (beforeRightmostDigit == 8 && rightmostDigit == 8) {
       return 2 + count8(rightmostDigitRemoved);
