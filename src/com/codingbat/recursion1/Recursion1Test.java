@@ -186,4 +186,36 @@ public class Recursion1Test {
     Assert.assertEquals(100, instance.powerN(10, 2));
     Assert.assertEquals(1000, instance.powerN(10, 3));
   }
+
+  /**
+   * Test method for {@link Recursion1#countX(String)}.
+   */
+  @Test
+  public void testCountX() {
+    Assert.assertEquals(4, instance.countX("xxhixx"));
+    Assert.assertEquals(3, instance.countX("xhixhix"));
+    Assert.assertEquals(0, instance.countX("hi"));
+    Assert.assertEquals(0, instance.countX("h"));
+    Assert.assertEquals(1, instance.countX("x"));
+    Assert.assertEquals(0, instance.countX("hihi"));
+    Assert.assertEquals(0, instance.countX("hiAAhi12hi"));
+  }
+
+  /**
+   * Test method for {@link Recursion1#countX(String)}.
+   */
+  @Test
+  public void testCountHi() {
+    Assert.assertEquals(1, instance.countHi("xxhixx"));
+    Assert.assertEquals(2, instance.countHi("xhixhix"));
+    Assert.assertEquals(1, instance.countHi("hi"));
+    Assert.assertEquals(2, instance.countHi("hihih"));
+    Assert.assertEquals(0, instance.countHi("h"));
+    Assert.assertEquals(0, instance.countHi(""));
+    Assert.assertEquals(4, instance.countHi("ihihihihih"));
+    Assert.assertEquals(5, instance.countHi("ihihihihihi"));
+    Assert.assertEquals(3, instance.countHi("hiAAhi12hi"));
+    Assert.assertEquals(3, instance.countHi("xhixhxihihhhih"));
+    Assert.assertEquals(1, instance.countHi("ship"));
+  }
 }

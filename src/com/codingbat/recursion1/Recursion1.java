@@ -145,4 +145,38 @@ public class Recursion1 {
     return base * powerN(base, exponent - 1);
   }
 
+  /**
+   * Given a string, compute recursively (no loops) the number of lowercase 'x' chars in the string.
+   *
+   * @param text the input string
+   * @return the above mentioned new number
+   */
+  int countX(String text) {
+    if (text.length() == 0) {
+      return 0;
+    }
+    String substring = text.substring(1);
+    if (text.charAt(0) == 'x') {
+      return 1 + countX(substring);
+    }
+    return countX(substring);
+  }
+
+  /**
+   * Given a string, compute recursively (no loops) the number of times lowercase "hi" appears in
+   * the string.
+   *
+   * @param text the input {@link String}
+   * @return the above mentioned new number
+   */
+  int countHi(String text) {
+    if (text.length() == 0) {
+      return 0;
+    }
+    String substring = text.substring(1);
+    if (text.startsWith("hi")) {
+      return 1 + countHi(substring);
+    }
+    return countHi(substring);
+  }
 }
