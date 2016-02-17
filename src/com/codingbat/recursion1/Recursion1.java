@@ -179,4 +179,16 @@ public class Recursion1 {
     }
     return countHi(substring);
   }
+
+  /**
+   * Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars
+   * have been changed to 'y' chars.
+   *
+   * @param text the input {@link String}
+   * @return the above mentioned new {@link String}
+   */
+  String changeXY(String text) {
+    return text.replace("x", "y");
+  }
+
 }

@@ -218,4 +218,23 @@ public class Recursion1Test {
     Assert.assertEquals(3, instance.countHi("xhixhxihihhhih"));
     Assert.assertEquals(1, instance.countHi("ship"));
   }
+
+  /**
+   * Test method for {@link Recursion1#changeXY(String)}.
+   */
+  @Test
+  public void testChangeXY() {
+    Assert.assertEquals("codey", instance.changeXY("codex"));
+    Assert.assertEquals("yyhiyy", instance.changeXY("xxhixx"));
+    Assert.assertEquals("yhiyhiy", instance.changeXY("xhixhix"));
+    Assert.assertEquals("hiy", instance.changeXY("hiy"));
+    Assert.assertEquals("h", instance.changeXY("h"));
+    Assert.assertEquals("y", instance.changeXY("x"));
+    Assert.assertEquals("", instance.changeXY(""));
+    Assert.assertEquals("yyy", instance.changeXY("xxx"));
+    Assert.assertEquals("yyhyyi", instance.changeXY("yyhxyi"));
+    Assert.assertEquals("hihi", instance.changeXY("hihi"));
+  }
+
+
 }
