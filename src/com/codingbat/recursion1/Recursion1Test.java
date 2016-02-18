@@ -236,5 +236,20 @@ public class Recursion1Test {
     Assert.assertEquals("hihi", instance.changeXY("hihi"));
   }
 
-
+  /**
+   * Test method for {@link Recursion1#changePi(String)}.
+   */
+  @Test
+  public void testChangePi() {
+    Assert.assertEquals("x3.14x", instance.changePi("xpix"));
+    Assert.assertEquals("3.143.14", instance.changePi("pipi"));
+    Assert.assertEquals("3.14p", instance.changePi("pip"));
+    Assert.assertEquals("3.14", instance.changePi("pi"));
+    Assert.assertEquals("hip", instance.changePi("hip"));
+    Assert.assertEquals("p", instance.changePi("p"));
+    Assert.assertEquals("x", instance.changePi("x"));
+    Assert.assertEquals("", instance.changePi(""));
+    Assert.assertEquals("3.14xx", instance.changePi("pixx"));
+    Assert.assertEquals("xyzzy", instance.changePi("xyzzy"));
+  }
 }

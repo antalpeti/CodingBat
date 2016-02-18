@@ -187,8 +187,31 @@ public class Recursion1 {
    * @param text the input {@link String}
    * @return the above mentioned new {@link String}
    */
-  String changeXY(String text) {
-    return text.replace("x", "y");
+  String changeXY(String str) {
+    String front = "";
+    if (str.length() == 0) {
+      return front;
+    }
+    if (str.charAt(0) == 'x') {
+      return 'y' + changeXY(str.substring(1));
+    }
+    return str.charAt(0) + changeXY(str.substring(1));
   }
 
+  /**
+   * Given a string, compute recursively (no loops) a new string where all appearances of "pi" have
+   * been replaced by "3.14".
+   *
+   * @param str the input {@link String}
+   * @return the above mentioned new string
+   */
+  String changePi(String str) {
+    if (str.length() == 0) {
+      return "";
+    }
+    if (str.startsWith("pi")) {
+      return "3.14" + changePi(str.substring(2));
+    }
+    return str.charAt(0) + changePi(str.substring(1));
+  }
 }
