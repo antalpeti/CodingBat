@@ -252,4 +252,17 @@ public class Recursion1Test {
     Assert.assertEquals("3.14xx", instance.changePi("pixx"));
     Assert.assertEquals("xyzzy", instance.changePi("xyzzy"));
   }
+
+  /**
+   * Test method for {@link Recursion1#noX(String)}.
+   */
+  @Test
+  public void testNoX() {
+    Assert.assertEquals("ab", instance.noX("xaxb"));
+    Assert.assertEquals("abc", instance.noX("abc"));
+    Assert.assertEquals("", instance.noX("xx"));
+    Assert.assertEquals("", instance.noX(""));
+    Assert.assertEquals("ab", instance.noX("axxbxx"));
+    Assert.assertEquals("Hello", instance.noX("Hellox"));
+  }
 }
