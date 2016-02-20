@@ -265,4 +265,19 @@ public class Recursion1Test {
     Assert.assertEquals("ab", instance.noX("axxbxx"));
     Assert.assertEquals("Hello", instance.noX("Hellox"));
   }
+
+  /**
+   * Test method for {@link Recursion1#array6(int[], int)}.
+   */
+  @Test
+  public void testArray6() {
+    Assert.assertEquals(true, instance.array6(new int[] {1, 6, 4}, 0));
+    Assert.assertEquals(false, instance.array6(new int[] {1, 4}, 0));
+    Assert.assertEquals(true, instance.array6(new int[] {6}, 0));
+    Assert.assertEquals(false, instance.array6(new int[] {}, 0));
+    Assert.assertEquals(true, instance.array6(new int[] {6, 2, 2}, 0));
+    Assert.assertEquals(false, instance.array6(new int[] {2, 5}, 0));
+    Assert.assertEquals(true, instance.array6(new int[] {1, 9, 4, 6, 6}, 0));
+    Assert.assertEquals(true, instance.array6(new int[] {2, 5, 6}, 0));
+  }
 }

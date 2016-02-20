@@ -231,4 +231,23 @@ public class Recursion1 {
     return str.charAt(0) + noX(str.substring(1));
   }
 
+  /**
+   * Given an array of ints, compute recursively if the array contains a 6. We'll use the convention
+   * of considering only the part of the array that begins at the given index. In this way, a
+   * recursive call can pass index+1 to move down the array. The initial call will pass in index as
+   * 0.
+   *
+   * @param nums the array of numbers
+   * @param index the starting index
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  boolean array6(int[] nums, int index) {
+    if (nums.length == 0 || nums.length == index) {
+      return false;
+    }
+    if (nums[index] == 6) {
+      return true;
+    }
+    return array6(nums, index + 1);
+  }
 }
