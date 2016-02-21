@@ -280,4 +280,22 @@ public class Recursion1Test {
     Assert.assertEquals(true, instance.array6(new int[] {1, 9, 4, 6, 6}, 0));
     Assert.assertEquals(true, instance.array6(new int[] {2, 5, 6}, 0));
   }
+
+  /**
+   * Test method for {@link Recursion1#array11(int[], int)}.
+   */
+  @Test
+  public void testArray11() {
+    Assert.assertEquals(1, instance.array11(new int[] {1, 2, 11}, 0));
+    Assert.assertEquals(2, instance.array11(new int[] {11, 11}, 0));
+    Assert.assertEquals(0, instance.array11(new int[] {1, 2, 3, 4}, 0));
+    Assert.assertEquals(3, instance.array11(new int[] {1, 11, 3, 11, 11}, 0));
+    Assert.assertEquals(1, instance.array11(new int[] {11}, 0));
+    Assert.assertEquals(0, instance.array11(new int[] {1}, 0));
+    Assert.assertEquals(0, instance.array11(new int[] {}, 0));
+    Assert.assertEquals(2, instance.array11(new int[] {11, 2, 3, 4, 11, 5}, 0));
+    Assert.assertEquals(2, instance.array11(new int[] {11, 5, 11}, 0));
+  }
+
+
 }
