@@ -203,7 +203,7 @@ public class Recursion1 {
    * been replaced by "3.14".
    *
    * @param str the input {@link String}
-   * @return the above mentioned new string
+   * @return the above mentioned new {@link String}
    */
   String changePi(String str) {
     if (str.length() == 0) {
@@ -219,7 +219,7 @@ public class Recursion1 {
    * Given a string, compute recursively a new string where all the 'x' chars have been removed.
    *
    * @param str the input {@link String}
-   * @return the above mentioned new string
+   * @return the above mentioned new {@link String}
    */
   String noX(String str) {
     if (str.length() == 0) {
@@ -291,4 +291,20 @@ public class Recursion1 {
     return array220(nums, index + 1);
   }
 
+  /**
+   * Given a string, compute recursively a new string where all the adjacent chars are now separated
+   * by a "*".
+   *
+   * @param str the input text
+   * @return the above mentioned new {@link String}
+   */
+  String allStar(String str) {
+    if (str.length() == 0) {
+      return "";
+    }
+    if (str.length() == 1) {
+      return str;
+    }
+    return str.charAt(0) + "*" + allStar(str.substring(1));
+  }
 }

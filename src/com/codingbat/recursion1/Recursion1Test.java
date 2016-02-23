@@ -319,5 +319,18 @@ public class Recursion1Test {
     Assert.assertEquals(true, instance.array220(new int[] {1, 2, 3, 4, 4, 50, 500, 6}, 0));
   }
 
-
+  /**
+   * Test method for {@link Recursion1#allStar(String)}.
+   */
+  @Test
+  public void testAllStar() {
+    Assert.assertEquals("h*e*l*l*o", instance.allStar("hello"));
+    Assert.assertEquals("a*b*c", instance.allStar("abc"));
+    Assert.assertEquals("a*b", instance.allStar("ab"));
+    Assert.assertEquals("a", instance.allStar("a"));
+    Assert.assertEquals("", instance.allStar(""));
+    Assert.assertEquals("3*.*1*4", instance.allStar("3.14"));
+    Assert.assertEquals("C*h*o*c*o*l*a*t*e", instance.allStar("Chocolate"));
+    Assert.assertEquals("1*2*3*4", instance.allStar("1234"));
+  }
 }
