@@ -307,4 +307,24 @@ public class Recursion1 {
     }
     return str.charAt(0) + "*" + allStar(str.substring(1));
   }
+
+  /**
+   * Given a string, compute recursively a new string where identical chars that are adjacent in the
+   * original string are separated from each other by a "*".
+   *
+   * @param str the input text
+   * @return the above mentioned new {@link String}
+   */
+  String pairStar(String str) {
+    if (str.length() == 0) {
+      return "";
+    }
+    if (str.length() == 1) {
+      return str;
+    }
+    if (str.charAt(0) == str.charAt(1)) {
+      return str.charAt(0) + "*" + pairStar(str.substring(1));
+    }
+    return str.charAt(0) + pairStar(str.substring(1));
+  }
 }

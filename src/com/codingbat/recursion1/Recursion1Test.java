@@ -333,4 +333,21 @@ public class Recursion1Test {
     Assert.assertEquals("C*h*o*c*o*l*a*t*e", instance.allStar("Chocolate"));
     Assert.assertEquals("1*2*3*4", instance.allStar("1234"));
   }
+
+  /**
+   * Test method for {@link Recursion1#allStar(String)}.
+   */
+  @Test
+  public void testPairStar() {
+    Assert.assertEquals("hel*lo", instance.pairStar("hello"));
+    Assert.assertEquals("x*xy*y", instance.pairStar("xxyy"));
+    Assert.assertEquals("a*a*a*a", instance.pairStar("aaaa"));
+    Assert.assertEquals("a*a*ab", instance.pairStar("aaab"));
+    Assert.assertEquals("a*a", instance.pairStar("aa"));
+    Assert.assertEquals("a", instance.pairStar("a"));
+    Assert.assertEquals("", instance.pairStar(""));
+    Assert.assertEquals("noadjacent", instance.pairStar("noadjacent"));
+    Assert.assertEquals("ab*ba", instance.pairStar("abba"));
+    Assert.assertEquals("ab*b*ba", instance.pairStar("abbba"));
+  }
 }
