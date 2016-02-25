@@ -350,4 +350,23 @@ public class Recursion1Test {
     Assert.assertEquals("ab*ba", instance.pairStar("abba"));
     Assert.assertEquals("ab*b*ba", instance.pairStar("abbba"));
   }
+
+  /**
+   * Test method for {@link Recursion1#endX(String)}.
+   */
+  @Test
+  public void testEndX() {
+    Assert.assertEquals("rexx", instance.endX("xxre"));
+    Assert.assertEquals("hixxxx", instance.endX("xxhixx"));
+    Assert.assertEquals("hihixxx", instance.endX("xhixhix"));
+    Assert.assertEquals("hiy", instance.endX("hiy"));
+    Assert.assertEquals("h", instance.endX("h"));
+    Assert.assertEquals("x", instance.endX("x"));
+    Assert.assertEquals("xx", instance.endX("xx"));
+    Assert.assertEquals("", instance.endX(""));
+    Assert.assertEquals("bxx", instance.endX("bxx"));
+    Assert.assertEquals("baxx", instance.endX("bxax"));
+    Assert.assertEquals("aaaxxx", instance.endX("axaxax"));
+    Assert.assertEquals("hixxx", instance.endX("xxhxi"));
+  }
 }
