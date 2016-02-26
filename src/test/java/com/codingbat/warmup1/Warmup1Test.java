@@ -1,6 +1,4 @@
-package test.java.com.codingbat.warmup1;
-
-import main.java.com.codingbat.warmup1.Warmup1;
+package com.codingbat.warmup1;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

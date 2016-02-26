@@ -1,4 +1,4 @@
-package main.java.com.codingbat.array1;
+package com.codingbat.array1;
 
 /**
  * The class Array1 is contains solution for Array-1 section.

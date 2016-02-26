@@ -1,4 +1,4 @@
-package main.java.com.codingbat.warmup2;
+package com.codingbat.warmup2;
 
 /**
  * The class Warmup2 is contains solution for Warmup-2 section.

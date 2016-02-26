@@ -1,6 +1,4 @@
-package test.java.com.codingbat.ap1;
-
-import main.java.com.codingbat.ap1.AP1;
+package com.codingbat.ap1;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.AfterClass;
@@ -293,10 +291,10 @@ public class AP1Test {
     Assert.assertEquals(2,
         instance.matchUp(new String[] {"x", "y", "z"}, new String[] {"xx", "yyy", ""}));
     Assert
-    .assertEquals(
-        3,
-        instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
-        "zzz"}));
+        .assertEquals(
+            3,
+            instance.matchUp(new String[] {"b", "x", "y", "z"}, new String[] {"a", "xx", "yyy",
+                "zzz"}));
     Assert.assertEquals(1,
         instance.matchUp(new String[] {"aaa", "bb", "c"}, new String[] {"aaa", "xx", "bb"}));
   }
@@ -549,7 +547,7 @@ public class AP1Test {
     Assert.assertArrayEquals(
         new String[] {"aa", "ba", "ca", "da"},
         instance.mergeTwo(new String[] {"aa", "da", "ea", "fa"}, new String[] {"ba", "ca", "fa",
-            "ga"}, 4));
+        "ga"}, 4));
     Assert.assertArrayEquals(new String[] {"1", "2", "3"}, instance.mergeTwo(new String[] {"1",
         "2", "3", "fa"}, new String[] {"4", "5", "6", "ga"}, 3));
   }

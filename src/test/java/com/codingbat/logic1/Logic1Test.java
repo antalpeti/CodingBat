@@ -1,6 +1,4 @@
-package test.java.com.codingbat.logic1;
-
-import main.java.com.codingbat.logic1.Logic1;
+package com.codingbat.logic1;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

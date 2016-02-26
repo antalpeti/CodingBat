@@ -1,4 +1,4 @@
 /**
  * Contains solutions to the Recursion-1 section.
  */
-package main.java.com.codingbat.recursion1;
+package com.codingbat.recursion1;

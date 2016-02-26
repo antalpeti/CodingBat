@@ -1,6 +1,4 @@
-package test.java.com.codingbat.array3;
-
-import main.java.com.codingbat.array3.Array3;
+package com.codingbat.array3;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

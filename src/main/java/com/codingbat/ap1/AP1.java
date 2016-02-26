@@ -1,4 +1,5 @@
-package main.java.com.codingbat.ap1;
+package com.codingbat.ap1;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;

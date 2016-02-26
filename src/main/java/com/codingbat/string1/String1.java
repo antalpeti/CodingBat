@@ -1,7 +1,4 @@
-package main.java.com.codingbat.string1;
-
-
-
+package com.codingbat.string1;
 
 /**
  * The class String1 is contains solution for String-1 section.

@@ -1,4 +1,4 @@
-package main.java.com.codingbat.array2;
+package com.codingbat.array2;
 
 import java.util.Arrays;
 
@@ -440,7 +440,7 @@ public class Array2 {
 
       boolean threeConsecutiveNumbersAreOdd =
           Math.abs(numbers[i] % 2) == 1 && Math.abs(numbers[i + 1]) % 2 == 1
-          && Math.abs(numbers[i + 2]) % 2 == 1;
+              && Math.abs(numbers[i + 2]) % 2 == 1;
       if (threeConsecutiveNumbersAreOdd) {
         return true;
       }

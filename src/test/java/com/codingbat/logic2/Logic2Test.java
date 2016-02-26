@@ -1,6 +1,4 @@
-package test.java.com.codingbat.logic2;
-
-import main.java.com.codingbat.logic2.Logic2;
+package com.codingbat.logic2;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

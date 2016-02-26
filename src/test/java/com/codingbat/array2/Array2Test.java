@@ -1,6 +1,4 @@
-package test.java.com.codingbat.array2;
-
-import main.java.com.codingbat.array2.Array2;
+package com.codingbat.array2;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -649,7 +647,7 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {0, 0, 0, -1, -1},
         instance.zeroFront(new int[] {-1, 0, 0, -1, 0}));
     Assert
-    .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
+        .assertArrayEquals(new int[] {0, 0, -3, -3}, instance.zeroFront(new int[] {0, -3, 0, -3}));
     Assert.assertArrayEquals(new int[] {}, instance.zeroFront(new int[] {}));
     Assert.assertArrayEquals(new int[] {0, 0, 9, 9, 9, 9},
         instance.zeroFront(new int[] {9, 9, 0, 9, 0, 9}));
@@ -737,7 +735,7 @@ public class Array2Test {
     Assert.assertArrayEquals(new int[] {2, 2, 2}, instance.evenOdd(new int[] {2, 2, 2}));
     Assert.assertArrayEquals(new int[] {2, 2, 3}, instance.evenOdd(new int[] {3, 2, 2}));
     Assert
-        .assertArrayEquals(new int[] {0, 0, 1, 1, 1}, instance.evenOdd(new int[] {1, 1, 0, 1, 0}));
+    .assertArrayEquals(new int[] {0, 0, 1, 1, 1}, instance.evenOdd(new int[] {1, 1, 0, 1, 0}));
     Assert.assertArrayEquals(new int[] {1}, instance.evenOdd(new int[] {1}));
     Assert.assertArrayEquals(new int[] {2, 1}, instance.evenOdd(new int[] {1, 2}));
     Assert.assertArrayEquals(new int[] {2, 1}, instance.evenOdd(new int[] {2, 1}));
@@ -753,7 +751,7 @@ public class Array2Test {
     Assert.assertArrayEquals(new String[] {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7"},
         instance.fizzBuzz(1, 8));
     Assert.assertArrayEquals(new String[] {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
-        "Buzz"}, instance.fizzBuzz(1, 11));
+    "Buzz"}, instance.fizzBuzz(1, 11));
     Assert.assertArrayEquals(new String[] {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz",
         "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"}, instance.fizzBuzz(1, 16));
     Assert.assertArrayEquals(new String[] {"1", "2", "Fizz"}, instance.fizzBuzz(1, 4));

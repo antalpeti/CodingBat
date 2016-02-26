@@ -1,5 +1,4 @@
-package main.java.com.codingbat.string3;
-
+package com.codingbat.string3;
 
 
 

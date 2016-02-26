@@ -1,6 +1,4 @@
-package test.java.com.codingbat.string1;
-
-import main.java.com.codingbat.string1.String1;
+package com.codingbat.string1;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

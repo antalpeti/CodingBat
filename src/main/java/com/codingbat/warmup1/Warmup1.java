@@ -1,4 +1,4 @@
-package main.java.com.codingbat.warmup1;
+package com.codingbat.warmup1;
 
 import java.util.Locale;
 
@@ -258,7 +258,7 @@ public class Warmup1 {
     int maxTemperature = 100;
     boolean oneIsGreaterThanOneHundred =
         temperature1 > maxTemperature || temperature2 > maxTemperature;
-        return oneIsLessThanZero && oneIsGreaterThanOneHundred;
+    return oneIsLessThanZero && oneIsGreaterThanOneHundred;
   }
 
   /**
