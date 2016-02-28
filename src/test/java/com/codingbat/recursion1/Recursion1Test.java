@@ -387,4 +387,23 @@ public class Recursion1Test {
     Assert.assertEquals(0, instance.countPairs("aa"));
     Assert.assertEquals(1, instance.countPairs("aaa"));
   }
+
+  /**
+   * Test method for {@link Recursion1#countAbc(String)}.
+   */
+  @Test
+  public void testCountAbc() {
+    Assert.assertEquals(1, instance.countAbc("abc"));
+    Assert.assertEquals(2, instance.countAbc("abcxxabc"));
+    Assert.assertEquals(2, instance.countAbc("abaxxaba"));
+    Assert.assertEquals(2, instance.countAbc("ababc"));
+    Assert.assertEquals(0, instance.countAbc("abxbc"));
+    Assert.assertEquals(1, instance.countAbc("aaabc"));
+    Assert.assertEquals(0, instance.countAbc("hello"));
+    Assert.assertEquals(0, instance.countAbc(""));
+    Assert.assertEquals(0, instance.countAbc("ab"));
+    Assert.assertEquals(1, instance.countAbc("aba"));
+    Assert.assertEquals(0, instance.countAbc("aca"));
+    Assert.assertEquals(0, instance.countAbc("aaa"));
+  }
 }
