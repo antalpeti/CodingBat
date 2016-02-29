@@ -401,4 +401,21 @@ public class Recursion1 {
     }
     return count11(str.substring(1));
   }
+
+  /**
+   * Given a string, return recursively a "cleaned" string where adjacent chars that are the same
+   * have been reduced to a single char. So "yyzzza" yields "yza".
+   *
+   * @param str the input text
+   * @return the above mentioned new {@link String}
+   */
+  public String stringClean(String str) {
+    if (str.length() < 2) {
+      return str;
+    }
+    if (str.charAt(0) == str.charAt(1)) {
+      return stringClean(str.substring(1));
+    }
+    return str.charAt(0) + stringClean(str.substring(1));
+  }
 }

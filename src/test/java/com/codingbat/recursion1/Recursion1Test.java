@@ -424,4 +424,17 @@ public class Recursion1Test {
     Assert.assertEquals(0, instance.count11("1Hello1"));
     Assert.assertEquals(0, instance.count11("Hello"));
   }
+
+  /**
+   * Test method for {@link Recursion1#stringClean(String)}.
+   */
+  @Test
+  public void testStringClean() {
+    Assert.assertEquals("yza", instance.stringClean("yyzzza"));
+    Assert.assertEquals("abcd", instance.stringClean("abbbcdd"));
+    Assert.assertEquals("Helo", instance.stringClean("Hello"));
+    Assert.assertEquals("XabcY", instance.stringClean("XXabcYY"));
+    Assert.assertEquals("12ab45", instance.stringClean("112ab445"));
+    Assert.assertEquals("Helo Bokeper", instance.stringClean("Hello Bookkeeper"));
+  }
 }
