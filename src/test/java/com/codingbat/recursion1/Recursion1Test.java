@@ -437,4 +437,27 @@ public class Recursion1Test {
     Assert.assertEquals("12ab45", instance.stringClean("112ab445"));
     Assert.assertEquals("Helo Bokeper", instance.stringClean("Hello Bookkeeper"));
   }
+
+  /**
+   * Test method for {@link Recursion1#countHi2(String)}.
+   */
+  @Test
+  public void testCountHi2() {
+    Assert.assertEquals(1, instance.countHi2("ahixhi"));
+    Assert.assertEquals(2, instance.countHi2("ahibhi"));
+    Assert.assertEquals(0, instance.countHi2("xhixhi"));
+    Assert.assertEquals(1, instance.countHi2("hixhi"));
+    Assert.assertEquals(2, instance.countHi2("hixhhi"));
+    Assert.assertEquals(3, instance.countHi2("hihihi"));
+    Assert.assertEquals(3, instance.countHi2("hihihix"));
+    Assert.assertEquals(2, instance.countHi2("xhihihix"));
+    Assert.assertEquals(0, instance.countHi2("xxhi"));
+    Assert.assertEquals(1, instance.countHi2("hixxhi"));
+    Assert.assertEquals(1, instance.countHi2("hi"));
+    Assert.assertEquals(0, instance.countHi2("xxxx"));
+    Assert.assertEquals(0, instance.countHi2("h"));
+    Assert.assertEquals(0, instance.countHi2("x"));
+    Assert.assertEquals(0, instance.countHi2(""));
+    Assert.assertEquals(1, instance.countHi2("Hellohi"));
+  }
 }
