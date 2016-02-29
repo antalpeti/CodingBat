@@ -406,4 +406,22 @@ public class Recursion1Test {
     Assert.assertEquals(0, instance.countAbc("aca"));
     Assert.assertEquals(0, instance.countAbc("aaa"));
   }
+
+  /**
+   * Test method for {@link Recursion1#count11(String)}.
+   */
+  @Test
+  public void testCount11() {
+    Assert.assertEquals(2, instance.count11("11abc11"));
+    Assert.assertEquals(3, instance.count11("abc11x11x11"));
+    Assert.assertEquals(1, instance.count11("111"));
+    Assert.assertEquals(2, instance.count11("1111"));
+    Assert.assertEquals(0, instance.count11("1"));
+    Assert.assertEquals(0, instance.count11(""));
+    Assert.assertEquals(0, instance.count11("hi"));
+    Assert.assertEquals(4, instance.count11("11x111x1111"));
+    Assert.assertEquals(1, instance.count11("1x111"));
+    Assert.assertEquals(0, instance.count11("1Hello1"));
+    Assert.assertEquals(0, instance.count11("Hello"));
+  }
 }
