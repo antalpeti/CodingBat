@@ -438,4 +438,19 @@ public class Recursion1 {
     }
     return countHi2(str.substring(1));
   }
+
+  /**
+   * Given a string that contains a single pair of parenthesis, compute recursively a new string
+   * made of only of the parenthesis and their contents, so "xyz(abc)123" yields "(abc)".
+   *
+   * @param str the input text
+   * @return the above mentioned new {@link String}
+   */
+  public String parenBit(String str) {
+    int startIndex = str.indexOf("(");
+    int endIndex = str.lastIndexOf(")");
+    return str.substring(startIndex, endIndex + 1);
+  }
+
+
 }

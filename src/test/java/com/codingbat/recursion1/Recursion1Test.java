@@ -460,4 +460,23 @@ public class Recursion1Test {
     Assert.assertEquals(0, instance.countHi2(""));
     Assert.assertEquals(1, instance.countHi2("Hellohi"));
   }
+
+  /**
+   * Test method for {@link Recursion1#parenBit(String)}.
+   */
+  @Test
+  public void testParenBit() {
+    Assert.assertEquals("(abc)", instance.parenBit("xyz(abc)123"));
+    Assert.assertEquals("(hello)", instance.parenBit("x(hello)"));
+    Assert.assertEquals("(xy)", instance.parenBit("(xy)1"));
+    Assert.assertEquals("(possible)", instance.parenBit("not really (possible)"));
+    Assert.assertEquals("(abc)", instance.parenBit("(abc)"));
+    Assert.assertEquals("(abc)", instance.parenBit("(abc)xyz"));
+    Assert.assertEquals("(abc)", instance.parenBit("(abc)x"));
+    Assert.assertEquals("(x)", instance.parenBit("(x)"));
+    Assert.assertEquals("()", instance.parenBit("()"));
+    Assert.assertEquals("(ipsa)", instance.parenBit("res (ipsa) loquitor"));
+    Assert.assertEquals("(not really)", instance.parenBit("hello(not really)there"));
+    Assert.assertEquals("(ab)", instance.parenBit("ab(ab)ab"));
+  }
 }
