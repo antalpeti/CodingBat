@@ -447,9 +447,13 @@ public class Recursion1 {
    * @return the above mentioned new {@link String}
    */
   public String parenBit(String str) {
-    int startIndex = str.indexOf("(");
-    int endIndex = str.lastIndexOf(")");
-    return str.substring(startIndex, endIndex + 1);
+    if (str.charAt(0) != '(') {
+      return parenBit(str.substring(1));
+    }
+    if (str.charAt(str.length() - 1) != ')') {
+      return parenBit(str.substring(0, str.length() - 1));
+    }
+    return str;
   }
 
 
