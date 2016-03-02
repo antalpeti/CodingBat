@@ -479,4 +479,26 @@ public class Recursion1Test {
     Assert.assertEquals("(not really)", instance.parenBit("hello(not really)there"));
     Assert.assertEquals("(ab)", instance.parenBit("ab(ab)ab"));
   }
+
+  /**
+   * Test method for {@link Recursion1#nestParen(String)}.
+   */
+  @Test
+  public void testNestParen() {
+    Assert.assertEquals(true, instance.nestParen("(())"));
+    Assert.assertEquals(true, instance.nestParen("((()))"));
+    Assert.assertEquals(false, instance.nestParen("(((x))"));
+    Assert.assertEquals(false, instance.nestParen("((())"));
+    Assert.assertEquals(false, instance.nestParen("((()()"));
+    Assert.assertEquals(true, instance.nestParen("()"));
+    Assert.assertEquals(true, instance.nestParen(""));
+    Assert.assertEquals(false, instance.nestParen("(yy)"));
+    Assert.assertEquals(true, instance.nestParen("(())"));
+    Assert.assertEquals(false, instance.nestParen("(((y))"));
+    Assert.assertEquals(false, instance.nestParen("((y)))"));
+    Assert.assertEquals(true, instance.nestParen("((()))"));
+    Assert.assertEquals(false, instance.nestParen("(())))"));
+    Assert.assertEquals(false, instance.nestParen("((yy())))"));
+    Assert.assertEquals(true, instance.nestParen("(((())))"));
+  }
 }
