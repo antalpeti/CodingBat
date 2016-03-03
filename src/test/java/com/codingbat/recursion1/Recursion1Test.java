@@ -501,4 +501,28 @@ public class Recursion1Test {
     Assert.assertEquals(false, instance.nestParen("((yy())))"));
     Assert.assertEquals(true, instance.nestParen("(((())))"));
   }
+
+  /**
+   * Test method for {@link Recursion1#strCount(String, String)}.
+   */
+  @Test
+  public void testStrCount() {
+    Assert.assertEquals(0, instance.strCount("", ""));
+    Assert.assertEquals(0, instance.strCount("", "cat"));
+    Assert.assertEquals(0, instance.strCount("catcowcat", ""));
+    Assert.assertEquals(2, instance.strCount("catcowcat", "cat"));
+    Assert.assertEquals(1, instance.strCount("catcowcat", "cow"));
+    Assert.assertEquals(0, instance.strCount("catcowcat", "dog"));
+    Assert.assertEquals(2, instance.strCount("cacatcowcat", "cat"));
+    Assert.assertEquals(2, instance.strCount("xyx", "x"));
+    Assert.assertEquals(4, instance.strCount("iiiijj", "i"));
+    Assert.assertEquals(2, instance.strCount("iiiijj", "ii"));
+    Assert.assertEquals(1, instance.strCount("iiiijj", "iii"));
+    Assert.assertEquals(2, instance.strCount("iiiijj", "j"));
+    Assert.assertEquals(1, instance.strCount("iiiijj", "jj"));
+    Assert.assertEquals(4, instance.strCount("aaabababab", "ab"));
+    Assert.assertEquals(1, instance.strCount("aaabababab", "aa"));
+    Assert.assertEquals(6, instance.strCount("aaabababab", "a"));
+    Assert.assertEquals(4, instance.strCount("aaabababab", "b"));
+  }
 }
