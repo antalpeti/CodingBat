@@ -497,4 +497,26 @@ public class Recursion1 {
     }
     return strCount(str.substring(1), sub);
   }
+
+  /**
+   * Given a string and a non-empty substring sub, compute recursively if at least n copies of sub
+   * appear in the string somewhere, possibly with overlapping. N will be non-negative.
+   *
+   * @param str the input text
+   * @param sub the searched text
+   * @param n the number of copies
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean strCopies(String str, String sub, int n) {
+    if ((str.length() == 0 || str.length() < sub.length()) && n > 0) {
+      return false;
+    }
+    if (n == 0) {
+      return true;
+    }
+    if (str.startsWith(sub)) {
+      return strCopies(str.substring(1), sub, --n);
+    }
+    return strCopies(str.substring(1), sub, n);
+  }
 }

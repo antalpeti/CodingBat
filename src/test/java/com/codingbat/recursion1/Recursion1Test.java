@@ -525,4 +525,25 @@ public class Recursion1Test {
     Assert.assertEquals(6, instance.strCount("aaabababab", "a"));
     Assert.assertEquals(4, instance.strCount("aaabababab", "b"));
   }
+
+  /**
+   * Test method for {@link Recursion1#strCopies(String, String, int)}.
+   */
+  @Test
+  public void testStrCopies() {
+    Assert.assertEquals(true, instance.strCopies("catcowcat", "cat", 2));
+    Assert.assertEquals(false, instance.strCopies("catcowcat", "cow", 2));
+    Assert.assertEquals(true, instance.strCopies("catcowcat", "cow", 1));
+    Assert.assertEquals(true, instance.strCopies("iiijjj", "i", 3));
+    Assert.assertEquals(false, instance.strCopies("iiijjj", "i", 4));
+    Assert.assertEquals(true, instance.strCopies("iiijjj", "ii", 2));
+    Assert.assertEquals(false, instance.strCopies("iiijjj", "ii", 3));
+    Assert.assertEquals(false, instance.strCopies("iiijjj", "x", 3));
+    Assert.assertEquals(true, instance.strCopies("iiijjj", "x", 0));
+    Assert.assertEquals(true, instance.strCopies("iiiiij", "iii", 3));
+    Assert.assertEquals(false, instance.strCopies("iiiiij", "iii", 4));
+    Assert.assertEquals(true, instance.strCopies("ijiiiiij", "iiii", 2));
+    Assert.assertEquals(false, instance.strCopies("ijiiiiij", "iiii", 4));
+    Assert.assertEquals(true, instance.strCopies("dogcatdogcat", "dog", 2));
+  }
 }
