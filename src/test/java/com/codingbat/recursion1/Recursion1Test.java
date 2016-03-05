@@ -546,4 +546,26 @@ public class Recursion1Test {
     Assert.assertEquals(false, instance.strCopies("ijiiiiij", "iiii", 4));
     Assert.assertEquals(true, instance.strCopies("dogcatdogcat", "dog", 2));
   }
+
+  /**
+   * Test method for {@link Recursion1#strDist(String, String)}.
+   */
+  @Test
+  public void testStrDist() {
+    Assert.assertEquals(9, instance.strDist("catcowcat", "cat"));
+    Assert.assertEquals(3, instance.strDist("catcowcat", "cow"));
+    Assert.assertEquals(9, instance.strDist("cccatcowcatxx", "cat"));
+    Assert.assertEquals(12, instance.strDist("abccatcowcatcatxyz", "cat"));
+    Assert.assertEquals(3, instance.strDist("xyx", "x"));
+    Assert.assertEquals(1, instance.strDist("xyx", "y"));
+    Assert.assertEquals(0, instance.strDist("xyx", "z"));
+    Assert.assertEquals(1, instance.strDist("z", "z"));
+    Assert.assertEquals(0, instance.strDist("x", "z"));
+    Assert.assertEquals(0, instance.strDist("x", ""));
+    Assert.assertEquals(0, instance.strDist("", "z"));
+    Assert.assertEquals(13, instance.strDist("hiHellohihihi", "hi"));
+    Assert.assertEquals(5, instance.strDist("hiHellohihihi", "hih"));
+    Assert.assertEquals(1, instance.strDist("hiHellohihihi", "o"));
+    Assert.assertEquals(2, instance.strDist("hiHellohihihi", "ll"));
+  }
 }

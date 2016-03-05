@@ -519,4 +519,25 @@ public class Recursion1 {
     }
     return strCopies(str.substring(1), sub, n);
   }
+
+  /**
+   * Given a string and a non-empty substring sub, compute recursively the largest substring which
+   * starts and ends with sub and return its length.
+   *
+   * @param str the input text
+   * @param sub the searched text
+   * @return the above mentioned new number
+   */
+  public int strDist(String str, String sub) {
+    if (str.length() == 0 || sub.length() == 0) {
+      return 0;
+    }
+    if (str.startsWith(sub)) {
+      if (str.endsWith(sub)) {
+        return str.length();
+      }
+      return strDist(str.substring(0, str.length() - 1), sub);
+    }
+    return strDist(str.substring(1), sub);
+  }
 }
