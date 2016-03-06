@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 /**
- * The class String1Test is contains tests for String-1 section.
+ * The class is contains tests for String-1 section.
  */
 public class String1Test {
 

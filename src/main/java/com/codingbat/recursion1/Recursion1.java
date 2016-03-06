@@ -1,7 +1,7 @@
 package com.codingbat.recursion1;
 
 /**
- * The class Recursion1 is contains solution for Recursion-1 section.
+ * The class is contains solution for Recursion-1 section.
  */
 public class Recursion1 {
 

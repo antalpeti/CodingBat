@@ -3,7 +3,7 @@ package com.codingbat.warmup1;
 import java.util.Locale;
 
 /**
- * The class Warmup1 is contains solution for Warmup-1 section.
+ * The class is contains solution for Warmup-1 section.
  */
 public class Warmup1 {
 
@@ -258,7 +258,7 @@ public class Warmup1 {
     int maxTemperature = 100;
     boolean oneIsGreaterThanOneHundred =
         temperature1 > maxTemperature || temperature2 > maxTemperature;
-    return oneIsLessThanZero && oneIsGreaterThanOneHundred;
+        return oneIsLessThanZero && oneIsGreaterThanOneHundred;
   }
 
   /**

@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * The class AP1 is contains solution for AP-1 section.
+ * The class is contains solution for AP-1 section.
  */
 public class AP1 {
 

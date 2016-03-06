@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * The class Logic2Test is contains tests for Logic-2 section.
+ * The class is contains tests for Logic-2 section.
  */
 public class Logic2Test {
 

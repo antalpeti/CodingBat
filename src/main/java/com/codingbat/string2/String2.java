@@ -3,7 +3,7 @@ package com.codingbat.string2;
 import java.util.Locale;
 
 /**
- * The class String2 is contains solution for String-2 section.
+ * The class is contains solution for String-2 section.
  */
 public class String2 {
 

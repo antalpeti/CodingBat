@@ -1,7 +1,7 @@
 package com.codingbat.array3;
 
 /**
- * The class Array3 is contains solution for Array-3 section.
+ * The class is contains solution for Array-3 section.
  */
 public class Array3 {
 

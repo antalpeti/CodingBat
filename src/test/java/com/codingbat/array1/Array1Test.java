@@ -5,10 +5,8 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.codingbat.array1.Array1;
-
 /**
- * The class Array1Test is contains tests for Array-1 section.
+ * The class is contains tests for Array-1 section.
  */
 public class Array1Test {
 

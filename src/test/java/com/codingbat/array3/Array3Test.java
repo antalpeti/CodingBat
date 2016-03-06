@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * The class Array3Test is contains tests for Array-3 section.
+ * The class is contains tests for Array-3 section.
  */
 public class Array3Test {
 

@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * The class Logic1Test is contains tests for Logic-1 section.
+ * The class is contains tests for Logic-1 section.
  */
 public class Logic1Test {
 

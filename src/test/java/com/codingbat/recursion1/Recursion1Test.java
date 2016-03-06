@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * The class Recursion1 is contains tests for Recursion-1 section.
+ * The class is contains tests for Recursion-1 section.
  */
 public class Recursion1Test {
 

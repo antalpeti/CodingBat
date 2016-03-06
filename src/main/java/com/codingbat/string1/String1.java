@@ -1,7 +1,7 @@
 package com.codingbat.string1;
 
 /**
- * The class String1 is contains solution for String-1 section.
+ * The class is contains solution for String-1 section.
  */
 public class String1 {
 

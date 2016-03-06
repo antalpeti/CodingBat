@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * The class String3Test is contains tests for String-3 section.
+ * The class is contains tests for String-3 section.
  */
 public class String3Test {
 

@@ -1,9 +1,7 @@
 package com.codingbat.string3;
 
-
-
 /**
- * The class String3 is contains solution for String-3 section.
+ * The class is contains solution for String-3 section.
  */
 public class String3 {
 
