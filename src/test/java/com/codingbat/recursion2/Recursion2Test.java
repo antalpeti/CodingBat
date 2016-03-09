@@ -52,4 +52,29 @@ public class Recursion2Test {
     Assert.assertEquals(true, instance.groupSum(0, new int[] {10, 2, 2, 5}, 15));
     Assert.assertEquals(true, instance.groupSum(0, new int[] {10, 2, 2, 5}, 9));
   }
+
+  /**
+   * Test method for {@link Recursion2#groupSum6(int, int[], int)}.
+   */
+  @Test
+  public void testGroupSum6() {
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {5, 6, 2}, 8));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {5, 6, 2}, 9));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {5, 6, 2}, 7));
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {1}, 1));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {9}, 1));
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {}, 0));
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {3, 2, 4, 6}, 8));
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {6, 2, 4, 3}, 8));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {5, 2, 4, 6}, 9));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {6, 2, 4, 5}, 9));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {3, 2, 4, 6}, 3));
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {1, 6, 2, 6, 4}, 12));
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {1, 6, 2, 6, 4}, 13));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {1, 6, 2, 6, 4}, 4));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {1, 6, 2, 6, 4}, 9));
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {1, 6, 2, 6, 5}, 14));
+    Assert.assertEquals(true, instance.groupSum6(0, new int[] {1, 6, 2, 6, 5}, 15));
+    Assert.assertEquals(false, instance.groupSum6(0, new int[] {1, 6, 2, 6, 5}, 16));
+  }
 }
