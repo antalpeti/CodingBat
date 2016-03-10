@@ -77,4 +77,23 @@ public class Recursion2Test {
     Assert.assertEquals(true, instance.groupSum6(0, new int[] {1, 6, 2, 6, 5}, 15));
     Assert.assertEquals(false, instance.groupSum6(0, new int[] {1, 6, 2, 6, 5}, 16));
   }
+
+  /**
+   * Test method for {@link Recursion2#groupNoAdj(int, int[], int)}.
+   */
+  @Test
+  public void testGroupNoAdj() {
+    Assert.assertEquals(true, instance.groupNoAdj(0, new int[] {2, 5, 10, 4}, 12));
+    Assert.assertEquals(false, instance.groupNoAdj(0, new int[] {2, 5, 10, 4}, 14));
+    Assert.assertEquals(false, instance.groupNoAdj(0, new int[] {2, 5, 10, 4}, 7));
+    Assert.assertEquals(true, instance.groupNoAdj(0, new int[] {2, 5, 10, 4, 2}, 7));
+    Assert.assertEquals(true, instance.groupNoAdj(0, new int[] {2, 5, 10, 4}, 9));
+    Assert.assertEquals(true, instance.groupNoAdj(0, new int[] {10, 2, 2, 3, 3}, 15));
+    Assert.assertEquals(false, instance.groupNoAdj(0, new int[] {10, 2, 2, 3, 3}, 7));
+    Assert.assertEquals(true, instance.groupNoAdj(0, new int[] {}, 0));
+    Assert.assertEquals(true, instance.groupNoAdj(0, new int[] {1}, 1));
+    Assert.assertEquals(false, instance.groupNoAdj(0, new int[] {9}, 1));
+    Assert.assertEquals(true, instance.groupNoAdj(0, new int[] {9}, 0));
+    Assert.assertEquals(true, instance.groupNoAdj(0, new int[] {5, 10, 4, 1}, 11));
+  }
 }

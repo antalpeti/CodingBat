@@ -15,7 +15,7 @@ public class Recursion2 {
    * are needed -- the recursive calls progress down the array.
    *
    * @param start the start index
-   * @param nums the arrays of numbers
+   * @param nums the array of numbers
    * @param target the searched sum
    * @return true, if the above mentioned conditions fulfilled
    */
@@ -38,7 +38,7 @@ public class Recursion2 {
    * constraint that all 6's must be chosen. (No loops needed.)
    *
    * @param start the start index
-   * @param nums the arrays of numbers
+   * @param nums the array of numbers
    * @param target the searched sum
    * @return true, if the above mentioned conditions fulfilled
    */
@@ -53,6 +53,30 @@ public class Recursion2 {
       target = target - nums[start];
     }
     if (groupSum6(start + 1, nums, target)) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Given an array of ints, is it possible to choose a group of some of the ints, such that the
+   * group sums to the given target with this additional constraint: If a value in the array is
+   * chosen to be in the group, the value immediately following it in the array must not be chosen.
+   * (No loops needed.)
+   *
+   * @param start the start index
+   * @param nums the array of numbers
+   * @param target the target sum
+   * @return true, if the above mentioned conditions fulfilled
+   */
+  public boolean groupNoAdj(int start, int[] nums, int target) {
+    if (start >= nums.length) {
+      return target == 0;
+    }
+    if (groupNoAdj(start + 2, nums, target - nums[start])) {
+      return true;
+    }
+    if (groupNoAdj(start + 1, nums, target)) {
       return true;
     }
     return false;
