@@ -1,4 +1,4 @@
-package com.codingbat.logic1;
+package java.com.codingbat.logic1;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

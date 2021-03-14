@@ -1,4 +1,4 @@
 /**
  * Contains solutions to the AP-1 section.
  */
-package com.codingbat.ap1;
+package java.com.codingbat.ap1;

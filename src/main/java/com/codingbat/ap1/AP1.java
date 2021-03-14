@@ -1,4 +1,4 @@
-package com.codingbat.ap1;
+package java.com.codingbat.ap1;
 
 
 import java.util.ArrayList;

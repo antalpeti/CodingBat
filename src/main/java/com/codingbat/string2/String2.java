@@ -1,4 +1,4 @@
-package com.codingbat.string2;
+package java.com.codingbat.string2;
 
 import java.util.Locale;
 

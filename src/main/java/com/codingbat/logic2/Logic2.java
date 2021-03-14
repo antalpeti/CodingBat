@@ -1,4 +1,4 @@
-package com.codingbat.logic2;
+package java.com.codingbat.logic2;
 
 /**
  * The class is contains solution for Logic-2 section.

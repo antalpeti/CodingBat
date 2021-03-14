@@ -1,4 +1,4 @@
-package com.codingbat.string3;
+package java.com.codingbat.string3;
 
 /**
  * The class is contains solution for String-3 section.

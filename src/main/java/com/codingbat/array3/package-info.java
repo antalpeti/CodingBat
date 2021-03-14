@@ -1,4 +1,4 @@
 /**
  * Contains solutions to the Array-3 section.
  */
-package com.codingbat.array3;
+package java.com.codingbat.array3;

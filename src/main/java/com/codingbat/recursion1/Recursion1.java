@@ -1,4 +1,4 @@
-package com.codingbat.recursion1;
+package java.com.codingbat.recursion1;
 
 /**
  * The class is contains solution for Recursion-1 section.

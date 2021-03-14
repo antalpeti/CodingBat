@@ -1,4 +1,4 @@
-package com.codingbat.array3;
+package java.com.codingbat.array3;
 
 /**
  * The class is contains solution for Array-3 section.

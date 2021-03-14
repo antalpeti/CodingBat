@@ -1,4 +1,4 @@
 /**
  * Contains solutions to the Logic-2 section.
  */
-package com.codingbat.logic2;
+package java.com.codingbat.logic2;

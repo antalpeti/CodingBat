@@ -1,4 +1,4 @@
 /**
  * Contains solutions to the String-2 section.
  */
-package com.codingbat.string2;
+package java.com.codingbat.string2;

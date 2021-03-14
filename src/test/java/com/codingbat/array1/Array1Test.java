@@ -1,4 +1,4 @@
-package com.codingbat.array1;
+package java.com.codingbat.array1;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

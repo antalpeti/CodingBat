@@ -1,4 +1,4 @@
-package com.codingbat.array2;
+package java.com.codingbat.array2;
 
 import java.util.Arrays;
 

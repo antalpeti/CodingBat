@@ -1,4 +1,4 @@
-package com.codingbat.recursion1;
+package java.com.codingbat.recursion1;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

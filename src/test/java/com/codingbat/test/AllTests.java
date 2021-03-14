@@ -1,22 +1,23 @@
-package com.codingbat.test;
+package java.com.codingbat.test;
+
+
+import java.com.codingbat.ap1.AP1Test;
+import java.com.codingbat.array1.Array1Test;
+import java.com.codingbat.array2.Array2Test;
+import java.com.codingbat.array3.Array3Test;
+import java.com.codingbat.logic1.Logic1Test;
+import java.com.codingbat.logic2.Logic2Test;
+import java.com.codingbat.recursion1.Recursion1Test;
+import java.com.codingbat.recursion2.Recursion2Test;
+import java.com.codingbat.string1.String1Test;
+import java.com.codingbat.string2.String2Test;
+import java.com.codingbat.string3.String3Test;
+import java.com.codingbat.warmup1.Warmup1Test;
+import java.com.codingbat.warmup2.Warmup2Test;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-
-import com.codingbat.ap1.AP1Test;
-import com.codingbat.array1.Array1Test;
-import com.codingbat.array2.Array2Test;
-import com.codingbat.array3.Array3Test;
-import com.codingbat.logic1.Logic1Test;
-import com.codingbat.logic2.Logic2Test;
-import com.codingbat.recursion1.Recursion1Test;
-import com.codingbat.recursion2.Recursion2Test;
-import com.codingbat.string1.String1Test;
-import com.codingbat.string2.String2Test;
-import com.codingbat.string3.String3Test;
-import com.codingbat.warmup1.Warmup1Test;
-import com.codingbat.warmup2.Warmup2Test;
 
 @RunWith(Suite.class)
 @SuiteClasses({AP1Test.class, Array1Test.class, Array2Test.class, Array3Test.class,
